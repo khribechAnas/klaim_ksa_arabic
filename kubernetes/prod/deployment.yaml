@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: prod
+  name: prod-klaim-website
+  labels:
+    app: prod-klaim-website
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: prod-klaim-website
+  template:
+    metadata:
+      labels:
+        app: prod-klaim-website
+    spec:
+      containers:
+        - name: prod-klaim-website
+          image: klaimregistry.azurecr.io/klaimregistry/prod-klaim-website
+          ports:
+            - containerPort: 3000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  namespace: prod
+  name: prod-klaim-website-svc
+spec:
+  selector:
+    app: prod-klaim-website
+  ports:
+    - port: 80
+      targetPort: 3000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  namespace: prod
+  name: prod-klaim-website-www-svc
+spec:
+  selector:
+    app: prod-klaim-website
+  ports:
+    - port: 80
+      targetPort: 3000
