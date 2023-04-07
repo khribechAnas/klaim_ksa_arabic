@@ -14,7 +14,7 @@ const TermsOfConditions = () => {
       </Head>
       <Header />
       <Hero />
-      <Terms />
+      {/* <Terms /> */}
       <Footer />
     </>
   );
