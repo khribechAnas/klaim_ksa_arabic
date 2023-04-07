@@ -51,7 +51,7 @@ pipeline {
                 dir (KUBERNETES_PATH) {
                  sh """
                     kubectl apply -f deployment.yaml
-                    kubectl -n  ${DEPLOYMENT_ENV} set image deployment ${DEPLOYMENT_ENV}-kklaim-website ${DEPLOYMENT_ENV}-klaim-website=klaimregistry.azurecr.io/klaimregistry/${DEPLOYMENT_ENV}-klaim-website:${GIT_COMMIT}
+                    kubectl -n  ${DEPLOYMENT_ENV} set image deployment ${DEPLOYMENT_ENV}-klaim-website ${DEPLOYMENT_ENV}-klaim-website=klaimregistry.azurecr.io/klaimregistry/${DEPLOYMENT_ENV}-klaim-website:${GIT_COMMIT}
                     """
                 }
             }
