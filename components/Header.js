@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header id="topnav" className="defaultscroll sticky navbar-white-bg">
       <div className="container">
-        <a className="logo" href="/">
+        <a className="logo" href="https://klaim.ai">
           <img
             src="assets/images/klaim/logo_klaim.svg"
             height="48"
