@@ -1,15 +1,8 @@
-import dynamic from "next/dynamic";
 import { ArrowRight } from "react-feather";
-
-const Jarallax = dynamic(() => import("../Jarralax"), {
-  ssr: false,
-});
-import JarallaxImage from "../JarallaxImage";
 
 const Hero = () => {
   return (
-    <Jarallax speed={0.2} imgPosition="0">
-      <JarallaxImage src="assets/images/klaim/hero_home.jpg" alt="" />
+    <div className="klaim-parallax">
       <section
         className="w-100 h-100 d-flex justify-content-center align-items-center"
         style={{ backgroundColor: "rgba(255, 255, 255, .55)" }}
@@ -72,7 +65,7 @@ const Hero = () => {
           <span className="scroll-thisico"></span>
         </div>
       </section>
-    </Jarallax>
+    </div>
   );
 };
 
