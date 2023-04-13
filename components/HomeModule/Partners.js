@@ -29,11 +29,6 @@ const Partners = () => {
           <a
             href="https://www.dhcc.ae/media/news/dubai-healthcare-city-authority-signs-agreement-with-klaim-to-boost-healthcare-provider-performance-and-revenue-management"
             target="_blank"
-            style={{
-              filter:
-                "invert(80%) sepia(49%) saturate(0%) hue-rotate(183deg) brightness(92%) contrast(105%);",
-              opacity: "0.4",
-            }}
           >
             <img
               src="assets/images/klaim/dhcc.png"

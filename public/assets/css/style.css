@@ -6949,3 +6949,13 @@ body[data-layout-mode="dark"] .mode-light {
     right: 20px;
   }
 }
+
+/* HOME HERO SECTIO */
+.klaim-parallax {
+  height: 100vh;
+  background-image: url("../images/klaim/hero_home.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
