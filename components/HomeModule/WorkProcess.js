@@ -51,8 +51,8 @@ const WorkProcess = () => {
               <div className="card-body d-flex flex-column">
                 <h4 className="title">Receive Your Proposal</h4>
                 <p className="text-muted para flex-1">
-                  Our AI algorithms will quickly assess your claims and provide
-                  you with a{" "}
+                  With the help of our AI technology we will assess your claims
+                  and provide you with a{" "}
                   <span className="fw-bold">Claim Purchase Proposal</span>{" "}
                   within 48 hours
                 </p>
@@ -75,8 +75,8 @@ const WorkProcess = () => {
                 <h4 className="title">Get Paid</h4>
                 <p className="text-muted para flex-1">
                   Upon mutual agreement on the purchase of pending claims, you
-                  can expect immediate payouts within{" "}
-                  <span className="fw-bold">7 Days</span> or even as fast as 48
+                  can expect payouts within{" "}
+                  <span className="fw-bold">7 Days</span> or even as fast as 24
                   hours starting from your second month
                 </p>
                 <ul className="list-unstyled d-flex justify-content-between mb-0 mt-2">

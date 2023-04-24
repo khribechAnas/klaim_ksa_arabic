@@ -46,7 +46,7 @@ const Faq = () => {
                 </h5>
                 <p className="answer text-muted mb-0">
                   Upon signing an agreement, you will receive payment within 7
-                  days. Subsequent claims will have a payout duration of 48
+                  days. Subsequent claims will have a payout duration of 24
                   hours.
                 </p>
               </div>
