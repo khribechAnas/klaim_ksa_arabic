@@ -51,6 +51,7 @@ function MyApp({ Component, pageProps }) {
       </HubspotProvider>
       <Script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js" />
       <Script src="/assets/js/app.js" />
+      <Script src="/assets/libs/shufflejs/shuffle.min.js" />
       {loading && <Preloader />}
     </>
   );
