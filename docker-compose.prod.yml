@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+  nextjs:
+    command: sh -c "npm run build && npm run start"
+  strapi:
+    command: sh -c "npm run build && npm run start"
