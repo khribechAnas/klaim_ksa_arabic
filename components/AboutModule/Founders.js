@@ -18,7 +18,7 @@ const FOUNDERS = [
     name: "Ghafoor Ahmad",
     title: "CRO",
     description:
-      "He is also the CEO and founder of AGA Medical Billing Services which is among UAE’s leading niche medical billing services companies that provides end-to-end revenue cycle management solutions for healthcare providers. This arms him with the perfect credentials to accelerate our revenue and growth, thereby making him the backbone of all our operations.",
+      "Ghafoor Ahmad is a highly accomplished executive, visionary leader, and serial entrepreneur with a 17-year career. He excels in sales and leadership roles, delivering outstanding results. As the Co-Founder and Chief Revenue Officer of Klaim, he played a pivotal role in its rapid growth and market disruption. Ghafoor also founded AGA Medical Billing Company, a leading RCM company. His exceptional leadership skills have consistently driven organizational growth and success.",
     imgSrc: "assets/images/klaim/ahmad-ghafoor.png",
     animateClass: "animate__fadeInRight",
     linkedInProfile: "https://www.linkedin.com/in/ghafoor-ahmad-7b98a3164/",
