@@ -1,4 +1,5 @@
 import moment from "moment";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
@@ -271,9 +272,9 @@ const Posts = ({ popularArticles, recentArticles, allArticles }) => {
 
           <div class="col-12 mt-4 pt-2">
             <div class="text-center">
-              <a href="/blog/articles" class="btn btn-primary">
+              <Link href="/blog/articles" class="btn btn-primary">
                 See More <i data-feather="arrow-right" class="fea icon-sm"></i>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
