@@ -45,6 +45,23 @@ function MyApp({ Component, pageProps }) {
         <Head>
           <link rel="shortcut icon" href="assets/images/klaim/favicon.ico" />
         </Head>
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-D0PLRFEHF5"
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+              
+                gtag('config', 'G-D0PLRFEHF5');
+              `}
+            </Script>
+          </>
+        )}
         <Component {...pageProps} />
         <ScrollToTop />
         <CookiePolicy />
