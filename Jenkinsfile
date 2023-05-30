@@ -28,6 +28,13 @@ pipeline {
             KUBERNETES_PATH = 'kubernetes/prod'
             IMAGE_VERSION = GIT_COMMIT
           }
+          if (BRANCH_NAME == 'stage') {
+            DEPLOYMENT_ENV = 'stg'
+            KUBERNETES_PATH = 'kubernetes/stg'
+            IMAGE_VERSION = GIT_COMMIT
+            BUILD_ARGS = '--build-arg APP_NAME="klaim_website" --build-arg STRAPI_ENDPOINT="" --build-arg STRAPI_TOKEN="" '
+
+          }
           echo "Environment set as ${DEPLOYMENT_ENV}. Image version: ${IMAGE_VERSION}"
         }
       }
@@ -38,7 +45,7 @@ pipeline {
         script {
           withCredentials([string(credentialsId: 'acr_password', variable: 'acr_password')]) {
             sh """
-              docker build  -t klaimregistry.azurecr.io/klaimregistry/${DEPLOYMENT_ENV}-klaim-website:"${IMAGE_VERSION}" .
+              docker build  ${BUILD_ARGS} -t klaimregistry.azurecr.io/klaimregistry/${DEPLOYMENT_ENV}-klaim-website:"${IMAGE_VERSION}" .
               docker login klaimregistry.azurecr.io -u klaimregistry -p \'''$acr_password''\'
               docker push klaimregistry.azurecr.io/klaimregistry/${DEPLOYMENT_ENV}-klaim-website:${IMAGE_VERSION}
             """
@@ -50,6 +57,7 @@ pipeline {
             steps  {
                 dir (KUBERNETES_PATH) {
                  sh """
+                    kubectl apply -f ingress.yaml
                     kubectl apply -f deployment.yaml
                     kubectl -n  ${DEPLOYMENT_ENV} set image deployment ${DEPLOYMENT_ENV}-klaim-website ${DEPLOYMENT_ENV}-klaim-website=klaimregistry.azurecr.io/klaimregistry/${DEPLOYMENT_ENV}-klaim-website:${GIT_COMMIT}
                     """

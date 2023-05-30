@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: stg
+  name: stg-klaim-website
+  labels:
+    app: stg-klaim-website
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: stg-klaim-website
+  template:
+    metadata:
+      labels:
+        app: stg-klaim-website
+    spec:
+      containers:
+        - name: stg-klaim-website
+          image: klaimregistry.azurecr.io/klaimregistry/stg-klaim-website
+          ports:
+            - containerPort: 3000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  namespace: stg
+  name: stg-klaim-website-svc
+spec:
+  selector:
+    app: stg-klaim-website
+  ports:
+    - port: 80
+      targetPort: 3000
