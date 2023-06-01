@@ -28,11 +28,7 @@ const Connect = () => {
                 <h5 className="text-muted">
                   <p>Get In Touch Today</p>
                   <a href="tel:+971 (0)4 876 4096" className="text-primary h5">
-                    +971 (0)4 876 4096
-                  </a>
-                  &nbsp; &#x2022; &nbsp;
-                  <a href="tel:+966 (0)11 510 2972" className="text-primary h5">
-                    +966 (0)11 510 2972
+                    +971 (0)4 581 3638
                   </a>
                 </h5>
                 <a
