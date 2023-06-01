@@ -80,7 +80,7 @@ const Posts = ({ popularArticles, recentArticles, allArticles }) => {
                 <div class="card blog blog-primary rounded border-0 shadow overflow-hidden h-100">
                   <div class="position-relative">
                     <img
-                      src={`http://localhost:1337${article.attributes.featuredImage.data.attributes.url}`}
+                      src={`${process.env.STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
                       class="card-img-top"
                       alt="..."
                     />
@@ -149,7 +149,7 @@ const Posts = ({ popularArticles, recentArticles, allArticles }) => {
               <div class="card blog blog-primary rounded border-0 shadow overflow-hidden h-100">
                 <div class="position-relative">
                   <img
-                    src={`http://localhost:1337${article.attributes.featuredImage.data.attributes.url}`}
+                    src={`${process.env.STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
                     class="card-img-top"
                     alt="..."
                   />
@@ -233,7 +233,7 @@ const Posts = ({ popularArticles, recentArticles, allArticles }) => {
               <div class="card blog blog-primary rounded border-0 shadow overflow-hidden h-100">
                 <div class="position-relative">
                   <img
-                    src={`http://localhost:1337${article.attributes.featuredImage.data.attributes.url}`}
+                    src={`${process.env.STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
                     class="card-img-top"
                     alt="..."
                   />

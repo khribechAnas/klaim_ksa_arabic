@@ -38,7 +38,7 @@ export async function getServerSideProps({ query }) {
   };
   const articlesResponse = await fetch(
     `${
-      process.env.STRAPI_ENDPOINT
+      process.env.STRAPI_API_ENDPOINT
     }/blog-articles?populate=*${buildArticleFilters()}`,
     {
       headers: {
@@ -49,7 +49,7 @@ export async function getServerSideProps({ query }) {
   const articles = await articlesResponse.json();
 
   const tagsResponse = await fetch(
-    `${process.env.STRAPI_ENDPOINT}/blog-tags?populate=*`,
+    `${process.env.STRAPI_API_ENDPOINT}/blog-tags?populate=*`,
     {
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
