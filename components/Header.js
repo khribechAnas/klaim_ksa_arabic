@@ -92,6 +92,11 @@ const Header = () => {
             <li className={router.pathname.startsWith("/blog") ? "active" : ""}>
               <Link href="/blog">Blog</Link>
             </li>
+            <li className={router.pathname.startsWith("/blog") ? "active" : ""}>
+              <Link href="https://klaimai1.recruitee.com/" target="_blank">
+                Careers
+              </Link>
+            </li>
             <li className={router.pathname == "/contact" ? "active" : ""}>
               <Link href="/contact">Contact Us</Link>
             </li>
