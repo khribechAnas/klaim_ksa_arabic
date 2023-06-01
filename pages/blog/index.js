@@ -29,6 +29,7 @@ const Blog = ({
 };
 
 export async function getServerSideProps() {
+  console.log(`${process.env.STRAPI_ENDPOINT}/blog-articles?populate=*&filters[isFeatured][$eq]=true`);
   const featuredArticlesResponse = await fetch(
     `${process.env.STRAPI_ENDPOINT}/blog-articles?populate=*&filters[isFeatured][$eq]=true`,
     {
