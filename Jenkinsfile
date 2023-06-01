@@ -32,7 +32,7 @@ pipeline {
             DEPLOYMENT_ENV = 'stg'
             KUBERNETES_PATH = 'kubernetes/stg'
             IMAGE_VERSION = GIT_COMMIT
-            BUILD_ARGS = '--build-arg APP_NAME="klaim_website" --build-arg STRAPI_ENDPOINT="https//strapi.stg.klaim.ai/api" --build-arg STRAPI_TOKEN="" '
+            BUILD_ARGS = '--build-arg APP_NAME="klaim_website" --build-arg STRAPI_ENDPOINT="https//strapi.stg.klaim.ai/api" --build-arg STRAPI_TOKEN="681cd31f3d55a7fc60e25e1b7c04d61fe20dd160fa6f617b989705deeac9a63ac2e6eca1d7ad69305f0a888a8765e645c0d112f8d92000687bc84a34c5c6aecbe9d675e5a42e1f60a52a1e5493d43e6f81afbe9c8a5ecedec5a2afc6f32216c7b6cc0d8641e54eb5ef41af135d96f7ce4dd9aace8ca9bbaf657a747a673f3210" '
 
           }
           echo "Environment set as ${DEPLOYMENT_ENV}. Image version: ${IMAGE_VERSION}"
