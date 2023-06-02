@@ -1,10 +1,10 @@
 # Use an official Node.js runtime as a parent image
 FROM node:14-alpine
 
-ARG APP_NAME
-ARG STRAPI_ENDPOINT
-ARG STRAPI_API_ENDPOINT
-ARG STRAPI_TOKEN
+ENV APP_NAME=klaim_website
+ENV STRAPI_ENDPOINT=https://strapi.stg.klaim.ai
+ENV STRAPI_API_ENDPOINT
+ENV STRAPI_TOKEN
 
 # Set the working directory to /app
 WORKDIR /app
