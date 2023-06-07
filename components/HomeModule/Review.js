@@ -18,7 +18,7 @@ const products = [
   },
   {
     img: "/assets/images/klaim/thumbnail4.jpeg",
-    video: "https://www.youtube.com/embed/woCS0nwXCzI",
+    video: "https://www.youtube.com/embed/F4WJESvD2u0",
   },
 ];
 
