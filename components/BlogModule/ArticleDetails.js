@@ -9,7 +9,7 @@ const ArticleDetails = ({ article, tags, recentArticles, relatedArticles }) => {
           <div class="col-lg-8 col-md-7">
             <div class="card border-0 shadow rounded overflow-hidden">
               <img
-                src={`${process.env.STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
+                src={`${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
                 class="img-fluid"
                 alt=""
               />
@@ -51,7 +51,7 @@ const ArticleDetails = ({ article, tags, recentArticles, relatedArticles }) => {
                         <div class="card blog blog-primary rounded border-0 shadow">
                           <div class="position-relative">
                             <img
-                              src={`${process.env.STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
+                              src={`${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
                               class="card-img-top rounded-top"
                               alt="..."
                             />
@@ -108,7 +108,7 @@ const ArticleDetails = ({ article, tags, recentArticles, relatedArticles }) => {
                         key={article.id}
                       >
                         <img
-                          src={`${process.env.STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
+                          src={`${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
                           class="avatar avatar-small rounded"
                           style={{ width: "auto;", objectFit: "cover" }}
                           alt=""

@@ -38,21 +38,21 @@ export async function getServerSideProps({ query }) {
   };
   const articlesResponse = await fetch(
     `${
-      process.env.STRAPI_API_ENDPOINT
+      process.env.NEXT_PUBLIC_STRAPI_API_ENDPOINT
     }/blog-articles?populate=*${buildArticleFilters()}`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
       },
     }
   );
   const articles = await articlesResponse.json();
 
   const tagsResponse = await fetch(
-    `${process.env.STRAPI_API_ENDPOINT}/blog-tags?populate=*`,
+    `${process.env.NEXT_PUBLIC_STRAPI_API_ENDPOINT}/blog-tags?populate=*`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
       },
     }
   );

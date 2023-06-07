@@ -20,7 +20,7 @@ const Hero = ({ featuredArticles }) => {
                 <div
                   class="bg-home-75vh d-flex align-items-center"
                   style={{
-                    background: `url('${process.env.STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}') center center no-repeat`,
+                    background: `url('${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}') center center no-repeat`,
                     backgroundSize: "cover",
                   }}
                 >
