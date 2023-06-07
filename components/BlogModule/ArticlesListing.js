@@ -48,48 +48,53 @@ const ArticlesListing = ({ articles, tags }) => {
         <div className="row">
           {articles &&
             articles.data.map((article) => (
-              <div className="col-lg-4 col-md-6 mb-4 pb-2" key={article.id}>
-                <div className="card blog blog-primary rounded border-0 shadow overflow-hidden h-100">
-                  <div className="position-relative">
-                    <img
-                      src={`${process.env.STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
-                      className="card-img-top"
-                      alt="..."
-                    />
-                    <div className="overlay rounded-top"></div>
-                  </div>
-                  <div className="card-body content d-flex flex-column justify-content-between">
-                    <h5>
+              <div
+                class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item"
+                data-groups='["business"]'
+                key={article.id}
+              >
+                <div class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden h-100">
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
+                    class="img-fluid work-image"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <div class="content">
+                      {article.attributes.blog_tags.data.map((tag) => (
+                        <a
+                          href={`/blog/articles?tag=${tag.attributes.name}`}
+                          class="badge badge-link bg me-1"
+                          key={tag.id}
+                        >
+                          {tag.attributes.name}
+                        </a>
+                      ))}
+                      <h5 class="mt-3">
+                        <a
+                          href={`/blog/${article.attributes.slug}`}
+                          class="text-dark title"
+                        >
+                          {article.attributes.title}
+                        </a>
+                      </h5>
+                      <p class="text-muted">
+                        {article.attributes.shortDescription}
+                      </p>
                       <a
                         href={`/blog/${article.attributes.slug}`}
-                        className="card-title title text-dark"
-                      >
-                        {article.attributes.title}
-                      </a>
-                    </h5>
-                    <div className="post-meta d-flex justify-content-between mt-3">
-                      <a
-                        href={`/blog/${article.attributes.slug}`}
-                        className="text-muted readmore"
+                        class="link h6"
                       >
                         Read More{" "}
-                        <i className="uil uil-angle-right-b align-middle"></i>
+                        <i class="uil uil-angle-right-b align-middle"></i>
                       </a>
                     </div>
-                  </div>
-                  <div className="author">
-                    <small className="date">
-                      <i className="uil uil-calendar-alt"></i>{" "}
-                      {moment(new Date(article.attributes.publishedOn)).format(
-                        "Do MMMM, YYYY"
-                      )}
-                    </small>
                   </div>
                 </div>
               </div>
             ))}
 
-          <div className="col-12">
+          <div className="col-12 mt-5">
             <ul className="pagination justify-content-center mb-0">
               <li className="page-item">
                 <a

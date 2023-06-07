@@ -30,40 +30,40 @@ const Blog = ({
 
 export async function getServerSideProps() {
   const featuredArticlesResponse = await fetch(
-    `${process.env.STRAPI_API_ENDPOINT}/blog-articles?populate=*&filters[isFeatured][$eq]=true`,
+    `${process.env.NEXT_PUBLIC_STRAPI_API_ENDPOINT}/blog-articles?populate=*&filters[isFeatured][$eq]=true`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
       },
     }
   );
   const featuredArticles = await featuredArticlesResponse.json();
 
   const popularArticlesResponse = await fetch(
-    `${process.env.STRAPI_API_ENDPOINT}/blog-articles?populate=*&filters[isPopular][$eq]=true&pagination[limit]=3&sort=publishedOn:desc`,
+    `${process.env.NEXT_PUBLIC_STRAPI_API_ENDPOINT}/blog-articles?populate=*&filters[isPopular][$eq]=true&pagination[limit]=3&sort=publishedOn:desc`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
       },
     }
   );
   const popularArticles = await popularArticlesResponse.json();
 
   const recentArticlesResponse = await fetch(
-    `${process.env.STRAPI_API_ENDPOINT}/blog-articles?populate=*&pagination[limit]=3&sort=publishedOn:desc`,
+    `${process.env.NEXT_PUBLIC_STRAPI_API_ENDPOINT}/blog-articles?populate=*&pagination[limit]=6&sort=publishedOn:desc`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
       },
     }
   );
   const recentArticles = await recentArticlesResponse.json();
 
   const allArticlesResponse = await fetch(
-    `${process.env.STRAPI_API_ENDPOINT}/blog-articles?populate=*&pagination[limit]=6&pagination[start]=3&sort=publishedOn:desc`,
+    `${process.env.NEXT_PUBLIC_STRAPI_API_ENDPOINT}/blog-articles?populate=*&pagination[limit]=6&pagination[start]=3&sort=publishedOn:desc`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
       },
     }
   );

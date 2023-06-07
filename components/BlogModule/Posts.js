@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
-const Posts = ({ popularArticles, recentArticles, allArticles }) => {
+const Posts = ({ popularArticles, recentArticles }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
 
@@ -66,52 +66,57 @@ const Posts = ({ popularArticles, recentArticles, allArticles }) => {
 
             <div class="col-md-4 mt-4 mt-sm-0">
               <div class="text-center text-md-end">
-                <a href={`/blog/articles`} class="btn btn-soft-primary">
+                <Link href="/blog/articles" class="btn btn-primary">
                   See More{" "}
                   <i data-feather="arrow-right" class="fea icon-sm"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
 
           <div class="row">
             {popularArticles.data.map((article) => (
-              <div class="col-lg-4 col-md-6 mt-4 pt-2" key={article.id}>
-                <div class="card blog blog-primary rounded border-0 shadow overflow-hidden h-100">
-                  <div class="position-relative">
-                    <img
-                      src={`${process.env.STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="overlay rounded-top"></div>
-                  </div>
-                  <div class="card-body content d-flex flex-column justify-content-between">
-                    <h5>
+              <div
+                class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item"
+                data-groups='["business"]'
+                key={article.id}
+              >
+                <div class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden h-100">
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
+                    class="img-fluid work-image"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <div class="content">
+                      {article.attributes.blog_tags.data.map((tag) => (
+                        <a
+                          href={`/blog/articles?tag=${tag.attributes.name}`}
+                          class="badge badge-link bg"
+                          key={tag.id}
+                        >
+                          {tag.attributes.name}
+                        </a>
+                      ))}
+                      <h5 class="mt-3">
+                        <a
+                          href={`/blog/${article.attributes.slug}`}
+                          class="text-dark title"
+                        >
+                          {article.attributes.title}
+                        </a>
+                      </h5>
+                      <p class="text-muted">
+                        {article.attributes.shortDescription}
+                      </p>
                       <a
                         href={`/blog/${article.attributes.slug}`}
-                        class="card-title title text-dark"
-                      >
-                        {article.attributes.title}
-                      </a>
-                    </h5>
-                    <div class="post-meta d-flex justify-content-between mt-3">
-                      <a
-                        href={`/blog/${article.attributes.slug}`}
-                        class="text-muted readmore"
+                        class="link h6"
                       >
                         Read More{" "}
                         <i class="uil uil-angle-right-b align-middle"></i>
                       </a>
                     </div>
-                  </div>
-                  <div class="author">
-                    <small class="date">
-                      <i class="uil uil-calendar-alt"></i>{" "}
-                      {moment(new Date(article.attributes.publishedOn)).format(
-                        "Do MMMM, YYYY"
-                      )}
-                    </small>
                   </div>
                 </div>
               </div>
@@ -119,12 +124,11 @@ const Posts = ({ popularArticles, recentArticles, allArticles }) => {
           </div>
         </div>
       )}
-
       <div class="container mt-100 mt-60">
         <div class="row align-items-center mb-4 pb-2">
           <div class="col-md-8">
             <div class="section-title text-center text-md-start">
-              <h4 class="mb-4">Recent Post</h4>
+              <h4 class="mb-4">Popular News</h4>
               <p class="text-muted mb-0 para-desc">
                 Start working with{" "}
                 <span class="text-primary fw-bold">Landrick</span> that can
@@ -136,58 +140,62 @@ const Posts = ({ popularArticles, recentArticles, allArticles }) => {
 
           <div class="col-md-4 mt-4 mt-sm-0">
             <div class="text-center text-md-end">
-              <a href={`/blog/articles`} class="btn btn-soft-primary">
+              <Link href="/blog/articles" class="btn btn-primary">
                 See More <i data-feather="arrow-right" class="fea icon-sm"></i>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
 
         <div class="row">
-          {recentArticles.data.map((article) => (
-            <div class="col-lg-4 col-md-6 mt-4 pt-2" key={article.key}>
-              <div class="card blog blog-primary rounded border-0 shadow overflow-hidden h-100">
-                <div class="position-relative">
-                  <img
-                    src={`${process.env.STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="overlay rounded-top"></div>
-                </div>
-                <div class="card-body content d-flex flex-column justify-content-between">
-                  <h5>
+          {/* {recentArticles.data.map((article) => (
+            <div
+              class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item"
+              data-groups='["business"]'
+              key={article.id}
+            >
+              <div class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden h-100">
+                <img
+                  src={`${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
+                  class="img-fluid work-image"
+                  alt=""
+                />
+                <div class="card-body">
+                  <div class="content">
+                    {article.attributes.blog_tags.data.map((tag) => (
+                      <a
+                        href={`/blog/articles?tag=${tag.attributes.name}`}
+                        class="badge badge-link bg me-1"
+                        key={tag.id}
+                      >
+                        {tag.attributes.name}
+                      </a>
+                    ))}
+                    <h5 class="mt-3">
+                      <a
+                        href={`/blog/${article.attributes.slug}`}
+                        class="text-dark title"
+                      >
+                        {article.attributes.title}
+                      </a>
+                    </h5>
+                    <p class="text-muted">
+                      {article.attributes.shortDescription}
+                    </p>
                     <a
                       href={`/blog/${article.attributes.slug}`}
-                      class="card-title title text-dark"
-                    >
-                      {article.attributes.title}
-                    </a>
-                  </h5>
-                  <div class="post-meta d-flex justify-content-between mt-3">
-                    <a
-                      href={`/blog/${article.attributes.slug}`}
-                      class="text-muted readmore"
+                      class="link h6"
                     >
                       Read More{" "}
                       <i class="uil uil-angle-right-b align-middle"></i>
                     </a>
                   </div>
                 </div>
-                <div class="author">
-                  <small class="date">
-                    <i class="uil uil-calendar-alt"></i>{" "}
-                    {moment(new Date(article.attributes.publishedOn)).format(
-                      "Do MMMM, YYYY"
-                    )}
-                  </small>
-                </div>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
-
       <div class="container-fluid mt-100 mt-60">
         <div
           class="rounded-md shadow-md py-5 position-relative"
@@ -211,7 +219,6 @@ const Posts = ({ popularArticles, recentArticles, allArticles }) => {
           </div>
         </div>
       </div>
-
       <div class="container mt-100 mt-60">
         <div class="row align-items-center mb-4 pb-2">
           <div class="col-md-8">
@@ -228,43 +235,48 @@ const Posts = ({ popularArticles, recentArticles, allArticles }) => {
         </div>
 
         <div class="row">
-          {allArticles.data.map((article) => (
-            <div class="col-lg-4 col-md-6 mt-4 pt-2" key={article.key}>
-              <div class="card blog blog-primary rounded border-0 shadow overflow-hidden h-100">
-                <div class="position-relative">
-                  <img
-                    src={`${process.env.STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="overlay rounded-top"></div>
-                </div>
-                <div class="card-body content d-flex flex-column justify-content-between">
-                  <h5>
+          {recentArticles.data.map((article) => (
+            <div
+              class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item"
+              data-groups='["business"]'
+              key={article.id}
+            >
+              <div class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden h-100">
+                <img
+                  src={`${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
+                  class="img-fluid work-image"
+                  alt=""
+                />
+                <div class="card-body">
+                  <div class="content">
+                    {article.attributes.blog_tags.data.map((tag) => (
+                      <a
+                        href={`/blog/articles?tag=${tag.attributes.name}`}
+                        class="badge badge-link bg me-1"
+                        key={tag.id}
+                      >
+                        {tag.attributes.name}
+                      </a>
+                    ))}
+                    <h5 class="mt-3">
+                      <a
+                        href={`/blog/${article.attributes.slug}`}
+                        class="text-dark title"
+                      >
+                        {article.attributes.title}
+                      </a>
+                    </h5>
+                    <p class="text-muted">
+                      {article.attributes.shortDescription}
+                    </p>
                     <a
                       href={`/blog/${article.attributes.slug}`}
-                      class="card-title title text-dark"
-                    >
-                      {article.attributes.title}
-                    </a>
-                  </h5>
-                  <div class="post-meta d-flex justify-content-between mt-3">
-                    <a
-                      href={`/blog/${article.attributes.slug}`}
-                      class="text-muted readmore"
+                      class="link h6"
                     >
                       Read More{" "}
                       <i class="uil uil-angle-right-b align-middle"></i>
                     </a>
                   </div>
-                </div>
-                <div class="author">
-                  <small class="date">
-                    <i class="uil uil-calendar-alt"></i>{" "}
-                    {moment(new Date(article.attributes.publishedOn)).format(
-                      "Do MMMM, YYYY"
-                    )}
-                  </small>
                 </div>
               </div>
             </div>
