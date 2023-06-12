@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import moment from "moment";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -54,12 +55,12 @@ const Posts = ({ popularArticles, recentArticles }) => {
           <div class="row align-items-center mb-4 pb-2">
             <div class="col-md-8">
               <div class="section-title text-center text-md-start">
-                <h4 class="mb-4">Popular post</h4>
+                <h4 class="mb-4">POPULAR POSTS</h4>
                 <p class="text-muted mb-0 para-desc">
-                  Start working with{" "}
-                  <span class="text-primary fw-bold">Landrick</span> that can
-                  provide everything you need to generate awareness, drive
-                  traffic, connect.
+                  Dive into our most-read articles, spanning industry insights,
+                  financial tips, and Klaim's groundbreaking fintech solutions.
+                  See what's trending in our community and get up to speed with
+                  the topics that are shaping the financial landscape
                 </p>
               </div>
             </div>
@@ -128,12 +129,11 @@ const Posts = ({ popularArticles, recentArticles }) => {
         <div class="row align-items-center mb-4 pb-2">
           <div class="col-md-8">
             <div class="section-title text-center text-md-start">
-              <h4 class="mb-4">Popular News</h4>
+              <h4 class="mb-4">POPULAR NEWS</h4>
               <p class="text-muted mb-0 para-desc">
-                Start working with{" "}
-                <span class="text-primary fw-bold">Landrick</span> that can
-                provide everything you need to generate awareness, drive
-                traffic, connect.
+                Stay updated with the most noteworthy news stories about Klaim
+                and the fintech sector. Uncover trends, advancements, and the
+                impacts of our work that have caught the world's attention
               </p>
             </div>
           </div>
@@ -223,12 +223,13 @@ const Posts = ({ popularArticles, recentArticles }) => {
         <div class="row align-items-center mb-4 pb-2">
           <div class="col-md-8">
             <div class="section-title text-center text-md-start">
-              <h4 class="mb-4">All News or Blog Post</h4>
+              <h4 class="mb-4">BLOG</h4>
               <p class="text-muted mb-0 para-desc">
-                Start working with{" "}
-                <span class="text-primary fw-bold">Landrick</span> that can
-                provide everything you need to generate awareness, drive
-                traffic, connect.
+                Explore our hub of knowledge where we share insights, analyses,
+                and opinions on everything fintech. Consider our blog a rich
+                resource brimming with financial acumen, advanced tech trends,
+                and expert guidance, all designed to bolster your financial
+                understanding and decision-making.
               </p>
             </div>
           </div>

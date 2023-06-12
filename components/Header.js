@@ -86,16 +86,56 @@ const Header = () => {
             <li className={router.pathname == "/" ? "active" : ""}>
               <Link href="/">Home</Link>
             </li>
-            <li className={router.pathname == "/about" ? "active" : ""}>
+            <li
+              className={`has-submenu parent-parent-menu-item ${
+                router.pathname == "/about" ||
+                router.pathname.startsWith("/blog")
+                  ? "active"
+                  : ""
+              }`}
+            >
               <Link href="/about">About Us</Link>
-            </li>
-            <li className={router.pathname.startsWith("/blog") ? "active" : ""}>
-              <Link href="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link href="https://klaimai1.recruitee.com/" target="_blank">
-                Careers
-              </Link>
+              <span class="menu-arrow"></span>
+              <ul class="submenu">
+                <li className={router.pathname == "/about" ? "active" : ""}>
+                  <Link
+                    href="/about"
+                    class={`sub-menu-item ${
+                      router.pathname == "/about" ? "active" : ""
+                    }`}
+                  >
+                    About Klaim
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://klaimai1.recruitee.com/"
+                    class="sub-menu-item"
+                    target="_blank"
+                  >
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" class="sub-menu-item">
+                    Media
+                  </Link>
+                </li>
+                <li
+                  className={
+                    router.pathname.startsWith("/blog") ? "active" : ""
+                  }
+                >
+                  <Link
+                    href="/blog"
+                    class={`sub-menu-item ${
+                      router.pathname.startsWith("/blog") ? "active" : ""
+                    }`}
+                  >
+                    Blog
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className={router.pathname == "/contact" ? "active" : ""}>
               <Link href="/contact">Contact Us</Link>
