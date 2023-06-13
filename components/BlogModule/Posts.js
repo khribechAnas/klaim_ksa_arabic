@@ -207,7 +207,10 @@ const Posts = ({ popularArticles, recentArticles }) => {
               <div class="col-12">
                 <div class="section-title text-center">
                   <h2 class="fw-bold text-white title-dark mb-4 pb-2">
-                    People are podcasting <br /> all over the world
+                    Celebrating Klaim's industry recognition and achievements.
+                    <br />
+                    Discover how our commitment to excellence in fintech
+                    innovation and customer service has been honored
                   </h2>
                   <a href={`/blog/articles`} class="btn btn-primary">
                     Read More{" "}
