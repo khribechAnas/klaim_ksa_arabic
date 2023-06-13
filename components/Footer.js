@@ -99,8 +99,7 @@ const Footer = () => {
                       />
                     </a>
                     <p class="mt-4">
-                      Start working with Landrick that can provide everything
-                      you need to generate awareness, drive traffic, connect.
+                      Unleash your financial potential today with Klaim!
                     </p>
                     <ul class="list-unstyled mb-0 mt-4">
                       <li class="list-inline-item mx-1">
@@ -217,36 +216,6 @@ const Footer = () => {
                         </Link>
                       </li>
                     </ul>
-                  </div>
-
-                  <div class="col-lg-4 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                    <h5 class="text-light footer-head">Get started now</h5>
-
-                    <ul class="list-unstyled footer-list mt-4 mb-2">
-                      <li class="list-inline-item mx-1">
-                        <a
-                          href="https://portal.uae.klaim.ai/sign-in"
-                          target="_blank"
-                          class="btn btn-soft-primary"
-                        >
-                          Sign In
-                        </a>
-                      </li>
-                      <li class="list-inline-item mx-1">
-                        <a
-                          href="https://portal.uae.klaim.ai/sign-up"
-                          class="btn btn-primary"
-                        >
-                          Sign Up
-                        </a>
-                      </li>
-                    </ul>
-                    <small class="d-block">
-                      Are you developer ?{" "}
-                      <a href="#" class="text-foot fw-medium">
-                        Learn More <i class="uil uil-arrow-right"></i>
-                      </a>
-                    </small>
                   </div>
                 </div>
               </div>
