@@ -94,7 +94,7 @@ const ArticlesListing = ({ articles, tags }) => {
               </div>
             ))}
 
-          <div className="col-12 mt-5">
+          {/* <div className="col-12 mt-5">
             <ul className="pagination justify-content-center mb-0">
               <li className="page-item">
                 <a
@@ -130,7 +130,7 @@ const ArticlesListing = ({ articles, tags }) => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

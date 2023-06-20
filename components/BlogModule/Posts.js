@@ -125,7 +125,7 @@ const Posts = ({ popularArticles, recentArticles }) => {
           </div>
         </div>
       )}
-      <div class="container mt-100 mt-60">
+      {/* <div class="container mt-100 mt-60">
         <div class="row align-items-center mb-4 pb-2">
           <div class="col-md-8">
             <div class="section-title text-center text-md-start">
@@ -148,7 +148,7 @@ const Posts = ({ popularArticles, recentArticles }) => {
         </div>
 
         <div class="row">
-          {/* {recentArticles.data.map((article) => (
+          {recentArticles.data.map((article) => (
             <div
               class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item"
               data-groups='["business"]'
@@ -193,9 +193,9 @@ const Posts = ({ popularArticles, recentArticles }) => {
                 </div>
               </div>
             </div>
-          ))} */}
+          ))}
         </div>
-      </div>
+      </div> */}
       <div class="container-fluid mt-100 mt-60">
         <div
           class="rounded-md shadow-md py-5 position-relative"

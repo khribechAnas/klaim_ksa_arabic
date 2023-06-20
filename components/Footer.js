@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
 import React from "react";
 import { Youtube } from "react-feather";
@@ -99,7 +100,11 @@ const Footer = () => {
                       />
                     </a>
                     <p class="mt-4">
-                      Unleash your financial potential today with Klaim!
+                      Discover more about Klaim and engage with us on our social
+                      media platforms. Get behind-the-scenes insights, stay
+                      up-to-date with the latest news, and become part of our
+                      growing community. Let's shape the future of fintech
+                      together.
                     </p>
                     <ul class="list-unstyled mb-0 mt-4">
                       <li class="list-inline-item mx-1">

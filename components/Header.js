@@ -89,7 +89,8 @@ const Header = () => {
             <li
               className={`has-submenu parent-parent-menu-item ${
                 router.pathname == "/about" ||
-                router.pathname.startsWith("/blog")
+                router.pathname.startsWith("/blog") ||
+                router.pathname.startsWith("/awards")
                   ? "active"
                   : ""
               }`}
@@ -119,6 +120,20 @@ const Header = () => {
                 <li>
                   <Link href="#" class="sub-menu-item">
                     Media
+                  </Link>
+                </li>
+                <li
+                  className={
+                    router.pathname.startsWith("/awards") ? "active" : ""
+                  }
+                >
+                  <Link
+                    href="/awards"
+                    class={`sub-menu-item ${
+                      router.pathname.startsWith("/awards") ? "active" : ""
+                    }`}
+                  >
+                    Awards
                   </Link>
                 </li>
                 <li
