@@ -63,7 +63,7 @@ function MyApp({ Component, pageProps }) {
             <Script
               defer
               data-domain="klaim.ai"
-              src="https://plausible.klaim.ai/js/Script.js"
+              src="https://plausible.klaim.ai/js/script.js"
             ></Script>
           </>
         )}
