@@ -1,19 +1,19 @@
 import Head from "next/head";
 import React from "react";
 import Header from "../../components/Header";
-import AwardsHero from "../../components/AwardsModule/AwardsHero";
 import Footer from "../../components/Footer";
-import AwardsListing from "../../components/AwardsModule/AwardsListing";
+import MediaHero from "../../components/MediaModule/MediaHero";
+import MediaListing from "../../components/MediaModule/MediaListing";
 
-const AwardsPage = ({ articles }) => {
+const MediaPage = ({ articles }) => {
   return (
     <>
       <Head>
-        <title>Klaim - Blog</title>
+        <title>Klaim - Media</title>
       </Head>
       <Header />
-      <AwardsHero />
-      <AwardsListing articles={articles} />
+      <MediaHero />
+      <MediaListing articles={articles} />
       <Footer />
     </>
   );
@@ -21,7 +21,7 @@ const AwardsPage = ({ articles }) => {
 
 export async function getServerSideProps({ query }) {
   const articlesResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_ENDPOINT}/awards-articles?populate=*`,
+    `${process.env.NEXT_PUBLIC_STRAPI_API_ENDPOINT}/media-articles?populate=*`,
     {
       headers: {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
@@ -37,4 +37,4 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default AwardsPage;
+export default MediaPage;

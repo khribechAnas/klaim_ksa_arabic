@@ -212,7 +212,7 @@ const Posts = ({ popularArticles, recentArticles }) => {
                     Discover how our commitment to excellence in fintech
                     innovation and customer service has been honored
                   </h2>
-                  <a href={`/blog/articles`} class="btn btn-primary">
+                  <a href={`/awards`} class="btn btn-primary">
                     Read More{" "}
                     <i data-feather="arrow-right" class="fea icon-sm"></i>
                   </a>
