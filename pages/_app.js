@@ -60,6 +60,11 @@ function MyApp({ Component, pageProps }) {
                 gtag('config', 'G-D0PLRFEHF5');
               `}
             </Script>
+            <Script
+              defer
+              data-domain="klaim.ai"
+              src="https://plausible.klaim.ai/js/Script.js"
+            ></Script>
           </>
         )}
         <Component {...pageProps} />
