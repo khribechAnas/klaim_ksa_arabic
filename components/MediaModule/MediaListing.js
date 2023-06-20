@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import moment from "moment";
 import React from "react";
 
