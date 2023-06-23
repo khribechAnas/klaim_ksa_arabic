@@ -233,7 +233,9 @@ const Footer = () => {
                   <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
                     <h5 class="text-white">Newsletter</h5>
                     <p class="mt-4">
-                      Sign up and receive the latest tips via email.
+                      Join the Klaim community for the latest financial
+                      innovations, industry insights, and exciting news.
+                      Subscribe now to be in the know!
                     </p>
                     <div className="" id="hubspot-newsletter-wrapper" />
                   </div>
