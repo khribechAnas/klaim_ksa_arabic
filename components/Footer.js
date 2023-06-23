@@ -1,9 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useHubspotForm } from "next-hubspot";
 import Link from "next/link";
 import React from "react";
 import { Youtube } from "react-feather";
 
 const Footer = () => {
+  const {} = useHubspotForm({
+    portalId: "9149608",
+    formId: "7438d036-524e-46cc-b0a7-961b1ad15c43",
+    region: "na1",
+    target: "#hubspot-newsletter-wrapper",
+  });
+
   return (
     <>
       <section className="section">
@@ -161,7 +169,7 @@ const Footer = () => {
                   </div>
 
                   <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                    <h5 class="footer-head">Company</h5>
+                    <h5 class="text-white">Company</h5>
                     <ul class="list-unstyled footer-list mt-4">
                       <li>
                         <Link href="/" class="text-foot">
@@ -196,7 +204,7 @@ const Footer = () => {
                   </div>
 
                   <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                    <h5 class="footer-head">Usefull Links</h5>
+                    <h5 class="text-white">Usefull Links</h5>
                     <ul class="list-unstyled footer-list mt-4">
                       <li>
                         <Link href="/privacy" class="text-foot">
@@ -221,6 +229,13 @@ const Footer = () => {
                         </Link>
                       </li>
                     </ul>
+                  </div>
+                  <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                    <h5 class="text-white">Newsletter</h5>
+                    <p class="mt-4">
+                      Sign up and receive the latest tips via email.
+                    </p>
+                    <div className="" id="hubspot-newsletter-wrapper" />
                   </div>
                 </div>
               </div>
