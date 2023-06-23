@@ -6,11 +6,14 @@ const Hero = () => {
       <section
         className="bg-half-170 d-table w-100"
         style={{
-          background: 'url("assets/images/klaim/about-hero.jpeg")',
+          background: 'url("assets/images/klaim/about-hero.png")',
           backgroundSize: "cover",
         }}
       >
-        <div className="bg-overlay  bg-overlay-white"></div>
+        <div
+          className="bg-overlay  bg-overlay-white"
+          style={{ backgroundColor: "rgba(255, 255, 255, 0.7" }}
+        ></div>
         <div className="container">
           <div className="row mt-5 justify-content-center">
             <div className="col-lg-9 text-center">
