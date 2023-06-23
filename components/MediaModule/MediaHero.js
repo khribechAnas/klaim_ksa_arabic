@@ -6,7 +6,7 @@ const MediaHero = () => {
       <section
         className="bg-half-170 d-table w-100"
         style={{
-          background: 'url("../../assets/images/klaim/about-hero.jpeg")',
+          background: 'url("../../assets/images/klaim/media-hero.png")',
           backgroundSize: "cover",
         }}
       >
