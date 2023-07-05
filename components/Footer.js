@@ -111,7 +111,7 @@ const Footer = () => {
                       Discover more about Klaim and engage with us on our social
                       media platforms. Get behind-the-scenes insights, stay
                       up-to-date with the latest news, and become part of our
-                      growing community. Let's shape the future of fintech
+                      growing community. Let's shape the future of Healthcare
                       together.
                     </p>
                     <ul class="list-unstyled mb-0 mt-4">
@@ -195,11 +195,6 @@ const Footer = () => {
                           <i class="uil uil-angle-right-b me-1"></i>Careers
                         </Link>
                       </li>
-                      <li>
-                        <Link href="/contact" class="text-foot">
-                          <i class="uil uil-angle-right-b me-1"></i>Contact Us
-                        </Link>
-                      </li>
                     </ul>
                   </div>
 
@@ -233,9 +228,9 @@ const Footer = () => {
                   <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
                     <h5 class="text-white">Newsletter</h5>
                     <p class="mt-4">
-                      Join the Klaim community for the latest financial
-                      innovations, industry insights, and exciting news.
-                      Subscribe now to be in the know!
+                      Join the Klaim community for the latest product updates,
+                      industry insights, and exciting news. Subscribe now to be
+                      in the know!
                     </p>
                     <div className="" id="hubspot-newsletter-wrapper" />
                   </div>

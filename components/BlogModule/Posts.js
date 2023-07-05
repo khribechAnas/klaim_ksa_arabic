@@ -58,9 +58,10 @@ const Posts = ({ popularArticles, recentArticles }) => {
                 <h4 class="mb-4">POPULAR POSTS</h4>
                 <p class="text-muted mb-0 para-desc">
                   Dive into our most-read articles, spanning industry insights,
-                  financial tips, and Klaim's groundbreaking fintech solutions.
+                  revenue cycle management best practices, and product updates.
                   See what's trending in our community and get up to speed with
-                  the topics that are shaping the financial landscape
+                  the topics that are shaping the landscape of healthcare
+                  finances
                 </p>
               </div>
             </div>
@@ -229,10 +230,9 @@ const Posts = ({ popularArticles, recentArticles }) => {
               <h4 class="mb-4">BLOG</h4>
               <p class="text-muted mb-0 para-desc">
                 Explore our hub of knowledge where we share insights, analyses,
-                and opinions on everything fintech. Consider our blog a rich
-                resource brimming with financial acumen, advanced tech trends,
-                and expert guidance, all designed to bolster your financial
-                understanding and decision-making.
+                and expert perspectives. Discover thought-provoking articles
+                that enhance your understanding and empower your decision-making
+                process
               </p>
             </div>
           </div>
