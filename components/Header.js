@@ -5,9 +5,14 @@ import { useRouter } from "next/router";
 const Header = () => {
   const router = useRouter();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [classOpen, setClassOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
+  };
+
+  const toggleMobileDropdown = () => {
+    setClassOpen(!classOpen);
   };
 
   return (
@@ -95,9 +100,11 @@ const Header = () => {
                   : ""
               }`}
             >
-              <Link href="/about">About Us</Link>
+              <Link href="javascript:void(0)" onClick={toggleMobileDropdown}>
+                About Us
+              </Link>
               <span class="menu-arrow"></span>
-              <ul class="submenu">
+              <ul class={`submenu ${classOpen ? "open" : ""}`}>
                 <li className={router.pathname == "/about" ? "active" : ""}>
                   <Link
                     href="/about"
@@ -131,20 +138,6 @@ const Header = () => {
                     Media
                   </Link>
                 </li>
-                {/* <li
-                  className={
-                    router.pathname.startsWith("/awards") ? "active" : ""
-                  }
-                >
-                  <Link
-                    href="/awards"
-                    class={`sub-menu-item ${
-                      router.pathname.startsWith("/awards") ? "active" : ""
-                    }`}
-                  >
-                    Awards
-                  </Link>
-                </li> */}
                 <li
                   className={
                     router.pathname.startsWith("/blog") ? "active" : ""
