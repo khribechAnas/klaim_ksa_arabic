@@ -63,7 +63,7 @@ function MyApp({ Component, pageProps }) {
             <Script
               defer
               data-domain="klaim.ai"
-              src="https://plausible.klaim.ai/js/script.js"
+              src="https://plausible.klaim.ai/js/script.tagged-events.js"
             ></Script>
             <Script id="hotjar" strategy="afterInteractive">
               {`(function(h,o,t,j,a,r){
