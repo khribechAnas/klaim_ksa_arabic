@@ -47,7 +47,7 @@ const Hero = () => {
                     Get A Personalized Proposal In 48 Hours
                     <a
                       href="#contact-form"
-                      className="text-primary ms-3 h6 mb-0 cta-padding"
+                      className="text-primary ms-3 h6 mb-0 cta-padding plausible-event-name=get-a-call-back"
                     >
                       Get a call back
                       <ArrowRight className="fea icon-sm ms-1" />
