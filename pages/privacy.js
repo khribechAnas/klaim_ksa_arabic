@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
       </Head>
       <Header />
       <Hero />
-      {/* <Privacy /> */}
+      <Privacy />
       <Footer />
     </>
   );
