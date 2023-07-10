@@ -39,7 +39,7 @@ const Hero = () => {
                   <a
                     href="https://portal.uae.klaim.ai/sign-up"
                     target="_blank"
-                    className="btn btn-primary mt-2"
+                    className="btn btn-primary mt-2 plausible-event-name=sign-up-button"
                   >
                     Get Funded Today
                   </a>

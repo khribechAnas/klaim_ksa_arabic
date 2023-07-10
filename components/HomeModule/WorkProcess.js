@@ -95,7 +95,7 @@ const WorkProcess = () => {
             <a
               href="https://portal.uae.klaim.ai/sign-up"
               target="_blank"
-              className="btn btn-outline-primary"
+              className="btn btn-outline-primary plausible-event-name=sign-up-button"
             >
               Get Started with KLAIM
             </a>
@@ -103,7 +103,7 @@ const WorkProcess = () => {
               Discover How KLAIM Can Benefit Your Practice
               <a
                 href="#contact-form"
-                className="text-primary ms-2 h6 mb-0 cta-padding"
+                className="text-primary ms-2 h6 mb-0 cta-padding plausible-event-name=get-a-call-back"
               >
                 Book a Call
                 <ArrowRight className="fea icon-sm ms-1" />
