@@ -6,7 +6,7 @@ const Hero = () => {
       <section
         className="bg-half-170 bg-light d-table w-100"
         style={{
-          background: 'url("assets/images/klaim/contact-us.jpg")',
+          background: 'url("assets/images/klaim/contact-us.png")',
           backgroundSize: "cover",
         }}
       >

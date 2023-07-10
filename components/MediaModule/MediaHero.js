@@ -1,30 +1,21 @@
 import React from "react";
 
-const Hero = () => {
+const MediaHero = () => {
   return (
     <>
       <section
         className="bg-half-170 d-table w-100"
         style={{
-          background: 'url("assets/images/klaim/about-hero.png")',
+          background: 'url("../../assets/images/klaim/media-hero.png")',
           backgroundSize: "cover",
         }}
       >
-        <div
-          className="bg-overlay  bg-overlay-white"
-          style={{ backgroundColor: "rgba(255, 255, 255, 0.7" }}
-        ></div>
+        <div className="bg-overlay  bg-overlay-white"></div>
         <div className="container">
           <div className="row mt-5 justify-content-center">
             <div className="col-lg-9 text-center">
               <div className="pages-heading title-heading px-4">
-                <h2 className="title-dark">About Us</h2>
-                <p className="mb-0 mx-auto">
-                  We help healthcare providers streamline the claims
-                  reimbursement process aiming to create an efficient process
-                  for healthcare providers and revolutionize the healthcare
-                  industry
-                </p>
+                <h2 className="title-dark">Media</h2>
               </div>
             </div>
           </div>
@@ -48,4 +39,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default MediaHero;

@@ -59,10 +59,10 @@ const Boxes = () => {
                     <div className="card counter-box border-0 bg-primary bg-gradient shadow text-center rounded">
                       <div className="card-body py-5">
                         <h2 className="text-white mb-0">
-                          AED<span className="counter-value">60</span>M
+                          AED<span className="counter-value">60</span>
                         </h2>
                         <h5 className="counter-head mb-0 text-white">
-                          Claims Paid
+                          Million Claims Paid
                         </h5>
                       </div>
                     </div>

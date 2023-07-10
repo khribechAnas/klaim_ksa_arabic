@@ -5,9 +5,14 @@ import { useRouter } from "next/router";
 const Header = () => {
   const router = useRouter();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [classOpen, setClassOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
+  };
+
+  const toggleMobileDropdown = () => {
+    setClassOpen(!classOpen);
   };
 
   return (
@@ -86,8 +91,68 @@ const Header = () => {
             <li className={router.pathname == "/" ? "active" : ""}>
               <Link href="/">Home</Link>
             </li>
-            <li className={router.pathname == "/about" ? "active" : ""}>
-              <Link href="/about">About Us</Link>
+            <li
+              className={`has-submenu parent-parent-menu-item ${
+                router.pathname == "/about" ||
+                router.pathname.startsWith("/blog") ||
+                router.pathname.startsWith("/media")
+                  ? "active"
+                  : ""
+              }`}
+            >
+              <Link href="javascript:void(0)" onClick={toggleMobileDropdown}>
+                About Us
+              </Link>
+              <span class="menu-arrow"></span>
+              <ul class={`submenu ${classOpen ? "open" : ""}`}>
+                <li className={router.pathname == "/about" ? "active" : ""}>
+                  <Link
+                    href="/about"
+                    class={`sub-menu-item ${
+                      router.pathname == "/about" ? "active" : ""
+                    }`}
+                  >
+                    About Klaim
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://klaimai1.recruitee.com/"
+                    class="sub-menu-item"
+                    target="_blank"
+                  >
+                    Careers
+                  </Link>
+                </li>
+                <li
+                  className={
+                    router.pathname.startsWith("/media") ? "active" : ""
+                  }
+                >
+                  <Link
+                    href="/media"
+                    class={`sub-menu-item ${
+                      router.pathname.startsWith("/media") ? "active" : ""
+                    }`}
+                  >
+                    Media
+                  </Link>
+                </li>
+                <li
+                  className={
+                    router.pathname.startsWith("/blog") ? "active" : ""
+                  }
+                >
+                  <Link
+                    href="/blog"
+                    class={`sub-menu-item ${
+                      router.pathname.startsWith("/blog") ? "active" : ""
+                    }`}
+                  >
+                    Blog
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className={router.pathname == "/contact" ? "active" : ""}>
               <Link href="/contact">Contact Us</Link>

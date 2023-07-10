@@ -19,14 +19,14 @@ const GetStarted = () => {
             <div className="mt-4">
               <a
                 href="https://portal.uae.klaim.ai/sign-up"
-                className="btn btn-primary mt-2 me-md-2"
+                className="btn btn-primary mt-2 me-md-2 plausible-event-name=sign-up-button"
                 target="_blank"
               >
                 Register & Get A Proposal In 48 Hours
               </a>
               <a
                 href="#contact-form"
-                className="btn btn-outline-primary mt-lg-2 mt-4"
+                className="btn btn-outline-primary mt-lg-2 mt-4 plausible-event-name=get-a-call-back"
               >
                 Get A Callback
               </a>

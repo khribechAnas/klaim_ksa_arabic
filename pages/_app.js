@@ -29,8 +29,13 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
-    Router.events.on("routeChangeStart", () => setLoading(true));
-    Router.events.on("routeChangeComplete", () => setLoading(false));
+    Router.events.on("routeChangeStart", (url, { shallow }) => {
+      console.log({ url, shallow });
+      setLoading(true);
+    });
+    Router.events.on("routeChangeComplete", () => {
+      setLoading(false);
+    });
     Router.events.on("routeChangeError", () => setLoading(false));
     return () => {
       Router.events.off("routeChangeStart", () => setLoading(true));
@@ -100,6 +105,7 @@ function MyApp({ Component, pageProps }) {
       </HubspotProvider>
       <Script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js" />
       <Script src="/assets/js/app.js" />
+      <Script src="/assets/libs/shufflejs/shuffle.min.js" />
       {loading && <Preloader />}
     </>
   );

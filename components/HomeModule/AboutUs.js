@@ -82,7 +82,7 @@ const AboutUs = () => {
                     Klaim Can Help With a Customized Solution
                     <a
                       href="#contact-form"
-                      className="text-primary ms-2 h6 mb-0 cta-padding"
+                      className="text-primary ms-2 h6 mb-0 cta-padding plausible-event-name=get-a-call-back"
                     >
                       Get a Call Back
                       <ArrowRight className="fea icon-sm" />

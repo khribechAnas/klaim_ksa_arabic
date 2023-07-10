@@ -89,7 +89,7 @@ const Advantages = () => {
                       Optimize Your Cash Flow with KLAIM
                       <a
                         href="#contact-form"
-                        className="text-primary ms-2 h6 mb-0 cta-padding"
+                        className="text-primary ms-2 h6 mb-0 cta-padding plausible-event-name=get-a-call-back"
                       >
                         Get a Proposal
                         <ArrowRight className="fea icon-sm ms-1" />

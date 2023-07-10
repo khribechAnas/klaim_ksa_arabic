@@ -24,7 +24,7 @@ const Solutions = () => {
                 <a
                   href="https://portal.uae.klaim.ai/sign-up"
                   target="_blank"
-                  className="btn btn-outline-primary mt-2"
+                  className="btn btn-outline-primary mt-2 plausible-event-name=sign-up-button"
                 >
                   Get Started with KLAIM
                 </a>
