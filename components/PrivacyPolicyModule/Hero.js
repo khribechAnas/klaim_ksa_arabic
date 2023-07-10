@@ -17,13 +17,13 @@ const Hero = () => {
             <div className="col-lg-12 text-center">
               <div className="pages-heading">
                 <h4 className="title"> Privacy Policy </h4>
-                <ul className="list-unstyled mt-4 mb-0">
+                {/* <ul className="list-unstyled mt-4 mb-0">
                   <li className="list-inline-item h6 date text-muted">
                     {" "}
                     <span className="text-dark">Last Revised :</span> 23th Sep,
                     2021
                   </li>
-                </ul>
+                </ul> */}
               </div>
             </div>
           </div>
