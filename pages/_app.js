@@ -86,8 +86,10 @@ function MyApp({ Component, pageProps }) {
               _linkedin_partner_id = "5667689";
               window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
               window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-              </Script><Script type="text/javascript">
-              (function(l) {
+              `}
+            </Script>
+            <Script id="linkedin-second" strategy="afterInteractive">
+              {`(function(l) {
               if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
               window.lintrk.q=[]}
               var s = document.getElementsByTagName("script")[0];
