@@ -1,4 +1,6 @@
 import React from "react";
+import ButtonPrimary from "../CommonModule/ButtonPrimary";
+import ButtonSecondary from "../CommonModule/ButtonSecondary";
 
 const HomeSolutions = () => {
   return (
@@ -24,15 +26,8 @@ const HomeSolutions = () => {
               Get claim payments in 48 hours instead of 45+ days.
             </p>
             <div className="flex items-center">
-              <a className="bg-[#6135FB] text-white rounded-lg py-4 px-6 text-lg font-bold leading-4 tracking-tighter">
-                I’m interested!
-              </a>
-              <div className="flex items-center py-4 px-6">
-                <a className="rounded-lg  text-[#6135FB] text-lg font-bold leading-4 tracking-tighter">
-                  See more
-                </a>
-                <img src="assets/images/Vector1.svg" className="ml-2" />
-              </div>
+              <ButtonPrimary title="I’m interested!" />
+              <ButtonSecondary title="See more" />
             </div>
           </div>
           <div className="py-12 px-16 rounded-lg bg-white">
@@ -50,15 +45,8 @@ const HomeSolutions = () => {
               at once.
             </p>
             <div className="flex items-center">
-              <a className="bg-[#6135FB] text-white rounded-lg py-4 px-6 text-lg font-bold leading-4 tracking-tighter">
-                I’m interested!
-              </a>
-              <div className="flex items-center py-4 px-6">
-                <a className="rounded-lg  text-[#6135FB] text-lg font-bold leading-4 tracking-tighter">
-                  See more
-                </a>
-                <img src="assets/images/Vector1.svg" className="ml-2" />
-              </div>
+              <ButtonPrimary title="I’m interested!" />
+              <ButtonSecondary title="See more" />
             </div>
           </div>
           <div className="py-12 px-16 rounded-lg bg-white">
@@ -76,15 +64,8 @@ const HomeSolutions = () => {
               reduce your claim rejection rate.
             </p>
             <div className="flex items-center">
-              <a className="bg-[#6135FB] text-white rounded-lg py-4 px-6 text-lg font-bold leading-4 tracking-tighter">
-                I’m interested!
-              </a>
-              <div className="flex items-center py-4 px-6">
-                <a className="rounded-lg  text-[#6135FB] text-lg font-bold leading-4 tracking-tighter">
-                  See more
-                </a>
-                <img src="assets/images/Vector1.svg" className="ml-2" />
-              </div>
+              <ButtonPrimary title="I’m interested!" />
+              <ButtonSecondary title="See more" />
             </div>
           </div>
           <div className="py-12 px-16 rounded-lg bg-white">
@@ -102,15 +83,8 @@ const HomeSolutions = () => {
               wrong turns.
             </p>
             <div className="flex items-center">
-              <a className="bg-[#6135FB] text-white rounded-lg py-4 px-6 text-lg font-bold leading-4 tracking-tighter">
-                I’m interested!
-              </a>
-              <div className="flex items-center py-4 px-6">
-                <a className="rounded-lg  text-[#6135FB] text-lg font-bold leading-4 tracking-tighter">
-                  See more
-                </a>
-                <img src="assets/images/Vector1.svg" className="ml-2" />
-              </div>
+              <ButtonPrimary title="I’m interested!" />
+              <ButtonSecondary title="See more" />
             </div>
           </div>
         </div>

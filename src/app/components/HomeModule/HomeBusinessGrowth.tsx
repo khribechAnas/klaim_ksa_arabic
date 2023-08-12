@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonPrimary from "../CommonModule/ButtonPrimary";
 
 const HomeBusinessGrowth = () => {
   return (
@@ -36,9 +37,7 @@ const HomeBusinessGrowth = () => {
         </div>
       </div>
       <div className="pt-4">
-        <a className="bg-[#6135FB] text-white rounded-lg py-4 px-6 text-lg font-bold leading-4 tracking-tighter">
-          I’m interested!
-        </a>
+        <ButtonPrimary title="I’m interested!" />
       </div>
     </section>
   );

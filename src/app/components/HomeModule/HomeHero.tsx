@@ -1,4 +1,6 @@
 import React from "react";
+import ButtonPrimary from "../CommonModule/ButtonPrimary";
+import ButtonSecondary from "../CommonModule/ButtonSecondary";
 
 const HomeHero = () => {
   return (
@@ -16,15 +18,8 @@ const HomeHero = () => {
               <span className="text-linear">your cash flow</span>
             </h1>
             <div className="flex items-center">
-              <a className="bg-[#6135FB] text-white rounded-lg py-4 px-6 text-lg font-bold leading-4 tracking-tighter">
-                See What's Inside
-              </a>
-              <div className="flex items-center py-4 px-6">
-                <a className="rounded-lg  text-[#6135FB] text-lg font-bold leading-4 tracking-tighter">
-                  Get Started Now
-                </a>
-                <img src="assets/images/Vector1.svg" className="ml-2" />
-              </div>
+              <ButtonPrimary title="See What's Inside" />
+              <ButtonSecondary title="Get Started Now" />
             </div>
           </div>
         </div>
