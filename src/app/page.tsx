@@ -8,6 +8,7 @@ import HomeGoodNews from "./components/HomeModule/HomeGoodNews";
 import HomeHero from "./components/HomeModule/HomeHero";
 import HomeHowToEliminate from "./components/HomeModule/HomeHowToEliminate";
 import HomeSolutions from "./components/HomeModule/HomeSolutions";
+import HomeKlaimHelps from "./components/HomeModule/HomeKlaimHelps";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <HomeBusinessGrowth />
       <HomeSolutions />
       <HomeAwards />
+      <HomeKlaimHelps />
       <Footer />
     </>
   );
