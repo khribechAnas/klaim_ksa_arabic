@@ -6,6 +6,7 @@ import HomeClients from "./components/HomeModule/HomeClients";
 import HomeGoodNews from "./components/HomeModule/HomeGoodNews";
 import HomeHero from "./components/HomeModule/HomeHero";
 import HomeHowToEliminate from "./components/HomeModule/HomeHowToEliminate";
+import HomeKlaimHelps from "./components/HomeModule/HomeKlaimHelps";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <HomeCashFlow />
       <HomeGoodNews />
       <HomeBusinessGrowth />
+      <HomeKlaimHelps />
       <Footer />
     </>
   );
