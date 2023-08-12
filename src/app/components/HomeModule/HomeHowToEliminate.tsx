@@ -10,7 +10,7 @@ const HomeHowToEliminate = () => {
           <span className="text-linear">biggest growth obsticle</span> <br />
           so that you can
         </h2>
-        <div className="mt-8 flex">
+        <div className="mt-8 grid grid-cols-3 gap-4">
           <div className="flex items-center justify-center px-8 py-7 bg-[#F5F7FB] rounded-lg">
             <img src="assets/images/HowToEliminate1.svg" />
             <p className="ml-8 text-[#3F465D] text-[22px] leading-[30px]">
