@@ -2,9 +2,9 @@ import React from "react";
 
 const HomeHero = () => {
   return (
-    <div className=" h-screen pt-[92px] flex flex-col">
-      <div className="flex container mx-auto bg-red-200 flex-1">
-        <div className="flex-1 flex flex-col justify-center">
+    <section className="pt-[74px] ">
+      <div className="flex container mx-auto">
+        <div className="flex-1 flex flex-col justify-center h-[600px]">
           <div>
             <img src="assets/images/dhcc2-1.png" />
             <h3 className="text-lg font-semibold leading-6 text-[#6135FB]">
@@ -29,7 +29,18 @@ const HomeHero = () => {
           </div>
         </div>
         <div className="flex-1 relative">
-          <img src="assets/images/Homepage_Hero.png" className="absolute" />
+          <img
+            src="assets/images/Hero_purple.svg"
+            className="absolute bottom-4 -right-48"
+          />
+          <img
+            src="assets/images/Hero_green.svg"
+            className="absolute bottom-28 -right-24"
+          />
+          <img
+            src="assets/images/Homepage_Hero.png"
+            className="absolute bottom-0 -right-24"
+          />
         </div>
       </div>
       <div className="bg-linear px-16 flex items-center justify-between">
@@ -42,7 +53,7 @@ const HomeHero = () => {
         <img src="assets/images/hero7.png" className="py-2" />
         <img src="assets/images/hero8.png" className="py-2" />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -754,3 +754,23 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.bg-img-linear {
+  background-image: linear-gradient(135deg, #6135fb 0%, #41d8b6 100%);
+}
+
+.viktor-box {
+  /* width: 300px; */
+  /* height: 300px; */
+  position: relative;
+  overflow: hidden;
+}
+.viktor-box:before {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 300px 0px 300px white;
+}
