@@ -4,19 +4,19 @@ import ButtonPrimary from "../CommonModule/ButtonPrimary";
 const HomeGetStarted = () => {
   return (
     <section className="bg-[#F5F7FB]">
-      <div className="container mx-auto flex">
-        <div className="flex-1 flex flex-col justify-center items-start">
-          <h2 className="text-6xl font-semibold leading-[70px] mb-8">
+      <div className="container mx-auto flex flex-col md:flex-row px-4 md:px-0 pt-12 md:pt-0">
+        <div className="flex-1 flex flex-col justify-center items-start mb-4 md:mb-0">
+          <h2 className="text-4xl md:text-6xl font-semibold leading-[44px] leading-[70px] mb-4 md:mb-8">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
               Get started NOW
             </span>
           </h2>
-          <p className="text-[28px] leading-9 text-[#3F465D] mb-12">
+          <p className="text-[20px] md:text-[28px] leading-[30px] leading-9 text-[#3F465D] mb-8 md:mb-12">
             Get higher profits, faster growth <br /> and happier patients.
           </p>
           <ButtonPrimary title="I'm interested" />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 flex items-center justify-center">
           <img src="assets/images/GetStarted.png" />
         </div>
       </div>

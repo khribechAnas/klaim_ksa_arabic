@@ -12,7 +12,7 @@ const HomeHero = () => {
             <h3 className="text-lg font-semibold leading-6 text-[#6135FB]">
               OFFICIAL PARTNERS
             </h3>
-            <h1 className="text-6xl font-semibold leading-[70px] tracking-tighter mt-8 mb-7">
+            <h1 className="text-[#3F465D] text-4xl md:text-6xl font-semibold leading-[44px] md:leading-[70px] tracking-tighter mt-8 mb-7">
               You take care of your <br /> patients, we take care of
               <br />
               <span className="text-linear">your cash flow</span>
@@ -23,7 +23,7 @@ const HomeHero = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1 relative">
+        {/* <div className="flex-1 relative">
           <img
             src="assets/images/Hero_purple.svg"
             className="absolute bottom-4 -right-48"
@@ -36,17 +36,17 @@ const HomeHero = () => {
             src="assets/images/Homepage_Hero.png"
             className="absolute bottom-0 -right-24"
           />
-        </div>
+        </div> */}
       </div>
-      <div className="bg-linear px-16 flex items-center justify-between">
-        <img src="assets/images/hero1.png" className="py-2" />
-        <img src="assets/images/hero2.png" className="py-2" />
-        <img src="assets/images/hero3.png" className="py-2" />
-        <img src="assets/images/hero4.png" className="py-2" />
-        <img src="assets/images/hero5.png" className="py-2" />
-        <img src="assets/images/hero6.png" className="py-2" />
-        <img src="assets/images/hero7.png" className="py-2" />
-        <img src="assets/images/hero8.png" className="py-2" />
+      <div className="bg-linear px-4 md:px-16 py-8 md:py-0 grid grid-cols-2 gap-4 md:flex items-center justify-center md:justify-between">
+        <img src="assets/images/hero1.png" className="py-0 md:py-2" />
+        <img src="assets/images/hero2.png" className="py-0 md:py-2" />
+        <img src="assets/images/hero3.png" className="py-0 md:py-2" />
+        <img src="assets/images/hero4.png" className="py-0 md:py-2" />
+        <img src="assets/images/hero5.png" className="py-0 md:py-2" />
+        <img src="assets/images/hero6.png" className="py-0 md:py-2" />
+        <img src="assets/images/hero7.png" className="py-0 md:py-2" />
+        <img src="assets/images/hero8.png" className="py-0 md:py-2" />
       </div>
     </section>
   );

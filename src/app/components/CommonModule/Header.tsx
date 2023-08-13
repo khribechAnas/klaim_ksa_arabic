@@ -17,7 +17,10 @@ const Header = () => {
   };
 
   return (
-    <header id="topnav" className="defaultscroll sticky navbar-white-bg">
+    <header
+      id="topnav"
+      className="defaultscroll sticky navbar-white-bg px-4 md:px-0"
+    >
       <div className="container mx-auto">
         <a className="logo" href="https://klaim.ai">
           <img

@@ -51,14 +51,17 @@ const FAQ: FC<FAQComponentProps> = ({ questions }) => {
   );
 
   return (
-    <div className="space-y-4 px-28">
+    <div className="space-y-2 md:space-y-4 px-0 md:px-28">
       {questions.map((question, index) => (
-        <div key={index} className="bg-[#F5F7FB] px-8 py-6 rounded-lg">
+        <div
+          key={index}
+          className="bg-[#F5F7FB] px-7 py-4 md:px-8 md:py-6 rounded-lg"
+        >
           <div
             className="flex items-center justify-between cursor-pointer"
             onClick={() => toggleAccordion(index)}
           >
-            <h2 className="text-[28px] leading-9 font-normal">
+            <h2 className="text-[16px] md:text-[28px] leading-[24px] md:leading-9 font-semibold md:font-normal">
               {question.title}
             </h2>
             <span
@@ -71,7 +74,7 @@ const FAQ: FC<FAQComponentProps> = ({ questions }) => {
           </div>
           {activeIndex === index && (
             <div
-              className="mt-4 text-[#3F465D] text-base"
+              className="mt-4 text-[#3F465D] text-sm md:text-base leading-[25px]"
               dangerouslySetInnerHTML={{ __html: question.answer }}
             />
           )}

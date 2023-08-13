@@ -29,8 +29,8 @@ const HomeFAQ = () => {
     },
   ];
   return (
-    <section className="container mx-auto py-32">
-      <h2 className="text-5xl font-semibold leading-[70px] mb-8">
+    <section className="container mx-auto py-12 md:py-32 px-4 md:px-0">
+      <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[70px] mb-4 md:mb-8">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
           FAQs
         </span>
