@@ -6,7 +6,10 @@ const HomeClients = () => {
       <div className="container mx-auto py-12 md:py-32 px-4 md:px-0">
         <h2 className="text-3xl md:text-5xl font-semibold leading-[130%] text-[#3F465D]">
           Trusted by <br />
-          <span className="text-linear">40+ healthcare providers</span> <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
+            40+ healthcare providers
+          </span>{" "}
+          <br />
           in the UAE and KSA
         </h2>
         <div className="mt-4 md:mt-16">

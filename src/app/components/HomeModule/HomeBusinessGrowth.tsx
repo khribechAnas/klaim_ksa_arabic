@@ -5,7 +5,10 @@ const HomeBusinessGrowth = () => {
   return (
     <section className="container mx-auto pt-12 md:pt-32 pb-12 md:pb-36 px-4 md:px-0">
       <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D]">
-        <span className="text-linear">Unleashing</span> <br />
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
+          Unleashing
+        </span>{" "}
+        <br />
         business growth
       </h2>
       <div className="bg-img-linear flex flex-col md:flex-row my-4 md:my-8">
@@ -18,6 +21,7 @@ const HomeBusinessGrowth = () => {
           </div>
         </div>
         <div className="w-8 bg-white" />
+        <div className="h-2 bg-white block md:hidden" />
         <div className="viktor-box flex-1">
           <div className="px-8 py-7 flex items-center">
             <img src="assets/images/Growth1.svg" />
@@ -27,6 +31,7 @@ const HomeBusinessGrowth = () => {
           </div>
         </div>
         <div className="w-8 bg-white" />
+        <div className="h-2 bg-white block md:hidden" />
         <div className="viktor-box flex-1">
           <div className="px-8 py-7 flex items-center">
             <img src="assets/images/Growth1.svg" />

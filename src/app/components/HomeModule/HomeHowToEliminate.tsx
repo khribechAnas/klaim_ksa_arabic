@@ -7,7 +7,10 @@ const HomeHowToEliminate = () => {
         <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D]">
           How to eliminate your
           <br />
-          <span className="text-linear">biggest growth obsticle</span> <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
+            biggest growth obsticle
+          </span>{" "}
+          <br />
           so that you can
         </h2>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">

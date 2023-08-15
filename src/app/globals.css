@@ -774,3 +774,29 @@
   border-radius: 20px;
   box-shadow: 0px 300px 0px 300px white;
 }
+
+@keyframes fadeOutWord {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInWord {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out-word {
+  animation: fadeOutWord 0.5s forwards;
+}
+
+.fade-in-word {
+  animation: fadeInWord 0.5s forwards;
+}

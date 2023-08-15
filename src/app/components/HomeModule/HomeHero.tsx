@@ -1,8 +1,33 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import ButtonPrimary from "../CommonModule/ButtonPrimary";
 import ButtonSecondary from "../CommonModule/ButtonSecondary";
 
 const HomeHero = () => {
+  const sentences = [
+    "optimizing your cash flow",
+    "reducing your expences",
+    "minimizing claim rejections",
+  ];
+
+  const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
+  const [isFadingOut, setIsFadingOut] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFadingOut(true);
+
+      setTimeout(() => {
+        setCurrentSentenceIndex(
+          (prevIndex) => (prevIndex + 1) % sentences.length
+        );
+        setIsFadingOut(false);
+      }, 500);
+    }, 3000); // Change sentence every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="pt-[74px] ">
       <div className="relative">
@@ -21,7 +46,13 @@ const HomeHero = () => {
             <h1 className="text-[#3F465D] text-4xl md:text-6xl font-semibold leading-[44px] md:leading-[70px] tracking-tighter mt-8 mb-7">
               You take care of your <br /> patients, we take care of
               <br />
-              <span className="text-linear">your cash flow</span>
+              <span
+                className={`bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] ${
+                  isFadingOut ? "fade-out-word" : "fade-in-word"
+                }`}
+              >
+                {sentences[currentSentenceIndex]}
+              </span>
             </h1>
             <div className="flex items-center">
               <ButtonPrimary title="See What's Inside" />
