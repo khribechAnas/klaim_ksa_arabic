@@ -8,7 +8,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 const SlickSliderVideo: React.FC = () => {
   const sliderRef = useRef<Slider | null>(null);
   const [showAboutUsVideoModal, setShowAboutUsVideoModal] = useState<
-    number | null
+    string | null
   >(null);
 
   const next = () => {
@@ -27,37 +27,48 @@ const SlickSliderVideo: React.FC = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
   };
 
   return (
     <div>
-      {/* <Lightbox
-        open={showAboutUsVideoModal !== null}
+      <Lightbox
+        open={!!showAboutUsVideoModal}
         close={() => setShowAboutUsVideoModal(null)}
         carousel={{ finite: true }}
         styles={{ container: { backgroundColor: "rgba(26,42,58,0.94)" } }}
-        slides={videos}
+        slides={[
+          {
+            type: "image",
+            src: "",
+          },
+        ]}
         render={{
-          slide: ({ slide }) => <>
-          <iframe
-            width="1000"
-            height="563"
-            src={showAboutUsVideoModal}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </>,
+          slide: ({ slide }) => (
+            <>
+              <iframe
+                width="1000"
+                height="563"
+                src={showAboutUsVideoModal as string}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </>
+          ),
         }}
-      /> */}
+      />
       <Slider ref={(c) => (sliderRef.current = c)} {...settings}>
         <div
           key={1}
           className="ml-36 cursor-pointer"
-          // onClick={() => setShowAboutUsVideoModal(true)}
+          onClick={() =>
+            setShowAboutUsVideoModal(
+              "https://www.youtube.com/embed/pLwpCnFtz8Y"
+            )
+          }
         >
           <div className="mx-2 pb-8 pt-12 px-6 bg-[#F5F7FB] rounded-lg">1</div>
         </div>
