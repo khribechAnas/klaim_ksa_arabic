@@ -1,9 +1,34 @@
 "use client";
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Lightbox } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+
+const videos = [
+  {
+    key: 1,
+    img: "/assets/images/thumbnail1.png",
+    video: "https://www.youtube.com/embed/V4xYylZ5Ers",
+  },
+  {
+    key: 2,
+    img: "/assets/images/thumbnail2.png",
+    video: "https://www.youtube.com/embed/47CDBY_j7KA",
+  },
+  {
+    key: 3,
+    img: "/assets/images/thumbnail3.png",
+    video: "https://www.youtube.com/embed/edZWAMvC3X8",
+  },
+  {
+    key: 4,
+    img: "/assets/images/thumbnail4.png",
+    video: "https://www.youtube.com/embed/F4WJESvD2u0",
+  },
+];
 
 const SlickSliderVideo: React.FC = () => {
   const sliderRef = useRef<Slider | null>(null);
@@ -60,26 +85,25 @@ const SlickSliderVideo: React.FC = () => {
           ),
         }}
       />
-      <Slider ref={(c) => (sliderRef.current = c)} {...settings}>
-        <div
-          key={1}
-          className="ml-36 cursor-pointer"
-          onClick={() =>
-            setShowAboutUsVideoModal(
-              "https://www.youtube.com/embed/pLwpCnFtz8Y"
-            )
-          }
-        >
-          <div className="mx-2 pb-8 pt-12 px-6 bg-[#F5F7FB] rounded-lg">1</div>
-        </div>
-        <div key={2} className="ml-36">
-          <div className="mx-2 pb-8 pt-12 px-6 bg-[#F5F7FB] rounded-lg">2</div>
-        </div>
-        <div key={3} className="ml-36">
-          <div className="mx-2 pb-8 pt-12 px-6 bg-[#F5F7FB] rounded-lg">3</div>
-        </div>
-      </Slider>
-      <div className="mt-12 flex items-center justify-end">
+      <div className="relative">
+        <Slider ref={(c) => (sliderRef.current = c)} {...settings}>
+          {videos.map((video) => {
+            return (
+              <div
+                key={video.key}
+                className="pr-0 md:pr-28 cursor-pointer rounded-lg"
+                onClick={() => setShowAboutUsVideoModal(video.video)}
+              >
+                <div className="mx-0 md:mx-2 rounded-lg">
+                  <img src={video.img} className="rounded-lg" />
+                </div>
+              </div>
+            );
+          })}
+        </Slider>
+        <div className="absolute rounded-l-lg top-0 right-0 bottom-[7px] bg-gradient-to-r from-gray-300 to-white w-[104px] hidden md:block" />
+      </div>
+      <div className="mt-8 flex items-center justify-end">
         <a className="mr-4 cursor-pointer" onClick={previous}>
           <img src="assets/images/arrowLeft.svg" />
         </a>
