@@ -19,16 +19,16 @@ const HomeCashFlow = () => {
             />
           </div>
           <div className="flex-1">
-            <p className="px-4 md:px-16 text-[20px] text-[28px] text-[#3F465D] leading-9 bg-white md:bg-transparent py-4 md:py-0 rounded-lg md:rounded-none shadow-lg md:shadow-none">
+            <p className="px-4 md:px-16 text-[20px] md:text-[28px] text-[#3F465D] leading-9 bg-white md:bg-transparent py-4 md:py-0 rounded-lg md:rounded-none shadow-lg md:shadow-none">
               <span className="md:hidden text-[#6135FB] mr-4">&#8226;</span>Pay
               for the talent, facilities, and <br className="hidden md:block" />{" "}
               equipment needed for growth
             </p>
           </div>
         </div>
-        <div className="flex items-center mt-8">
+        <div className="flex items-center mt-4 md:mt-8">
           <div className="flex-1">
-            <p className="px-4 md:px-16 text-[20px] text-[28px] text-[#3F465D] leading-9 bg-white md:bg-transparent py-4 md:py-0 rounded-lg md:rounded-none shadow-lg md:shadow-none">
+            <p className="px-4 md:px-16 text-[20px] md:text-[28px] text-[#3F465D] leading-9 bg-white md:bg-transparent py-4 md:py-0 rounded-lg md:rounded-none shadow-lg md:shadow-none">
               <span className="md:hidden text-[#6135FB] mr-4">&#8226;</span>Make
               investments to improve the <br className="hidden md:block" />{" "}
               patient experience
@@ -41,7 +41,7 @@ const HomeCashFlow = () => {
             />
           </div>
         </div>
-        <div className="flex items-center mt-8">
+        <div className="flex items-center mt-4 md:mt-8">
           <div className="flex-1 hidden md:block">
             <img
               src="assets/images/CashFlow3.png"
@@ -49,7 +49,7 @@ const HomeCashFlow = () => {
             />
           </div>
           <div className="flex-1">
-            <p className="px-4 md:px-16 text-[20px] text-[28px] text-[#3F465D] leading-9 bg-white md:bg-transparent py-4 md:py-0 rounded-lg md:rounded-none shadow-lg md:shadow-none">
+            <p className="px-4 md:px-16 text-[20px] md:text-[28px] text-[#3F465D] leading-9 bg-white md:bg-transparent py-4 md:py-0 rounded-lg md:rounded-none shadow-lg md:shadow-none">
               <span className="md:hidden text-[#6135FB] mr-4">&#8226;</span>
               Achieve the level of excellence that{" "}
               <br className="hidden md:block" /> attracts talent and investors

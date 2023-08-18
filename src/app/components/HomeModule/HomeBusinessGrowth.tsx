@@ -24,7 +24,7 @@ const HomeBusinessGrowth = () => {
         <div className="h-2 bg-white block md:hidden" />
         <div className="viktor-box flex-1">
           <div className="px-8 py-7 flex items-center">
-            <img src="assets/images/Growth1.svg" />
+            <img src="assets/images/Growth2.svg" />
             <p className="text-white ml-8">
               Stabilize and <br /> accelerate cash flow
             </p>
@@ -34,7 +34,7 @@ const HomeBusinessGrowth = () => {
         <div className="h-2 bg-white block md:hidden" />
         <div className="viktor-box flex-1">
           <div className="px-8 py-7 flex items-center">
-            <img src="assets/images/Growth1.svg" />
+            <img src="assets/images/Growth3.svg" />
             <p className="text-white ml-8">
               Reduce RCM-related <br /> staffing costs
             </p>

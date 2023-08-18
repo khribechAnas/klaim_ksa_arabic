@@ -32,13 +32,13 @@ const HomeHero = () => {
     <section className="pt-[74px] ">
       <div className="relative">
         <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="h-[340px] md:h-auto"></div>
+          <div className="h-[380px] md:h-auto"></div>
           <div className="">
             <img src="assets/images/Homepage_Hero.jpg" className="" />
           </div>
         </div>
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 absolute left-0 right-0 top-0 bottom-0">
-          <div className="flex flex-col items-start justify-center md:px-0 px-4 pt-8 h-[360px] md:h-auto">
+          <div className="flex flex-col items-start justify-center md:px-0 px-4 pt-16 md:pt-0 h-[360px] md:h-auto">
             <img src="assets/images/dhcc2-1.png" />
             <h3 className="text-lg font-semibold leading-6 text-[#6135FB]">
               OFFICIAL PARTNERS
@@ -59,7 +59,6 @@ const HomeHero = () => {
               <ButtonSecondary title="Get Started Now" />
             </div>
           </div>
-          <div></div>
         </div>
       </div>
       <div className="bg-linear px-4 md:px-16 py-8 md:py-0 grid grid-cols-2 gap-4 md:flex items-center justify-center md:justify-between">

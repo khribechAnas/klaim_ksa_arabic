@@ -5,8 +5,8 @@ const HomeClients = () => {
     <section className="bg-[#F5F7FB]">
       <div className="container mx-auto py-12 md:py-32 px-4 md:px-0">
         <h2 className="text-3xl md:text-5xl font-semibold leading-[130%] text-[#3F465D]">
-          Trusted by <br />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
+          Trusted by <br className="hidden md:block" />
+          <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
             40+ healthcare providers
           </span>{" "}
           <br />

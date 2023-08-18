@@ -16,7 +16,7 @@ const HomeHowToEliminate = () => {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="flex items-center justify-center px-8 py-7 bg-[#F5F7FB] rounded-lg">
             <img src="assets/images/HowToEliminate1.svg" />
-            <p className="ml-8 text-[#3F465D text-[18px] leading-[26px] md:text-[22px] md:leading-[30px]">
+            <p className="ml-8 text-[#3F465D] text-[18px] leading-[26px] md:text-[22px] md:leading-[30px]">
               Grow and expand your business
             </p>
           </div>
