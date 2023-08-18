@@ -102,7 +102,7 @@ const Header = () => {
                   : ""
               }`}
             >
-              <Link href="javascript:void(0)" onClick={toggleMobileDropdown}>
+              <Link href="/about" onClick={toggleMobileDropdown}>
                 About Us
               </Link>
               <span className="menu-arrow"></span>
