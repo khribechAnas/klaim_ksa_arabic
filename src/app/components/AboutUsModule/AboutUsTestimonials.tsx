@@ -3,7 +3,7 @@ import SlickSliderVideo from "../CommonModule/SlickSliderVideo";
 
 const AboutUsTestimonials = () => {
   return (
-    <section className="bg-[#F5F7FB] py-32">
+    <section className="bg-[#F5F7FB] py-12 md:py-32 px-4 md:px-0">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
         <div>
           <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] leading-[130%] text-[#3F465D] mb-4 md:mb-8">

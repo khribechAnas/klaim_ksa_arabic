@@ -4,13 +4,13 @@ const AboutUsClients = () => {
   return (
     <section className="container mx-auto py-12 md:py-32 px-4 md:px-0">
       <div className="">
-        <h2 className="text-3xl md:text-5xl font-semibold leading-[130%] text-[#3F465D]">
+        <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D]">
           Trusted by <br className="hidden md:block" />
           <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
             40+ healthcare providers
           </span>{" "}
         </h2>
-        <div className="mt-4 md:mt-8 mb-32">
+        <div className="mt-8 mb-12 md:mb-32">
           <div className="grid grid-cols-2 gap-4 items-center justify-center md:flex md:flex-row md:justify-between">
             <img src="assets/images/client1.png" />
             <img src="assets/images/client2.png" />
@@ -24,44 +24,46 @@ const AboutUsClients = () => {
             <img src="assets/images/client8.png" />
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
-            <h2 className="text-3xl md:text-[32px] font-bold leading-[40px] text-[#3F465D]">
+            <h2 className="text-2xl md:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                 150,000+
               </span>{" "}
             </h2>
-            <p className="text-[18px] font-semibold leading-[24px]">
+            <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
               claims accelerated
             </p>
           </div>
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
-            <h2 className="text-3xl md:text-[32px] font-bold leading-[40px] text-[#3F465D]">
+            <h2 className="text-2xl md:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                 {`$ {x} milion`}
               </span>{" "}
             </h2>
-            <p className="text-[18px] font-semibold leading-[24px]">
+            <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
               in claim payments
             </p>
           </div>
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
-            <p className="text-[18px] font-semibold leading-[24px]">
+            <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
               Established in
             </p>
-            <h2 className="text-3xl md:text-[32px] font-bold leading-[40px] text-[#3F465D]">
+            <h2 className="text-2xl md:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                 2019
               </span>{" "}
             </h2>
           </div>
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
-            <h2 className="text-3xl md:text-[32px] font-bold leading-[40px] text-[#3F465D]">
+            <h2 className="text-2xl md:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                 Award-winning
               </span>{" "}
             </h2>
-            <p className="text-[18px] font-semibold leading-[24px]">team</p>
+            <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
+              team
+            </p>
           </div>
         </div>
       </div>

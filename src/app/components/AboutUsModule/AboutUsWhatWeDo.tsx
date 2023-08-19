@@ -2,11 +2,11 @@ import React from "react";
 
 const AboutUsWhatWeDo = () => {
   return (
-    <section className="bg-[#F5F7FB] py-32">
-      <div className="container mx-auto grid grid-cols-2">
-        <img src="assets/images/about-us1.png" />
+    <section className="bg-[#F5F7FB] py-12 md:py-32 px-4 md:px-0">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 ">
+        <img src="assets/images/about-us1.png" className="hidden md:block" />
         <div className="flex flex-col justify-center">
-          <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D] mb-8">
+          <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D] mb-4 md:mb-8">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
               What we do
             </span>
@@ -34,6 +34,7 @@ const AboutUsWhatWeDo = () => {
             future, we anticipate expanding across the GCC and beyond.
           </p>
         </div>
+        <img src="assets/images/about-us1.png" className="block md:hidden" />
       </div>
     </section>
   );

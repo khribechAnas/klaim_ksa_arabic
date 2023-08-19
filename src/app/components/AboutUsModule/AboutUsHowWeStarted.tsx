@@ -3,7 +3,7 @@ import ButtonPrimary from "../CommonModule/ButtonPrimary";
 
 const AboutUsHowWeStarted = () => {
   return (
-    <section className="container mx-auto flex items-center py-32">
+    <section className="container mx-auto flex flex-col md:flex-row items-center py-12 md:py-32 px-4 md:px-0">
       <div className="flex-1">
         <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D] mb-8">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
@@ -37,8 +37,8 @@ const AboutUsHowWeStarted = () => {
         </p>
         <ButtonPrimary title="Send us a message" />
       </div>
-      <div className="flex-1 flex justify-end">
-        <img src="assets/images/about-us2.png" />
+      <div className="flex-1 flex justify-end mt-12 md:mt-0">
+        <img src="assets/images/about-us2.png" className="rounded-lg" />
       </div>
     </section>
   );

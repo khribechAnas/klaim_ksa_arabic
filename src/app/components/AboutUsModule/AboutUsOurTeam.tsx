@@ -43,7 +43,7 @@ const directors = [
 
 const AboutUsOurTeam = () => {
   return (
-    <section className="bg-[#F5F7FB] py-32">
+    <section className="bg-[#F5F7FB] py-12 md:py-32 px-4 md:px-0">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D] mb-8">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
@@ -53,16 +53,16 @@ const AboutUsOurTeam = () => {
         <h4 className="text-[32px] text-[#3F465D] font-bold leading-[40px]">
           Cofounders
         </h4>
-        <div className="mt-8 grid grid-cols-2 gap-4 mb-16">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 md:mb-16">
           {cofounders.map((cofounder) => (
             <div className="px-8 py-7 bg-white rounded-lg shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
-              <div className="mb-4 flex items-center">
+              <div className="mb-4 flex flex-col md:flex-row items-start md:items-center">
                 <img src={cofounder.image} />
-                <div className="ml-8">
-                  <h5 className="text-[32px] text-[#3F465D] font-bold leading-[40px]">
+                <div className="ml-0 md:ml-8">
+                  <h5 className="text-[24px] md:text-[32px] text-[#3F465D] font-bold leading-[36px] md:leading-[40px] mt-2 md:mt-0">
                     {cofounder.name}
                   </h5>
-                  <p className="text-[16px] leading-[25px] text-[#3F465D] mb-2">
+                  <p className="text-[14px] md:text-[16px] leading-[25px] text-[#3F465D] mb-2">
                     {cofounder.title}
                   </p>
                   <img src="assets/images/about-us-linkedin.svg" />
@@ -77,27 +77,34 @@ const AboutUsOurTeam = () => {
         <h4 className="text-[32px] text-[#3F465D] font-bold leading-[40px]">
           Board of Directors
         </h4>
-        <div className="mt-8 grid grid-cols-3 gap-4">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
           {directors.map((director) => (
             <div className="px-8 py-7 bg-white rounded-lg flex flex-col shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
-              <div className="mb-4 flex items-center">
+              <div className="mb-4 flex flex-col md:flex-row items-start md:items-center">
                 <img src={director.image} />
-                <div className="ml-8">
-                  <h5 className="text-[32px] text-[#3F465D] font-bold leading-[40px]">
+                <div className="ml-0 md:ml-8">
+                  <h5 className="text-[24px] md:text-[32px] text-[#3F465D] font-bold leading-[36px] md:leading-[40px] mt-2 md:mt-0">
                     {director.name}
                   </h5>
                   <p className="text-[16px] leading-[25px] text-[#3F465D] mb-2">
                     {director.title}
                   </p>
+                  <img
+                    src="assets/images/about-us-linkedin.svg"
+                    className="block md:hidden"
+                  />
                 </div>
               </div>
-              <div className="flex-1 mb-4">
+              <div className="flex-1 mb-0 md:mb-4">
                 <p className="text-[16px] leading-[25px] text-[#3F465D]">
                   {director.description}
                 </p>
               </div>
               <div>
-                <img src="assets/images/about-us-linkedin.svg" />
+                <img
+                  src="assets/images/about-us-linkedin.svg"
+                  className="hidden md:block"
+                />
               </div>
             </div>
           ))}

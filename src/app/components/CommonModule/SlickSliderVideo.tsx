@@ -50,6 +50,7 @@ const SlickSliderVideo: React.FC = () => {
 
   const settings = {
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -57,7 +58,7 @@ const SlickSliderVideo: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <Lightbox
         open={!!showAboutUsVideoModal}
         close={() => setShowAboutUsVideoModal(null)}
