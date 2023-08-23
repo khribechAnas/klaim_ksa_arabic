@@ -64,6 +64,7 @@ const SlickSlider: React.FC = () => {
 
   const settings = {
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -100,7 +101,7 @@ const SlickSlider: React.FC = () => {
         {testimonials.map((testimonial) => {
           return (
             <div key={testimonial.key}>
-              <div className="pb-7 md:pb-8 pt-7 md:pt-12 px-6 ml-4 bg-[#F5F7FB] rounded-lg">
+              <div className="pb-7 md:pb-8 pt-7 md:pt-12 px-6 mx-1 md:mx-2 bg-[#F5F7FB] rounded-lg">
                 <p className="text-[14px] md:text-[16px] leading-[25px] text-[#3F465D]">
                   {testimonial.testimonial}
                 </p>

@@ -50,6 +50,7 @@ const SlickSliderVideo: React.FC = () => {
 
   const settings = {
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -57,7 +58,7 @@ const SlickSliderVideo: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <Lightbox
         open={!!showAboutUsVideoModal}
         close={() => setShowAboutUsVideoModal(null)}
@@ -101,7 +102,7 @@ const SlickSliderVideo: React.FC = () => {
             );
           })}
         </Slider>
-        <div className="absolute rounded-l-lg top-0 right-0 bottom-[7px] bg-gradient-to-r from-gray-300 to-white w-[104px] hidden md:block" />
+        <div className="absolute rounded-l-lg top-0 right-0 bottom-[7px] bg-gradient-to-r from-gray-300 to-transparent w-[104px] hidden md:block" />
       </div>
       <div className="mt-8 flex items-center justify-end">
         <a className="mr-4 cursor-pointer" onClick={previous}>
