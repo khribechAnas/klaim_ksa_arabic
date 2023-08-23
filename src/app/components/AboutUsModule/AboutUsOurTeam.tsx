@@ -54,8 +54,11 @@ const AboutUsOurTeam = () => {
           Cofounders
         </h4>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 md:mb-16">
-          {cofounders.map((cofounder) => (
-            <div className="px-8 py-7 bg-white rounded-lg shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
+          {cofounders.map((cofounder, index) => (
+            <div
+              key={index}
+              className="px-8 py-7 bg-white rounded-lg shadow-[0_0_16px_0_rgba(0,0,0,0.05)]"
+            >
               <div className="mb-4 flex flex-col md:flex-row items-start md:items-center">
                 <img src={cofounder.image} />
                 <div className="ml-0 md:ml-8">
@@ -78,8 +81,11 @@ const AboutUsOurTeam = () => {
           Board of Directors
         </h4>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {directors.map((director) => (
-            <div className="px-8 py-7 bg-white rounded-lg flex flex-col shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
+          {directors.map((director, index) => (
+            <div
+              key={index}
+              className="px-8 py-7 bg-white rounded-lg flex flex-col shadow-[0_0_16px_0_rgba(0,0,0,0.05)]"
+            >
               <div className="mb-4 flex flex-col md:flex-row items-start md:items-center">
                 <img src={director.image} />
                 <div className="ml-0 md:ml-8">
