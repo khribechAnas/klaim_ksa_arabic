@@ -27,7 +27,7 @@ const XrayClientsTestimonials = () => {
           <img src="assets/images/client8.png" />
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 md:mb-16">
         <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
           <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
             Established in
@@ -59,7 +59,7 @@ const XrayClientsTestimonials = () => {
           </h2>
         </div>
       </div>
-      <div className="relative mb-16">
+      <div className="relative mb-8 md:mb-16">
         <SlickSlider />
         <div className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-white to-[rgba(255, 255, 255, 0.52)] w-[33%] lg:block hidden" />
       </div>

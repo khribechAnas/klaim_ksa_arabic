@@ -117,7 +117,7 @@ const Header = () => {
                     About Klaim
                   </Link>
                 </li>
-                <li>
+                <li className={pathname == "/x-ray" ? "active" : ""}>
                   <Link
                     href="/x-ray"
                     className={`sub-menu-item ${
