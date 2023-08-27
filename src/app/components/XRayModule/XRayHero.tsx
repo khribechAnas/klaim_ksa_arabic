@@ -8,8 +8,8 @@ const XRayHero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="h-[460px] md:h-auto"></div>
           <div className="relative">
-            <img src="assets/images/about-hero.png" className="" />
-            <div className="bg-gradient-to-r from-white to-[rgba(255, 255, 255, 0.52)] absolute top-0 bottom-0 left-0 w-[50%] hidden md:block" />
+            <img src="assets/images/xray-hero1.png" className="" />
+            <div className="bg-gradient-to-r from-white to-[rgba(255, 255, 255, 0.52)] absolute top-0 bottom-0 left-0 w-[40%] hidden md:block" />
           </div>
         </div>
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 absolute left-0 right-0 top-0 bottom-0">
