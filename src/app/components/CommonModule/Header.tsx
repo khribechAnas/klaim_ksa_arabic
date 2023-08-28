@@ -96,13 +96,13 @@ const Header = () => {
             <li
               className={`has-submenu parent-parent-menu-item ${
                 pathname == "/about" ||
-                pathname.startsWith("/blog") ||
-                pathname.startsWith("/media")
+                pathname == "/x-ray" ||
+                pathname.startsWith("/blog")
                   ? "active"
                   : ""
               }`}
             >
-              <Link href="/about" onClick={toggleMobileDropdown}>
+              <Link href="" onClick={toggleMobileDropdown}>
                 About Us
               </Link>
               <span className="menu-arrow"></span>
@@ -117,33 +117,14 @@ const Header = () => {
                     About Klaim
                   </Link>
                 </li>
-                <li>
+                <li className={pathname == "/x-ray" ? "active" : ""}>
                   <Link
-                    href="https://klaimai1.recruitee.com/"
-                    className="sub-menu-item"
-                    target="_blank"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li className={pathname.startsWith("/media") ? "active" : ""}>
-                  <Link
-                    href="/media"
+                    href="/x-ray"
                     className={`sub-menu-item ${
-                      pathname.startsWith("/media") ? "active" : ""
+                      pathname == "/x-ray" ? "active" : ""
                     }`}
                   >
-                    Media
-                  </Link>
-                </li>
-                <li className={pathname.startsWith("/blog") ? "active" : ""}>
-                  <Link
-                    href="/blog"
-                    className={`sub-menu-item ${
-                      pathname.startsWith("/blog") ? "active" : ""
-                    }`}
-                  >
-                    Blog
+                    Klaim X-Ray
                   </Link>
                 </li>
               </ul>

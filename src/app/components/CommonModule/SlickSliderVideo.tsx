@@ -48,13 +48,23 @@ const SlickSliderVideo: React.FC = () => {
     }
   };
 
+  // const settings = {
+  //   dots: false,
+  //   arrows: false,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  // };
+
   const settings = {
-    dots: false,
-    arrows: false,
+    className: "center",
+    centerMode: window.innerWidth > 768,
     infinite: true,
-    speed: 500,
+    arrows: false,
+    centerPadding: "50px",
     slidesToShow: 1,
-    slidesToScroll: 1,
+    speed: 500,
   };
 
   return (
@@ -86,7 +96,7 @@ const SlickSliderVideo: React.FC = () => {
           ),
         }}
       />
-      <div className="relative">
+      {/* <div className="relative">
         <Slider ref={(c) => (sliderRef.current = c)} {...settings}>
           {videos.map((video) => {
             return (
@@ -103,6 +113,24 @@ const SlickSliderVideo: React.FC = () => {
           })}
         </Slider>
         <div className="absolute rounded-l-lg top-0 right-0 bottom-[7px] bg-gradient-to-r from-gray-300 to-transparent w-[104px] hidden md:block" />
+      </div> */}
+      <div className="relative">
+        <Slider ref={(c) => (sliderRef.current = c)} {...settings}>
+          {videos.map((video) => {
+            return (
+              <div
+                key={video.key}
+                className="pr-0 md:pr-8 -ml-0 md:-ml-10 cursor-pointer rounded-lg"
+                onClick={() => setShowAboutUsVideoModal(video.video)}
+              >
+                <div className="mx-0 md:mx-0 rounded-lg">
+                  <img src={video.img} className="rounded-lg" />
+                </div>
+              </div>
+            );
+          })}
+        </Slider>
+        <div className="absolute rounded-l-lg top-0 right-0 bottom-[7px] bg-gradient-to-l from-white via-[rgba(255,255,255,0.7)] to-transparent w-[120px] hidden md:block" />
       </div>
       <div className="mt-8 flex items-center justify-end">
         <a className="mr-4 cursor-pointer" onClick={previous}>

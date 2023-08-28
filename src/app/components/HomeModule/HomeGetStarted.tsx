@@ -16,7 +16,7 @@ const HomeGetStarted = () => {
           </p>
           <ButtonPrimary title="I'm interested" />
         </div>
-        <div className="flex-1 flex items-center justify-center">
+        <div className="flex-1 flex items-center justify-center mt-0 md:mt-12">
           <img src="assets/images/GetStarted.png" />
         </div>
       </div>
