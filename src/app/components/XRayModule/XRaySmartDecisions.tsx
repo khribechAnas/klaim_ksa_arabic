@@ -7,7 +7,7 @@ const XRaySmartDecisions = () => {
       <div className="container mx-auto py-12 md:py-32 px-4 md:px-0 flex flex-col md:flex-row">
         <img
           src="assets/images/xray4.png"
-          className="flex-1 mr-4 hidden md:block"
+          className="flex-1 mr-4 hidden md:block object-cover"
         />
         <div className="flex-1 ml-0 md:ml-4 flex flex-col items-start justify-center">
           <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D]">

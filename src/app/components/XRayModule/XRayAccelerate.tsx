@@ -19,7 +19,7 @@ const XRayAccelerate = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="py-7 md:py-4 px-8 md:px-12 bg-[#F5F7FB] rounded-lg flex items-center">
           <img src="assets/images/xray1.svg" />
-          <div className="ml-8 md:ml-12 text-[#3F465D]">
+          <div className="ml-8 xl:ml-8 2xl:ml-12 text-[#3F465D]">
             <p className="mb-0 md:mb-2 text-[24px] md:text-[32px] font-bold leading-[36px] md:leading-[40px]">
               Claims
             </p>
@@ -30,7 +30,7 @@ const XRayAccelerate = () => {
         </div>
         <div className="py-7 md:py-4 px-8 md:px-12 bg-[#F5F7FB] rounded-lg flex items-center">
           <img src="assets/images/xray2.svg" />
-          <div className="ml-8 md:ml-12 text-[#3F465D]">
+          <div className="ml-8 xl:ml-8 2xl:ml-12 text-[#3F465D]">
             <p className="mb-0 md:mb-2 text-[24px] md:text-[32px] font-bold leading-[36px] md:leading-[40px]">
               Team
             </p>
@@ -41,7 +41,7 @@ const XRayAccelerate = () => {
         </div>
         <div className="py-7 md:py-4 px-8 md:px-12 bg-[#F5F7FB] rounded-lg flex items-center">
           <img src="assets/images/xray1.svg" />
-          <div className="ml-8 md:ml-12 text-[#3F465D]">
+          <div className="ml-8 xl:ml-8 2xl:ml-12 text-[#3F465D]">
             <p className="mb-0 md:mb-2 text-[24px] md:text-[32px] font-bold leading-[36px] md:leading-[40px]">
               Activities
             </p>

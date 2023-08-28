@@ -61,6 +61,7 @@ const SlickSliderVideo: React.FC = () => {
     className: "center",
     centerMode: window.innerWidth > 768,
     infinite: true,
+    arrows: false,
     centerPadding: "50px",
     slidesToShow: 1,
     speed: 500,

@@ -45,9 +45,9 @@ const HomeHero = () => {
             </h3>
             <h1 className="text-[#3F465D] text-4xl md:text-6xl font-semibold leading-[44px] md:leading-[70px] tracking-tighter mt-8 mb-7">
               You take care of your <br /> patients, we take care of
-              <br />
+              <br className="block xl:hidden 2xl:block" />
               <span
-                className={`bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] ${
+                className={`bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] ml-0 xl:ml-3 2xl:ml-0 ${
                   isFadingOut ? "fade-out-word" : "fade-in-word"
                 }`}
               >
@@ -62,14 +62,38 @@ const HomeHero = () => {
         </div>
       </div>
       <div className="bg-linear px-4 md:px-16 py-8 md:py-0 grid grid-cols-2 gap-4 md:flex items-center justify-center md:justify-between">
-        <img src="assets/images/hero1.png" className="py-0 md:py-2" />
-        <img src="assets/images/hero2.png" className="py-0 md:py-2" />
-        <img src="assets/images/hero3.png" className="py-0 md:py-2" />
-        <img src="assets/images/hero4.png" className="py-0 md:py-2" />
-        <img src="assets/images/hero5.png" className="py-0 md:py-2" />
-        <img src="assets/images/hero6.png" className="py-0 md:py-2" />
-        <img src="assets/images/hero7.png" className="py-0 md:py-2" />
-        <img src="assets/images/hero8.png" className="py-0 md:py-2" />
+        <img
+          src="assets/images/hero1.png"
+          className="py-0 md:py-2 w-auto md:w-[150px] 2xl:w-auto"
+        />
+        <img
+          src="assets/images/hero2.png"
+          className="py-0 md:py-2 w-auto md:w-[150px] 2xl:w-auto"
+        />
+        <img
+          src="assets/images/hero3.png"
+          className="py-0 md:py-2 w-auto md:w-[150px] 2xl:w-auto"
+        />
+        <img
+          src="assets/images/hero4.png"
+          className="py-0 md:py-2 w-auto md:w-[150px] 2xl:w-auto"
+        />
+        <img
+          src="assets/images/hero5.png"
+          className="py-0 md:py-2 w-auto md:w-[150px] 2xl:w-auto"
+        />
+        <img
+          src="assets/images/hero6.png"
+          className="py-0 md:py-2 w-auto md:w-[150px] 2xl:w-auto"
+        />
+        <img
+          src="assets/images/hero7.png"
+          className="py-0 md:py-2 w-auto md:w-[150px] 2xl:w-auto"
+        />
+        <img
+          src="assets/images/hero8.png"
+          className="py-0 md:py-2 w-auto md:w-[150px] 2xl:w-auto"
+        />
       </div>
     </section>
   );

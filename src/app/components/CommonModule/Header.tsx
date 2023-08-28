@@ -102,7 +102,7 @@ const Header = () => {
                   : ""
               }`}
             >
-              <Link href="/about" onClick={toggleMobileDropdown}>
+              <Link href="" onClick={toggleMobileDropdown}>
                 About Us
               </Link>
               <span className="menu-arrow"></span>
@@ -125,26 +125,6 @@ const Header = () => {
                     }`}
                   >
                     Klaim X-Ray
-                  </Link>
-                </li>
-                <li className={pathname.startsWith("/media") ? "active" : ""}>
-                  <Link
-                    href="/media"
-                    className={`sub-menu-item ${
-                      pathname.startsWith("/media") ? "active" : ""
-                    }`}
-                  >
-                    Media
-                  </Link>
-                </li>
-                <li className={pathname.startsWith("/blog") ? "active" : ""}>
-                  <Link
-                    href="/blog"
-                    className={`sub-menu-item ${
-                      pathname.startsWith("/blog") ? "active" : ""
-                    }`}
-                  >
-                    Blog
                   </Link>
                 </li>
               </ul>

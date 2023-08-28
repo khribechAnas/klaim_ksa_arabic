@@ -26,7 +26,7 @@ const AboutUsClients = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
-            <h2 className="text-2xl md:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
+            <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                 150,000+
               </span>{" "}
@@ -36,7 +36,7 @@ const AboutUsClients = () => {
             </p>
           </div>
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
-            <h2 className="text-2xl md:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
+            <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                 {`$ {x} milion`}
               </span>{" "}
@@ -49,14 +49,14 @@ const AboutUsClients = () => {
             <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
               Established in
             </p>
-            <h2 className="text-2xl md:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
+            <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                 2019
               </span>{" "}
             </h2>
           </div>
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
-            <h2 className="text-2xl md:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
+            <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                 Award-winning
               </span>{" "}

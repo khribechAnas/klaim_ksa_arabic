@@ -12,8 +12,8 @@ const AboutUsContact = () => {
             </h3>
           </div>
           <p className="text-[18px] md:text-[22px] leading-[26px] md:leading-[30px] text-[#3F465D] mb-2">
-            Connect with our team by <br /> phone on weekdays from 9 am <br />{" "}
-            to 6 pm.
+            Connect with our team by <br /> phone on weekdays from 9 am{" "}
+            <br className="block xl:hidden 2xl:block" /> to 6 pm.
           </p>
           <div className="flex">
             <div className="text-[#6135FB] font-semibold leading-[24px] text-[16px] md:text-[18px]">

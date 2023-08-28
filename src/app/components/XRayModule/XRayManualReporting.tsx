@@ -16,7 +16,7 @@ const XRayManualReporting = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="px-8 py-7 bg-white rounded-lg text-[#3F465D] shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
-            <p className="text-[28px] font-bold leading-[36px] mb-2">
+            <p className="text-[1.25rem] xl:text-[1.65rem] 2xl:text-[1.75rem] font-bold leading-[1.875rem] 2xl:leading-[2.25rem] mb-2">
               Time-consuming
             </p>
             <p className="text-[18px] font-semibold leading-[24px]">
@@ -24,7 +24,7 @@ const XRayManualReporting = () => {
             </p>
           </div>
           <div className="px-8 py-7 bg-white rounded-lg text-[#3F465D] shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
-            <p className="text-[28px] font-bold leading-[36px] mb-2">
+            <p className="text-[1.25rem] xl:text-[1.65rem] 2xl:text-[1.75rem] font-bold leading-[1.875rem] 2xl:leading-[2.25rem] mb-2">
               Out-of-date
             </p>
             <p className="text-[18px] font-semibold leading-[24px]">
@@ -32,7 +32,7 @@ const XRayManualReporting = () => {
             </p>
           </div>
           <div className="px-8 py-7 bg-white rounded-lg text-[#3F465D] shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
-            <p className="text-[28px] font-bold leading-[36px] mb-2">
+            <p className="text-[1.25rem] xl:text-[1.65rem] 2xl:text-[1.75rem] font-bold leading-[1.875rem] 2xl:leading-[2.25rem] mb-2">
               Incomplete
             </p>
             <p className="text-[18px] font-semibold leading-[24px]">
@@ -40,7 +40,7 @@ const XRayManualReporting = () => {
             </p>
           </div>
           <div className="px-8 py-7 bg-white rounded-lg text-[#3F465D] shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
-            <p className="text-[28px] font-bold leading-[36px] mb-2">
+            <p className="text-[1.25rem] xl:text-[1.65rem] 2xl:text-[1.75rem] font-bold leading-[1.875rem] 2xl:leading-[2.25rem] mb-2">
               Innacurate
             </p>
             <p className="text-[18px] font-semibold leading-[24px]">
