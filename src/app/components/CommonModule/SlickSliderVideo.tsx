@@ -59,12 +59,38 @@ const SlickSliderVideo: React.FC = () => {
 
   const settings = {
     className: "center",
-    centerMode: window.innerWidth > 768,
+    centerMode: true,
     infinite: true,
     arrows: false,
     centerPadding: "50px",
     slidesToShow: 1,
     speed: 500,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          className: "center",
+          centerMode: false,
+          infinite: true,
+          arrows: false,
+          centerPadding: "50px",
+          slidesToShow: 1,
+          speed: 500,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          className: "center",
+          centerMode: false,
+          infinite: true,
+          arrows: false,
+          centerPadding: "50px",
+          slidesToShow: 1,
+          speed: 500,
+        },
+      },
+    ],
   };
 
   return (
