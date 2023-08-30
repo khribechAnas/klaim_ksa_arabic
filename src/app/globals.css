@@ -753,6 +753,9 @@
 .bg-linear {
   background: linear-gradient(135deg, #6135fb 0%, #41d8b6 100%);
 }
+.bg-linear-table {
+  background: linear-gradient(135deg, #6135fb 0%, #41d8b6 100%);
+}
 .text-linear {
   background: -webkit-linear-gradient(135deg, #6135fb 0%, #41d8b6 100%);
   -webkit-background-clip: text;
