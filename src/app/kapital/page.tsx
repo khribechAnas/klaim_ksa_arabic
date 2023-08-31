@@ -12,6 +12,7 @@ import KapitalCardsBanner2 from "../components/KapitalModule/KapitalCardsBanner2
 import KapitalAccelerate from "../components/KapitalModule/KapitalAccelerate";
 import KapitalFAQ from "../components/KapitalModule/KapitalFAQ";
 import KapitalTable from "../components/KapitalModule/KapitalTable";
+import KapitalHowItWorks from "../components/KapitalModule/KapitalHowItWorks";
 
 const KapitalPage = () => {
   return (
@@ -22,6 +23,7 @@ const KapitalPage = () => {
       <KapitalBanner />
       <KapitalMeanwhile />
       <KapitalWhatWould />
+      <KapitalHowItWorks />
       <KapitalCardsBanner />
       <KapitalTestimonials />
       <KapitalTable />
