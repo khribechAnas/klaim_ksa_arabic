@@ -140,7 +140,7 @@ const KapitalTable = () => {
               <td className="px-6 py-4 flex text-[1.125rem] font-semibold leading-[1.5rem]">
                 {" "}
                 <img src="assets/images/check.svg" className="mr-6" /> As little
-                as 7 days
+                as 5-7 business days
               </td>
             </tr>
             <tr className="border-b-4 border-[#3F465D] h-[5rem] flex flex-col justify-center">

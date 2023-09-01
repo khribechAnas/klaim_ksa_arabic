@@ -15,11 +15,11 @@ const KapitalMeanwhile = () => {
             <div className="px-8 py-7 bg-[#F5F7FB] rounded-lg">
               <h2 className="text-2xl md:text-[2rem] 2xl:text-[32px] font-bold leading-[36px] md:leading-[2.5rem] text-[#3F465D]">
                 <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-                  Invest
+                  Run
                 </span>{" "}
               </h2>
               <p className="text-[1.375rem] font-normal leading-[1.875rem] text-[#3F465D]">
-                in growth
+                seamless operations
               </p>
             </div>
             <div className="px-8 py-7 bg-[#F5F7FB] rounded-lg">

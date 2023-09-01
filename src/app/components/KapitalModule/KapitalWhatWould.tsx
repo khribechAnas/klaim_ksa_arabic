@@ -18,7 +18,7 @@ const KapitalWhatWould = () => {
           <div className="bg-white rounded-lg shadow-[0_0_16px_0_rgba(0,0,0,0.05)] px-8 py-7">
             <img src="assets/images/kapital2.svg" />
             <p className="text-[#3F465D] text-[1.375rem] leading-[1.875rem] mt-8">
-              Accelerate your revenue cycle from 45+ days to <br /> 48 hours
+              Accelerate your revenue cycle from 30+ days to <br /> 48 hours
             </p>
           </div>
           <div className="bg-white rounded-lg shadow-[0_0_16px_0_rgba(0,0,0,0.05)] px-8 py-7">
