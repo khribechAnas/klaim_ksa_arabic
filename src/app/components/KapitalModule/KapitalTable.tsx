@@ -5,7 +5,7 @@ const KapitalTable = () => {
   return (
     <section className="bg-[#3F465D]">
       <div className="container mx-auto py-12 md:py-32 px-4 md:px-0">
-        <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] leading-[130%] text-white mb-4 md:mb-8 hidden md:block">
+        <h2 className="text-3xl md:text-5xl font-semibold leading-[2.25rem] md:leading-[3.9rem] text-white mb-4 md:mb-8 hidden md:block">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
             How does Klaim Kapital
           </span>
@@ -161,7 +161,7 @@ const KapitalTable = () => {
         </div>
         <div className="text-center py-4">
           <a className="bg-[#F5F7FB] text-[#6135FB] rounded-lg py-4 px-6 text-sm md:text-lg font-bold leading-4 tracking-[0.0225rem]">
-            I'm interested
+            I&#39;m interested
           </a>
         </div>
       </div>

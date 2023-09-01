@@ -6,7 +6,7 @@ const KapitalMeanwhile = () => {
       <h2 className="text-3xl md:text-5xl font-semibold leading-[130%] text-[#3F465D]">
         Meanwhile, <br className="hidden md:block" />
         <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-          you're working hard to...
+          you&#39;re working hard to...
         </span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 mt-8">
