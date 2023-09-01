@@ -95,7 +95,6 @@ const Header = () => {
             </li>
             <li
               className={`has-submenu parent-parent-menu-item ${
-                pathname == "/about" ||
                 pathname == "/x-ray" ||
                 pathname == "/kapital" ||
                 pathname.startsWith("/blog")
@@ -104,20 +103,10 @@ const Header = () => {
               }`}
             >
               <Link href="#" onClick={toggleMobileDropdown}>
-                About Us
+                Services
               </Link>
               <span className="menu-arrow"></span>
               <ul className={`submenu ${classOpen ? "open" : ""}`}>
-                <li className={pathname == "/about" ? "active" : ""}>
-                  <Link
-                    href="/about"
-                    className={`sub-menu-item ${
-                      pathname == "/about" ? "active" : ""
-                    }`}
-                  >
-                    About Klaim
-                  </Link>
-                </li>
                 <li className={pathname == "/x-ray" ? "active" : ""}>
                   <Link
                     href="/x-ray"
@@ -136,6 +125,30 @@ const Header = () => {
                     }`}
                   >
                     Klaim Kapital
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li
+              className={`has-submenu parent-parent-menu-item ${
+                pathname == "/about" || pathname.startsWith("/blog")
+                  ? "active"
+                  : ""
+              }`}
+            >
+              <Link href="#" onClick={toggleMobileDropdown}>
+                About Us
+              </Link>
+              <span className="menu-arrow"></span>
+              <ul className={`submenu ${classOpen ? "open" : ""}`}>
+                <li className={pathname == "/about" ? "active" : ""}>
+                  <Link
+                    href="/about"
+                    className={`sub-menu-item ${
+                      pathname == "/about" ? "active" : ""
+                    }`}
+                  >
+                    About Klaim
                   </Link>
                 </li>
               </ul>

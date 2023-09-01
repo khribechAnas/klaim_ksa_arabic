@@ -9,10 +9,10 @@ const KapitalMeanwhile = () => {
           you're working hard to...
         </span>
       </h2>
-      <div className="grid grid-cols-2 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-8">
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="px-8 py-7 bg-[#F5F7FB] rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center md:text-start">
+            <div className="px-4 md:px-8 py-2 md:py-7 bg-[#F5F7FB] rounded-lg">
               <h2 className="text-2xl md:text-[2rem] 2xl:text-[32px] font-bold leading-[36px] md:leading-[2.5rem] text-[#3F465D]">
                 <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                   Run
@@ -22,7 +22,7 @@ const KapitalMeanwhile = () => {
                 seamless operations
               </p>
             </div>
-            <div className="px-8 py-7 bg-[#F5F7FB] rounded-lg">
+            <div className="px-4 md:px-8 py-2 md:py-7 bg-[#F5F7FB] rounded-lg">
               <h2 className="text-2xl md:text-[2rem] 2xl:text-[32px] font-bold leading-[36px] md:leading-[2.5rem] text-[#3F465D]">
                 <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                   Improve
@@ -32,7 +32,7 @@ const KapitalMeanwhile = () => {
                 patient experience
               </p>
             </div>
-            <div className="px-8 py-7 bg-[#F5F7FB] rounded-lg">
+            <div className="px-4 md:px-8 py-2 md:py-7 bg-[#F5F7FB] rounded-lg">
               <h2 className="text-2xl md:text-[2rem] 2xl:text-[32px] font-bold leading-[36px] md:leading-[2.5rem] text-[#3F465D]">
                 <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                   Attract
@@ -42,7 +42,7 @@ const KapitalMeanwhile = () => {
                 top-tier talent
               </p>
             </div>
-            <div className="px-8 py-7 bg-[#F5F7FB] rounded-lg">
+            <div className="px-4 md:px-8 py-2 md:py-7 bg-[#F5F7FB] rounded-lg">
               <h2 className="text-2xl md:text-[2rem] 2xl:text-[32px] font-bold leading-[36px] md:leading-[2.5rem] text-[#3F465D]">
                 <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                   Entice
@@ -53,7 +53,7 @@ const KapitalMeanwhile = () => {
               </p>
             </div>
           </div>
-          <div className="mt-8 text-[#3F465D] text-[1.75rem] leading-[2.25rem]">
+          <div className="mt-8 mb-4 md:mb-0 text-[#3F465D] text-[1.25rem] md:text-[1.75rem] leading-[1.875rem] md:leading-[2.25rem]">
             Without reliable cash flow, achieving your top objectives becomes
             nearly impossible.
           </div>

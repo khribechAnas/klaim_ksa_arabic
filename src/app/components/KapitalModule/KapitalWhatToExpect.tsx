@@ -9,7 +9,7 @@ const KapitalWhatToExpect = () => {
           What to expect
         </span>
       </h2>
-      <div className="grid grid-cols-4 mt-8">
+      <div className="hidden md:grid grid-cols-4 mt-8">
         <div className="flex items-center">
           <div className="px-4 py-3 flex flex-col items-center rounded-lg bg-gradient-to-r from-[#6135fb] to-[#5f3ff7] w-[5rem]">
             <p className="text-white text-[2.625rem] font-bold leading-[3.4125rem]">
@@ -42,7 +42,57 @@ const KapitalWhatToExpect = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-4 mt-[1.06rem]">
+
+      {/* Mobile Start*/}
+      <div className="block md:hidden mt-4 mb-16 grid grid-cols-1">
+        <div className="flex items-center">
+          <div className="px-4 py-3 flex flex-col items-center rounded-lg bg-gradient-to-b from-[#6138fa] to-[#5b52ef] w-[5rem]">
+            <p className="text-white text-[2.625rem] font-bold leading-[3.4125rem]">
+              01
+            </p>
+          </div>
+          <p className="text-[1.125rem] leading-[1.625rem] text-[#3F465D] ml-4">
+            Let us know
+            <br /> you’re interested
+          </p>
+        </div>
+        <div className="h-[4rem] w-1 bg-gradient-to-b from-[#5b52ef] to-[#5764e7] ml-10" />
+        <div className="flex items-center">
+          <div className="px-4 py-3 flex flex-col items-center rounded-lg bg-gradient-to-b from-[#5764e7] to-[#537ddc] w-[5rem]">
+            <p className="text-white text-[2.625rem] font-bold leading-[3.4125rem]">
+              02
+            </p>
+          </div>
+          <p className="text-[1.125rem] leading-[1.625rem] text-[#3F465D] ml-4">
+            Get a no-cost Claim <br /> Purchase Proposal
+          </p>
+        </div>
+        <div className="h-[4rem] w-1 bg-gradient-to-b from-[#537ddc] to-[#5090d5] ml-10" />
+        <div className="flex items-center">
+          <div className="px-4 py-3 flex flex-col items-center rounded-lg bg-gradient-to-b from-[#5090d5] to-[#4aa9ca] w-[5rem]">
+            <p className="text-white text-[2.625rem] font-bold leading-[3.4125rem]">
+              03
+            </p>
+          </div>
+          <p className="text-[1.125rem] leading-[1.625rem] text-[#3F465D] ml-4">
+            Onboard with us <br /> in as little as 5-7 days
+          </p>
+        </div>
+        <div className="h-[4rem] w-1 bg-gradient-to-b from-[#4aa9ca] to-[#46bbc2] ml-10" />
+        <div className="flex items-center">
+          <div className="px-4 py-3 flex flex-col items-center rounded-lg bg-gradient-to-b from-[#46bbc2] to-[#42d4b7] w-[5rem]">
+            <p className="text-white text-[2.625rem] font-bold leading-[3.4125rem]">
+              04
+            </p>
+          </div>
+          <p className="text-[1.125rem] leading-[1.625rem] text-[#3F465D] ml-4">
+            Start getting 48-hour claim <br /> payments
+          </p>
+        </div>
+      </div>
+      {/* Mobile End */}
+
+      <div className="hidden md:grid grid-cols-4 mt-[1.06rem]">
         <p className="text-[1.375rem] leading-[1.875rem] text-[#3F465D]">
           Let us know
           <br /> you’re interested
