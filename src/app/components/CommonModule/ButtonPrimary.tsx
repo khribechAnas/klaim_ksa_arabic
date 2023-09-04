@@ -8,7 +8,7 @@ interface ButtonPrimaryProps {
 const ButtonPrimary: FC<ButtonPrimaryProps> = ({ title, className }) => {
   return (
     <a
-      className={`bg-[#6135FB] text-white rounded-lg py-4 px-6 text-sm md:text-lg font-bold leading-4 tracking-tighter tracking-[0.02em] ${className}`}
+      className={`bg-[#6135FB] text-white rounded-lg py-4 px-6 text-sm md:text-lg font-bold leading-4 tracking-[0.0225rem] ${className}`}
     >
       {title}
     </a>

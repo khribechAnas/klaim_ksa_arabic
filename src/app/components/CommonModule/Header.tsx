@@ -95,9 +95,43 @@ const Header = () => {
             </li>
             <li
               className={`has-submenu parent-parent-menu-item ${
-                pathname == "/about" ||
                 pathname == "/x-ray" ||
+                pathname == "/kapital" ||
                 pathname.startsWith("/blog")
+                  ? "active"
+                  : ""
+              }`}
+            >
+              <Link href="#" onClick={toggleMobileDropdown}>
+                Services
+              </Link>
+              <span className="menu-arrow"></span>
+              <ul className={`submenu ${classOpen ? "open" : ""}`}>
+                <li className={pathname == "/x-ray" ? "active" : ""}>
+                  <Link
+                    href="/x-ray"
+                    className={`sub-menu-item ${
+                      pathname == "/x-ray" ? "active" : ""
+                    }`}
+                  >
+                    Klaim X-Ray
+                  </Link>
+                </li>
+                <li className={pathname == "/kapital" ? "active" : ""}>
+                  <Link
+                    href="/kapital"
+                    className={`sub-menu-item ${
+                      pathname == "/kapital" ? "active" : ""
+                    }`}
+                  >
+                    Klaim Kapital
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li
+              className={`has-submenu parent-parent-menu-item ${
+                pathname == "/about" || pathname.startsWith("/blog")
                   ? "active"
                   : ""
               }`}
@@ -115,16 +149,6 @@ const Header = () => {
                     }`}
                   >
                     About Klaim
-                  </Link>
-                </li>
-                <li className={pathname == "/x-ray" ? "active" : ""}>
-                  <Link
-                    href="/x-ray"
-                    className={`sub-menu-item ${
-                      pathname == "/x-ray" ? "active" : ""
-                    }`}
-                  >
-                    Klaim X-Ray
                   </Link>
                 </li>
               </ul>
