@@ -4,6 +4,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+interface SlickSliderProps {
+  isWhite?: boolean;
+}
+
 const testimonials = [
   {
     testimonial:
@@ -47,7 +51,7 @@ const testimonials = [
   },
 ];
 
-const SlickSlider: React.FC = () => {
+const SlickSlider: React.FC<SlickSliderProps> = ({ isWhite }) => {
   const sliderRef = useRef<Slider | null>(null);
 
   const next = () => {
@@ -101,7 +105,13 @@ const SlickSlider: React.FC = () => {
         {testimonials.map((testimonial) => {
           return (
             <div key={testimonial.key}>
-              <div className="pb-7 md:pb-8 pt-7 md:pt-12 px-6 mx-1 md:mx-2 bg-[#F5F7FB] rounded-lg">
+              <div
+                className={`pb-7 md:pb-8 pt-7 md:pt-12 px-6 mx-1 md:mx-2 ${
+                  isWhite
+                    ? "bg-white shadow-[0_0_16px_0_rgba(0,0,0,0.05)]"
+                    : "bg-[#F5F7FB]"
+                } rounded-lg`}
+              >
                 <p className="text-[14px] md:text-[16px] leading-[25px] text-[#3F465D]">
                   {testimonial.testimonial}
                 </p>

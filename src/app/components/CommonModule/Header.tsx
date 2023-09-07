@@ -97,6 +97,7 @@ const Header = () => {
               className={`has-submenu parent-parent-menu-item ${
                 pathname == "/x-ray" ||
                 pathname == "/kapital" ||
+                pathname == "/inspector" ||
                 pathname.startsWith("/blog")
                   ? "active"
                   : ""
@@ -125,6 +126,16 @@ const Header = () => {
                     }`}
                   >
                     Klaim Kapital
+                  </Link>
+                </li>
+                <li className={pathname == "/inspector" ? "active" : ""}>
+                  <Link
+                    href="/inspector"
+                    className={`sub-menu-item ${
+                      pathname == "/inspector" ? "active" : ""
+                    }`}
+                  >
+                    Klaim Inspector
                   </Link>
                 </li>
               </ul>
