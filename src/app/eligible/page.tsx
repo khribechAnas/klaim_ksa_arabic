@@ -7,6 +7,9 @@ import EligibleFastAndEasy from "../components/EligibleModule/EligibleFastAndEas
 import EligibleBulkEligibility from "../components/EligibleModule/EligibleBulkEligibility";
 import EligibleBanner from "../components/EligibleModule/EligibleBanner";
 import EligibleTrustedByTestimonials from "../components/EligibleModule/EligibleTrustedByTestimonials";
+import EligibleCardBanner from "../components/EligibleModule/EligibleCardBanner";
+import EligibleReadyFor from "../components/EligibleModule/EligibleReadyFor";
+import EligibleFAQ from "../components/EligibleModule/EligibleFAQ";
 
 const EligiblePage = () => {
   return (
@@ -18,6 +21,9 @@ const EligiblePage = () => {
       <EligibleBulkEligibility />
       <EligibleBanner />
       <EligibleTrustedByTestimonials />
+      <EligibleCardBanner />
+      <EligibleReadyFor />
+      <EligibleFAQ />
       <Footer />
     </>
   );

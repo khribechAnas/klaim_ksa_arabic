@@ -38,24 +38,24 @@ const FAQ: FC<FAQComponentProps> = ({ questions }) => {
   const downArrow = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="16"
+      width="14.728"
       height="17"
-      viewBox="0 0 16 17"
-      fill="none"
+      viewBox="0 0 14.728 17"
     >
       <path
-        d="M8.70711 16.7071C9.09763 17.0976 9.7308 17.0976 10.1213 16.7071L16.4853 10.3431C16.8758 9.95262 16.8758 9.31946 16.4853 8.92893C16.0948 8.53841 15.4616 8.53841 15.0711 8.92893L9.41421 14.5858L3.75736 8.92893C3.36683 8.53841 2.73367 8.53841 2.34315 8.92893C1.95262 9.31946 1.95262 9.95262 2.34315 10.3431L8.70711 16.7071ZM7 16L7 0L9 0L9 16L7 16Z"
+        d="M8.707.293a1,1,0,0,0-1.414,0L.929,6.657A1,1,0,0,0,2.343,8.071L8,2.414l5.657,5.657a1,1,0,0,0,1.414-1.414ZM7,1V17H9V1Z"
+        transform="translate(15.364 17) rotate(180)"
         fill="#3F465D"
       />
     </svg>
   );
 
   return (
-    <div className="space-y-2 md:space-y-4 px-0 md:px-28">
+    <div className="space-y-2 md:space-y-4 px-0 xl:px-28">
       {questions.map((question, index) => (
         <div
           key={index}
-          className="bg-[#F5F7FB] px-7 py-4 md:px-8 md:py-6 rounded-lg"
+          className="bg-[#F5F7FB] pl-7 pr-3 py-4 md:pl-8 md:pr-4 md:py-6 rounded-lg"
         >
           <div
             className="flex items-center justify-between cursor-pointer"
@@ -65,7 +65,7 @@ const FAQ: FC<FAQComponentProps> = ({ questions }) => {
               {question.title}
             </h2>
             <span
-              className={`transform transition-transform ${
+              className={`transform transition-transform p-4 ${
                 activeIndex === index ? "rotate-60" : ""
               }`}
             >
@@ -75,8 +75,10 @@ const FAQ: FC<FAQComponentProps> = ({ questions }) => {
           {activeIndex === index && (
             <div
               className="mt-4 text-[#3F465D] text-sm md:text-base leading-[25px]"
-              dangerouslySetInnerHTML={{ __html: question.answer }}
-            />
+              // dangerouslySetInnerHTML={{ __html: question.answer }}
+            >
+              {question.answer}
+            </div>
           )}
         </div>
       ))}

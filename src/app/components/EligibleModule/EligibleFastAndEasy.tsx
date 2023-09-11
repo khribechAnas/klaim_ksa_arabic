@@ -6,7 +6,7 @@ const EligibleFastAndEasy = () => {
       <div className="container mx-auto py-12 md:py-32 px-4 md:px-0">
         <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D]">
           <span className="mr-2 bg-clip-text text-transparent bg-gradient-to-r from-[#5186d9] to-[#42d9b7]">
-            Bulk checking and more
+            Fast and easy upgrade
           </span>
         </h2>
         <p className="text-white text-[1.75rem] leading-[2.25rem] my-8">
