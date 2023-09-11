@@ -2,6 +2,9 @@ import moment from "moment";
 import React from "react";
 
 const HRArticleDetails = ({ article }) => {
+  const regex = /<img src="\/uploads\/(.*?)"/g;
+  const replacement = `<img style="max-width: 100%" src="${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}/uploads/$1"`;
+
   return (
     <section class="bg-half-170 d-table w-100">
       <div class="container">
@@ -29,7 +32,10 @@ const HRArticleDetails = ({ article }) => {
                 </div>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: article.attributes.content,
+                    __html: article.attributes.content.replace(
+                      regex,
+                      replacement
+                    ),
                   }}
                 />
               </div>
