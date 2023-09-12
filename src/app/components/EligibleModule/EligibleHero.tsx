@@ -27,7 +27,7 @@ const EligibleHero = () => {
           </div>
           <div className="flex-1 block xl:hidden mt-4 lg:mt-0">
             <img
-              src="assets/images/kapital-hero-1.png"
+              src="assets/images/eligible-hero-mobile.png"
               className="h-full object-cover"
             />
           </div>

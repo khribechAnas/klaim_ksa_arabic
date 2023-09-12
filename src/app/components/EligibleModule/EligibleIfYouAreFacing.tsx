@@ -10,7 +10,7 @@ const EligibleIfYouAreFacing = () => {
             If you’re facing…
           </span>
         </h2>
-        <div className="grid grid-cols-4 gap-4 mt-8 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mt-8 mb-12 xl:mb-32">
           <div className="flex flex-col border rounded-[0.625rem]">
             <img src="assets/images/eligible-card1.png" />
             <p className="px-6 py-4 text-[1.375rem] leading-[1.875rem] text-[#3F465D]">

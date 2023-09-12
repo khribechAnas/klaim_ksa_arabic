@@ -5,16 +5,17 @@ const EligibleReadyFor = () => {
   return (
     <section className="bg-[#F5F7FB]">
       <div className="container mx-auto py-12 md:py-32 px-4 md:px-0">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div>
             <h2 className="text-[2.25rem] md:text-[3.75rem] font-semibold xl:font-bold leading-[2.75rem] xl:leading-[4.375rem] -tracking-[0.0675] xl:-tracking-[0.1125rem] text-[#3F465D] mb-8">
               Ready for <br className="hidden md:block" />
-              <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
+              <span className="mr-2 lg:mr-0 bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                 happier patients
               </span>
-              <br />
+              <br className="hidden lg:block" />
               and
-              <span className="ml-3 bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
+              <br className="block lg:hidden" />
+              <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                 reliable cash flow?
               </span>
             </h2>

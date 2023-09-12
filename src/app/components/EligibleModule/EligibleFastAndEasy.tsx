@@ -4,12 +4,12 @@ const EligibleFastAndEasy = () => {
   return (
     <section className="bg-[#3F465D]">
       <div className="container mx-auto py-12 md:py-32 px-4 md:px-0">
-        <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D]">
-          <span className="mr-2 bg-clip-text text-transparent bg-gradient-to-r from-[#5186d9] to-[#42d9b7]">
+        <h2 className="text-[1.875rem] md:text-5xl font-semibold leading-[2.25rem] md:leading-[3.9rem] text-[#3F465D]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#5186d9] to-[#42d9b7]">
             Fast and easy upgrade
           </span>
         </h2>
-        <p className="text-white text-[1.75rem] leading-[2.25rem] my-8">
+        <p className="text-white text-[1.25rem] md:text-[1.75rem] leading-[1.875rem] md:leading-[2.25rem] my-8">
           With Klaim Eligible, your staff will be able to…
         </p>
         <div className="text-white grid grid-cols-1 md:grid-cols-3 gap-4">
