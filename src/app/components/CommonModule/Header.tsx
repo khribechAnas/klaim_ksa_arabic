@@ -99,6 +99,7 @@ const Header = () => {
                 pathname == "/kapital" ||
                 pathname == "/inspector" ||
                 pathname == "/eligible" ||
+                pathname == "/rcm" ||
                 pathname.startsWith("/blog")
                   ? "active"
                   : ""
@@ -147,6 +148,16 @@ const Header = () => {
                     }`}
                   >
                     Klaim Eligible
+                  </Link>
+                </li>
+                <li className={pathname == "/rcm" ? "active" : ""}>
+                  <Link
+                    href="/rcm"
+                    className={`sub-menu-item ${
+                      pathname == "/rcm" ? "active" : ""
+                    }`}
+                  >
+                    Klaim RCM 2.0
                   </Link>
                 </li>
               </ul>
