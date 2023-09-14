@@ -3,10 +3,10 @@ import ButtonPrimary from "../CommonModule/ButtonPrimary";
 
 const RcmHero = () => {
   return (
-    <section className="pt-[75px]">
+    <section className="h-auto pt-[75px]">
       <div className="flex flex-col h-full">
         <div className="flex-1 flex flex-col lg:flex-row">
-          <div className="flex-1 block xl:hidden flex flex-col items-start justify-center md:px-0 px-4 pt-4 md:pt-0">
+          <div className="flex-1 block xl:hidden flex flex-col items-start justify-center px-4 pt-4 md:pt-0 lg:my-12 xl:my-0">
             <p className="text-[#6135FB] leading-[1.5rem] text-[16px] md:text-lg font-semibold">
               RCM 2.0
             </p>
@@ -26,7 +26,7 @@ const RcmHero = () => {
           <div className="flex-1 block xl:hidden mt-4 lg:mt-0">
             <img
               src="assets/images/rcm-hero-mobile.png"
-              className="h-full object-cover"
+              className="w-full lg:h-full object-cover"
             />
           </div>
           <div
@@ -37,7 +37,7 @@ const RcmHero = () => {
               backgroundSize: "cover",
             }}
           >
-            <div className="container mx-auto grid grid-cols-2 h-full">
+            <div className="container mx-auto grid grid-cols-2 h-full px-4">
               <div className="flex flex-col items-start justify-center md:px-0 px-4 pt-16 md:pt-0 my-0 md:my-32">
                 <p className="text-[#6135FB] leading-[1.5rem] text-[16px] md:text-lg font-semibold">
                   RCM 2.0

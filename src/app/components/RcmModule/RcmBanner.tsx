@@ -3,7 +3,7 @@ import React from "react";
 const RcmBanner = () => {
   return (
     <section className="bg-[#F5F7FB]">
-      <div className="container mx-auto py-12 md:py-32 px-4 xl:px-0">
+      <div className="container mx-auto py-12 md:py-32 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg bg-white shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
             <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
