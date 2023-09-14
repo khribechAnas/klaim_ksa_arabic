@@ -9,7 +9,7 @@ const HRArticleDetails = ({ article }) => {
     <section class="bg-half-170 d-table w-100">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-md-7">
+          <div class="col-lg-12 col-md-12">
             <div class="card border-0 shadow rounded overflow-hidden">
               <img
                 src={`${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}${article.attributes.featuredImage.data.attributes.url}`}
