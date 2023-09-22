@@ -25,7 +25,7 @@ const XRaySmartDecisions = () => {
           <p className="text-[#3F465D] font-semibold text-[16px] md:text-[18px] leading-[24px] mt-4 mb-8">
             That’s why Klaim X-Ray is one of our most popular solutions!
           </p>
-          <ButtonPrimary title="I'm interested!" />
+          <ButtonPrimary title="Learn More" />
         </div>
         <img
           src="assets/images/xray4.png"

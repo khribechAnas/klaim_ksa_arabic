@@ -45,7 +45,7 @@ const InspectorBulkChecking = () => {
           </div>
         </div>
         <div className="py-4 mt-8 md:mt-0">
-          <ButtonWhite />
+          <ButtonWhite title="Learn More" />
         </div>
       </div>
     </section>

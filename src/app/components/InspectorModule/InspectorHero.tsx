@@ -33,7 +33,7 @@ const InspectorHero = () => {
               detects data-filling errors and automatically compares diagnoses
               with provided services for higher acceptance rates.
             </p>
-            <ButtonPrimary title="Get Started" />
+            <ButtonPrimary title="Talk to an expert" />
           </div>
         </div>
       </div>

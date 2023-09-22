@@ -20,7 +20,7 @@ const AboutUsWhatWeDo = () => {
           <p className="text-[16px] leading-[25px] text-[#3F465D] mb-8">
             We work to restore a balance of power between providers and
             insurance companies by converting pending claims into working
-            capital within 48 hours of submission. This liberates providers to
+            capital within 24 hours of submission. This liberates providers to
             get back to what’s important: caring for patients.
           </p>
           <p className="text-[16px] leading-[25px] text-[#3F465D] mb-8">

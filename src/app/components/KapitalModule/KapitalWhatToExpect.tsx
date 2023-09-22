@@ -86,7 +86,7 @@ const KapitalWhatToExpect = () => {
             </p>
           </div>
           <p className="text-[1.125rem] leading-[1.625rem] text-[#3F465D] ml-4">
-            Start getting 48-hour claim <br /> payments
+            Start getting 24-hour claim <br /> payments
           </p>
         </div>
       </div>
@@ -105,11 +105,11 @@ const KapitalWhatToExpect = () => {
           <br /> in as little as 5-7 days
         </p>
         <p className="text-[1.375rem] leading-[1.875rem] text-[#3F465D]">
-          Start getting 48-hour <br /> claim payments
+          Start getting 24-hour <br /> claim payments
         </p>
       </div>
       <div className="py-4 mt-8">
-        <ButtonPrimary title="I'm interested!" />
+        <ButtonPrimary title="Sign Up Today" />
       </div>
     </section>
   );

@@ -150,7 +150,7 @@ const Header = () => {
                     Klaim Eligible
                   </Link>
                 </li>
-                <li className={pathname == "/rcm" ? "active" : ""}>
+                {/* <li className={pathname == "/rcm" ? "active" : ""}>
                   <Link
                     href="/rcm"
                     className={`sub-menu-item ${
@@ -159,7 +159,7 @@ const Header = () => {
                   >
                     Klaim RCM 2.0
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </li>
             <li
