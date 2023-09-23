@@ -28,7 +28,7 @@ const XRayHero = () => {
               reporting with comprehensive real-time reporting. See
               up-to-the-minute data at a glance.
             </p>
-            <ButtonPrimary title="I'm interested!" />
+            <ButtonPrimary title="Talk to an expert" />
           </div>
         </div>
       </div>

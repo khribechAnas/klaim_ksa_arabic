@@ -9,7 +9,7 @@ const KapitalWhatWould = () => {
           What would you do with
           <br />
           <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-            48-hour claim payments?
+            24-hour claim payments?
           </span>
         </h2>
         <div className="mt-4 md:mt-8 mb-8 text-[#3F465D] text-[1.25rem] md:text-[1.75rem] leading-[1.875rem] md:leading-[2.25rem]">
@@ -20,7 +20,7 @@ const KapitalWhatWould = () => {
             <img src="assets/images/kapital2.svg" />
             <p className="text-[#3F465D] text-[1.125rem] md:text-[1.375rem] leading-[1.625rem] md:leading-[1.875rem] ml-8 mt-0 md:mt-8 md:ml-0">
               Accelerate your revenue cycle from 30+ days to{" "}
-              <br className="hidden md:block" /> 48 hours
+              <br className="hidden md:block" /> 24 hours
             </p>
           </div>
           <div className="bg-white rounded-lg shadow-[0_0_16px_0_rgba(0,0,0,0.05)] px-8 py-7 flex md:block">
@@ -46,7 +46,7 @@ const KapitalWhatWould = () => {
           </div>
         </div>
         <div className="py-4 mt-8">
-          <ButtonPrimary title="I'm interested!" />
+          <ButtonPrimary title="Learn More" />
         </div>
       </div>
     </section>

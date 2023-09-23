@@ -23,7 +23,7 @@ const EligibleHero = () => {
               and dramatically reduce <br /> claim denials due to
               eligibility-related mistakes.
             </p>
-            <ButtonPrimary title="I'm interested!" />
+            <ButtonPrimary title="Talk to an expert" />
           </div>
           <div className="flex-1 block xl:hidden mt-4 lg:mt-0">
             <img
@@ -37,6 +37,7 @@ const EligibleHero = () => {
               backgroundImage: "url('assets/images/eligible-hero.png')",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
+              backgroundPosition: "80%",
             }}
           >
             <div className="container mx-auto grid grid-cols-2 h-full">
@@ -57,7 +58,7 @@ const EligibleHero = () => {
                   costs, and dramatically reduce <br /> claim denials due to
                   eligibility-related mistakes.
                 </p>
-                <ButtonPrimary title="Get started" />
+                <ButtonPrimary title="Talk to an expert" />
               </div>
             </div>
           </div>

@@ -25,11 +25,11 @@ const KapitalHero = () => {
               Stabilize Cash Flow and Boost Profitability
             </h1>
             <p className="text-[14px] md:text-base leading-[1.5625rem] text-[#3F465D] mr-0 md:pr-36 my-4 md:my-7">
-              With Klaim Kapital, you’ll get claim payments within 48 hours of
+              With Klaim Kapital, you’ll get claim payments within 24 hours of
               submission—no loans or financing required. Get started in as
               little as 7 days.
             </p>
-            <ButtonPrimary title="I'm interested!" />
+            <ButtonPrimary title="Talk to an expert" />
           </div>
         </div>
       </div>

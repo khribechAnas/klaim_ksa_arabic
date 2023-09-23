@@ -15,7 +15,7 @@ const EligibleReadyFor = () => {
               <br className="hidden lg:block" />
               and
               <br className="block lg:hidden" />
-              <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
+              <span className="ml-2 bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
                 reliable cash flow?
               </span>
             </h2>
@@ -28,7 +28,7 @@ const EligibleReadyFor = () => {
               in your business.
             </p>
             <div className="py-4">
-              <ButtonPrimary title="I'm interested!" />
+              <ButtonPrimary title="Get a call back" />
             </div>
           </div>
           <div className="flex items-center justify-end">

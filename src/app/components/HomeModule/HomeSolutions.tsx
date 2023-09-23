@@ -11,7 +11,7 @@ const HomeSolutions = () => {
             Explore our solutions
           </span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 md:mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="py-8 px-8 md:py-12 md:px-16 rounded-lg bg-white">
             <div className="flex items-center mb-8">
               <img src="assets/images/Solution1.svg" />
@@ -20,10 +20,10 @@ const HomeSolutions = () => {
               </h3>
             </div>
             <h4 className="text-[20px] md:text-[32px] text-[#3F465D] font-bold leading-[30px] md:leading-10 mb-4">
-              48-Hour Claim Payments <br /> (No Loans Required)
+              24-Hour Claim Payments <br /> (No Loans Required)
             </h4>
             <p className="text-[18px] md:text-[22px] text-[#3F465D] leading-[26px] leading-[30px] mb-8">
-              Get claim payments in 48 hours instead of 45+ days.
+              Get claim payments in 24 hours instead of 45+ days.
             </p>
             <div className="flex items-center">
               <ButtonPrimary title="I’m interested!" />
@@ -88,7 +88,7 @@ const HomeSolutions = () => {
             </div>
           </div>
         </div>
-        <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] leading-[130%] text-[#3F465D] mb-4 md:mb-8">
+        {/* <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] leading-[130%] text-[#3F465D] mb-4 md:mb-8">
           Or get our <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
             all-in-one solution...
@@ -131,7 +131,7 @@ const HomeSolutions = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

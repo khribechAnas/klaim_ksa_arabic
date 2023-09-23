@@ -11,22 +11,22 @@ const HomeHero = () => {
   ];
 
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
-  const [isFadingOut, setIsFadingOut] = useState(false);
+  // const [isFadingOut, setIsFadingOut] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsFadingOut(true);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIsFadingOut(true);
 
-      setTimeout(() => {
-        setCurrentSentenceIndex(
-          (prevIndex) => (prevIndex + 1) % sentences.length
-        );
-        setIsFadingOut(false);
-      }, 500);
-    }, 3000); // Change sentence every 3 seconds
+  //     setTimeout(() => {
+  //       setCurrentSentenceIndex(
+  //         (prevIndex) => (prevIndex + 1) % sentences.length
+  //       );
+  //       setIsFadingOut(false);
+  //     }, 500);
+  //   }, 3000); // Change sentence every 3 seconds
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <section className="pt-[74px] ">
@@ -44,15 +44,21 @@ const HomeHero = () => {
               OFFICIAL PARTNERS
             </h3>
             <h1 className="text-[#3F465D] text-4xl md:text-6xl font-semibold leading-[44px] md:leading-[70px] tracking-tighter mt-8 mb-7">
-              You take care of your <br /> patients, we take care of
+              Treat your patient today,
               <br className="block xl:hidden 2xl:block" />
               <span
+                className={`bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] ml-0 xl:ml-3 2xl:ml-0               
+                `}
+              >
+                receive payment tomorrow
+              </span>
+              {/* <span
                 className={`bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] ml-0 xl:ml-3 2xl:ml-0 ${
                   isFadingOut ? "fade-out-word" : "fade-in-word"
                 }`}
               >
                 {sentences[currentSentenceIndex]}
-              </span>
+              </span> */}
             </h1>
             <div className="flex items-center">
               <ButtonPrimary title="See What's Inside" />
