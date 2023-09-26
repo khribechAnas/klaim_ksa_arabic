@@ -31,7 +31,7 @@ const EligibleFAQ = () => {
     },
   ];
   return (
-    <section className="container mx-auto py-12 md:py-36 px-4 xl:px-0">
+    <section className="container mx-auto py-12 md:py-36 px-4">
       <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[70px] mb-4 md:mb-8">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
           FAQs

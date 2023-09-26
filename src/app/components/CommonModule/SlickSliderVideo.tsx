@@ -67,7 +67,7 @@ const SlickSliderVideo: React.FC = () => {
     speed: 500,
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           className: "center",
           centerMode: false,
@@ -149,7 +149,7 @@ const SlickSliderVideo: React.FC = () => {
                 className="pr-0 md:pr-8 -ml-0 md:-ml-10 cursor-pointer rounded-lg"
                 onClick={() => setShowAboutUsVideoModal(video.video)}
               >
-                <div className="mx-0 md:mx-0 rounded-lg">
+                <div className="mx-4 md:mx-0 rounded-lg">
                   <img src={video.img} className="rounded-lg" />
                 </div>
               </div>
@@ -157,6 +157,8 @@ const SlickSliderVideo: React.FC = () => {
           })}
         </Slider>
         <div className="absolute rounded-l-lg top-0 right-0 bottom-[7px] bg-gradient-to-l from-white via-[rgba(255,255,255,0.7)] to-transparent w-[120px] hidden md:block" />
+        {/* <div className="absolute rounded-l-lg top-0 right-0 bottom-[7px] bg-gradient-to-l from-white via-[rgba(255,255,255,0.7)] to-transparent w-[70px] block md:hidden" />
+        <div className="absolute rounded-r-lg top-0 left-0 bottom-[7px] bg-gradient-to-r from-white via-[rgba(255,255,255,0.7)] to-transparent w-[70px] block md:hidden" /> */}
       </div>
       <div className="mt-8 flex items-center justify-end">
         <a className="mr-4 cursor-pointer" onClick={previous}>

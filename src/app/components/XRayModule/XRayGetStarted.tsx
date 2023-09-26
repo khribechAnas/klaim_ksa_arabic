@@ -4,7 +4,7 @@ import ButtonPrimary from "../CommonModule/ButtonPrimary";
 const XRayGetStarted = () => {
   return (
     <section className="bg-[#F5F7FB]">
-      <div className="container mx-auto px-4 md:px-0 pt-12 md:pt-0 grid grid-cols-1 md:grid-cols-2">
+      <div className="container mx-auto px-4 pt-12 lg:pt-0 grid grid-cols-1 lg:grid-cols-2">
         <div className="flex flex-col items-start justify-center">
           <h2 className="text-4xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D]">
             Get started with <br />
@@ -21,7 +21,7 @@ const XRayGetStarted = () => {
           <ButtonPrimary title="Get a call back" />
         </div>
         <div className="flex justify-center">
-          <img src="assets/images/xray5.png" className="mt-8" />
+          <img src="assets/images/xray5.png" className="mt-8 object-cover" />
         </div>
       </div>
     </section>

@@ -2,16 +2,16 @@ import React from "react";
 
 const InspectorClaimDenials = () => {
   return (
-    <section className="container mx-auto py-12 md:py-32 px-4 md:px-0">
+    <section className="container mx-auto py-12 md:py-32 px-4">
       <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D] mb-8">
         86% of claim denials <br />
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
           are avoidable*
         </span>
       </h2>
-      <div className="flex md:flex-row flex-col-reverse">
+      <div className="flex lg:flex-row flex-col-reverse">
         <div className="flex-1 text-[#3F465D] mr-0 md:mr-2">
-          <p className="text-[1.25rem] leading-[1.875rem] md:text-[1.75rem] md:leading-[2.25rem]">
+          <p className="text-[1.25rem] leading-[1.875rem] md:text-[1.75rem] md:leading-[2.25rem] mt-8 lg:mt-0">
             So we created an easy-to-use tool <br /> called Klaim Inspector
             that:
           </p>
@@ -45,8 +45,8 @@ const InspectorClaimDenials = () => {
             </span>
           </p>
         </div>
-        <div className="flex-1 ml-0 md:ml-2 flex items-center justify-center mb-8 md:mb-0">
-          <img src="assets/images/inspector2.png" />
+        <div className="flex-1 ml-0 lg:ml-2 flex items-center justify-center mb-8 md:mb-0 w-full">
+          <img src="assets/images/inspector2.png" className="w-full" />
         </div>
       </div>
     </section>

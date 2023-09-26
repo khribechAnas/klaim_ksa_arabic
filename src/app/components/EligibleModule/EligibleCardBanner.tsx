@@ -2,7 +2,7 @@ import React from "react";
 
 const EligibleCardBanner = () => {
   return (
-    <section className="bg-linear py-8 md:py-24 px-4 md:px-0">
+    <section className="bg-linear py-8 md:py-24 px-4">
       <div className="flex flex-wrap items-center justify-center">
         <div className="px-2 md:px-6 py-4 text-white border-[3px] rounded-lg flex flex-col items-center justify-center w-56">
           <img src="assets/images/Banner1.svg" className="mb-4" />

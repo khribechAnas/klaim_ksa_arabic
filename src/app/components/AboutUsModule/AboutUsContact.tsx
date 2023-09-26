@@ -2,8 +2,8 @@ import React from "react";
 
 const AboutUsContact = () => {
   return (
-    <section className="bg-[#F5F7FB] py-12 md:py-32 px-4 md:px-0">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="bg-[#F5F7FB] py-12 md:py-32 px-4">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
         <div className="px-8 md:px-12 py-7 md:py-10 bg-white rounded-lg">
           <div className="flex items-center mb-8">
             <img src="assets/images/about-us3.svg" />
