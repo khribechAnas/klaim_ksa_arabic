@@ -11,15 +11,8 @@ const ContactUsForm = () => {
   });
   return (
     <section className="pt-[75px]">
-      <div className="container mx-auto py-12 md:py-32 px-4">
-        <section id="contact-us">
-          <h2 className="text-3xl md:text-5xl font-semibold leading-[130%] text-[#fff]">
-            <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-              Contact us
-            </span>
-          </h2>
-        </section>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-12">
+      <div className="container mx-auto pt-12 pb-12 md:pt-12 md:pb-32 px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div
             className="bg-white rounded-lg pl-0 xl:pl-[7rem]"
             id="hubspot-form-wrapper"
