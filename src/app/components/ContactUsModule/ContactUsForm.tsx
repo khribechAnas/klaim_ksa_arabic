@@ -1,5 +1,4 @@
 "use client";
-
 import { useHubspotForm } from "next-hubspot";
 import React from "react";
 

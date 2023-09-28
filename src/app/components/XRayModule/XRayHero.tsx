@@ -19,7 +19,7 @@ const XRayHero = () => {
             <p className="text-[14px] md:text-base leading-[1.5625rem] md:tracking-[0.04rem] text-[#3F465D] pr-0 sm:pr-32 md:pr-28 xl:pr-36 my-4 md:my-7">
               Klaim X-Ray replaces slow, unreliable, and expensive manual
               reporting with comprehensive real-time reporting. See
-              up-to-the-minute data at a glance.
+              up-to-the-minute data at a glance
             </p>
             <ButtonPrimary title="Talk to an expert" />
           </div>
@@ -52,7 +52,7 @@ const XRayHero = () => {
                 <p className="text-[14px] md:text-base leading-[1.5625rem] text-[#3F465D] mr-0 md:pr-[550px] xl:pr-48 my-4 md:my-7">
                   Klaim X-Ray replaces slow, unreliable, and expensive manual
                   reporting with comprehensive real-time reporting. See
-                  up-to-the-minute data at a glance.
+                  up-to-the-minute data at a glance
                 </p>
                 <ButtonPrimary title="Talk to an expert" />
               </div>
