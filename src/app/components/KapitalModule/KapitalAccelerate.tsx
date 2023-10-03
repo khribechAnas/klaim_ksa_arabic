@@ -18,11 +18,11 @@ const KapitalAccelerate = () => {
               with reliable cash flow
             </h2>
             <p className="mt-4 md:mt-8 text-[#3F465D] text-[1.25rem] md:text-[1.75rem] leading-[1.875rem] md:leading-[2.25rem]">
-              To get started, let us know you're interested.
+              To get started, let us know you&apos;re interested.
             </p>
             <p className="mt-4 md:mt-8 text-[#3F465D] text-[1.25rem] md:text-[1.75rem] leading-[1.875rem] md:leading-[2.25rem]">
-              We'll learn more about your goals, answer your questions, and help
-              you decide what to do next.
+              We&apos;ll learn more about your goals, answer your questions, and
+              help you decide what to do next.
             </p>
             <div className="py-4 mt-8 md:mt-8">
               <ButtonPrimary title="Get a call back" />
