@@ -8,7 +8,8 @@ const faqData = [
   },
   {
     title: "How will you protect my data?",
-    answer: "Custom generate",
+    answer:
+      "Here are a few important details about our advanced security measures: 1.Your credentials will be encrypted by an AES256 algorithm, which would theoretically take millions of years to crack, even with the latest technology. 2.Our website forces an HTTPS protocol on all our services. 3.We use secure cloud providers with servers located in the UAE. You can relax knowing your data is safe. Click here to connect with our team.",
   },
   {
     title: "Do you require long-term commitment?",
@@ -16,15 +17,14 @@ const faqData = [
       "No commitment or commitment required. We work on demand, and you can discontinue anytime. Click here to send us a message now.",
   },
   {
-    title:
-      "How much does it cost to get a claim purchase proposal with Klaim Kapital?",
-    answer:
-      "Claim purchase proposals are free. After you request a proposal, we’ll deliver it within 48 hours at no cost to you. Click here to get started.",
-  },
-  {
-    title: "How much do the individual tools cost?",
+    title: "How much does this tool cost?",
     answer:
       "We’ve found that every business has unique needs, and we excel at creating solutions that are customized just for you. During our initial conversation, we’ll take time to learn more about your needs and tailor our solutions accordingly. That way, you can optimize your investment for a maximum ROI. Click here to send us a message, and our team will be in touch.",
+  },
+  {
+    title: "How is this different from what my RCM team uses already?",
+    answer:
+      "Revenue Cycle Management teams (including RCM agencies) use tools to check claims, but Klaim Inspector is the only tool that compares diagnosis codes with provided services. No other tool we’ve seen is as comprehensive or effective, and other tools are much more subject to human error. If you want the maximum possible acceptance rate with a user-friendly interface and reliable support, Klaim Inspector is for you. Click here to connect with us.",
   },
 ];
 

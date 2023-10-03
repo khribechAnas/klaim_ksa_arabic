@@ -26,7 +26,7 @@ const KapitalTable = () => {
           conventional claim financing
         </h2>
         {isClient && (
-          <div className="flex items-end my-8 overflow-x-scroll">
+          <div className="flex items-end my-8 overflow-x-auto">
             <table className="bg-[#323748] text-white rounded-t-lg min-w-[370px]">
               <tr className="border-b-4 border-[#3F465D] h-[5rem] flex flex-col justify-center">
                 <td className="px-6 py-4 flex text-[1.25rem] md:text-[1.75rem] font-normal leading-[1.875rem] md:leading-[2.25rem]">

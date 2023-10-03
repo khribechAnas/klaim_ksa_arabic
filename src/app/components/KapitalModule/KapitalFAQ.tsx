@@ -9,7 +9,8 @@ const KapitalFAQ = () => {
     },
     {
       title: "How will you protect my data?",
-      answer: "Custom generate",
+      answer:
+        "Here are a few important details about our advanced security measures: 1.Your credentials will be encrypted by an AES256 algorithm, which would theoretically take millions of years to crack, even with the latest technology. 2.Our website forces an HTTPS protocol on all our services. 3.We use secure cloud providers with servers located in the UAE. You can relax knowing your data is safe. Click here to connect with our team.",
     },
     {
       title: "Do you require long-term commitment?",
