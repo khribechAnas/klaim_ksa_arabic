@@ -4,23 +4,24 @@ import ButtonSecondary from "../CommonModule/ButtonSecondary";
 
 const HomeSolutions = () => {
   return (
-    <section className="bg-[#F5F7FB] py-12 md:py-32 px-4 md:px-0">
+    <section className="bg-[#F5F7FB] py-12 md:py-32 px-4">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-6xl font-semibold leading-[120%] md:leading-[70px] mb-4 md:mb-8">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
             Explore our solutions
           </span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           <div className="py-8 px-8 md:py-12 md:px-16 rounded-lg bg-white">
             <div className="flex items-center mb-8">
-              <img src="assets/images/Solution1.svg" />
-              <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] text-[24px] md:text-[42px] font-bold leading-[36px] md:leading-[130%] ml-8">
+              {/* <img src="assets/images/Solution1.svg" /> */}
+              <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] text-[24px] md:text-[42px] font-bold leading-[36px] md:leading-[130%]">
                 Klaim KAPITAL
               </h3>
             </div>
             <h4 className="text-[20px] md:text-[32px] text-[#3F465D] font-bold leading-[30px] md:leading-10 mb-4">
-              24-Hour Claim Payments <br /> (No Loans Required)
+              24-Hour Claim Payments <br className="hidden xl:block" /> (No
+              Loans Required)
             </h4>
             <p className="text-[18px] md:text-[22px] text-[#3F465D] leading-[26px] leading-[30px] mb-8">
               Get claim payments in 24 hours instead of 45+ days.
@@ -32,8 +33,8 @@ const HomeSolutions = () => {
           </div>
           <div className="py-8 px-8 md:py-12 md:px-16 rounded-lg bg-white">
             <div className="flex items-center mb-8">
-              <img src="assets/images/Solution2.svg" />
-              <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] text-[24px] md:text-[42px] font-bold leading-[36px] md:leading-[130%] ml-8">
+              {/* <img src="assets/images/Solution2.svg" /> */}
+              <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] text-[24px] md:text-[42px] font-bold leading-[36px] md:leading-[130%]">
                 Klaim ELIGIBLE
               </h3>
             </div>
@@ -41,8 +42,8 @@ const HomeSolutions = () => {
               Automated Eligibility Checking
             </h4>
             <p className="text-[18px] md:text-[22px] text-[#3F465D] leading-[26px] leading-[30px] mb-8">
-              Check patient eligibility on 94% of insurance <br /> portals, all
-              at once.
+              Check patient eligibility on 94% of insurance{" "}
+              <br className="hidden xl:block" /> portals, all at once.
             </p>
             <div className="flex items-center">
               <ButtonPrimary title="I’m interested!" />
@@ -51,8 +52,8 @@ const HomeSolutions = () => {
           </div>
           <div className="py-8 px-8 md:py-12 md:px-16 rounded-lg bg-white">
             <div className="flex items-center mb-8">
-              <img src="assets/images/Solution3.svg" />
-              <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] text-[24px] md:text-[42px] font-bold leading-[36px] md:leading-[130%] ml-8">
+              {/* <img src="assets/images/Solution3.svg" /> */}
+              <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] text-[24px] md:text-[42px] font-bold leading-[36px] md:leading-[130%]">
                 Klaim INSPECTOR
               </h3>
             </div>
@@ -70,8 +71,8 @@ const HomeSolutions = () => {
           </div>
           <div className="py-8 px-8 md:py-12 md:px-16 rounded-lg bg-white">
             <div className="flex items-center mb-8">
-              <img src="assets/images/Solution1.svg" />
-              <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] text-[24px] md:text-[42px] font-bold leading-[36px] md:leading-[130%] ml-8">
+              {/* <img src="assets/images/Solution1.svg" /> */}
+              <h3 className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] text-[24px] md:text-[42px] font-bold leading-[36px] md:leading-[130%]">
                 Klaim X-RAY
               </h3>
             </div>

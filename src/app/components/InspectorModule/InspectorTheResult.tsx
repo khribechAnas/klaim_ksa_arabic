@@ -3,7 +3,7 @@ import ButtonWhite from "../CommonModule/ButtonWhite";
 
 const InspectorTheResult = () => {
   return (
-    <section className="py-8 text-center text-white bg-linear">
+    <section className="py-8 text-center text-white bg-linear px-4">
       <h3 className="leading-[2.4rem] md:leading-[3.4125rem] font-bold text-[2rem] md:text-[2.625rem] mb-2">
         The result?
       </h3>
@@ -11,7 +11,7 @@ const InspectorTheResult = () => {
         Higher revenues, reliable cash flow, and lower operational costs.
       </p>
       <div className="py-4">
-        <ButtonWhite />
+        <ButtonWhite title="I'm interested!" />
       </div>
     </section>
   );

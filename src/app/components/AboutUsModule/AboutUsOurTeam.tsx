@@ -43,7 +43,7 @@ const directors = [
 
 const AboutUsOurTeam = () => {
   return (
-    <section className="bg-[#F5F7FB] py-12 md:py-32 px-4 md:px-0">
+    <section className="bg-[#F5F7FB] py-12 md:py-32 px-4">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D] mb-8">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
@@ -53,7 +53,7 @@ const AboutUsOurTeam = () => {
         <h4 className="text-[32px] text-[#3F465D] font-bold leading-[40px]">
           Cofounders
         </h4>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 md:mb-16">
+        <div className="mt-8 grid grid-cols-1 xl:grid-cols-2 gap-4 mb-12 md:mb-16">
           {cofounders.map((cofounder, index) => (
             <div
               key={index}
@@ -80,7 +80,7 @@ const AboutUsOurTeam = () => {
         <h4 className="text-[32px] text-[#3F465D] font-bold leading-[40px]">
           Board of Directors
         </h4>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="mt-8 grid grid-cols-1 xl:grid-cols-3 gap-4">
           {directors.map((director, index) => (
             <div
               key={index}

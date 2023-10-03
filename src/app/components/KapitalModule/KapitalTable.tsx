@@ -10,7 +10,7 @@ const KapitalTable = () => {
 
   return (
     <section className="bg-[#3F465D]">
-      <div className="container mx-auto py-12 md:py-32 px-4 md:px-0">
+      <div className="container mx-auto py-12 md:py-32 px-4 ">
         <h2 className="text-3xl md:text-5xl font-semibold leading-[2.25rem] md:leading-[3.9rem] text-white mb-4 md:mb-8 hidden md:block">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
             How does Klaim Kapital
@@ -27,7 +27,7 @@ const KapitalTable = () => {
         </h2>
         {isClient && (
           <div className="flex items-end my-8 overflow-x-auto">
-            <table className="bg-[#323748] text-white rounded-t-lg overflow-hidden w-[25%]">
+            <table className="bg-[#323748] text-white rounded-t-lg min-w-[370px]">
               <tr className="border-b-4 border-[#3F465D] h-[5rem] flex flex-col justify-center">
                 <td className="px-6 py-4 flex text-[1.25rem] md:text-[1.75rem] font-normal leading-[1.875rem] md:leading-[2.25rem]">
                   Model
@@ -62,7 +62,7 @@ const KapitalTable = () => {
 
             {/*  */}
 
-            <table className="bg-[#323748] text-white rounded-t-lg overflow-hidden mx-1 md:w-[37.5%]">
+            <table className="bg-[#323748] text-white rounded-t-lg mx-1 min-w-[560px]">
               <tr className="border-b-4 border-[#3F465D] h-[4.25rem] flex flex-col justify-center w-[20rem] md:w-auto">
                 <td className="px-6 py-4 text-[1.25rem] md:text-[1.75rem] font-bold leading-[1.875rem] md:leading-[2.25rem]">
                   Conventional financing
@@ -115,7 +115,7 @@ const KapitalTable = () => {
 
             {/*  */}
 
-            <table className="bg-linear-table text-white rounded-t-lg overflow-hidden w-[37.5%]">
+            <table className="bg-linear-table text-white rounded-t-lg min-w-[560px]">
               <tr className="border-b-4 border-[#3F465D] h-[4.25rem] flex flex-col justify-center w-[20rem] md:w-auto">
                 <td className="px-6 py-4 text-[1.25rem] md:text-[1.75rem] font-bold leading-[1.875rem] md:leading-[2.25rem]">
                   Klaim Kapital

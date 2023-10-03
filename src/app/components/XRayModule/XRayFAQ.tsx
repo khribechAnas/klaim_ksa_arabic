@@ -9,23 +9,18 @@ const XRayFAQ = () => {
     },
     {
       title: "How will you protect my data?",
-      answer: "Custom generate",
+      answer:
+        "Here are a few important details about our advanced security measures: 1.Your credentials will be encrypted by an AES256 algorithm, which would theoretically take millions of years to crack, even with the latest technology. 2.Our website forces an HTTPS protocol on all our services. 3.We use secure cloud providers with servers located in the UAE. You can relax knowing your data is safe. Click here to connect with our team.",
+    },
+    {
+      title: "How much does this tool cost?",
+      answer:
+        "We’ve found that every business has unique needs, and we excel at creating solutions that are customized just for you. During our initial conversation, we’ll take time to learn more about your needs and tailor our solutions accordingly. That way, you can optimize your investment for a maximum ROI. Click here to send us a message, and our team will be in touch.",
     },
     {
       title: "Do you require long-term commitment?",
       answer:
         "No commitment or commitment required. We work on demand, and you can discontinue anytime. Click here to send us a message now.",
-    },
-    {
-      title:
-        "How much does it cost to get a claim purchase proposal with Klaim Kapital?",
-      answer:
-        "Claim purchase proposals are free. After you request a proposal, we’ll deliver it within 48 hours at no cost to you. Click here to get started.",
-    },
-    {
-      title: "How much do the individual tools cost?",
-      answer:
-        "We’ve found that every business has unique needs, and we excel at creating solutions that are customized just for you. During our initial conversation, we’ll take time to learn more about your needs and tailor our solutions accordingly. That way, you can optimize your investment for a maximum ROI. Click here to send us a message, and our team will be in touch.",
     },
   ];
   return (

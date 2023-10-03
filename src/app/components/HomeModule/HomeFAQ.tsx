@@ -9,7 +9,8 @@ const HomeFAQ = () => {
     },
     {
       title: "How will you protect my data?",
-      answer: "Custom generate",
+      answer:
+        "Here are a few important details about our advanced security measures: 1.Your credentials will be encrypted by an AES256 algorithm, which would theoretically take millions of years to crack, even with the latest technology. 2.Our website forces an HTTPS protocol on all our services. 3.We use secure cloud providers with servers located in the UAE. You can relax knowing your data is safe. Click here to connect with our team.",
     },
     {
       title: "Do you require long-term commitment?",
@@ -29,7 +30,7 @@ const HomeFAQ = () => {
     },
   ];
   return (
-    <section className="container mx-auto py-12 md:py-32 px-4 md:px-0">
+    <section className="container mx-auto py-12 md:py-32 px-4">
       <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[70px] mb-4 md:mb-8">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
           FAQs

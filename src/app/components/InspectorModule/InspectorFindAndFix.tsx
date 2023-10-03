@@ -3,11 +3,14 @@ import React from "react";
 const InspectorFindAndFix = () => {
   return (
     <section className="bg-[#F5F7FB]">
-      <div className="container mx-auto py-12 md:py-32 px-4 md:px-0 flex flex-col-reverse md:flex-row items-center">
-        <div className="flex-1">
-          <img src="assets/images/inspector6.png" className="rounded-lg" />
+      <div className="container mx-auto py-12 md:py-32 px-4 flex flex-col-reverse lg:flex-row items-center">
+        <div className="flex-1 w-full lg:mr-2">
+          <img
+            src="assets/images/inspector6.png"
+            className="rounded-lg w-full mt-8 lg:mt-0"
+          />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 lg:ml-2">
           <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D]">
             <span className="mr-2 bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
               Find and fix

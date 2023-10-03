@@ -1,6 +1,6 @@
 import React from "react";
 
-const AboutUsContact = () => {
+const ContactUsCards = () => {
   return (
     <section className="bg-[#F5F7FB] py-12 md:py-32 px-4">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -84,4 +84,4 @@ const AboutUsContact = () => {
   );
 };
 
-export default AboutUsContact;
+export default ContactUsCards;

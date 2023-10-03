@@ -4,7 +4,7 @@ import ButtonPrimary from "../CommonModule/ButtonPrimary";
 const InspectorStartMinimizing = () => {
   return (
     <section className="bg-[#F5F7FB]">
-      <div className="container mx-auto px-4 md:px-0 pt-12 md:pt-0 flex flex-col md:flex-row items-center">
+      <div className="container mx-auto px-4 pt-12 md:pt-12 xl:pt-0 flex flex-col lg:flex-row items-center">
         <div className="flex-1">
           <h2 className="text-[2.25rem] md:text-[3.75rem] leading-[2.75rem] md:leading-[4.375rem] -tracking-[0.0675rem] md:-tracking-[0.1125rem] font-semibold md:font-bold text-[#3F465D] mb-4 md:mb-8">
             Start minimizing <br className="hidden md:block" /> lost revenue
