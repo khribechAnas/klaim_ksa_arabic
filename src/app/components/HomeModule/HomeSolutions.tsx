@@ -27,7 +27,6 @@ const HomeSolutions = () => {
               Get claim payments in 24 hours instead of 45+ days.
             </p>
             <div className="flex items-center">
-              <ButtonPrimary title="I’m interested!" />
               <ButtonSecondary title="See more" />
             </div>
           </div>
@@ -46,7 +45,6 @@ const HomeSolutions = () => {
               <br className="hidden xl:block" /> portals, all at once.
             </p>
             <div className="flex items-center">
-              <ButtonPrimary title="I’m interested!" />
               <ButtonSecondary title="See more" />
             </div>
           </div>
@@ -65,7 +63,6 @@ const HomeSolutions = () => {
               reduce your claim rejection rate.
             </p>
             <div className="flex items-center">
-              <ButtonPrimary title="I’m interested!" />
               <ButtonSecondary title="See more" />
             </div>
           </div>
@@ -84,7 +81,6 @@ const HomeSolutions = () => {
               wrong turns.
             </p>
             <div className="flex items-center">
-              <ButtonPrimary title="I’m interested!" />
               <ButtonSecondary title="See more" />
             </div>
           </div>
