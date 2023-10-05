@@ -16,7 +16,8 @@ const HomeBusinessGrowth = () => {
           <div className="px-8 py-7 flex items-center h-full">
             <img src="assets/images/Growth1.svg" />
             <p className="text-white ml-8">
-              Stop losing revenue <br /> due to claim denials
+              Stop losing revenue <br className="hidden 2xl:block" /> due to
+              claim denials
             </p>
           </div>
         </div>
@@ -26,7 +27,8 @@ const HomeBusinessGrowth = () => {
           <div className="px-8 py-7 flex items-center h-full">
             <img src="assets/images/Growth2.svg" />
             <p className="text-white ml-8">
-              Stabilize and accelerate <br /> cash flow
+              Stabilize and accelerate <br className="hidden 2xl:block" /> cash
+              flow
             </p>
           </div>
         </div>
@@ -36,7 +38,8 @@ const HomeBusinessGrowth = () => {
           <div className="px-8 py-7 flex items-center h-full">
             <img src="assets/images/Growth3.svg" />
             <p className="text-white ml-8">
-              Reduce RCM-related <br /> staffing costs
+              Reduce RCM-related <br className="hidden 2xl:block" /> staffing
+              costs
             </p>
           </div>
         </div>

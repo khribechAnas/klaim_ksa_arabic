@@ -45,9 +45,9 @@ const HomeHero = () => {
             </h3>
             <h1 className="text-[#3F465D] text-4xl lg:text-5xl xl:text-6xl font-semibold leading-[2.75rem] md:leading-[3rem] xl:leading-[4.375rem] tracking-tighter mt-8 mb-7">
               Treat your patient today,
-              <br className="block md:hidden lg:hidden xl:hidden 2xl:block" />
+              <br className="block lg:hidden xl:hidden 2xl:block" />
               <span
-                className={`bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] ml-0 md:ml-3 xl:ml-3 2xl:ml-0               
+                className={`bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] ml-0 lg:ml-3 xl:ml-3 2xl:ml-0               
                 `}
               >
                 receive payment tomorrow
@@ -67,7 +67,33 @@ const HomeHero = () => {
           </div>
         </div>
       </div>
-      <div className="bg-linear px-4 md:px-16 py-8 md:py-0 grid grid-cols-2 gap-4 md:flex items-center justify-center md:justify-between overflow-x-auto">
+      {/* <div className="bg-linear grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 gap-4 mx-auto">
+        <div className="flex items-center justify-center">
+          <img src="assets/images/hero1.png" />
+        </div>
+        <div className="flex items-center justify-center">
+          <img src="assets/images/hero2.png" />
+        </div>
+        <div className="flex items-center justify-center">
+          <img src="assets/images/hero3.png" />
+        </div>
+        <div className="flex items-center justify-center">
+          <img src="assets/images/hero4.png" />
+        </div>
+        <div className="flex items-center justify-center">
+          <img src="assets/images/hero5.png" />
+        </div>
+        <div className="flex items-center justify-center">
+          <img src="assets/images/hero6.png" />
+        </div>
+        <div className="flex items-center justify-center">
+          <img src="assets/images/hero7.png" />
+        </div>
+        <div className="flex items-center justify-center">
+          <img src="assets/images/hero8.png" />
+        </div>
+      </div> */}
+      <div className="bg-linear px-4 md:px-16 py-8 md:py-0 grid grid-cols-2 gap-4 md:flex md:flex-wrap items-center justify-center 2xl:justify-between">
         <img
           src="assets/images/hero1.png"
           className="py-0 md:py-2 w-auto md:w-[150px] 2xl:w-auto"

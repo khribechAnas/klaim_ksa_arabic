@@ -27,7 +27,15 @@ const HomeSolutions = () => {
               Get claim payments in 24 hours instead of 45+ days.
             </p>
             <div className="flex items-center">
-              <ButtonSecondary title="See more" />
+              <div className="flex items-center py-4 pr-4 md:pr-6">
+                <a
+                  href="/kapital"
+                  className="rounded-lg  text-[#6135FB] text-sm md:text-lg font-bold leading-4 tracking-tighter tracking-[0.02em]"
+                >
+                  See more
+                </a>
+                <img src="assets/images/Vector1.svg" className="ml-2" />
+              </div>
             </div>
           </div>
           <div className="py-8 px-8 md:py-12 md:px-16 rounded-lg bg-white">
@@ -45,7 +53,15 @@ const HomeSolutions = () => {
               <br className="hidden xl:block" /> portals, all at once.
             </p>
             <div className="flex items-center">
-              <ButtonSecondary title="See more" />
+              <div className="flex items-center py-4 pr-4 md:pr-6">
+                <a
+                  href="/eligible"
+                  className="rounded-lg  text-[#6135FB] text-sm md:text-lg font-bold leading-4 tracking-tighter tracking-[0.02em]"
+                >
+                  See more
+                </a>
+                <img src="assets/images/Vector1.svg" className="ml-2" />
+              </div>
             </div>
           </div>
           <div className="py-8 px-8 md:py-12 md:px-16 rounded-lg bg-white">
@@ -63,7 +79,15 @@ const HomeSolutions = () => {
               reduce your claim rejection rate.
             </p>
             <div className="flex items-center">
-              <ButtonSecondary title="See more" />
+              <div className="flex items-center py-4 pr-4 md:pr-6">
+                <a
+                  href="/inspector"
+                  className="rounded-lg  text-[#6135FB] text-sm md:text-lg font-bold leading-4 tracking-tighter tracking-[0.02em]"
+                >
+                  See more
+                </a>
+                <img src="assets/images/Vector1.svg" className="ml-2" />
+              </div>
             </div>
           </div>
           <div className="py-8 px-8 md:py-12 md:px-16 rounded-lg bg-white">
@@ -81,7 +105,15 @@ const HomeSolutions = () => {
               wrong turns.
             </p>
             <div className="flex items-center">
-              <ButtonSecondary title="See more" />
+              <div className="flex items-center py-4 pr-4 md:pr-6">
+                <a
+                  href="/x-ray"
+                  className="rounded-lg  text-[#6135FB] text-sm md:text-lg font-bold leading-4 tracking-tighter tracking-[0.02em]"
+                >
+                  See more
+                </a>
+                <img src="assets/images/Vector1.svg" className="ml-2" />
+              </div>
             </div>
           </div>
         </div>

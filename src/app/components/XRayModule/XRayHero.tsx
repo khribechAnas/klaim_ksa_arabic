@@ -44,10 +44,12 @@ const XRayHero = () => {
                   KLAIM X-RAY
                 </p>
                 <h1 className="text-[#3F465D] text-4xl md:text-6xl font-semibold leading-[44px] md:leading-[3.75rem] xl:leading-[4.375rem] -tracking-[0.1124rem]">
-                  Make Confident Data-Driven Decisions
+                  Make Confident <br className="block xl:hidden" /> Data-Driven
+                  <br className="block xl:hidden" /> Decisions
                 </h1>
                 <h3 className="font-bold leading-[36px] md:leading-[40px] text-2xl md:text-[32px] text-[#3F465D]">
-                  For Faster Growth and Fewer Wrong Turns
+                  For Faster Growth and <br className="block xl:hidden" /> Fewer
+                  Wrong Turns
                 </h3>
                 <p className="text-[14px] md:text-base leading-[1.5625rem] text-[#3F465D] mr-0 md:pr-[550px] xl:pr-48 my-4 md:my-7">
                   Klaim X-Ray replaces slow, unreliable, and expensive manual

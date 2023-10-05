@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeCashFlow = () => {
   return (
-    <section className="pt-12 md:pt-32 pb-12 md:pb-16 px-4 bg-[#F5F7FB]">
+    <section className="pt-12 md:pt-32 pb-12 md:pb-32 px-4 bg-[#F5F7FB]">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-5xl font-semibold leading-[120%] md:leading-[130%] text-[#3F465D]">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">

@@ -8,7 +8,7 @@ const HomeHowToEliminate = () => {
           How to eliminate your
           <br className="" />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-            biggest growth obsticle
+            biggest growth obstacle
           </span>{" "}
           <br />
           so that you can

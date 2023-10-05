@@ -68,7 +68,7 @@ const Footer = () => {
             <div className="text-white text-sm md:text-base leading-[25px] leading-none mb-4 md:mb-0">
               <a href="">Terms of Service</a>
               <span className="mx-2">&#124;</span>
-              <a href="">Privacy Policy</a>
+              <a href="/privacy-policy">Privacy Policy</a>
             </div>
             <div className="text-white text-sm md:text-base leading-[25px] leading-none mb-2 md:mb-0">
               <p className="">

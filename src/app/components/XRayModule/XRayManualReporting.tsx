@@ -41,7 +41,7 @@ const XRayManualReporting = () => {
           </div>
           <div className="px-8 py-7 bg-white rounded-lg text-[#3F465D] shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
             <p className="text-[1.25rem] xl:text-[1.65rem] 2xl:text-[1.75rem] font-bold leading-[1.875rem] 2xl:leading-[2.25rem] mb-2">
-              Innacurate
+              Inaccurate
             </p>
             <p className="text-[18px] font-semibold leading-[24px]">
               due to the high risk of human error
