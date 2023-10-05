@@ -41,7 +41,8 @@ const KapitalHero = () => {
                   KLAIM KAPITAL
                 </p>
                 <h1 className="text-[#3F465D] text-4xl md:text-6xl font-semibold leading-[44px] md:leading-[3.75rem] xl:leading-[4.375rem] -tracking-[0.1124rem]">
-                  Stabilize Cash Flow and Boost Profitability
+                  Stabilize Cash Flow <br className="block xl:hidden" /> and
+                  Boost <br className="block xl:hidden" /> Profitability
                 </h1>
                 <p className="text-[14px] md:text-base leading-[1.5625rem] text-[#3F465D] mr-0 md:pr-[550px] xl:pr-52 my-4 md:my-7">
                   With Klaim Kapital, you’ll get claim payments within 24 hours

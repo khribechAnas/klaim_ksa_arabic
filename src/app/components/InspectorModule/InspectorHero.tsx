@@ -80,10 +80,12 @@ const InspectorHero = () => {
                   KLAIM INSPECTOR
                 </p>
                 <h1 className="text-[#3F465D] text-4xl md:text-6xl font-semibold leading-[44px] md:leading-[3.75rem] xl:leading-[4.375rem] -tracking-[0.1124rem]">
-                  86% of Claim Denials Are Avoidable:
+                  86% of Claim Denials <br className="block xl:hidden" /> Are
+                  Avoidable:
                 </h1>
                 <h3 className="font-bold leading-[36px] md:leading-[40px] text-2xl md:text-[2rem] text-[#3F465D]">
-                  Maximize Acceptance Rate With One Simple Tool
+                  Maximize Acceptance Rate <br className="block xl:hidden" />{" "}
+                  With One Simple Tool
                 </h3>
                 <p className="text-[14px] md:text-base leading-[1.5625rem] text-[#3F465D] mr-0 md:pr-[550px] xl:pr-28 my-4 md:my-7">
                   Maximize claim acceptance, stabilize your cash flow, and
