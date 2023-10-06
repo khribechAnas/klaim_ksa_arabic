@@ -75,10 +75,8 @@ const FAQ: FC<FAQComponentProps> = ({ questions }) => {
           {activeIndex === index && (
             <div
               className="mt-4 text-[#3F465D] text-sm md:text-base leading-[25px]"
-              // dangerouslySetInnerHTML={{ __html: question.answer }}
-            >
-              {question.answer}
-            </div>
+              dangerouslySetInnerHTML={{ __html: question.answer }}
+            />
           )}
         </div>
       ))}
