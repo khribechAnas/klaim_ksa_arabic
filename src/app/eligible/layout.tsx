@@ -1,4 +1,3 @@
-import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
@@ -8,15 +7,12 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Klaim - Swift Healthcare Claim Payments in UAE & KSA",
+  title: "Klaim Eligible - Automate and Accelerate Eligibility Checks",
   description:
-    "Transform your healthcare revenue cycle with Klaim - ensuring providers receive payments within 24 hours, not 45+ days. Explore innovative, award-winning solutions that stabilize cash flow, reduce staffing costs, and expedite business growth.",
-  icons: {
-    icon: "/favicon.ico",
-  },
+    "Transform patient check-ins with Klaim Eligible, instantly verifying insurance across 94% of portals. Elevate patient experience and significantly cut down on eligibility-related claim denials, ensuring a smoother and more efficient healthcare provision.",
 };
 
-export default function RootLayout({
+export default function EligibleLayout({
   children,
 }: {
   children: React.ReactNode;

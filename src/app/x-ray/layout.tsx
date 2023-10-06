@@ -1,4 +1,3 @@
-import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
@@ -8,15 +7,12 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Klaim - Swift Healthcare Claim Payments in UAE & KSA",
+  title: "Klaim X-Ray – Real-Time Healthcare Reporting Tool in the UAE & KSA",
   description:
-    "Transform your healthcare revenue cycle with Klaim - ensuring providers receive payments within 24 hours, not 45+ days. Explore innovative, award-winning solutions that stabilize cash flow, reduce staffing costs, and expedite business growth.",
-  icons: {
-    icon: "/favicon.ico",
-  },
+    "Introducing Klaim X-Ray: your key to making confident, data-driven decisions in healthcare. Replace slow, unreliable manual reporting with up-to-the-minute, comprehensive real-time reporting, enhancing operational clarity and driving informed, strategic growth.",
 };
 
-export default function RootLayout({
+export default function XRayLayout({
   children,
 }: {
   children: React.ReactNode;

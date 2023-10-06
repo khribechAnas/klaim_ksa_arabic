@@ -1,4 +1,3 @@
-import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
@@ -8,15 +7,12 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Klaim - Swift Healthcare Claim Payments in UAE & KSA",
+  title: "Klaim Inspector - Elevate Claim Acceptance Rates",
   description:
-    "Transform your healthcare revenue cycle with Klaim - ensuring providers receive payments within 24 hours, not 45+ days. Explore innovative, award-winning solutions that stabilize cash flow, reduce staffing costs, and expedite business growth.",
-  icons: {
-    icon: "/favicon.ico",
-  },
+    "Maximize claim acceptance and safeguard your cash flow with Klaim Inspector, your ally in detecting data-filling errors and ensuring higher acceptance rates by automatically validating diagnoses with provided services",
 };
 
-export default function RootLayout({
+export default function InspectorLayout({
   children,
 }: {
   children: React.ReactNode;
