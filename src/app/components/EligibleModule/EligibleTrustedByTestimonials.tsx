@@ -14,17 +14,18 @@ const EligibleTrustedByTestimonials = () => {
         in the UAE and KSA
       </h2>
       <div className="mt-8 mb-12 md:mb-32">
-        <div className="grid grid-cols-2 gap-4 items-center justify-center xl:flex xl:flex-row xl:justify-between">
+        <div className="grid grid-cols-2 gap-x-12 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 items-center justify-center">
           <img src="assets/images/client1.png" />
           <img src="assets/images/client2.png" />
           <img src="assets/images/client3.png" />
           <img src="assets/images/client4.png" />
-        </div>
-        <div className="grid grid-cols-2 gap-4 items-center justify-center xl:flex xl:flex-row xl:justify-between mt-8">
           <img src="assets/images/client5.png" />
           <img src="assets/images/client6.png" />
           <img src="assets/images/client7.png" />
           <img src="assets/images/client8.png" />
+          <img src="assets/images/client9.png" />
+          <img src="assets/images/client10.png" />
+          <img src="assets/images/client11.png" />
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12 md:mb-16 text-start sm:text-center lg:text-start">
