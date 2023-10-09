@@ -11,8 +11,8 @@ const AboutUsHero = () => {
             </h1>
             <p className="text-[14px] md:text-base leading-[1.5625rem] md:tracking-[0.04rem] text-[#3F465D] pr-0 sm:pr-32 md:pr-28 xl:pr-36 my-4 md:my-7">
               Klaim is an award-winning fintech company headquartered in Abu
-              Dhabi Global Market (ADGM), Abu Dhabi, UAE [with offices in Dubai,
-              Abu Dhabi and Riyadh]. Since 2019, we’ve been revolutionizing the
+              Dhabi Global Market ADGM, Abu Dhabi, UAE with offices in Dubai,
+              Abu Dhabi and Riyadh. Since 2019, we’ve been revolutionizing the
               healthcare industry by giving providers access to the working
               capital they need to grow faster and serve patients better. By
               helping providers thrive, we help patients thrive too.
@@ -40,8 +40,8 @@ const AboutUsHero = () => {
                 </h1>
                 <p className="text-[14px] md:text-base leading-[1.5625rem] text-[#3F465D] mr-0 md:pr-[550px] xl:pr-28 my-4 md:my-7">
                   Klaim is an award-winning fintech company headquartered in Abu
-                  Dhabi Global Market (ADGM), Abu Dhabi, UAE [with offices in
-                  Dubai, Abu Dhabi and Riyadh]. Since 2019, we’ve been
+                  Dhabi Global Market ADGM, Abu Dhabi, UAE with offices in
+                  Dubai, Abu Dhabi and Riyadh. Since 2019, we’ve been
                   revolutionizing the healthcare industry by giving providers
                   access to the working capital they need to grow faster and
                   serve patients better. By helping providers thrive, we help

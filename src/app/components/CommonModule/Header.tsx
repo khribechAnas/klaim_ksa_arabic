@@ -162,7 +162,10 @@ const Header = () => {
                 </li> */}
               </ul>
             </li>
-            <li
+            <li className={pathname == "/about" ? "active" : ""}>
+              <Link href="/about">About us</Link>
+            </li>
+            {/* <li
               className={`has-submenu parent-parent-menu-item ${
                 pathname == "/about" || pathname.startsWith("/blog")
                   ? "active"
@@ -185,7 +188,7 @@ const Header = () => {
                   </Link>
                 </li>
               </ul>
-            </li>
+            </li> */}
             <li className={pathname == "/contact" ? "active" : ""}>
               <Link href="/contact">Contact us</Link>
             </li>

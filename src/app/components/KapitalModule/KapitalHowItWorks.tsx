@@ -65,7 +65,7 @@ const KapitalHowItWorks = () => {
             </p>
           </div>
           <p className="text-[1.125rem] leading-[1.625rem] text-[#3F465D] ml-4">
-            You get paid within 24 hours of claims submission.
+            We pay you within 24 hours
           </p>
         </div>
         <div className="h-[4rem] w-1 bg-gradient-to-b from-[#4e98d1] to-[#49afc7] ml-[3.1875rem]" />
@@ -79,7 +79,7 @@ const KapitalHowItWorks = () => {
             </p>
           </div>
           <p className="text-[1.125rem] leading-[1.625rem] text-[#3F465D] ml-4">
-            We work with the insurance companies to get reimbursed.
+            We handle reimbursement from the insurers
           </p>
         </div>
       </div>
@@ -90,10 +90,10 @@ const KapitalHowItWorks = () => {
           We purchase your <br className="hidden lg:block" /> submitted claims
         </p>
         <p className="text-[1.375rem] leading-[1.875rem] text-[#3F465D] w-[15.16rem] px-0 md:px-5">
-          You get paid within 24 hours of claims submission.
+          We pay you within 24 hours
         </p>
         <p className="text-[1.375rem] leading-[1.875rem] text-[#3F465D] w-[15.16rem] px-0 md:px-3">
-          We work with the insurance companies to get reimbursed.
+          We handle reimbursement from the insurers
         </p>
       </div>
 

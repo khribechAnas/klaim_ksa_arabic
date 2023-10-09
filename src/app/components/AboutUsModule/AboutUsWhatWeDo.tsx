@@ -13,7 +13,7 @@ const AboutUsWhatWeDo = () => {
           </h2>
           <p className="text-[16px] leading-[25px] text-[#3F465D] mb-8">
             Pending insurance claims in the UAE alone amount to approximately
-            $1.2 billion.* This puts providers at a severe disadvantage—and
+            $1.2 billion. This puts providers at a severe disadvantage—and
             ultimately interferes with patients’ access to the quality care they
             need.
           </p>

@@ -23,13 +23,13 @@ const ContactUsCards = () => {
             </div>
             <div className="ml-4 text-[#3F465D] font-semibold leading-[24px] text-[16px] md:text-[18px]">
               <p>
-                <a href="tel:+971 (0)4 876 4096">+971 (0)4 876 4096</a>
+                <a href="tel:+97148764096">+971 4 876 4096</a>
               </p>
               <p>
-                <a href="tel:+966 (0)11 510 2972">+966 (0)11 510 2972</a>
+                <a href="tel:+966115102972">+966 11 510 2972</a>
               </p>
               <p>
-                <a href="tel:+968 7173 4424">+968 7173 4424</a>
+                <a href="tel:+96871734424">+968 7 173 4424</a>
               </p>
             </div>
           </div>

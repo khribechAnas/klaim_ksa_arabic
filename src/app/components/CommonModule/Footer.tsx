@@ -24,24 +24,24 @@ const Footer = () => {
               <img src="assets/images/facebook.svg" className="mr-4" />
             </div>
             <div className="flex flex-col md:flex-row">
-              <div className="text-white text-sm md:text-base leading-[25px] md:leading-none font-normal">
+              {/* <div className="text-white text-sm md:text-base leading-[25px] md:leading-none font-normal">
                 <p className="mb-2">Al Khatem Tower 4, ADGM Square,</p>
                 <p className="mb-2">Abu Dhabi, UAE,</p>
                 <p className="mb-2">
                   <a href="mailto:hello@klaim.ai">hello@klaim.ai</a>
                 </p>
                 <p>
-                  <a href="tel:+968 7173 4424">+971 xxxxxxx</a>
+                  <a href="tel:+97148764096">+971 4 876 4096</a>
                 </p>
-              </div>
-              <div className="text-white text-sm md:text-base leading-[25px] md:leading-none font-normal mx-0 md:mx-8 my-8 md:my-0">
+              </div> */}
+              <div className="text-white text-sm md:text-base leading-[25px] md:leading-none font-normal mx-0 md:mx-16 my-8 md:my-0">
                 <p className="mb-2">Indigo Icon Tower 3404, JLT Cluster F,</p>
                 <p className="mb-2">Dubai, UAE</p>
                 <p className="mb-2">
                   <a href="mailto:hello@klaim.ai">hello@klaim.ai</a>
                 </p>
                 <p>
-                  <a href="tel:+971 4876 4096">+971 (0)4 876 4096</a>
+                  <a href="tel:+97148764096">+971 4 876 4096</a>
                 </p>
               </div>
               <div className="text-white text-sm md:text-base leading-[25px] md:leading-none font-normal">
@@ -51,7 +51,7 @@ const Footer = () => {
                   <a href="mailto:helloksa@klaim.ai">helloksa@klaim.ai</a>
                 </p>
                 <p>
-                  <a href="tel:+966 11510 2972">+966 (0)11 510 2972</a>
+                  <a href="tel:+966115102972">+966 11 510 2972</a>
                 </p>
               </div>
             </div>

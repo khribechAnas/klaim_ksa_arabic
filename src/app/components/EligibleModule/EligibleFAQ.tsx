@@ -5,7 +5,7 @@ const EligibleFAQ = () => {
   const faqData = [
     {
       title: "What is Klaim?",
-      answer: `<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-family:"Popins",sans-serif;'><span style="font-size: 18px;">Klaim is an award-winning fintech company based in UAE. Since 2019, we’ve been revolutionizing the healthcare industry by giving providers access to the working capital they need to grow faster and serve patients better. Our solutions are already trusted by more than 40 healthcare providers, and so far we’ve accelerated 300,000 claims and paid out 25 million in purchased claims (as part of our Klaim Kapital solution). Our team is ready to connect with you, answer your questions, and help you decide on next steps. <a href="http://www.google.com/" style="text-decoration: underline; color: blue;">Click here</a> to send us a message now.</span></p>`,
+      answer: `<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-family:"Popins",sans-serif;'><span style="font-size: 18px;">Klaim is an award-winning fintech company based in UAE. Since 2019, we’ve been revolutionizing the healthcare industry by giving providers access to the working capital they need to grow faster and serve patients better. Our solutions are already trusted by more than 40 healthcare providers, and so far we’ve accelerated 300,000 claims and paid out 25 million in purchased claims (as part of our Klaim Kapital solution). Our team is ready to connect with you, answer your questions, and help you decide on next steps. <a href="/contact" style="text-decoration: underline; color: blue;">Click here</a> to send us a message now.</span></p>`,
     },
     {
       title: "How will you protect my data?",
@@ -16,15 +16,15 @@ const EligibleFAQ = () => {
           <li style="font-size: 16px;">We use secure cloud providers with servers located in the UAE.</li>
       </ul>
       <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:.5in;font-family:"Popins",sans-serif;'><span style="font-size: 16px;">&nbsp;</span></p>
-      <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-family:"Popins",sans-serif;'><span style="font-size: 18px;">You can relax knowing your data is safe. <a href="http://www.google.com/" style="text-decoration: underline; color: blue;">Click here</a> to connect with our team.</span></p>`,
+      <p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-family:"Popins",sans-serif;'><span style="font-size: 18px;">You can relax knowing your data is safe. <a href="/contact" style="text-decoration: underline; color: blue;">Click here</a> to connect with our team.</span></p>`,
     },
     {
       title: "Do you require long-term commitment?",
-      answer: `<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-family:"Popins",sans-serif;'><span style="font-size: 18px;">No commitment or commitment required. We work on demand, and you can discontinue anytime. <a href="http://www.google.com/" style="text-decoration: underline; color: blue;">Click here</a> to send us a message now.</span></p>`,
+      answer: `<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-family:"Popins",sans-serif;'><span style="font-size: 18px;">No commitment or commitment required. We work on demand, and you can discontinue anytime. <a href="/contact" style="text-decoration: underline; color: blue;">Click here</a> to send us a message now.</span></p>`,
     },
     {
       title: "How much does this tool cost?",
-      answer: `<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-family:"Popins",sans-serif;'><span style="font-size: 18px;">We’ve found that every business has unique needs, and we excel at creating solutions that are customized just for you. During our initial conversation, we’ll take time to learn more about your needs and tailor our solutions accordingly. That way, you can optimize your investment for a maximum ROI. <br/> <a href="http://www.google.com/" style="text-decoration: underline; color: blue;">Click here</a> to send us a message, and our team will be in touch.</span></p>`,
+      answer: `<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-family:"Popins",sans-serif;'><span style="font-size: 18px;">We’ve found that every business has unique needs, and we excel at creating solutions that are customized just for you. During our initial conversation, we’ll take time to learn more about your needs and tailor our solutions accordingly. That way, you can optimize your investment for a maximum ROI. <br/> <a href="/contact" style="text-decoration: underline; color: blue;">Click here</a> to send us a message, and our team will be in touch.</span></p>`,
     },
   ];
   return (
