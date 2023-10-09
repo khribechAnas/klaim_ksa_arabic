@@ -12,10 +12,11 @@ const AboutUsWhatWeDo = () => {
             </span>
           </h2>
           <p className="text-[16px] leading-[25px] text-[#3F465D] mb-8">
-            Pending insurance claims in the UAE alone amount to approximately
-            $1.2 billion. This puts providers at a severe disadvantage—and
-            ultimately interferes with patients’ access to the quality care they
-            need.
+            By regulation, accepted claims should be paid within 45 days after
+            submission. However, according to our database, a typical cycle from
+            submission preparation to claim payment takes between 60 to 90 days,
+            heavily impacting healthcare facilities cash flow. On average,
+            insurers take 113 days to pay 90% of submitted claims.
           </p>
           <p className="text-[16px] leading-[25px] text-[#3F465D] mb-8">
             We work to restore a balance of power between providers and
