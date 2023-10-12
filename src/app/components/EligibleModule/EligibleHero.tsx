@@ -26,14 +26,14 @@ const EligibleHero = () => {
           </div>
           <div className="flex-1 block lg:hidden">
             <img
-              src="assets/images/eligible-hero-mobile.png"
-              className="h-[250px] w-full sm:h-[500px] object-cover"
+              src="assets/images/eligible-hero-mobile.jpg"
+              className="w-full object-cover"
             />
           </div>
           <div
             className="flex-1 hidden lg:block overflow-hidden"
             style={{
-              backgroundImage: "url('assets/images/eligible-hero.png')",
+              backgroundImage: "url('assets/images/eligible-hero.jpg')",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               backgroundPosition: "80%",

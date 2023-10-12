@@ -25,14 +25,14 @@ const XRayHero = () => {
           </div>
           <div className="flex-1 block lg:hidden">
             <img
-              src="assets/images/xray-hero1.png"
-              className="h-[250px] w-full sm:h-[500px] object-cover"
+              src="assets/images/xray-hero-mobile.jpg"
+              className="w-full object-cover"
             />
           </div>
           <div
             className="flex-1 hidden lg:block overflow-hidden"
             style={{
-              backgroundImage: "url('assets/images/xray-hero.png')",
+              backgroundImage: "url('assets/images/xray-hero.jpg')",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               backgroundPosition: "80%",

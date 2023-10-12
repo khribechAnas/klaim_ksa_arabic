@@ -12,18 +12,68 @@ const RcmClients = () => {
           <br />
           in the UAE and KSA
         </h2>
-        <div className="mt-4 xl:mt-0">
-          <div className="grid grid-cols-2 md:flex items-center justify-between">
-            <img src="assets/images/client1.png" />
-            <img src="assets/images/client4.png" />
-          </div>
-          <div className="grid grid-cols-2 md:flex items-center justify-between my-8">
-            <img src="assets/images/client6.png" />
-            <img src="assets/images/client7.png" className="ml-12 md:ml-0" />
-          </div>
-          <div className="grid grid-cols-2 md:flex items-center justify-between">
-            <img src="assets/images/client3.png" />
-            <img src="assets/images/client8.png" />
+        <div className="mt-4 md:mt-16">
+          <div className="grid grid-cols-2 gap-x-12 gap-y-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 items-center justify-center">
+            <div className="flex items-center justify-center">
+              <img
+                src="assets/images/client1.png"
+                className="h-[50px] object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="assets/images/client2.png"
+                className="h-[50px] object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="assets/images/client3.png"
+                className="h-[50px] object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="assets/images/client4.png"
+                className="h-[50px] object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="assets/images/client5.png"
+                className="h-[50px] object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="assets/images/client6.png"
+                className="h-[50px] object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="assets/images/client7.png"
+                className="h-[50px] object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="assets/images/client8.png"
+                className="h-[50px] object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="assets/images/client9.png"
+                className="h-[50px] object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="assets/images/client10.png"
+                className="h-[50px] object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ const ContactUsForm = () => {
             <div
               className="h-full px-12 py-6 rounded-lg col-span-2 ml-0 lg:ml-20 xl:ml-36"
               style={{
-                backgroundImage: "url('assets/images/kapital-contact.png')",
+                backgroundImage: "url('assets/images/contact.jpg')",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "80%",

@@ -51,45 +51,11 @@ const Header = () => {
           </div>
         </div>
 
-        {/* <ul className="buy-button list-inline mb-0 d-none d-lg-block">
-          <li className="list-inline-item mb-0 me-4">
-            <a
-              href="https://portal.uae.klaim.ai/sign-in"
-              className="btn btn-soft-primary px-5 py-4 outline-0 text-base tracking-wide font-semibold rounded-md bg-[#2f55d40d] border-[#2f55d40d] text-[#6135fb]"
-              style={{ boxShadow: "none" }}
-              target="_blank"
-            >
-              Sign In
-            </a>
-          </li>
-          <li className="list-inline-item ps-1 mb-0">
-            <a
-              href="https://portal.uae.klaim.ai/sign-up"
-              className="btn btn-outline-primary"
-              target="_blank"
-            >
-              Sign Up
-            </a>
-          </li>
-        </ul> */}
-        {/* <ul className="buy-button list-inline mb-0 d-lg-none">
-          <li className="list-inline-item mb-0">
-            <a
-              href="https://portal.uae.klaim.ai/sign-up"
-              className="btn btn-outline-primary"
-              target="_blank"
-              style={{ border: "none" }}
-            >
-              Sign Up
-            </a>
-          </li>
-        </ul> */}
-
         <div
           id="navigation"
           style={{ display: showMobileMenu ? "block" : "none" }}
         >
-          <ul className="navigation-menu">
+          <ul className="navigation-menu relative">
             <li className={pathname == "/" ? "active" : ""}>
               <Link href="/">Home</Link>
             </li>
@@ -192,6 +158,30 @@ const Header = () => {
             <li className={pathname == "/contact" ? "active" : ""}>
               <Link href="/contact">Contact us</Link>
             </li>
+            <ul className="min-[1024px]:flex absolute top-0 bottom-0 right-0 flex items-center justify-center hidden">
+              <li className="bg-[#6135FB] px-5 py-2 rounded-lg font-semibold text-white mx-2.5">
+                <a href="https://portal.uae.klaim.ai/sign-in" target="_blank">
+                  Sign In
+                </a>
+              </li>
+              <li className="px-5 py-2 rounded-lg font-semibold border border-[#6135FB] ml-2.5 text-[#6135FB]">
+                <a href="https://portal.uae.klaim.ai/sign-up" target="_blank">
+                  Sign Up
+                </a>
+              </li>
+            </ul>
+            <ul className="min-[1024px]:hidden items-center justify-start flex mb-3 ml-5 min-[992px]:ml-0 mt-5 min-[992px]:mt-0">
+              <li className="bg-[#6135FB] px-5 py-2 rounded-lg font-semibold text-white mx-2.5">
+                <a href="https://portal.uae.klaim.ai/sign-in" target="_blank">
+                  Sign In
+                </a>
+              </li>
+              <li className="px-5 py-2 rounded-lg font-semibold border border-[#6135FB] ml-2.5 text-[#6135FB]">
+                <a href="https://portal.uae.klaim.ai/sign-up" target="_blank">
+                  Sign Up
+                </a>
+              </li>
+            </ul>
           </ul>
         </div>
       </div>
