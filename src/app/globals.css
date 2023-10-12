@@ -353,6 +353,7 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    align-items: center;
   }
   #topnav .navigation-menu > .has-submenu:hover .menu-arrow {
     top: 33px !important;
@@ -506,6 +507,9 @@
   }
   #topnav #navigation {
     display: block !important;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
   }
   #topnav.scroll {
     top: 0;
