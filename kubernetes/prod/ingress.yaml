@@ -1,0 +1,43 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: prod
+  name: prod-klaim-website-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: '36000'
+    nginx.ingress.kubernetes.io/proxy-send-timeout: '36000'
+    nginx.ingress.kubernetes.io/proxy-read-timeout: '36000'
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    #nginx.org/websocket-services: "portal-frontend-uae-svc"
+    #nginx.ingress.kubernetes.io/limit-connections: '10'
+    #nginx.ingress.kubernetes.io/limit-rpm: '60'
+spec:
+  rules:
+    - host: klaim.ai
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prod-klaim-website-svc
+                port:
+                  number: 80
+    - host: www.klaim.ai
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prod-klaim-website-www-svc
+                port:
+                  number: 80
+  tls:
+    - hosts:
+      - www.klaim.ai
+      - klaim.ai
+      secretName: prod-klaim-website-tls
