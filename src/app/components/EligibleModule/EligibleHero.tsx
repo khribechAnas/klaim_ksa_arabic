@@ -22,7 +22,7 @@ const EligibleHero = () => {
               patient experience, streamline staffing costs, and dramatically
               reduce claim denials due to eligibility-related mistakes. mobile
             </p>
-            <ButtonPrimary title="Talk to an expert" />
+            <ButtonPrimary title="Talk to an expert" href="/contact" />
           </div>
           <div className="flex-1 block lg:hidden">
             <img
@@ -57,7 +57,7 @@ const EligibleHero = () => {
                   dramatically reduce claim denials due to eligibility-related
                   mistakes...
                 </p>
-                <ButtonPrimary title="Talk to an expert" />
+                <ButtonPrimary title="Talk to an expert" href="/contact" />
               </div>
             </div>
           </div>

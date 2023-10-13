@@ -11,7 +11,7 @@ const InspectorTheResult = () => {
         Higher revenues, reliable cash flow, and lower operational costs.
       </p>
       <div className="py-4">
-        <ButtonWhite title="I'm interested!" />
+        <ButtonWhite title="I'm interested!" href="/contact" />
       </div>
     </section>
   );

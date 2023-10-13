@@ -32,9 +32,9 @@ const EligibleBulkEligibility = () => {
             </p>
           </div>
         </div>
-        <div className="py-4 text-center">
+        {/* <div className="py-4 text-center">
           <ButtonPrimary title="I'm interested" />
-        </div>
+        </div> */}
       </div>
     </section>
   );

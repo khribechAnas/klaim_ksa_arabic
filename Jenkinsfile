@@ -24,6 +24,13 @@ pipeline {
 
           echo "Setting environment for branch ${BRANCH_NAME}"
           
+          if (BRANCH_NAME == 'master') {
+            DEPLOYMENT_ENV = 'prod'
+            KUBERNETES_PATH = 'kubernetes/prod'
+            IMAGE_VERSION = GIT_COMMIT
+            BUILD_ARGS = '--build-arg NEXT_PUBLIC_APP_NAME="klaim_website" '
+
+          }
           if (BRANCH_NAME == 'stage') {
             DEPLOYMENT_ENV = 'stg'
             KUBERNETES_PATH = 'kubernetes/stg'

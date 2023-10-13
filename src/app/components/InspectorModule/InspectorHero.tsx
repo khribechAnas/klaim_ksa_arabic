@@ -22,7 +22,7 @@ const InspectorHero = () => {
               detects data-filling errors and automatically compares diagnoses
               with provided services for higher acceptance rates.
             </p>
-            <ButtonPrimary title="Talk to an expert" />
+            <ButtonPrimary title="Talk to an expert" href="/contact" />
           </div>
           <div className="flex-1 block lg:hidden">
             <img
@@ -58,7 +58,7 @@ const InspectorHero = () => {
                   that detects data-filling errors and automatically compares
                   diagnoses with provided services for higher acceptance rates.
                 </p>
-                <ButtonPrimary title="Talk to an expert" />
+                <ButtonPrimary title="Talk to an expert" href="/contact" />
               </div>
             </div>
           </div>

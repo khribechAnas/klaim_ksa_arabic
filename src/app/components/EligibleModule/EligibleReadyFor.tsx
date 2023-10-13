@@ -28,7 +28,7 @@ const EligibleReadyFor = () => {
               in your business.
             </p>
             <div className="py-4">
-              <ButtonPrimary title="Get a call back" />
+              <ButtonPrimary title="Get a call back" href="/contact" />
             </div>
           </div>
           <div className="flex items-center justify-end w-full mt-4 lg:mt-0">

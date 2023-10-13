@@ -46,7 +46,7 @@ const HomeBusinessGrowth = () => {
         <div className="w-1 bg-white hidden md:block 2xl:hidden" />
       </div>
       <div className="pt-4">
-        <ButtonPrimary title="I’m interested!" />
+        <ButtonPrimary title="I’m interested!" href="/contact" />
       </div>
     </section>
   );

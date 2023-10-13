@@ -121,9 +121,9 @@ const KapitalWhatToExpect = () => {
           </p>
         </div>
       </div>
-      <div className="py-4 mt-12">
-        <ButtonPrimary title="Sign Up Today" />
-      </div>
+      {/* <div className="py-4 mt-12">
+        <ButtonPrimary title="Get a Call Back" href="/contact" />
+      </div> */}
     </section>
   );
 };

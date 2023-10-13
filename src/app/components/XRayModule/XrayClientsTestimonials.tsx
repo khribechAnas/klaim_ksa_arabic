@@ -114,7 +114,7 @@ const XrayClientsTestimonials = () => {
         <div className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-white to-[rgba(255, 255, 255, 0.52)] w-[33%] lg:block hidden" />
       </div> */}
       <div className="text-center py-4">
-        <ButtonPrimary title="I'm interested!" />
+        <ButtonPrimary title="I'm interested!" href="/contact" />
       </div>
     </section>
   );

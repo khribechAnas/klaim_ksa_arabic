@@ -36,7 +36,7 @@ const AboutUsHowWeStarted = () => {
           faster growth and better patient care.
         </p>
         <div className="py-4">
-          <ButtonPrimary title="Send us a message" />
+          <ButtonPrimary title="Talk to an Expert" href="/contact" />
         </div>
       </div>
       <div className="flex-1 flex justify-end mt-12 xl:mt-0 w-full xl:w-auto">

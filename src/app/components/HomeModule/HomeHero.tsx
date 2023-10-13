@@ -61,8 +61,8 @@ const HomeHero = () => {
               </span> */}
             </h1>
             <div className="flex items-center">
-              <ButtonPrimary title="See What's Inside" />
-              <ButtonSecondary title="Get Started Now" />
+              <ButtonPrimary title="Talk to an expert" href="/contact" />
+              <ButtonSecondary title="Get Started Now" href="https://portal.uae.klaim.ai/sign-up" target="_blank" />
             </div>
           </div>
         </div>

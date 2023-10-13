@@ -18,7 +18,7 @@ const XRayGetStarted = () => {
             more about your goals, answer your questions, and help you decide on
             your next steps.
           </p>
-          <ButtonPrimary title="Get a call back" />
+          <ButtonPrimary title="Get a call back" href="/contact" />
         </div>
         <div className="flex justify-center">
           <img src="assets/images/xray5.png" className="mt-8 object-cover" />

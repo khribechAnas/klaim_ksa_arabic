@@ -19,7 +19,7 @@ const InspectorStartMinimizing = () => {
             questions, and help you decide on your next steps.
           </p>
           <div className="py-4">
-            <ButtonPrimary title="Get a call back" />
+            <ButtonPrimary title="Get a call back" href="/contact" />
           </div>
         </div>
         <div className="flex-1 flex items-center justify-center">

@@ -167,11 +167,11 @@ const KapitalTable = () => {
             </table>
           </div>
         )}
-        <div className="text-center py-4">
+        {/* <div className="text-center py-4">
           <a className="bg-[#F5F7FB] text-[#6135FB] rounded-lg py-4 px-6 text-sm md:text-lg font-bold leading-4 tracking-[0.0225rem]">
             I&#39;m interested
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -42,7 +42,7 @@ const KapitalWhatWould = () => {
           </div>
         </div>
         <div className="py-4 mt-8">
-          <ButtonPrimary title="Learn More" />
+          <ButtonPrimary title="I'm interested" href="/contact" />
         </div>
       </div>
     </section>

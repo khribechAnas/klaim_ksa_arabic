@@ -78,7 +78,7 @@ const InspectorTrustedByTestimonials = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12 md:mb-16 text-start sm:text-center lg:text-start">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12 md:mb-16 text-start sm:text-center lg:text-start">
           <div className="px-6 py-4 bg-white shadow-[0_0_16px_0_rgba(0,0,0,0.05)] rounded-lg">
             <h2 className="text-[1.5rem] md:text-[2rem] font-bold leading-[2.25rem] md:leading-[2.5rem] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
@@ -109,14 +109,14 @@ const InspectorTrustedByTestimonials = () => {
               team
             </p>
           </div>
-        </div>
+        </div> */}
         {/* <div className="relative mb-8 md:mb-16">
           <SlickSlider isWhite />
           <div className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-white to-[rgba(255, 255, 255, 0.52)] w-[33%] lg:block hidden" />
         </div> */}
-        <div className="text-center py-4">
+        {/* <div className="text-center py-4">
           <ButtonPrimary title="I'm interested!" />
-        </div>
+        </div> */}
       </div>
     </section>
   );

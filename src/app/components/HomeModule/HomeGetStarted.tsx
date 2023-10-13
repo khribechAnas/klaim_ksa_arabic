@@ -15,7 +15,7 @@ const HomeGetStarted = () => {
             Get higher profits, faster growth{" "}
             <br className="block md:hidden lg:block" /> and happier patients.
           </p>
-          <ButtonPrimary title="I'm interested" />
+          <ButtonPrimary title="Sign up Today" href="https://portal.uae.klaim.ai/sign-up" target="_blank" />
         </div>
         <div className="flex-1 flex items-center justify-center mt-0 md:mt-12">
           <img

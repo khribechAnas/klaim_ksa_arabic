@@ -25,7 +25,7 @@ const KapitalAccelerate = () => {
               help you decide what to do next.
             </p>
             <div className="py-4 mt-8 md:mt-8">
-              <ButtonPrimary title="Get a call back" />
+              <ButtonPrimary title="Get a call back" href="/contact" />
             </div>
           </div>
           <div className="flex items-center justify-start block xl:hidden mt-12">

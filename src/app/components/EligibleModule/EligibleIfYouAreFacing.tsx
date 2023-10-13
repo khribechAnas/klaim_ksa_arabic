@@ -71,7 +71,7 @@ const EligibleIfYouAreFacing = () => {
           </div>
         </div>
         <div className="py-4">
-          <ButtonPrimary title="Learn More" />
+          <ButtonPrimary title="I'm interested" href="/contact" />
         </div>
       </div>
     </section>
