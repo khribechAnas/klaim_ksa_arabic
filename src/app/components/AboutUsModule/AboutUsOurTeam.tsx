@@ -7,6 +7,7 @@ const cofounders = [
     image: "assets/images/about-us-karim.png",
     description:
       "Karim Dakki is an instinctive leader with a stellar 15-year track record in highly demanding private equity and technology management environments. He previously cofounded a Myanmar-based telecom company valued at 700 million USD and has delivered outstanding results as an acting CFO in multiple organizations. Karim’s relentless commitment to excellence has been a driving force in Klaim’s impressive growth.",
+    linkedInProfile: "https://www.linkedin.com/in/karimdakki/",
   },
   {
     name: "Ghafoor Ahmad",
@@ -14,6 +15,7 @@ const cofounders = [
     image: "assets/images/about-us-ghafoor.png",
     description:
       "Ghafoor Ahmad is a highly accomplished executive, visionary leader, and serial entrepreneur. He has delivered extraordinary results in sales and leadership roles throughout his 17-year career. Ghafoor also founded AGA Medical Billing Services, one of the UAE’s leading revenue cycle management companies. His exceptional leadership skills have played a pivotal role in Klaim’s rapid growth and market disruption.",
+    linkedInProfile: "https://www.linkedin.com/in/ghafoor-ahmad-7b98a3164/",
   },
 ];
 
@@ -24,6 +26,7 @@ const directors = [
     image: "assets/images/about-us-eli.png",
     description:
       "Eli A. Chedid is a successful entrepreneur with 40 years of experience in business development, sales, and operations in the healthcare industry. His extensive knowledge comes from a broad range of corporate managerial involvement, including strategic planning and execution, industry positioning, and building awareness among leading US and international healthcare companies.",
+    linkedInProfile: "https://www.linkedin.com/in/eli-chedid-9594b110/",
   },
   {
     name: "Abdullah A. AlOthaim",
@@ -31,6 +34,7 @@ const directors = [
     image: "assets/images/about-us-abdulah.png",
     description:
       "Abdullah A. AlOthaim is the founder and CEO of Mad’a Investment Company, a venture capital and private equity firm headquartered in Riyadh, Saudi Arabia. During his career, he has achieved successful investments in many growth capital companies.",
+    linkedInProfile: "https://www.linkedin.com/in/abdullahalothaim/",
   },
   {
     name: "Dr. Majed AlAmeel",
@@ -38,6 +42,7 @@ const directors = [
     image: "assets/images/about-us-majed.png",
     description:
       "Dr. Majed AlAmeel leads his firm’s efforts to support healthcare organizations in the development of digital health and integrated information strategies and implementations. His specialties include business development, financial growth, relationship management, product development, and digital health.",
+    linkedInProfile: "https://www.linkedin.com/in/malameel/",
   },
 ];
 
@@ -60,7 +65,7 @@ const AboutUsOurTeam = () => {
               className="px-8 py-7 bg-white rounded-lg shadow-[0_0_16px_0_rgba(0,0,0,0.05)]"
             >
               <div className="mb-4 flex flex-col md:flex-row items-start md:items-center">
-                <img src={cofounder.image} />
+                <img src={cofounder.image} className="w-[129px]" />
                 <div className="ml-0 md:ml-8">
                   <h5 className="text-[24px] md:text-[32px] text-[#3F465D] font-bold leading-[36px] md:leading-[40px] mt-2 md:mt-0">
                     {cofounder.name}
@@ -68,7 +73,9 @@ const AboutUsOurTeam = () => {
                   <p className="text-[14px] md:text-[16px] leading-[25px] text-[#3F465D] mb-2">
                     {cofounder.title}
                   </p>
-                  <img src="assets/images/about-us-linkedin.svg" />
+                  <a href={cofounder.linkedInProfile} target="_blank">
+                    <img src="assets/images/about-us-linkedin.svg" />
+                  </a>
                 </div>
               </div>
               <p className="text-[16px] leading-[25px] text-[#3F465D]">
@@ -95,10 +102,12 @@ const AboutUsOurTeam = () => {
                   <p className="text-[16px] leading-[25px] text-[#3F465D] mb-2">
                     {director.title}
                   </p>
-                  <img
-                    src="assets/images/about-us-linkedin.svg"
-                    className="block md:hidden"
-                  />
+                  <a href={director.linkedInProfile} target="_blank">
+                    <img
+                      src="assets/images/about-us-linkedin.svg"
+                      className="block md:hidden"
+                    />
+                  </a>
                 </div>
               </div>
               <div className="flex-1 mb-0 md:mb-4">
@@ -107,10 +116,12 @@ const AboutUsOurTeam = () => {
                 </p>
               </div>
               <div>
-                <img
-                  src="assets/images/about-us-linkedin.svg"
-                  className="hidden md:block"
-                />
+                <a href={director.linkedInProfile} target="_blank">
+                  <img
+                    src="assets/images/about-us-linkedin.svg"
+                    className="hidden md:block"
+                  />
+                </a>
               </div>
             </div>
           ))}

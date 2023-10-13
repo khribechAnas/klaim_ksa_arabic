@@ -146,11 +146,15 @@ const SlickSliderVideo: React.FC = () => {
             return (
               <div
                 key={video.key}
-                className="pr-0 md:pr-8 -ml-0 md:-ml-10 cursor-pointer rounded-lg"
-                onClick={() => setShowAboutUsVideoModal(video.video)}
+                className="pr-0 md:pr-8 -ml-0 md:-ml-10 rounded-lg"
               >
-                <div className="mx-4 md:mx-0 rounded-lg">
+                <div className="mx-4 md:mx-0 rounded-lg relative">
                   <img src={video.img} className="rounded-lg" />
+                  <img
+                    src="assets/images/play.svg"
+                    className="absolute top-40 left-1/2 w-14 bg-white rounded-full cursor-pointer"
+                    onClick={() => setShowAboutUsVideoModal(video.video)}
+                  />
                 </div>
               </div>
             );

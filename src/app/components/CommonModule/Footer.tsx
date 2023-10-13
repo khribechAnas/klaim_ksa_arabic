@@ -24,7 +24,7 @@ const Footer = () => {
               <img src="assets/images/facebook.svg" className="mr-4" />
             </div>
             <div className="flex flex-col md:flex-row">
-              {/* <div className="text-white text-sm md:text-base leading-[25px] md:leading-none font-normal">
+              <div className="text-white text-sm md:text-base leading-[25px] md:leading-none font-normal">
                 <p className="mb-2">Al Khatem Tower 4, ADGM Square,</p>
                 <p className="mb-2">Abu Dhabi, UAE,</p>
                 <p className="mb-2">
@@ -33,7 +33,7 @@ const Footer = () => {
                 <p>
                   <a href="tel:+97148764096">+971 4 876 4096</a>
                 </p>
-              </div> */}
+              </div>
               <div className="text-white text-sm md:text-base leading-[25px] md:leading-none font-normal mx-0 md:mx-16 my-8 md:my-0">
                 <p className="mb-2">Indigo Icon Tower 3404, JLT Cluster F,</p>
                 <p className="mb-2">Dubai, UAE</p>
