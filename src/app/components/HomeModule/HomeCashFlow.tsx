@@ -13,10 +13,12 @@ const HomeCashFlow = () => {
         </h2>
         <div className="flex items-center flex-col md:flex-row mt-8 md:mt-8">
           <div className="flex-1">
-            <img
-              src="assets/images/CashFlow1.png"
-              className="rounded-lg w-full"
-            />
+            <div className="pr-0 lg:pr-12">
+              <img
+                src="assets/images/CashFlow1.png"
+                className="rounded-lg w-full"
+              />
+            </div>
           </div>
           <div className="flex-1">
             <p className="px-4 md:px-16 text-[20px] md:text-[28px] text-[#3F465D] leading-9 bg-transparent py-4 md:py-0 rounded-b-lg md:rounded-none">
@@ -33,18 +35,22 @@ const HomeCashFlow = () => {
             </p>
           </div>
           <div className="flex-1">
-            <img
-              src="assets/images/CashFlow2.png"
-              className="rounded-lg w-full"
-            />
+            <div className="pl-0 lg:pl-12">
+              <img
+                src="assets/images/CashFlow2.png"
+                className="rounded-lg w-full"
+              />
+            </div>
           </div>
         </div>
         <div className="flex items-center flex-col md:flex-row mt-8 md:mt-8">
           <div className="flex-1">
-            <img
-              src="assets/images/CashFlow3.png"
-              className="rounded-lg w-full"
-            />
+            <div className="pr-0 lg:pr-12">
+              <img
+                src="assets/images/CashFlow3.png"
+                className="rounded-lg w-full"
+              />
+            </div>
           </div>
           <div className="flex-1">
             <p className="px-4 md:px-16 text-[20px] md:text-[28px] text-[#3F465D] leading-9 bg-transparent py-4 md:py-0 rounded-b-lg md:rounded-none">

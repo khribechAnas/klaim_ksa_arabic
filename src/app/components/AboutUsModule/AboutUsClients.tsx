@@ -78,41 +78,41 @@ const AboutUsClients = () => {
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
             <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-                300,000+
+                Over 323,000
               </span>{" "}
             </h2>
             <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
-              claims accelerated
+              claims processed globally
             </p>
           </div>
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
             <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-                {`$ 25 milion`}
+                {`Over $25 milion`}
               </span>{" "}
             </h2>
             <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
-              in claim payments
+              disbursed in claim payments
             </p>
-          </div>
-          <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
-            <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
-              Established in
-            </p>
-            <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
-              <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-                2019
-              </span>{" "}
-            </h2>
           </div>
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
             <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-                Award-winning
+                Founded in 2019
               </span>{" "}
             </h2>
             <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
-              team
+              Offices in the UAE, KSA, and Oman
+            </p>
+          </div>
+          <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg">
+            <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
+              <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
+                Honored as an
+              </span>{" "}
+            </h2>
+            <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
+              Innovative Fintech Pioneer
             </p>
           </div>
         </div>
