@@ -6,9 +6,9 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-production
-    nginx.ingress.kubernetes.io/proxy-connect-timeout: '36000'
-    nginx.ingress.kubernetes.io/proxy-send-timeout: '36000'
-    nginx.ingress.kubernetes.io/proxy-read-timeout: '36000'
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "36000"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "36000"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "36000"
     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
     nginx.ingress.kubernetes.io/enable-cors: "true"
 spec:
@@ -23,8 +23,8 @@ spec:
                 name: stg-klaim-website-svc
                 port:
                   number: 80
-   
+
   tls:
     - hosts:
-      - stg.klaim.ai
+        - stg.klaim.ai
       secretName: stg-klaim-website-tls

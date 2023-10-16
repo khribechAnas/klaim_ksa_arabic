@@ -23,18 +23,19 @@ pipeline {
           BRANCH_NAME = "${env.GIT_BRANCH.split('/').size() > 1 ? env.GIT_BRANCH.split('/')[1..-1].join('/') : env.GIT_BRANCH}"
 
           echo "Setting environment for branch ${BRANCH_NAME}"
+          
           if (BRANCH_NAME == 'master') {
             DEPLOYMENT_ENV = 'prod'
             KUBERNETES_PATH = 'kubernetes/prod'
             IMAGE_VERSION = GIT_COMMIT
-            BUILD_ARGS = '--build-arg NEXT_PUBLIC_APP_NAME="klaim_website" --build-arg NEXT_PUBLIC_STRAPI_ENDPOINT="https://strapi.klaim.ai" --build-arg NEXT_PUBLIC_STRAPI_API_ENDPOINT="https://strapi.klaim.ai/api" --build-arg  NEXT_PUBLIC_STRAPI_TOKEN="3bcb1f76988ca0415a93c4093d0365e5ee11e67c4675d282f34e7d46d4f1fb220e110dce258e618ee030b333f95bc696395bc395856eda80a47f374491e46a381e05bc82dfa570f9c586b92e23682bda75c7ce8f05414f789df8a30faa4b6132efed7723ddeae8203224d7af255a2f37e6a2f780cd7d5cd07b4fa56b13961b13" '
+            BUILD_ARGS = '--build-arg NEXT_PUBLIC_APP_NAME="klaim_website" '
 
           }
           if (BRANCH_NAME == 'stage') {
             DEPLOYMENT_ENV = 'stg'
             KUBERNETES_PATH = 'kubernetes/stg'
             IMAGE_VERSION = GIT_COMMIT
-            BUILD_ARGS = '--build-arg NEXT_PUBLIC_APP_NAME="klaim_website" --build-arg NEXT_PUBLIC_STRAPI_ENDPOINT="https://strapi.stg.klaim.ai" --build-arg NEXT_PUBLIC_STRAPI_API_ENDPOINT="https://strapi.stg.klaim.ai/api" --build-arg  NEXT_PUBLIC_STRAPI_TOKEN="4703b6805273a76fadad65749fe22254b9cf8a0187a37037a5d62270297610a9c1536006722fa7365e39698d715708bbd6196a4fd4d525d8ee321144a1089b182af7b86c2db009def0340e763c7fd1e58db3f072d8341e66ef238b0d178a7d2469b7199b08f1db40ae51575a449fe7ed7ddb5e2adb81c20619159681d453c808" '
+            BUILD_ARGS = '--build-arg NEXT_PUBLIC_APP_NAME="klaim_website" '
 
           }
           echo "Environment set as ${DEPLOYMENT_ENV}. Image version: ${IMAGE_VERSION}"
