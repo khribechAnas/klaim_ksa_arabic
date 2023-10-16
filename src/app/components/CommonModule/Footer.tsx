@@ -1,4 +1,5 @@
 import React from "react";
+import FooterNewsletter from "./FooterNewsletter";
 
 const Footer = () => {
   return (
@@ -15,13 +16,24 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col xl:flex-row items-start xl:items-center justify-between my-8 xl:my-16">
-            <div className="flex mb-8 xl:mb-0">
-              <img src="assets/images/youtube.svg" className="mr-4" />
-              <img src="assets/images/twitter.svg" className="mr-4" />
-              <img src="assets/images/instagram.svg" className="mr-4" />
-              <img src="assets/images/linkedin.svg" className="mr-4" />
-              <img src="assets/images/viber.svg" className="mr-4" />
-              <img src="assets/images/facebook.svg" className="mr-4" />
+            <div className="mr-4 mb-8 xl:mb-0">
+              <div className="flex mb-8">
+                <img src="assets/images/youtube.svg" className="mr-4" />
+                <img src="assets/images/twitter.svg" className="mr-4" />
+                <img src="assets/images/instagram.svg" className="mr-4" />
+                <img src="assets/images/linkedin.svg" className="mr-4" />
+                <img src="assets/images/viber.svg" className="mr-4" />
+                <img src="assets/images/facebook.svg" className="mr-4" />
+              </div>
+              <h2 className="text-white font-bold leading-[16px] md:leading-4 text-sm md:text-lg tracking-tight mb-4">
+                Newsletter
+              </h2>
+              <p className="text-white text-sm md:text-base leading-[25px] md:leading-none font-normal mb-4">
+                Join the Klaim community for the latest product <br /> updates,
+                industry insights, and exciting news. <br />
+                Subscribe now to be in the know!
+              </p>
+              <FooterNewsletter />
             </div>
             <div className="flex flex-col md:flex-row">
               <div className="text-white text-sm md:text-base leading-[25px] md:leading-none font-normal">
