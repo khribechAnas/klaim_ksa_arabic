@@ -57,7 +57,7 @@ const Header = () => {
         >
           <ul className="navigation-menu relative">
             <li className={pathname == "/" ? "active" : ""}>
-              <Link href="/">Home</Link>
+              <a href="/">Home</a>
             </li>
             <li
               className={`has-submenu parent-parent-menu-item ${
@@ -71,65 +71,65 @@ const Header = () => {
                   : ""
               }`}
             >
-              <Link href="#" onClick={toggleMobileDropdown}>
+              <a href="#" onClick={toggleMobileDropdown}>
                 Services
-              </Link>
+              </a>
               <span className="menu-arrow"></span>
               <ul className={`submenu ${classOpen ? "open" : ""}`}>
                 <li className={pathname == "/x-ray" ? "active" : ""}>
-                  <Link
+                  <a
                     href="/x-ray"
                     className={`sub-menu-item ${
                       pathname == "/x-ray" ? "active" : ""
                     }`}
                   >
                     Klaim X-Ray
-                  </Link>
+                  </a>
                 </li>
                 <li className={pathname == "/kapital" ? "active" : ""}>
-                  <Link
+                  <a
                     href="/kapital"
                     className={`sub-menu-item ${
                       pathname == "/kapital" ? "active" : ""
                     }`}
                   >
                     Klaim Kapital
-                  </Link>
+                  </a>
                 </li>
                 <li className={pathname == "/inspector" ? "active" : ""}>
-                  <Link
+                  <a
                     href="/inspector"
                     className={`sub-menu-item ${
                       pathname == "/inspector" ? "active" : ""
                     }`}
                   >
                     Klaim Inspector
-                  </Link>
+                  </a>
                 </li>
                 <li className={pathname == "/eligible" ? "active" : ""}>
-                  <Link
+                  <a
                     href="/eligible"
                     className={`sub-menu-item ${
                       pathname == "/eligible" ? "active" : ""
                     }`}
                   >
                     Klaim Eligible
-                  </Link>
+                  </a>
                 </li>
                 {/* <li className={pathname == "/rcm" ? "active" : ""}>
-                  <Link
+                  <a
                     href="/rcm"
                     className={`sub-menu-item ${
                       pathname == "/rcm" ? "active" : ""
                     }`}
                   >
                     Klaim RCM 2.0
-                  </Link>
+                  </a>
                 </li> */}
               </ul>
             </li>
             <li className={pathname == "/about" ? "active" : ""}>
-              <Link href="/about">About us</Link>
+              <a href="/about">About us</a>
             </li>
             {/* <li
               className={`has-submenu parent-parent-menu-item ${
@@ -156,7 +156,7 @@ const Header = () => {
               </ul>
             </li> */}
             <li className={pathname == "/contact" ? "active" : ""}>
-              <Link href="/contact">Contact us</Link>
+              <a href="/contact">Contact us</a>
             </li>
             <ul className="min-[1024px]:flex absolute top-0 bottom-0 right-0 flex items-center justify-center hidden">
               <li className="bg-[#6135FB] px-5 py-2 rounded-lg font-semibold text-white mx-2.5">
