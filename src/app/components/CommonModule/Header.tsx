@@ -65,8 +65,7 @@ const Header = () => {
                 pathname == "/kapital" ||
                 pathname == "/inspector" ||
                 pathname == "/eligible" ||
-                pathname == "/rcm" ||
-                pathname.startsWith("/blog")
+                pathname == "/rcm"
                   ? "active"
                   : ""
               }`}
@@ -128,33 +127,40 @@ const Header = () => {
                 </li> */}
               </ul>
             </li>
-            <li className={pathname == "/about" ? "active" : ""}>
-              <a href="/about">About us</a>
-            </li>
-            {/* <li
+            <li
               className={`has-submenu parent-parent-menu-item ${
                 pathname == "/about" || pathname.startsWith("/blog")
                   ? "active"
                   : ""
               }`}
             >
-              <Link href="#" onClick={toggleMobileDropdown}>
+              <a href="#" onClick={toggleMobileDropdown}>
                 About Us
-              </Link>
+              </a>
               <span className="menu-arrow"></span>
               <ul className={`submenu ${classOpen ? "open" : ""}`}>
                 <li className={pathname == "/about" ? "active" : ""}>
-                  <Link
+                  <a
                     href="/about"
                     className={`sub-menu-item ${
                       pathname == "/about" ? "active" : ""
                     }`}
                   >
                     About Klaim
-                  </Link>
+                  </a>
+                </li>
+                <li className={pathname == "/blog" ? "active" : ""}>
+                  <a
+                    href="/blog"
+                    className={`sub-menu-item ${
+                      pathname == "/blog" ? "active" : ""
+                    }`}
+                  >
+                    Blog
+                  </a>
                 </li>
               </ul>
-            </li> */}
+            </li>
             <li className={pathname == "/contact" ? "active" : ""}>
               <a href="/contact">Contact us</a>
             </li>
