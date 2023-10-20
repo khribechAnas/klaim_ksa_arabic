@@ -5,7 +5,7 @@ const HomeFAQ = () => {
   const faqData = [
     {
       title: "What is Klaim?",
-      answer: `<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-family:"Popins",sans-serif;'><span style="font-size: 18px;">Klaim is an award-winning fintech company based in UAE. Since 2019, we’ve been revolutionizing the healthcare industry by giving providers access to the working capital they need to grow faster and serve patients better. Our solutions are already trusted by more than 40 healthcare providers, and so far we’ve accelerated 300,000 claims and paid out 25 million in purchased claims (as part of our Klaim Kapital solution). Our team is ready to connect with you, answer your questions, and help you decide on next steps. <a href="/contact" style="text-decoration: underline; color: blue;">Click here</a> to send us a message now.</span></p>`,
+      answer: `<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;font-family:"Popins",sans-serif;'><span style="font-size: 18px;">Klaim is an award-winning fintech company based in UAE. Since 2019, we’ve been revolutionizing the healthcare industry by giving providers access to the working capital they need to grow faster and serve patients better. Our solutions are already trusted by more than 40 healthcare providers, and so far we’ve accelerated 300,000 claims and paid out 100 million AED in purchased claims (as part of our Klaim Kapital solution). Our team is ready to connect with you, answer your questions, and help you decide on next steps. <a href="/contact" style="text-decoration: underline; color: blue;">Click here</a> to send us a message now.</span></p>`,
     },
     {
       title: "How will you protect my data?",

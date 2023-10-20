@@ -49,7 +49,7 @@ const KapitalHero = () => {
                   of submission—no loans or financing required. Get started in
                   as little as 7 days.
                 </p>
-                <ButtonPrimary title="Talk to an expert" />
+                <ButtonPrimary title="Talk to an expert" href="/contact" />
               </div>
             </div>
           </div>

@@ -74,6 +74,12 @@ const HomeClients = () => {
                 className="h-[50px] object-contain"
               />
             </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="assets/images/client11.png"
+                className="h-[50px] object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
