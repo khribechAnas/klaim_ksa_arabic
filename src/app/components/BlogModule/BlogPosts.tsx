@@ -1,4 +1,5 @@
 import React from "react";
+import Pagination from "../CommonModule/Pagination";
 
 const BlogPosts = () => {
   return (
@@ -14,9 +15,9 @@ const BlogPosts = () => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
             />
           </svg>
@@ -50,10 +51,12 @@ const BlogPosts = () => {
       </div>
       <div className="flex w-full mb-16">
         <div className="w-7/12 flex flex-col">
-          <img
-            src="assets/images/blog-1.png"
-            className="w-full h-[30rem] object-cover rounded-lg mb-4"
-          />
+          <a href="/blog/blogpost">
+            <img
+              src="assets/images/blog-1.png"
+              className="w-full h-[30rem] object-cover rounded-lg mb-4"
+            />
+          </a>
           <p className="text-[#6135FB] text-base font-medium mb-3.5">
             Dr. Sara Surname • 20 Jan 2022
           </p>
@@ -221,7 +224,7 @@ const BlogPosts = () => {
         </div>
       </div>
       <div className="flex items-center justify-center mb-[7.625rem]">
-        <button className="border rounded-lg px-12 py-6">Pagination</button>
+        <Pagination />
       </div>
     </section>
   );

@@ -24,12 +24,12 @@ const Header = () => {
       <div className="container mx-auto">
         <a className="logo" href="https://klaim.ai">
           <img
-            src="assets/images/Logo.svg"
+            src="/assets/images/Logo.svg"
             className="logo-light-mode"
             alt=""
           />
           <img
-            src="assets/images/klaim/logo_klaim_w.svg"
+            src="/assets/images/klaim/logo_klaim_w.svg"
             className="logo-dark-mode"
             alt=""
           />

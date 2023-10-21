@@ -7,7 +7,7 @@ const Footer = () => {
       <footer className="bg-linear pt-8 pb-8 px-4 md:pt-32 md:pb-10">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between">
-            <img src="assets/images/Logo-white.svg" />
+            <img src="/assets/images/Logo-white.svg" />
             <div className="flex items-center text-white font-bold leading-[16px] md:leading-4 text-sm md:text-lg tracking-tight mt-8 md:mt-0">
               <a className="pr-16" href="/">
                 Home
@@ -20,26 +20,26 @@ const Footer = () => {
               href="https://www.linkedin.com/company/klaim-ai/"
               target="_blank"
             >
-              <img src="assets/images/linkedin.svg" className="mr-4" />
+              <img src="/assets/images/linkedin.svg" className="mr-4" />
             </a>
             <a
               href="https://www.youtube.com/channel/UCSFyygyt3hE05B9nGNCqHMA"
               target="_blank"
             >
-              <img src="assets/images/youtube.svg" className="mr-4" />
+              <img src="/assets/images/youtube.svg" className="mr-4" />
             </a>
             <a href="https://www.twitter.com/AiKlaim" target="_blank">
-              <img src="assets/images/twitter.svg" className="mr-4" />
+              <img src="/assets/images/twitter.svg" className="mr-4" />
             </a>
             <a href="https://www.instagram.com/klaim.ai/" target="_blank">
-              <img src="assets/images/instagram.svg" className="mr-4" />
+              <img src="/assets/images/instagram.svg" className="mr-4" />
             </a>
 
             <a
               href="https://www.facebook.com/profile.php?id=100063848329885"
               target="_blank"
             >
-              <img src="assets/images/facebook.svg" className="mr-4" />
+              <img src="/assets/images/facebook.svg" className="mr-4" />
             </a>
           </div>
           <div className="flex flex-col xl:flex-row items-start xl:items-start justify-between my-8 xl:my-16">
