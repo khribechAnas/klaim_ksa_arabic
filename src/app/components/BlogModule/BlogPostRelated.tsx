@@ -2,11 +2,11 @@ import React from "react";
 
 const BlogPostRelated = () => {
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto px-4">
       <h2 className="font-bold text-4xl text-[#222B45] mb-9">
         Related reading
       </h2>
-      <div className="grid grid-cols-3 gap-8 mb-[4.5rem]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-[4.5rem]">
         <div className="flex flex-col">
           <img
             src="/assets/images/blog-1.png"

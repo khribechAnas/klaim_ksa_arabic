@@ -2,7 +2,7 @@ import React from "react";
 
 const BlogPostAuthor = () => {
   return (
-    <section className="container mx-auto px-[25rem] mb-14">
+    <section className="container mx-auto px-[4rem] lg:px-[8rem] xl:px-[18rem] 2xl:px-[26rem] mb-14">
       <hr />
       <div className="flex py-10">
         <img

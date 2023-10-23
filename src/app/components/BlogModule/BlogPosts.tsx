@@ -3,9 +3,9 @@ import Pagination from "../CommonModule/Pagination";
 
 const BlogPosts = () => {
   return (
-    <section className="container mx-auto">
-      <div className="relative mb-6 w-1/2">
-        <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+    <section className="container mx-auto px-4">
+      <div className="relative mb-6 w-full md:w-1/2">
+        <div className="absolute inset-y-0 left-0 flex items-center pl-6 pointer-events-none">
           <svg
             className="w-4 h-4 text-gray-500 dark:text-gray-400"
             aria-hidden="true"
@@ -25,11 +25,11 @@ const BlogPosts = () => {
         <input
           type="text"
           id="input-group-1"
-          className="bg-[#F7F9FC] text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-[#F7F9FC] text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 py-5 pr-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Search posts..."
         />
       </div>
-      <div className="flex mb-11">
+      <div className="flex mb-8 py-4 overflow-x-auto">
         <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
           Design
         </div>
@@ -49,8 +49,8 @@ const BlogPosts = () => {
           Presentation
         </div>
       </div>
-      <div className="flex w-full mb-16">
-        <div className="w-7/12 flex flex-col">
+      <div className="flex flex-col xl:flex-row w-full mb-16">
+        <div className="w-full xl:w-[55%] flex flex-col mb-8 xl:mb-0">
           <a href="/blog/blogpost">
             <img
               src="assets/images/blog-1.png"
@@ -80,7 +80,7 @@ const BlogPosts = () => {
             </div>
           </div>
         </div>
-        <div className="w-5/12 pl-16  flex flex-col">
+        <div className="w-full xl:w-[45%] pl-0 xl:pl-16 flex flex-col">
           <img
             src="assets/images/blog-1.png"
             className="w-full h-[30rem] object-cover rounded-lg mb-4"
@@ -109,7 +109,7 @@ const BlogPosts = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-8 mb-[4.5rem]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-[4.5rem]">
         <div className="flex flex-col">
           <img
             src="assets/images/blog-1.png"

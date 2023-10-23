@@ -2,22 +2,19 @@ import React from "react";
 
 const BlogPostTitle = () => {
   return (
-    <section className="pt-[74px] container mx-auto">
-      <div className="flex items-center py-11">
+    <section className="pt-[74px] container mx-auto px-4">
+      <div className="flex flex-col xl:flex-row items-center pt-11 pb-28 xl:pb-11">
         <img
           src="/assets/images/blog-1.png"
-          className="object-cover h-[30rem] w-[45rem] rounded-lg"
+          className="object-cover h-[30rem] w-full xl:w-[45rem] rounded-t-lg xl:rounded-lg"
         />
-        <div className="bg-[#F5F7FB] w-full rounded-r-lg px-14 py-10">
+        <div className="bg-[#F5F7FB] w-full rounded-b-lg xl:rounded-r-lg px-14 py-10">
           <div className="flex flex-1 items-end mb-6">
             <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
               Design
             </div>
             <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
               Research
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Presentation
             </div>
           </div>
           <h1 className="text-4xl text-[#222B45] mb-5">

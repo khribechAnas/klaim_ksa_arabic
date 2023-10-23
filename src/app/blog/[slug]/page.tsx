@@ -1,4 +1,5 @@
 import BlogPostAuthor from "@/app/components/BlogModule/BlogPostAuthor";
+import BlogPostNewsLetter from "@/app/components/BlogModule/BlogPostNewsLetter";
 import BlogPostRelated from "@/app/components/BlogModule/BlogPostRelated";
 import BlogPostText from "@/app/components/BlogModule/BlogPostText";
 import BlogPostTitle from "@/app/components/BlogModule/BlogPostTitle";
@@ -13,6 +14,7 @@ const BlogPostPage = () => {
       <BlogPostTitle />
       <BlogPostText />
       <BlogPostAuthor />
+      {/* <BlogPostNewsLetter /> */}
       <BlogPostRelated />
       <Footer />
     </>
