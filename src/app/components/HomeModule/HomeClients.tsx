@@ -13,7 +13,7 @@ const HomeClients = () => {
           in the UAE and KSA
         </h2>
         <div className="mt-4 md:mt-16">
-          <div className="grid grid-cols-2 gap-x-12 gap-y-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 items-center justify-center">
+          <div className="grid grid-cols-2 gap-x-12 gap-y-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 items-center justify-center">
             <div className="flex items-center justify-center">
               <img
                 src="assets/images/client1.png"
@@ -46,7 +46,7 @@ const HomeClients = () => {
             </div>
             <div className="flex items-center justify-center">
               <img
-                src="assets/images/client6.png"
+                src="assets/images/client11.png"
                 className="h-[50px] object-contain"
               />
             </div>
@@ -76,7 +76,7 @@ const HomeClients = () => {
             </div>
             <div className="flex items-center justify-center">
               <img
-                src="assets/images/client11.png"
+                src="assets/images/client6.png"
                 className="h-[50px] object-contain"
               />
             </div>
