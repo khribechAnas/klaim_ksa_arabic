@@ -1,7 +1,54 @@
 import React from "react";
 import Pagination from "../CommonModule/Pagination";
+import moment from "moment";
+import SearchBlogPost from "./SearchBlogPost";
 
-const BlogPosts = () => {
+const loadTags = async () => {
+  const response = await fetch(
+    `${process.env.NEXT_APP_STRAPI_ENDPOINT}/blog-tags`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_APP_STRAPI_TOKEN}`,
+      },
+    }
+  );
+  return response.json();
+};
+
+const loadLastTwoPosts = async () => {
+  const response = await fetch(
+    `${process.env.NEXT_APP_STRAPI_ENDPOINT}/blog-articles?populate=*&pagination[page]=1&pagination[pageSize]=2&sort[0]=publishedOn:desc`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_APP_STRAPI_TOKEN}`,
+      },
+    }
+  );
+  return response.json();
+};
+
+const loadOtherPosts = async (search: string) => {
+  const searchParameters = search ? `&filters[title][$contains]=${search}` : "";
+  const response = await fetch(
+    `${
+      process.env.NEXT_APP_STRAPI_ENDPOINT
+    }/blog-articles?populate=*&pagination[start]=${
+      search ? 0 : 2
+    }&pagination[limit]=9&sort[0]=publishedOn:desc${searchParameters}`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_APP_STRAPI_TOKEN}`,
+      },
+    }
+  );
+  return response.json();
+};
+
+const BlogPosts = async ({ searchParams }: any) => {
+  const tags = await loadTags();
+  const lastTwoPosts = await loadLastTwoPosts();
+  const otherPosts = await loadOtherPosts(searchParams.search);
+
   return (
     <section className="container mx-auto px-4">
       <div className="relative mb-6 w-full md:w-1/2">
@@ -22,206 +69,96 @@ const BlogPosts = () => {
             />
           </svg>
         </div>
-        <input
-          type="text"
-          id="input-group-1"
-          className="bg-[#F7F9FC] text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 py-5 pr-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Search posts..."
-        />
+        <SearchBlogPost searchParams={searchParams} />
       </div>
       <div className="flex mb-8 py-4 overflow-x-auto">
-        <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-          Design
-        </div>
-        <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-          Research
-        </div>
-        <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-          Presentation
-        </div>
-        <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-          Design
-        </div>
-        <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-          Research
-        </div>
-        <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-          Presentation
-        </div>
-      </div>
-      <div className="flex flex-col xl:flex-row w-full mb-16">
-        <div className="w-full xl:w-[55%] flex flex-col mb-8 xl:mb-0">
-          <a href="/blog/blogpost">
-            <img
-              src="assets/images/blog-1.png"
-              className="w-full h-[30rem] object-cover rounded-lg mb-4"
-            />
-          </a>
-          <p className="text-[#6135FB] text-base font-medium mb-3.5">
-            Dr. Sara Surname • 20 Jan 2022
-          </p>
-          <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
-            The management strategy IBM’s Katrina Alcorn uses to empower large
-            teams
-          </h4>
-          <p className="text-[#696F81] text-base font-medium mb-3.5">
-            The pandemic put an unprecedented level of stress on parents who
-            were balancing full-time work and kids at home attending school …
-          </p>
-          <div className="flex flex-1 items-end">
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Design
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Research
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Presentation
-            </div>
+        {tags.data.map((tag: any) => (
+          <div
+            key={tag.id}
+            className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4"
+          >
+            {tag.attributes.name}
           </div>
-        </div>
-        <div className="w-full xl:w-[45%] pl-0 xl:pl-16 flex flex-col">
-          <img
-            src="assets/images/blog-1.png"
-            className="w-full h-[30rem] object-cover rounded-lg mb-4"
-          />
-          <p className="text-[#6135FB] text-base font-medium mb-3.5">
-            Dr. Sara Surname • 20 Jan 2022
-          </p>
-          <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
-            The management strategy IBM’s Katrina Alcorn uses to empower large
-            teams
-          </h4>
-          <p className="text-[#696F81] text-base font-medium mb-3.5">
-            The pandemic put an unprecedented level of stress on parents who
-            were balancing full-time work and kids at home attending school …
-          </p>
-          <div className="flex flex-1 items-end">
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Design
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Research
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Presentation
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+      {!searchParams.search && (
+        <div className="flex flex-col xl:flex-row w-full mb-16">
+          {lastTwoPosts.data.map((post: any, index: number) => (
+            <div
+              className={`w-full xl:w-[${
+                index === 0 ? 55 : 45
+              }%] flex flex-col mb-8 xl:mb-0 ${
+                index === 1 ? "pl-0 xl:pl-16" : ""
+              }`}
+              key={post.id}
+            >
+              <a href={`/blog/${post.attributes.slug}`}>
+                <img
+                  src={`${process.env.NEXT_APP_STRAPI_STATIC_ENDPOINT}${post.attributes.featuredImage.data.attributes.url}`}
+                  className="w-full h-[30rem] object-cover rounded-lg mb-4"
+                />
+              </a>
+              <p className="text-[#6135FB] text-base font-medium mb-3.5">
+                {post.attributes.admin_user.data.attributes.firstname}{" "}
+                {post.attributes.admin_user.data.attributes.lastname} •{" "}
+                {moment(new Date(post.attributes.publishedOn)).format(
+                  "Do MMMM, YYYY"
+                )}
+              </p>
+              <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
+                {post.attributes.title}
+              </h4>
+              <p className="text-[#696F81] text-base font-medium mb-3.5">
+                {post.attributes.shortDescription}
+              </p>
+              <div className="flex flex-1 items-end">
+                {post.attributes.blog_tags.data.map((tag: any) => (
+                  <div
+                    className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4"
+                    key={tag.id}
+                  >
+                    {tag.attributes.name}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-[4.5rem]">
-        <div className="flex flex-col">
-          <img
-            src="assets/images/blog-1.png"
-            className="w-full h-[17rem] object-cover rounded-lg mb-4"
-          />
-          <p className="text-[#6135FB] text-base font-medium mb-3.5">
-            Dr. Sara Surname • 20 Jan 2022
-          </p>
-          <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
-            The management strategy IBM’s Katrina Alcorn uses to empower large
-            teams
-          </h4>
-          <p className="text-[#696F81] text-base font-medium mb-3.5">
-            The pandemic put an unprecedented level of stress on parents who
-            were balancing full-time work and kids at home attending school …
-          </p>
-          <div className="flex flex-1 items-end">
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Design
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Research
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Presentation
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col">
-          <img
-            src="assets/images/blog-1.png"
-            className="w-full h-[17rem] object-cover rounded-lg mb-4"
-          />
-          <p className="text-[#6135FB] text-base font-medium mb-3.5">
-            Dr. Sara Surname • 20 Jan 2022
-          </p>
-          <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
-            The management strategy IBM’s Katrina Alcorn uses to empower large
-            teams
-          </h4>
-          <p className="text-[#696F81] text-base font-medium mb-3.5">
-            The pandemic put an unprecedented level of stress on parents who
-            were balancing full-time work and kids at home attending school …
-          </p>
-          <div className="flex flex-1 items-end">
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Design
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Research
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Presentation
+        {otherPosts.data.map((post: any) => (
+          <div className="flex flex-col" key={post.id}>
+            <a href={`/blog/${post.attributes.slug}`}>
+              <img
+                src={`${process.env.NEXT_APP_STRAPI_STATIC_ENDPOINT}${post.attributes.featuredImage.data.attributes.url}`}
+                className="w-full h-[17rem] object-cover rounded-lg mb-4"
+              />
+            </a>
+            <p className="text-[#6135FB] text-base font-medium mb-3.5">
+              {post.attributes.admin_user.data.attributes.firstname}{" "}
+              {post.attributes.admin_user.data.attributes.lastname} •{" "}
+              {moment(new Date(post.attributes.publishedOn)).format(
+                "Do MMMM, YYYY"
+              )}
+            </p>
+            <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
+              {post.attributes.title}
+            </h4>
+            <p className="text-[#696F81] text-base font-medium mb-3.5">
+              {post.attributes.shortDescription}
+            </p>
+            <div className="flex flex-1 items-end">
+              {post.attributes.blog_tags.data.map((tag: any) => (
+                <div
+                  className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4"
+                  key={tag.id}
+                >
+                  {tag.attributes.name}
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-        <div className="flex flex-col">
-          <img
-            src="assets/images/blog-1.png"
-            className="w-full h-[17rem] object-cover rounded-lg mb-4"
-          />
-          <p className="text-[#6135FB] text-base font-medium mb-3.5">
-            Dr. Sara Surname • 20 Jan 2022
-          </p>
-          <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
-            The management strategy IBM’s Katrina Alcorn uses to empower large
-            teams
-          </h4>
-          <p className="text-[#696F81] text-base font-medium mb-3.5">
-            The pandemic put an unprecedented level of stress on parents who
-            were balancing full-time work and kids at home attending school …
-          </p>
-          <div className="flex flex-1 items-end">
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Design
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Research
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Presentation
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col">
-          <img
-            src="assets/images/blog-1.png"
-            className="w-full h-[17rem] object-cover rounded-lg mb-4"
-          />
-          <p className="text-[#6135FB] text-base font-medium mb-3.5">
-            Dr. Sara Surname • 20 Jan 2022
-          </p>
-          <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
-            The management strategy IBM’s Katrina Alcorn uses to empower large
-            teams
-          </h4>
-          <p className="text-[#696F81] text-base font-medium mb-3.5">
-            The pandemic put an unprecedented level of stress on parents who
-            were balancing full-time work and kids at home attending school …
-          </p>
-          <div className="flex flex-1 items-end">
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Design
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Research
-            </div>
-            <div className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4">
-              Presentation
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
       <div className="flex items-center justify-center mb-[7.625rem]">
         <Pagination />

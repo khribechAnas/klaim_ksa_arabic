@@ -5,12 +5,12 @@ import BlogTitle from "../components/BlogModule/BlogTitle";
 import BlogPosts from "../components/BlogModule/BlogPosts";
 import BlogNews from "../components/BlogModule/BlogNews";
 
-const BlogPage = () => {
+const BlogPage = ({ searchParams }: any) => {
   return (
     <>
       <Header />
       <BlogTitle />
-      <BlogPosts />
+      <BlogPosts searchParams={searchParams} />
       <BlogNews />
       <Footer />
     </>
