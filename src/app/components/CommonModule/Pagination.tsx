@@ -1,12 +1,80 @@
-import React from "react";
+"use client";
 
-const Pagination = () => {
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import React, { FC, useEffect, useState } from "react";
+
+interface ComponentProps {
+  pagination: {
+    page: number;
+    pageSize: number;
+    pageCount: number;
+    total: number;
+  };
+  onChange: (page: number) => void;
+}
+
+const Pagination: FC<ComponentProps> = ({ pagination, onChange }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [pagesArray, setPagesArray] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (pagination) {
+      const arr = [];
+      for (let i = 1; i <= pagination.pageCount; i++) {
+        arr.push(i);
+      }
+      setPagesArray(arr);
+    }
+  }, [pagination]);
+
+  const handlePageChange = (page: number) => {
+    const current = new URLSearchParams(Array.from(searchParams.entries()));
+    current.set("page", page.toString());
+    current.set("pageSize", "5");
+
+    const search = current.toString();
+    const query = search ? `?${search}` : "";
+
+    router.push(`${pathname}${query}`);
+    onChange(page);
+  };
+
+  const handleNextClick = () => {
+    const current = new URLSearchParams(Array.from(searchParams.entries()));
+    const currentPage = current.get("page") || 1;
+    if (currentPage && +currentPage < pagination.pageCount) {
+      current.set("page", (+currentPage + 1).toString());
+      current.set("pageSize", "5");
+      const search = current.toString();
+      const query = search ? `?${search}` : "";
+      router.push(`${pathname}${query}`);
+      onChange(+currentPage + 1);
+    }
+  };
+
+  const handleBackClick = () => {
+    const current = new URLSearchParams(Array.from(searchParams.entries()));
+    const currentPage = current.get("page") || 1;
+    if (currentPage && +currentPage > 1) {
+      current.set("page", (+currentPage - 1).toString());
+      current.set("pageSize", "5");
+      const search = current.toString();
+      const query = search ? `?${search}` : "";
+      router.push(`${pathname}${query}`);
+      onChange(+currentPage - 1);
+    }
+  };
+
+  if (pagination.pageCount <= 1) return null;
+
   return (
     <ul className="flex items-center -space-x-px h-8 text-sm">
       <li>
         <a
-          href="#"
-          className="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={handleBackClick}
+          className="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer"
         >
           <span className="sr-only">Previous</span>
           <svg
@@ -26,51 +94,22 @@ const Pagination = () => {
           </svg>
         </a>
       </li>
+      {pagesArray.map((page) => (
+        <li className="cursor-pointer">
+          <a
+            onClick={() => handlePageChange(page)}
+            className={`flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
+              page === pagination.page ? "font-bold" : ""
+            }`}
+          >
+            {page}
+          </a>
+        </li>
+      ))}
       <li>
         <a
-          href="#"
-          className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-        >
-          1
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-        >
-          2
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          aria-current="page"
-          className="z-10 flex items-center justify-center px-3 h-8 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
-        >
-          3
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-        >
-          4
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-        >
-          5
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={handleNextClick}
+          className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer"
         >
           <span className="sr-only">Next</span>
           <svg

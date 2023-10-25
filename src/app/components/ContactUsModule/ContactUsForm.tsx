@@ -15,11 +15,14 @@ const ContactUsForm = () => {
       <div className="container mx-auto pt-12 pb-12 md:pt-20 md:pb-32 px-4">
         <h2 className="text-4xl md:text-6xl font-semibold leading-[44px] leading-[70px] mb-4 md:mb-8">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-            Contact us
+            Connect With Us
           </span>
         </h2>
         <p className="text-[20px] md:text-[28px] leading-[30px] leading-9 text-[#3F465D] mb-8 md:mb-12">
-          Get higher profits, faster growth and happier patients.
+          Thank you for your interest. Please leave your contact details below,{" "}
+          <br />
+          and one of our experts will be in touch shortly. <br /> We look
+          forward to connecting with you!
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center">
           <div

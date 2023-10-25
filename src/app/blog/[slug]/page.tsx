@@ -9,10 +9,10 @@ import React from "react";
 
 const loadBlogPost = async (slug: string) => {
   const response = await fetch(
-    `${process.env.NEXT_APP_STRAPI_ENDPOINT}/blog-articles?populate=*&filters[slug][$eq]=${slug}`,
+    `${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}/blog-articles?populate=*&filters[slug][$eq]=${slug}`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.NEXT_APP_STRAPI_TOKEN}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
       },
     }
   );

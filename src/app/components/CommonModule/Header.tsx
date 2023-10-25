@@ -129,7 +129,10 @@ const Header = () => {
             </li>
             <li
               className={`has-submenu parent-parent-menu-item ${
-                pathname == "/about" || pathname.startsWith("/blog")
+                pathname == "/about" ||
+                pathname == "/news" ||
+                pathname == "/awards" ||
+                pathname.startsWith("/blog")
                   ? "active"
                   : ""
               }`}
@@ -157,6 +160,26 @@ const Header = () => {
                     }`}
                   >
                     Blog
+                  </a>
+                </li>
+                <li className={pathname == "/news" ? "active" : ""}>
+                  <a
+                    href="/news"
+                    className={`sub-menu-item ${
+                      pathname == "/news" ? "active" : ""
+                    }`}
+                  >
+                    Klaim News
+                  </a>
+                </li>
+                <li className={pathname == "/awards" ? "active" : ""}>
+                  <a
+                    href="/awards"
+                    className={`sub-menu-item ${
+                      pathname == "/awards" ? "active" : ""
+                    }`}
+                  >
+                    Klaim Awards
                   </a>
                 </li>
               </ul>

@@ -35,7 +35,7 @@ pipeline {
             DEPLOYMENT_ENV = 'stg'
             KUBERNETES_PATH = 'kubernetes/stg'
             IMAGE_VERSION = GIT_COMMIT
-            BUILD_ARGS = '--build-arg NEXT_PUBLIC_APP_NAME="klaim_website" --build-arg NEXT_APP_STRAPI_TOKEN="b22d2c0e5f3c64cec025aaa7417714e8d33cb12d7448322404221f289fb30c1e64cf2401719a70fa31c4237a19f20b9c5ee85031642b267152c4041033e3c917a5ffa68375c902e9640780e16e2b8d3ac281e54a1ec3c52369f978bbf5d53ff6929e51422c3ffb31b81406bc86979af3556412be0cdffe48f51f9efc9fa62bc3" --build-arg NEXT_APP_STRAPI_ENDPOINT="https://strapi.stg.klaim.ai/api" --build-arg NEXT_APP_STRAPI_STATIC_ENDPOINT="https://strapi.stg.klaim.ai" '
+            BUILD_ARGS = '--build-arg NEXT_PUBLIC_APP_NAME="klaim_website" --build-arg NEXT_PUBLIC_STRAPI_TOKEN="b22d2c0e5f3c64cec025aaa7417714e8d33cb12d7448322404221f289fb30c1e64cf2401719a70fa31c4237a19f20b9c5ee85031642b267152c4041033e3c917a5ffa68375c902e9640780e16e2b8d3ac281e54a1ec3c52369f978bbf5d53ff6929e51422c3ffb31b81406bc86979af3556412be0cdffe48f51f9efc9fa62bc3" --build-arg NEXT_PUBLIC_STRAPI_ENDPOINT="https://strapi.stg.klaim.ai/api" --build-arg NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT="https://strapi.stg.klaim.ai" '
 
           }
           echo "Environment set as ${DEPLOYMENT_ENV}. Image version: ${IMAGE_VERSION}"
