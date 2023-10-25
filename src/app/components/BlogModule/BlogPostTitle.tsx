@@ -6,7 +6,7 @@ const BlogPostTitle = ({ blogPost }: any) => {
     <section className="pt-[74px] container mx-auto px-4">
       <div className="flex flex-col xl:flex-row items-center pt-11 pb-28 xl:pb-11">
         <img
-          src={`${process.env.NEXT_APP_STRAPI_STATIC_ENDPOINT}${blogPost.attributes.featuredImage.data.attributes.url}`}
+          src={`${process.env.NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT}${blogPost.attributes.featuredImage.data.attributes.url}`}
           className="object-cover h-[30rem] w-full xl:w-[45rem] rounded-t-lg xl:rounded-lg"
         />
         <div className="bg-[#F5F7FB] w-full rounded-b-lg xl:rounded-r-lg px-14 py-10">

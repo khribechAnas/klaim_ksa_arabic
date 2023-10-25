@@ -1,53 +1,62 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Pagination from "../CommonModule/Pagination";
 import moment from "moment";
 import SearchBlogPost from "./SearchBlogPost";
 
-const loadTags = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_APP_STRAPI_ENDPOINT}/blog-tags`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.NEXT_APP_STRAPI_TOKEN}`,
-      },
-    }
-  );
-  return response.json();
-};
+const BlogPosts = ({ searchParams }: any) => {
+  const [tags, setTags] = useState([]);
+  const [lastTwoPosts, setLastTwoPosts] = useState<any[]>([]);
+  const [otherPosts, setOtherPosts] = useState<any[]>([]);
+  const [pagination, setPagination] = useState<any>([]);
 
-const loadLastTwoPosts = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_APP_STRAPI_ENDPOINT}/blog-articles?populate=*&pagination[page]=1&pagination[pageSize]=2&sort[0]=publishedOn:desc`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.NEXT_APP_STRAPI_TOKEN}`,
-      },
-    }
-  );
-  return response.json();
-};
+  useEffect(() => {
+    loadTags();
+    loadPosts(
+      searchParams.search,
+      searchParams.page || "1",
+      searchParams.pageSize || "5"
+    );
+  }, []);
 
-const loadOtherPosts = async (search: string) => {
-  const searchParameters = search ? `&filters[title][$contains]=${search}` : "";
-  const response = await fetch(
-    `${
-      process.env.NEXT_APP_STRAPI_ENDPOINT
-    }/blog-articles?populate=*&pagination[start]=${
-      search ? 0 : 2
-    }&pagination[limit]=9&sort[0]=publishedOn:desc${searchParameters}`,
-    {
+  const loadTags = () => {
+    fetch(`${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}/blog-tags`, {
       headers: {
-        Authorization: `Bearer ${process.env.NEXT_APP_STRAPI_TOKEN}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
       },
-    }
-  );
-  return response.json();
-};
+    }).then((response) => {
+      response.json().then((tagsJson) => {
+        setTags(tagsJson.data);
+      });
+    });
+  };
 
-const BlogPosts = async ({ searchParams }: any) => {
-  const tags = await loadTags();
-  const lastTwoPosts = await loadLastTwoPosts();
-  const otherPosts = await loadOtherPosts(searchParams.search);
+  const loadPosts = (search: string, page: string, limit: string) => {
+    const searchParameters = search
+      ? `&filters[title][$contains]=${search}`
+      : "";
+    fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}/blog-articles?populate=*&pagination[page]=${page}&pagination[pageSize]=${limit}&sort[0]=publishedOn:desc${searchParameters}`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
+        },
+      }
+    ).then((response) => {
+      response.json().then((postsJson) => {
+        setLastTwoPosts([postsJson.data[0], postsJson.data[1]]);
+        if (+page < 2) {
+          setOtherPosts(
+            postsJson.data.filter((post: any, index: number) => index > 1)
+          );
+        } else {
+          setOtherPosts(postsJson.data);
+        }
+        setPagination(postsJson.meta.pagination);
+      });
+    });
+  };
 
   return (
     <section className="container mx-auto px-4">
@@ -72,7 +81,7 @@ const BlogPosts = async ({ searchParams }: any) => {
         <SearchBlogPost searchParams={searchParams} />
       </div>
       <div className="flex mb-8 py-4 overflow-x-auto">
-        {tags.data.map((tag: any) => (
+        {tags.map((tag: any) => (
           <div
             key={tag.id}
             className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4"
@@ -81,9 +90,9 @@ const BlogPosts = async ({ searchParams }: any) => {
           </div>
         ))}
       </div>
-      {!searchParams.search && (
+      {!searchParams.search && pagination.page < 2 && (
         <div className="flex flex-col xl:flex-row w-full mb-16">
-          {lastTwoPosts.data.map((post: any, index: number) => (
+          {lastTwoPosts.map((post: any, index: number) => (
             <div
               className={`w-full xl:w-[${
                 index === 0 ? 55 : 45
@@ -94,7 +103,7 @@ const BlogPosts = async ({ searchParams }: any) => {
             >
               <a href={`/blog/${post.attributes.slug}`}>
                 <img
-                  src={`${process.env.NEXT_APP_STRAPI_STATIC_ENDPOINT}${post.attributes.featuredImage.data.attributes.url}`}
+                  src={`${process.env.NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT}${post.attributes.featuredImage.data.attributes.url}`}
                   className="w-full h-[30rem] object-cover rounded-lg mb-4"
                 />
               </a>
@@ -105,9 +114,11 @@ const BlogPosts = async ({ searchParams }: any) => {
                   "Do MMMM, YYYY"
                 )}
               </p>
-              <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
-                {post.attributes.title}
-              </h4>
+              <a href={`/blog/${post.attributes.slug}`}>
+                <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
+                  {post.attributes.title}
+                </h4>
+              </a>
               <p className="text-[#696F81] text-base font-medium mb-3.5">
                 {post.attributes.shortDescription}
               </p>
@@ -126,11 +137,11 @@ const BlogPosts = async ({ searchParams }: any) => {
         </div>
       )}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-[4.5rem]">
-        {otherPosts.data.map((post: any) => (
+        {otherPosts.map((post: any) => (
           <div className="flex flex-col" key={post.id}>
             <a href={`/blog/${post.attributes.slug}`}>
               <img
-                src={`${process.env.NEXT_APP_STRAPI_STATIC_ENDPOINT}${post.attributes.featuredImage.data.attributes.url}`}
+                src={`${process.env.NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT}${post.attributes.featuredImage.data.attributes.url}`}
                 className="w-full h-[17rem] object-cover rounded-lg mb-4"
               />
             </a>
@@ -141,9 +152,11 @@ const BlogPosts = async ({ searchParams }: any) => {
                 "Do MMMM, YYYY"
               )}
             </p>
-            <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
-              {post.attributes.title}
-            </h4>
+            <a href={`/blog/${post.attributes.slug}`}>
+              <h4 className="text-[#222B45] text-lg font-medium mb-3.5">
+                {post.attributes.title}
+              </h4>
+            </a>
             <p className="text-[#696F81] text-base font-medium mb-3.5">
               {post.attributes.shortDescription}
             </p>
@@ -161,7 +174,12 @@ const BlogPosts = async ({ searchParams }: any) => {
         ))}
       </div>
       <div className="flex items-center justify-center mb-[7.625rem]">
-        <Pagination />
+        <Pagination
+          pagination={pagination}
+          onChange={(page: number) =>
+            loadPosts(searchParams.search, page.toString(), "5")
+          }
+        />
       </div>
     </section>
   );
