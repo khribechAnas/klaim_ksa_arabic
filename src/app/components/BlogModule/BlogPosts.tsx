@@ -4,8 +4,12 @@ import React, { useEffect, useState } from "react";
 import Pagination from "../CommonModule/Pagination";
 import moment from "moment";
 import SearchBlogPost from "./SearchBlogPost";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const BlogPosts = ({ searchParams }: any) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const hookSearchParams = useSearchParams();
   const [tags, setTags] = useState([]);
   const [lastTwoPosts, setLastTwoPosts] = useState<any[]>([]);
   const [otherPosts, setOtherPosts] = useState<any[]>([]);
@@ -16,7 +20,8 @@ const BlogPosts = ({ searchParams }: any) => {
     loadPosts(
       searchParams.search,
       searchParams.page || "1",
-      searchParams.pageSize || "5"
+      searchParams.pageSize || "5",
+      searchParams.tag
     );
   }, []);
 
@@ -32,12 +37,18 @@ const BlogPosts = ({ searchParams }: any) => {
     });
   };
 
-  const loadPosts = (search: string, page: string, limit: string) => {
+  const loadPosts = (
+    search: string,
+    page: string,
+    limit: string,
+    tag: string | null
+  ) => {
     const searchParameters = search
       ? `&filters[title][$contains]=${search}`
       : "";
+    const tagsParameters = tag ? `&[filters][blog_tags][name][$eq]=${tag}` : "";
     fetch(
-      `${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}/blog-articles?populate=*&pagination[page]=${page}&pagination[pageSize]=${limit}&sort[0]=publishedOn:desc${searchParameters}`,
+      `${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}/blog-articles?populate=*&pagination[page]=${page}&pagination[pageSize]=${limit}&sort[0]=publishedOn:desc${searchParameters}${tagsParameters}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
@@ -45,8 +56,10 @@ const BlogPosts = ({ searchParams }: any) => {
       }
     ).then((response) => {
       response.json().then((postsJson) => {
-        setLastTwoPosts([postsJson.data[0], postsJson.data[1]]);
-        if (+page < 2) {
+        if (postsJson.data.length > 1) {
+          setLastTwoPosts([postsJson.data[0], postsJson.data[1]]);
+        }
+        if (+page < 2 && !searchParameters && !tagsParameters) {
           setOtherPosts(
             postsJson.data.filter((post: any, index: number) => index > 1)
           );
@@ -56,6 +69,25 @@ const BlogPosts = ({ searchParams }: any) => {
         setPagination(postsJson.meta.pagination);
       });
     });
+  };
+
+  const handleTagClick = (tagName: string) => {
+    const current = new URLSearchParams(Array.from(hookSearchParams.entries()));
+    const newTag = searchParams.tag === tagName ? null : tagName;
+    if (newTag) {
+      current.set("tag", tagName);
+    } else {
+      current.delete("tag");
+    }
+    const search = current.toString();
+    const query = search ? `?${search}` : "";
+    router.push(`${pathname}${query}`);
+    loadPosts(
+      searchParams.search,
+      searchParams.page || "1",
+      searchParams.pageSize || "5",
+      newTag
+    );
   };
 
   return (
@@ -83,14 +115,19 @@ const BlogPosts = ({ searchParams }: any) => {
       <div className="flex mb-8 py-4 overflow-x-auto">
         {tags.map((tag: any) => (
           <div
+            onClick={() => handleTagClick(tag.attributes.name)}
             key={tag.id}
-            className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4"
+            className={`px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4 cursor-pointer border-2 ${
+              searchParams.tag === tag.attributes.name
+                ? "border-[#488596]"
+                : "border-[#C1F3FF]"
+            }`}
           >
             {tag.attributes.name}
           </div>
         ))}
       </div>
-      {!searchParams.search && pagination.page < 2 && (
+      {!searchParams.search && pagination.page < 2 && !searchParams.tag && (
         <div className="flex flex-col xl:flex-row w-full mb-16">
           {lastTwoPosts.map((post: any, index: number) => (
             <div
@@ -177,7 +214,7 @@ const BlogPosts = ({ searchParams }: any) => {
         <Pagination
           pagination={pagination}
           onChange={(page: number) =>
-            loadPosts(searchParams.search, page.toString(), "5")
+            loadPosts(searchParams.search, page.toString(), "5", searchParams.tag)
           }
         />
       </div>
