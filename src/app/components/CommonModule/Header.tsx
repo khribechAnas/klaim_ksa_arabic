@@ -162,14 +162,14 @@ const Header = () => {
                     Blog
                   </a>
                 </li>
-                {/* <li className={pathname == "/news" ? "active" : ""}>
+                <li className={pathname == "/news" ? "active" : ""}>
                   <a
                     href="/news"
                     className={`sub-menu-item ${
                       pathname == "/news" ? "active" : ""
                     }`}
                   >
-                    Klaim News
+                    News
                   </a>
                 </li>
                 <li className={pathname == "/awards" ? "active" : ""}>
@@ -179,9 +179,9 @@ const Header = () => {
                       pathname == "/awards" ? "active" : ""
                     }`}
                   >
-                    Klaim Awards
+                    Awards
                   </a>
-                </li> */}
+                </li>
               </ul>
             </li>
             <li className={pathname == "/contact" ? "active" : ""}>

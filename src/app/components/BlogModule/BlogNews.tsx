@@ -98,9 +98,11 @@ const BlogNews = () => {
           </div>
         </div>
         <div className="text-center mt-[4.5rem]">
-          <button className="border border-[#6135FB] rounded-lg px-9 py-4 text-[#6135FB] font-medium text-sm">
-            Read our stories
-          </button>
+          <a href="/news">
+            <button className="border border-[#6135FB] rounded-lg px-9 py-4 text-[#6135FB] font-medium text-sm">
+              Read our stories
+            </button>
+          </a>
         </div>
       </div>
     </section>

@@ -1,15 +1,14 @@
 import React from "react";
 import { headers } from "next/headers";
 
-const BlogPostText = ({ blogPost }: any) => {
+const AwardText = ({ award }: any) => {
   const headersList = headers();
-
   return (
     <section className="container mx-auto px-4">
       <div className="px-[4rem] lg:px-[8rem] xl:px-[18rem] 2xl:px-[26rem] relative mb-14 text-[#222B45]">
         <div
           dangerouslySetInnerHTML={{
-            __html: blogPost.attributes.content.replace(
+            __html: award.attributes.content.replace(
               'src="',
               `src="${process.env.NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT}`
             ),
@@ -46,4 +45,4 @@ const BlogPostText = ({ blogPost }: any) => {
   );
 };
 
-export default BlogPostText;
+export default AwardText;

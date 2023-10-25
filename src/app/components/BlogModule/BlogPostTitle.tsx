@@ -24,12 +24,8 @@ const BlogPostTitle = ({ blogPost }: any) => {
             {blogPost.attributes.title}
           </h1>
           <p className="mb-8 text-[#696F81]">2 min read</p>
-          <div className="-mb-28">
-            <img
-              src="/assets/images/blog-author.png"
-              className="w-[3.6rem] h-[3.6rem] object-cover rounded-full"
-            />
-            <p className="mt-4 text-[#696F81]">
+          <div>
+            <p className="text-[#696F81]">
               {blogPost.attributes.admin_user.data.attributes.firstname}{" "}
               {blogPost.attributes.admin_user.data.attributes.lastname} •{" "}
               {moment(new Date(blogPost.attributes.publishedOn)).format(

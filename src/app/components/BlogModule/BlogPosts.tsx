@@ -95,7 +95,7 @@ const BlogPosts = ({ searchParams }: any) => {
       <div className="relative mb-6 w-full md:w-1/2">
         <div className="absolute inset-y-0 left-0 flex items-center pl-6 pointer-events-none">
           <svg
-            className="w-4 h-4 text-gray-500 dark:text-gray-400"
+            className="w-4 h-4 text-gray-500"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -122,13 +122,19 @@ const BlogPosts = ({ searchParams }: any) => {
           <div
             onClick={() => handleTagClick(tag.attributes.name)}
             key={tag.id}
-            className={`px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4 cursor-pointer border-2 ${
+            className={`px-3 py-1 text-sm text-gray-500 font-medium tracking-[0.011rem] rounded-lg mr-4 cursor-pointer border hover:bg-gray-100 ${
               searchParams.tag === tag.attributes.name
-                ? "border-[#488596]"
-                : "border-[#C1F3FF]"
+                ? "border-gray-500 bg-gray-100"
+                : "border-[#d1d5db]"
             }`}
           >
-            {tag.attributes.name}
+            <span
+              className={`${
+                searchParams.tag === tag.attributes.name ? "font-bold" : ""
+              }`}
+            >
+              {tag.attributes.name}
+            </span>
           </div>
         ))}
       </div>
@@ -137,7 +143,7 @@ const BlogPosts = ({ searchParams }: any) => {
           <div role="status">
             <svg
               aria-hidden="true"
-              className="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-[#6135fb]"
+              className="w-8 h-8 mr-2 text-gray-200 animate-spin fill-[#6135fb]"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +198,7 @@ const BlogPosts = ({ searchParams }: any) => {
                   <div className="flex flex-1 items-end">
                     {post.attributes.blog_tags.data.map((tag: any) => (
                       <div
-                        className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4"
+                        className="px-3 py-1 text-sm text-gray-500 font-medium tracking-[0.011rem] rounded-lg mr-4 border"
                         key={tag.id}
                       >
                         {tag.attributes.name}
@@ -230,7 +236,7 @@ const BlogPosts = ({ searchParams }: any) => {
                 <div className="flex flex-1 items-end">
                   {post.attributes.blog_tags.data.map((tag: any) => (
                     <div
-                      className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4"
+                      className="px-3 py-1 text-sm text-gray-500 font-medium tracking-[0.011rem] rounded-lg mr-4 border"
                       key={tag.id}
                     >
                       {tag.attributes.name}

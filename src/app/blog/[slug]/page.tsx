@@ -1,4 +1,3 @@
-import BlogPostAuthor from "@/app/components/BlogModule/BlogPostAuthor";
 import BlogPostNewsLetter from "@/app/components/BlogModule/BlogPostNewsLetter";
 import BlogPostRelated from "@/app/components/BlogModule/BlogPostRelated";
 import BlogPostText from "@/app/components/BlogModule/BlogPostText";
@@ -26,9 +25,9 @@ const BlogPostPage = async ({ params }: any) => {
       <Header />
       <BlogPostTitle blogPost={blogPost.data[0]} />
       <BlogPostText blogPost={blogPost.data[0]} />
-      <BlogPostAuthor blogPost={blogPost.data[0]} />
+      {/* <BlogPostAuthor blogPost={blogPost.data[0]} /> */}
       {/* <BlogPostNewsLetter /> */}
-      <BlogPostRelated />
+      <BlogPostRelated blogPost={blogPost.data[0]} />
       <Footer />
     </>
   );
