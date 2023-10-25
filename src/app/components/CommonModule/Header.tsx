@@ -162,7 +162,7 @@ const Header = () => {
                     Blog
                   </a>
                 </li>
-                <li className={pathname == "/news" ? "active" : ""}>
+                {/* <li className={pathname == "/news" ? "active" : ""}>
                   <a
                     href="/news"
                     className={`sub-menu-item ${
@@ -181,7 +181,7 @@ const Header = () => {
                   >
                     Klaim Awards
                   </a>
-                </li>
+                </li> */}
               </ul>
             </li>
             <li className={pathname == "/contact" ? "active" : ""}>
