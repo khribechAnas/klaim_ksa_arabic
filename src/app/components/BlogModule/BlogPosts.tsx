@@ -6,6 +6,7 @@ import moment from "moment";
 import SearchBlogPost from "./SearchBlogPost";
 
 const BlogPosts = ({ searchParams }: any) => {
+  const [selectedTags, setSelectedTags] = useState<any>([]);
   const [tags, setTags] = useState([]);
   const [lastTwoPosts, setLastTwoPosts] = useState<any[]>([]);
   const [otherPosts, setOtherPosts] = useState<any[]>([]);
@@ -58,6 +59,14 @@ const BlogPosts = ({ searchParams }: any) => {
     });
   };
 
+  const handleTagClick = (tagName: string) => {
+    if (selectedTags.find((t: string) => t === tagName)) {
+      setSelectedTags(selectedTags.filter((t: string) => t !== tagName));
+    } else {
+      setSelectedTags([...selectedTags, tagName]);
+    }
+  };
+
   return (
     <section className="container mx-auto px-4">
       <div className="relative mb-6 w-full md:w-1/2">
@@ -83,6 +92,7 @@ const BlogPosts = ({ searchParams }: any) => {
       <div className="flex mb-8 py-4 overflow-x-auto">
         {tags.map((tag: any) => (
           <div
+            onClick={() => handleTagClick(tag.attributes.name)}
             key={tag.id}
             className="px-3 py-1 text-sm text-[#488596] font-medium tracking-[0.011rem] bg-[#C1F3FF] rounded-lg mr-4"
           >
