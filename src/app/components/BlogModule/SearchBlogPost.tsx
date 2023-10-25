@@ -3,7 +3,7 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 
-const SearchBlogPost = ({}: any) => {
+const SearchBlogPost = ({ onChange }: any) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -25,11 +25,14 @@ const SearchBlogPost = ({}: any) => {
           } else {
             current.set("search", value);
           }
+          current.set("page", "1");
+          current.set("pageSize", "5");
 
           const search = current.toString();
           const query = search ? `?${search}` : "";
 
           router.push(`${pathname}${query}`);
+          onChange(value);
         }
       }}
     />

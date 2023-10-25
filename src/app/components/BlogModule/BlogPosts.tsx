@@ -79,15 +79,12 @@ const BlogPosts = ({ searchParams }: any) => {
     } else {
       current.delete("tag");
     }
+    current.set("page", "1");
+    current.set("pageSize", "5");
     const search = current.toString();
     const query = search ? `?${search}` : "";
     router.push(`${pathname}${query}`);
-    loadPosts(
-      searchParams.search,
-      searchParams.page || "1",
-      searchParams.pageSize || "5",
-      newTag
-    );
+    loadPosts(searchParams.search, "1", "5", newTag);
   };
 
   return (
@@ -110,7 +107,12 @@ const BlogPosts = ({ searchParams }: any) => {
             />
           </svg>
         </div>
-        <SearchBlogPost searchParams={searchParams} />
+        <SearchBlogPost
+          searchParams={searchParams}
+          onChange={(search: string) =>
+            loadPosts(search, "1", "5", searchParams.tag)
+          }
+        />
       </div>
       <div className="flex mb-8 py-4 overflow-x-auto">
         {tags.map((tag: any) => (
@@ -214,7 +216,12 @@ const BlogPosts = ({ searchParams }: any) => {
         <Pagination
           pagination={pagination}
           onChange={(page: number) =>
-            loadPosts(searchParams.search, page.toString(), "5", searchParams.tag)
+            loadPosts(
+              searchParams.search,
+              page.toString(),
+              "5",
+              searchParams.tag
+            )
           }
         />
       </div>
