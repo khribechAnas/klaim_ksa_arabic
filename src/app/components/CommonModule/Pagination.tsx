@@ -43,7 +43,7 @@ const Pagination: FC<ComponentProps> = ({ pagination, onChange }) => {
 
   const handleNextClick = () => {
     const current = new URLSearchParams(Array.from(searchParams.entries()));
-    const currentPage = current.get("page");
+    const currentPage = current.get("page") || 1;
     if (currentPage && +currentPage < pagination.pageCount) {
       current.set("page", (+currentPage + 1).toString());
       current.set("pageSize", "5");
@@ -56,7 +56,7 @@ const Pagination: FC<ComponentProps> = ({ pagination, onChange }) => {
 
   const handleBackClick = () => {
     const current = new URLSearchParams(Array.from(searchParams.entries()));
-    const currentPage = current.get("page");
+    const currentPage = current.get("page") || 1;
     if (currentPage && +currentPage > 1) {
       current.set("page", (+currentPage - 1).toString());
       current.set("pageSize", "5");
