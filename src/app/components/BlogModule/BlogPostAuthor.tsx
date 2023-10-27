@@ -11,8 +11,8 @@ const BlogPostAuthor = ({ blogPost }: any) => {
         />
         <div className="ml-6 font-medium">
           <p className="mb-2 text-[#222B45]">
-            {blogPost.attributes.admin_user.data.attributes.firstname}{" "}
-            {blogPost.attributes.admin_user.data.attributes.lastname}
+            {blogPost.attributes.admin_user.data?.attributes.firstname}{" "}
+            {blogPost.attributes.admin_user.data?.attributes.lastname}
           </p>
           <p className="text-[#696F81]">
             Eli is the best man for the job. His design career spans both

@@ -16,8 +16,8 @@ const AwardTitle = ({ award }: any) => {
           <p className="mb-8 text-[#696F81]">2 min read</p>
           <div>
             <p className="text-[#696F81]">
-              {award.attributes.admin_user.data.attributes.firstname}{" "}
-              {award.attributes.admin_user.data.attributes.lastname} •{" "}
+              {/* {award.attributes.admin_user.data?.attributes.firstname}{" "} */}
+              {/* {award.attributes.admin_user.data?.attributes.lastname} •{" "} */}
               {moment(new Date(award.attributes.publishedOn)).format(
                 "Do MMMM, YYYY"
               )}

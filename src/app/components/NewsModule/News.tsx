@@ -18,7 +18,7 @@ const News = () => {
         process.env.NEXT_PUBLIC_STRAPI_ENDPOINT
       }/news-articles?populate=*&pagination[start]=0&pagination[limit]=${
         page * 4
-      }`,
+      }&sort[0]=publishedOn:desc`,
       {
         headers: {
           Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
@@ -59,7 +59,7 @@ const News = () => {
       <div className="flex flex-col items-center justify-center">
         {news?.data?.length >= 1 && renderPost(news.data[0])}
         {news?.data?.length >= 2 && renderPost(news.data[1])}
-        <NewsCTA />
+        {/* <NewsCTA /> */}
         {news?.data?.length >= 3 && renderPost(news.data[2])}
         <NewsNewsletter />
         {news?.data?.map((newsArticle: any, index: number) => (

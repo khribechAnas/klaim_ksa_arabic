@@ -23,11 +23,11 @@ const BlogPostTitle = ({ blogPost }: any) => {
           <h1 className="text-4xl text-[#222B45] mb-5">
             {blogPost.attributes.title}
           </h1>
-          <p className="mb-8 text-[#696F81]">2 min read</p>
+          <p className="mb-8 text-[#696F81]">{blogPost.attributes.readingTime}</p>
           <div>
             <p className="text-[#696F81]">
-              {blogPost.attributes.admin_user.data.attributes.firstname}{" "}
-              {blogPost.attributes.admin_user.data.attributes.lastname} •{" "}
+              {/* {blogPost.attributes.admin_user.data?.attributes.firstname}{" "} */}
+              {/* {blogPost.attributes.admin_user.data?.attributes.lastname} •{" "} */}
               {moment(new Date(blogPost.attributes.publishedOn)).format(
                 "Do MMMM, YYYY"
               )}
