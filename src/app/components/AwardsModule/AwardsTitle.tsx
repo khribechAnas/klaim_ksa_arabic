@@ -10,9 +10,9 @@ const AwardsTitle = () => {
         </span>
       </h2>
       <p className="text-[#696F81] text-[20px] md:text-[28px] leading-[30px] md:leading-9 text-[#3F465D] text-center">
-        Untitled is growing fast, and we are always looking for passionate,
-        dynamic, and talented individuals to join our distributed team all
-        around the world.
+        Delve into our esteemed recognitions and accolades, a testament to our
+        commitment to excellence. Browse through milestones that celebrate our
+        dedication, innovation, and impact in the industry
       </p>
     </section>
   );

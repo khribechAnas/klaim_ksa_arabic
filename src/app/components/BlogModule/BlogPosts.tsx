@@ -170,14 +170,14 @@ const BlogPosts = ({ searchParams }: any) => {
                   className={`w-full xl:w-[${
                     index === 0 ? 55 : 45
                   }%] flex flex-col mb-8 xl:mb-0 ${
-                    index === 1 ? "pl-0 xl:pl-16" : ""
+                    index === 1 ? "pl-0 xl:pl-20" : ""
                   }`}
                   key={post.id}
                 >
                   <a href={`/blog/${post.attributes.slug}`}>
                     <img
                       src={`${process.env.NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT}${post.attributes.featuredImage.data.attributes.url}`}
-                      className="w-full h-[30rem] object-cover rounded-lg mb-4"
+                      className="w-full h-[20rem] object-cover rounded-lg mb-4"
                     />
                   </a>
                   <p className="text-[#6135FB] text-base font-medium mb-3.5">

@@ -10,8 +10,9 @@ const BlogTitle = () => {
         </span>
       </h2>
       <p className="text-[#696F81] text-[20px] md:text-[28px] leading-[30px] md:leading-9 text-[#3F465D] mb-14">
-        Discover what sustainable growth in RCM really looks like with expert
-        insights shared every month
+        Explore our hub of knowledge where we share insights, analyses, and
+        expert perspectives. Discover thought-provoking articles that enhance
+        your understanding and empower your decision-making process
       </p>
     </section>
   );
