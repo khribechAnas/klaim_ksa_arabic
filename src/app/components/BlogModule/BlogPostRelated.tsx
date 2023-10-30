@@ -45,8 +45,8 @@ const BlogPostRelated = ({ blogPost }: any) => {
               />
             </a>
             <p className="text-[#6135FB] text-base font-medium mb-3.5">
-              {post.attributes.admin_user.data?.attributes.firstname}{" "}
-              {post.attributes.admin_user.data?.attributes.lastname} •{" "}
+              {/* {post.attributes.admin_user.data?.attributes.firstname}{" "}
+              {post.attributes.admin_user.data?.attributes.lastname} •{" "} */}
               {moment(new Date(post.attributes.publishedOn)).format(
                 "Do MMMM, YYYY"
               )}
