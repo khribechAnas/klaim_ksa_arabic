@@ -4,8 +4,3 @@ This file contains all changes for development channel. Before issue a release, 
 placed in the CHANGELOG.md under particular release number.
 
 ## Current
-
-### feature/news-slug
-
-- Change the news section to use the old media articles from strapi
-- Added docs folder for keeping changelog
