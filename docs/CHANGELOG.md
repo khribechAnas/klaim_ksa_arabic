@@ -2,6 +2,10 @@
 
 This file contains the history of all releases.
 
+## 1.0.1
+
+- Change strapi endpoints to pont on production
+
 ## 1.0.0
 
 ### feature/news-slug
