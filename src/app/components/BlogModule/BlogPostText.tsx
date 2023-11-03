@@ -8,6 +8,7 @@ const BlogPostText = ({ blogPost }: any) => {
     <section className="container mx-auto px-4">
       <div className="px-[4rem] lg:px-[8rem] xl:px-[18rem] 2xl:px-[26rem] relative mb-14 text-[#222B45]">
         <div
+          className="prose prose-p:my-0"
           dangerouslySetInnerHTML={{
             __html: blogPost.attributes.content.replace(
               'src="',
