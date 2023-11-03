@@ -5,13 +5,13 @@ import NewsTitle from "../components/NewsModule/NewsTitle";
 import NewsLogos from "../components/NewsModule/NewsLogos";
 import News from "../components/NewsModule/News";
 
-const NewsPage = () => {
+const NewsPage = ({ searchParams }: any) => {
   return (
     <>
       <Header />
       <NewsTitle />
       <NewsLogos />
-      <News />
+      <News searchParams={searchParams} />
       <Footer />
     </>
   );

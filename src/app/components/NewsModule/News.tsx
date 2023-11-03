@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import NewsCTA from "./NewsCTA";
 import NewsNewsletter from "./NewsNewsletter";
 
-const News = () => {
+const News = ({ searchParams }: any) => {
   const [news, setNews] = useState<any>();
   const [defaultPage, setDefaultPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -16,7 +16,7 @@ const News = () => {
     const response = await fetch(
       `${
         process.env.NEXT_PUBLIC_STRAPI_ENDPOINT
-      }/news-articles?populate=*&pagination[start]=0&pagination[limit]=${
+      }/media-articles?populate=*&pagination[start]=0&pagination[limit]=${
         page * 4
       }&sort[0]=publishedOn:desc`,
       {
@@ -37,13 +37,13 @@ const News = () => {
 
   const renderPost = (newsArticle: any) => (
     <div className="w-full lg:w-1/2 text-center mb-12">
-      <a href={newsArticle.attributes.link} target="_blank">
+      <a href={`/news/${newsArticle.attributes.slug}`}>
         <img
           src={`${process.env.NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT}${newsArticle.attributes.featuredImage.data.attributes.url}`}
           className="w-full h-[400px] object-cover rounded-lg"
         />
       </a>
-      <a href={newsArticle.attributes.link} target="_blank">
+      <a href={`/news/${newsArticle.attributes.slug}`}>
         <h2 className="text-lg text-[#222B45] font-medium mt-7 mb-3.5 px-12">
           {newsArticle.attributes.title}
         </h2>
