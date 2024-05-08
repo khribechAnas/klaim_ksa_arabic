@@ -59,7 +59,7 @@ const Header = () => {
             <li className={pathname == "/" ? "active" : ""}>
               <a href="/">Home</a>
             </li>
-            <li
+            {/* <li
               className={`has-submenu parent-parent-menu-item ${
                 pathname == "/x-ray" ||
                 pathname == "/kapital" ||
@@ -115,7 +115,7 @@ const Header = () => {
                     Klaim Eligible
                   </a>
                 </li>
-                {/* <li className={pathname == "/rcm" ? "active" : ""}>
+                <li className={pathname == "/rcm" ? "active" : ""}>
                   <a
                     href="/rcm"
                     className={`sub-menu-item ${
@@ -124,9 +124,9 @@ const Header = () => {
                   >
                     Klaim RCM 2.0
                   </a>
-                </li> */}
+                </li>
               </ul>
-            </li>
+            </li> */}
             <li
               className={`has-submenu parent-parent-menu-item ${
                 pathname == "/about" ||
