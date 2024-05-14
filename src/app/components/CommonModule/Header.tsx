@@ -184,6 +184,9 @@ const Header = () => {
                 </li>
               </ul>
             </li>
+            <li className={pathname == "/case-studies" ? "active" : ""}>
+              <a href="/case-studies">Case Studies</a>
+            </li>
             <li className={pathname == "/contact" ? "active" : ""}>
               <a href="/contact">Contact us</a>
             </li>
