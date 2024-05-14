@@ -13,11 +13,41 @@ import HomeTestimonials from "./components/HomeModule/HomeTestimonials";
 import HomeCardBanner from "./components/HomeModule/HomeCardBanner";
 import HomeGetStarted from "./components/HomeModule/HomeGetStarted";
 import HomeFAQ from "./components/HomeModule/HomeFAQ";
+import KapitalWhatWould from "./components/KapitalModule/KapitalWhatWould";
+import KapitalHowItWorks from "./components/KapitalModule/KapitalHowItWorks";
+import KapitalCardsBanner2 from "./components/KapitalModule/KapitalCardsBanner2";
+import KapitalCardsBanner from "./components/KapitalModule/KapitalCardsBanner";
+import KapitalTable from "./components/KapitalModule/KapitalTable";
+import KapitalWhatToExpect from "./components/KapitalModule/KapitalWhatToExpect";
+import KapitalAccelerate from "./components/KapitalModule/KapitalAccelerate";
+import KapitalFAQ from "./components/KapitalModule/KapitalFAQ";
 
 export default function Home() {
   return (
     <>
+     
+     {/* NEW HOME PAGE */}
+
       <Header />
+      <HomeHero />
+      <HomeClients />
+      <HomeCashFlow />
+      <HomeGoodNews />
+      <KapitalWhatWould/>
+      <KapitalHowItWorks/>
+      <KapitalCardsBanner/>
+      <HomeAwards />
+      <HomeTestimonials />
+      <KapitalTable/>
+      <KapitalWhatToExpect/>
+      <HomeCardBanner />
+      <KapitalAccelerate/>
+      <KapitalFAQ/>
+      <Footer />
+    
+     {/* OLD HOME PAGE */}
+
+      {/* <Header />
       <HomeHero />
       <HomeClients />
       <HomeHowToEliminate />
@@ -31,7 +61,7 @@ export default function Home() {
       <HomeCardBanner />
       <HomeGetStarted />
       <HomeFAQ />
-      <Footer />
+      <Footer /> */}
     </>
   );
 }
