@@ -71,8 +71,8 @@ export function CaseStudyPosts({ searchParams }: any) {
     <section className="container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-[4.5rem]">
         {caseStudies &&
-          caseStudies.map((c) => {
-            return <CaseStudy caseStudy={c}/>;
+          caseStudies.map((c, index) => {
+            return <CaseStudy key={'case_study_' + index} caseStudy={c}/>;
           })}
       </div>
 
