@@ -1,8 +1,9 @@
-import React from "react";
+
 import { headers } from "next/headers";
 
-const CaseStudyText = ({ blogPost }: any) => {
+const CaseStudyText = ({ caseStudy, html }: any) => {
   const headersList = headers();
+
 
   return (
     <section className="container mx-auto px-4">
@@ -10,10 +11,7 @@ const CaseStudyText = ({ blogPost }: any) => {
         <div
           className="prose prose-p:my-0"
           dangerouslySetInnerHTML={{
-            __html: blogPost.attributes.content.replace(
-              'src="',
-              `src="${process.env.NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT}`
-            ),
+            __html: html,
           }}
         />
         <div className="absolute top-0 left-[0rem] lg:left-[2rem] xl:left-[12rem] 2xl:left-[20rem]">
