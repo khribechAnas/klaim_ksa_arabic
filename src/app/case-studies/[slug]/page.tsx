@@ -49,8 +49,8 @@ const solveButtons = (caseStudy: any) => {
                 const attributes = stringWithoutBrackets.split(',');
                 const text = attributes[0];
                 const href = attributes[1];
-
-                tmpHtml = tmpHtml.replace(fullString, `<div class="w-full flex justify-center"><p class="bg-[#6135FB] px-5 py-2 rounded-lg font-semibold mx-2.5 w-min"><a class="font-semibold text-white no-underline w-min block" href=${href} target="_blank">${text}</a></p></div>`)
+                
+                tmpHtml = tmpHtml.replace(fullString, `<div class="w-full flex justify-center mt-2 mb-2"><p class="bg-[#6135FB] px-5 py-2 rounded-lg font-semibold mx-2.5"><a class="font-semibold text-white no-underline block" href=${href} target="_blank">${text}</a></p></div>`)
                 closedBracketsCounter = 0;
                 openBracketIndex = -1;
                 closedBracketIndex = -1;
