@@ -57,6 +57,9 @@ const solveButtons = (caseStudy: any) => {
             }
             else {
                 tmpHtml = tmpHtml.replace(fullString, `<div class="mt-2 mb-2"><iframe width="100%" height="365px" src=${stringWithoutBrackets} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>`)
+                closedBracketsCounter = 0;
+                openBracketIndex = -1;
+                closedBracketIndex = -1;
             }
 
 
