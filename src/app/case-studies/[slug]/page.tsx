@@ -12,6 +12,7 @@ const loadCaseStudy = async (slug: string) => {
             headers: {
                 Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
             },
+            cache: "no-store"
         }
     );
     return response.json();
