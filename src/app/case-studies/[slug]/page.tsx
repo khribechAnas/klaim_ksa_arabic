@@ -19,7 +19,8 @@ const loadCaseStudy = async (slug: string) => {
 };
 
 const solveButtons = (caseStudy: any) => {
-    let tmpHtml = caseStudy?.attributes?.content ?? "";
+    let tmpHtml = caseStudy?.attributes?.content.replaceAll('src="',
+        `src="${process.env.NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT}`) ?? "";
     const html = caseStudy?.attributes?.content ?? "";
 
     let openBracketIndex = -1;
