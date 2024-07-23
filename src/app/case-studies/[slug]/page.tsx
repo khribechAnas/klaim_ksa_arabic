@@ -64,7 +64,7 @@ const solveButtons = (caseStudy: any) => {
                 closedBracketIndex = -1;
             }
 
-
+``
         }
     }
 

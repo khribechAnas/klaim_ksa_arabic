@@ -10,7 +10,7 @@ const CaseStudiesTitle = () => {
         </span>
       </h2>
       <p className="text-[#696F81] text-[20px] md:text-[28px] leading-[30px] md:leading-9 text-[#3F465D] mb-14">
-        Case studies
+          Discover how Klaim has helped clients overcome challenges and achieve remarkable success.
       </p>
     </section>
   );
