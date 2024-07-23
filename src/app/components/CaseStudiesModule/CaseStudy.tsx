@@ -7,7 +7,7 @@ export function CaseStudy({caseStudy}: any) {
           />
         </a>
 
-        <div className={'flex flex-col gap-5 justify-end pl-4'}>
+        <div className={'flex flex-col gap-5 justify-end pl-4 pr-4'}>
         <img src={`${process.env.NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT}${caseStudy?.attributes?.companyLogo?.data?.attributes?.url}`} alt="" className={'w-[20%] h-auto px-2 pt-2'}/>
 
         <p className="text-[#000000] text-base font-medium px-2 w-full whitespace-pre-wrap text-ellipsis line-clamp-2">
