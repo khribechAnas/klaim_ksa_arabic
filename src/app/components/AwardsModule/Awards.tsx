@@ -2,15 +2,20 @@ import moment from "moment";
 import React from "react";
 
 const loadAwards = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}/awards-articles?populate=*`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
-      },
+    try {
+        const response = await fetch(
+            `${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}/awards-articles?populate=*`,
+            {
+                headers: {
+                    Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
+                },
+            }
+        );
+        return response.json();
     }
-  );
-  return response.json();
+    catch (e) {
+        console.error(e);
+    }
 };
 
 const Awards = async () => {
