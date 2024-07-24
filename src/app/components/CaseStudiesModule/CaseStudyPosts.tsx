@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { CaseStudy } from "./CaseStudy";
 import Pagination from "../CommonModule/Pagination";
+import {CaseStudyMain} from "@/app/components/CaseStudiesModule/CaseStudyMain";
 
 export function CaseStudyPosts({ searchParams }: any) {
   const [loading, setLoading] = useState(true);
@@ -69,10 +70,17 @@ export function CaseStudyPosts({ searchParams }: any) {
 
   return (
     <section className="container mx-auto px-4">
+
+      <div className={'w-full'}>
+        {caseStudies && caseStudies.length && <CaseStudyMain key={'case_study_0'} caseStudy={caseStudies[0]}/>}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-[4.5rem]">
         {caseStudies &&
           caseStudies.map((c, index) => {
-            return <CaseStudy key={'case_study_' + index} caseStudy={c}/>;
+            if(index != 0){
+              return <CaseStudy key={'case_study_' + index} caseStudy={c}/>;
+            }
           })}
       </div>
 
