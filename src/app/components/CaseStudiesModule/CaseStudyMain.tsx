@@ -34,8 +34,8 @@ export function CaseStudyMain({caseStudy}: any) {
         </div>
 
         <p className={'w-[60%] flex justify-center items-center mb-24 text-lg md:text-xl lg:text-2xl text-gray-700 text-center'}>
-            Worrying about payment delays is a thing of the past. <br/> Klaim helped us concentrate on the quality of our
-            medical services
+            &quot;Worrying about payment delays is a thing of the past. Klaim helped us concentrate on the quality of our
+            medical services&quot;
         </p>
 
     </div>
