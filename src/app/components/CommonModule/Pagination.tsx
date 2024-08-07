@@ -11,9 +11,10 @@ interface ComponentProps {
     total: number;
   };
   onChange: (page: number) => void;
+  pageSize?: string;
 }
 
-const Pagination: FC<ComponentProps> = ({ pagination, onChange }) => {
+const Pagination: FC<ComponentProps> = ({ pagination, onChange, pageSize }) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -32,7 +33,7 @@ const Pagination: FC<ComponentProps> = ({ pagination, onChange }) => {
   const handlePageChange = (page: number) => {
     const current = new URLSearchParams(Array.from(searchParams.entries()));
     current.set("page", page.toString());
-    current.set("pageSize", "5");
+    current.set("pageSize", pageSize ? pageSize : "5");
 
     const search = current.toString();
     const query = search ? `?${search}` : "";
@@ -46,7 +47,7 @@ const Pagination: FC<ComponentProps> = ({ pagination, onChange }) => {
     const currentPage = current.get("page") || 1;
     if (currentPage && +currentPage < pagination.pageCount) {
       current.set("page", (+currentPage + 1).toString());
-      current.set("pageSize", "5");
+      current.set("pageSize", pageSize ? pageSize : "5");
       const search = current.toString();
       const query = search ? `?${search}` : "";
       router.push(`${pathname}${query}`);
@@ -59,7 +60,7 @@ const Pagination: FC<ComponentProps> = ({ pagination, onChange }) => {
     const currentPage = current.get("page") || 1;
     if (currentPage && +currentPage > 1) {
       current.set("page", (+currentPage - 1).toString());
-      current.set("pageSize", "5");
+      current.set("pageSize", pageSize ? pageSize : "5");
       const search = current.toString();
       const query = search ? `?${search}` : "";
       router.push(`${pathname}${query}`);
