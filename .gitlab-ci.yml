@@ -12,7 +12,7 @@ build-and-push-job:
     - echo "Setting environment for branch $CI_COMMIT_REF_NAME"
     - SHORT_COMMIT=$(echo $CI_COMMIT_SHA | cut -c1-8)
     - >
-      if [ "$CI_COMMIT_REF_NAME" == "feature/huawei-deploy" ]; then
+      if [ "$CI_COMMIT_REF_NAME" == "develop" ]; then
         export DEPLOYMENT_ENV="dev"
         export IMAGE_VERSION=$SHORT_COMMIT
 
@@ -69,7 +69,7 @@ build-and-push-job:
 
 
   rules:
-    - if: '$CI_COMMIT_REF_NAME == "feature/huawei-deploy"'
+    - if: '$CI_COMMIT_REF_NAME == "develop"'
     - if: '$CI_COMMIT_REF_NAME == "master"'
   
 
