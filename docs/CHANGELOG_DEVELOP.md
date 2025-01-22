@@ -8,3 +8,7 @@ placed in the CHANGELOG.md under particular release number.
 ### feature/merge-home-kapital-screen
 
 - home and kapital screen merged
+
+### feature/new-logo-new-numbers-new-branding-message
+
+- Add new logo, new numbers and new branding message

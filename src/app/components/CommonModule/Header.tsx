@@ -25,7 +25,7 @@ const Header = () => {
         <a className="logo" href="https://klaim.ai">
           <img
             src="/assets/images/Logo.svg"
-            className="logo-light-mode"
+            className="logo-light-mode w-[125px] h-auto"
             alt=""
           />
           <img

@@ -7,7 +7,7 @@ const Footer = () => {
       <footer className="bg-linear pt-8 pb-8 px-4 md:pt-32 md:pb-10">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between">
-            <img src="/assets/images/Logo-white.svg" />
+            <img src="/assets/images/Logo-white.svg" className="w-[180px] h-auto" alt="Klaim Logo"/>
             <div className="flex items-center text-white font-bold leading-[16px] md:leading-4 text-sm md:text-lg tracking-tight mt-8 md:mt-0">
               <a className="pr-16" href="/">
                 Home
