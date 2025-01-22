@@ -44,14 +44,14 @@ const HomeHero = () => {
               OFFICIAL PARTNERS
             </h3>
             <h1 className="text-[#3F465D] text-4xl lg:text-5xl xl:text-6xl font-semibold leading-[2.75rem] md:leading-[3rem] xl:leading-[4.375rem] tracking-tighter mt-8 mb-7">
-              Treat your patient today,
-              <br className="block lg:hidden xl:hidden 2xl:block" />
               <span
-                className={`bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] ml-0 lg:ml-3 xl:ml-3 2xl:ml-0               
+                  className={`bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] ml-0 lg:ml-3 xl:ml-3 2xl:ml-0               
                 `}
               >
-                receive payment tomorrow
+                Focus on Healing,
               </span>
+              <br className="block lg:hidden xl:hidden 2xl:block"/>
+                Not Billing
               {/* <span
                 className={`bg-clip-text text-transparent bg-gradient-to-r from-[#6135fb] to-[#41d8b6] ml-0 xl:ml-3 2xl:ml-0 ${
                   isFadingOut ? "fade-out-word" : "fade-in-word"
@@ -61,7 +61,7 @@ const HomeHero = () => {
               </span> */}
             </h1>
             <div className="flex items-center">
-              <ButtonPrimary title="Talk to an expert" href="/contact" />
+              <ButtonPrimary title="Talk to an expert" href="/contact"/>
               <ButtonSecondary title="Get Started Now" href="https://portal.uae.klaim.ai/sign-up" target="_blank" />
             </div>
           </div>

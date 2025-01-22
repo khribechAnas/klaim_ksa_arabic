@@ -8,7 +8,7 @@ const KapitalCardsBanner = () => {
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg bg-white shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
             <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-                Over 323,000
+                Over 1,300,000
               </span>{" "}
             </h2>
             <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
@@ -18,7 +18,7 @@ const KapitalCardsBanner = () => {
           <div className="px-6 py-4 bg-[#F5F7FB] rounded-lg bg-white shadow-[0_0_16px_0_rgba(0,0,0,0.05)]">
             <h2 className="text-2xl md:text-[30px] 2xl:text-[32px] font-bold leading-[36px] md:leading-[40px] text-[#3F465D]">
               <span className="bg-clip-text text-transparent leading-[130%] bg-gradient-to-r from-[#6135fb] to-[#41d8b6]">
-                {`Over $25 milion`}
+                {`AED 270 million`}
               </span>{" "}
             </h2>
             <p className="text-[18px] font-normal md:font-semibold leading-[24px] text-[#3F465D]">
