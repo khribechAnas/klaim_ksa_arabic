@@ -2,6 +2,16 @@
 
 This file contains the history of all releases.
 
+## 1.5.0
+
+### feature/merge-home-kapital-screen
+
+- home and kapital screen merged
+
+### feature/new-logo-new-numbers-new-branding-message
+
+- Add new logo, new numbers and new branding message
+
 ## 1.1.0
 
 ### feature/analytics
