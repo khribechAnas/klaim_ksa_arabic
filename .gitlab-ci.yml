@@ -1,76 +1,16 @@
 stages:
-  - build_and_push
+  - version
+  - build
 
-variables:
-  ACR_REGISTRY: swr.ae-ad-1.g42cloud.com
-  DOCKER_DRIVER: overlay2
+include:
+  - project: 'devops/ci-cd'
+    file: '.semantic.gitlab-ci.yml'
+  - project: 'devops/ci-cd'
+    file: '.docker.gitlab-ci.yml'
 
-build-and-push-job:
-  stage: build_and_push
-  image: docker:latest
-  script:
-    - echo "Setting environment for branch $CI_COMMIT_REF_NAME"
-    - SHORT_COMMIT=$(echo $CI_COMMIT_SHA | cut -c1-8)
-    - >
-      if [ "$CI_COMMIT_REF_NAME" == "develop" ]; then
-        export DEPLOYMENT_ENV="dev"
-        export IMAGE_VERSION=$SHORT_COMMIT
-
-
-        export REACT_APP_BACKEND_URL="klaim_website";
-        export NEXT_PUBLIC_STRAPI_TOKEN="b22d2c0e5f3c64cec025aaa7417714e8d33cb12d7448322404221f289fb30c1e64cf2401719a70fa31c4237a19f20b9c5ee85031642b267152c4041033e3c917a5ffa68375c902e9640780e16e2b8d3ac281e54a1ec3c52369f978bbf5d53ff6929e51422c3ffb31b81406bc86979af3556412be0cdffe48f51f9efc9fa62bc3";
-        export NEXT_PUBLIC_STRAPI_ENDPOINT="https://strapi.dev.klaim.ai/api";
-        export NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT="https://strapi.dev.klaim.ai";
-
-
-        VERSION=$(cat ./package.json | grep '"version"' | awk -F '"' '{print $4}')
-        echo "Version found: $VERSION"
-        CHART_VERSION="$VERSION+$SHORT_COMMIT"
-        echo "Updating version and appVersion in helm/uae-dev/Chart.yaml"
-        sed -i 's/^version:.*/version: "'$CHART_VERSION'"/' helm/uae-dev/Chart.yaml
-        sed -i 's/^appVersion:.*/appVersion: "'$VERSION'"/' helm/uae-dev/Chart.yaml
-        echo "Updated Chart.yaml:"
-        cat helm/uae-dev/Chart.yaml
-
-      
-      elif [ "$CI_COMMIT_REF_NAME" == "master" ]; then
-        export DEPLOYMENT_ENV="prod"
-        export IMAGE_VERSION=$SHORT_COMMIT
-        echo "Exiting job for branch $CI_COMMIT_REF_NAME"
-        exit 0
-        
-      else
-        echo "Branch $CI_COMMIT_REF_NAME is not configured for deployment"
-        exit 1
-      fi
-    - echo "Environment set as $DEPLOYMENT_ENV"
-    - echo "Image version $IMAGE_VERSION"
-
-    - docker build --build-arg REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL --build-arg NEXT_PUBLIC_STRAPI_TOKEN=$NEXT_PUBLIC_STRAPI_TOKEN --build-arg NEXT_PUBLIC_STRAPI_ENDPOINT=$NEXT_PUBLIC_STRAPI_ENDPOINT --build-arg NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT=$NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT -t $ACR_REGISTRY/klaim-uae/${DEPLOYMENT_ENV}-klaim-website:$IMAGE_VERSION .
-
-    - echo "Pushing image for branch $CI_COMMIT_REF_NAME"
-    - echo $ACR_PASSWORD | docker login $ACR_REGISTRY -u ae-ad-1@$ACR_USERNAME --password-stdin
-    - docker push $ACR_REGISTRY/klaim-uae/${DEPLOYMENT_ENV}-klaim-website:$IMAGE_VERSION
-
-    - echo "Updating Helm chart with new image version"
-    - apk add --no-cache yq curl 
-    - cd $CI_PROJECT_DIR
-    - pwd
-    - yq -i '.spec.template.spec.containers[] |= select(.name == "'$DEPLOYMENT_ENV'-klaim-website") .image = "'$ACR_REGISTRY'/klaim-uae/'$DEPLOYMENT_ENV'-klaim-website:'$IMAGE_VERSION'"' ./helm/uae-$DEPLOYMENT_ENV/templates/deployment.yaml
-    - cat ./helm/uae-$DEPLOYMENT_ENV/templates/deployment.yaml | grep "image:"
-
-    # Install Helm
-    - curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | sh
-    - helm package ./helm/uae-$DEPLOYMENT_ENV
-    - PACKAGE_NAME=$(find . -name "${DEPLOYMENT_ENV}-klaim-website-*.tgz" -print -quit)
-    - echo "Found package $PACKAGE_NAME"
-
-    - curl --fail-with-body --request POST --user evgeniy:$CI_PAT --form chart=@$PACKAGE_NAME "https://gitlab.uae.klaim.dev/api/v4/projects/1/packages/helm/api/stable/charts"
-
-
-  rules:
-    - if: '$CI_COMMIT_REF_NAME == "develop"'
-    - if: '$CI_COMMIT_REF_NAME == "master"'
+build_docker:
+  variables:
+    BUILD_ARGS: "--build-arg REACT_APP_BACKEND_URL=klaim_website --build-arg NEXT_PUBLIC_STRAPI_TOKEN=b22d2c0e5f3c64cec025aaa7417714e8d33cb12d7448322404221f289fb30c1e64cf2401719a70fa31c4237a19f20b9c5ee85031642b267152c4041033e3c917a5ffa68375c902e9640780e16e2b8d3ac281e54a1ec3c52369f978bbf5d53ff6929e51422c3ffb31b81406bc86979af3556412be0cdffe48f51f9efc9fa62bc3 --build-arg NEXT_PUBLIC_STRAPI_ENDPOINT=https://strapi.dev.klaim.ai/api --build-arg NEXT_PUBLIC_STRAPI_STATIC_ENDPOINT=https://strapi.dev.klaim.ai"
   
 
 
