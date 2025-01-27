@@ -8,19 +8,32 @@
   ],
   "tagFormat": "${version}",
   "plugins": [
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": false
+      }
+    ],
     ["@semantic-release/gitlab",
       {
         "gitlabUrl": "https://gitlab.uae.klaim.dev",
         "assets":
         [
           {
-            "url": "https://gitlab.uae.klaim.dev/devops/semantic-test/-/blob/master/CHANGELOG.md"
+            "url": "https://gitlab.uae.klaim.dev/services/klaim-website/-/blob/master/CHANGELOG.md",
+            "label": "CHANGELOG.md"
           }
         ]
       }
     ],
-    ["@semantic-release/commit-analyzer", { "preset": "conventionalcommits" }],
-    ["@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/commit-analyzer", 
+      { 
+        "preset": "conventionalcommits" 
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
       {
         "preset": "conventionalcommits",
         "writerOpts": { "groupBy": "type" },
@@ -84,7 +97,15 @@
         "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file. See\n[Conventional Commits](https://conventionalcommits.org) for commit guidelines."
       }
     ],
-    ["@semantic-release/git", { "message": "Release: ${nextRelease.version}" }]
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "package.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+      }
+    ]
   ]
 }
-
