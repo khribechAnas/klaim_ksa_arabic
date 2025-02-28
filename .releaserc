@@ -1,0 +1,111 @@
+{
+  "branches": [
+    "master",
+    {
+      "name": "develop",
+      "prerelease": true
+    }
+  ],
+  "tagFormat": "${version}",
+  "plugins": [
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": false
+      }
+    ],
+    ["@semantic-release/gitlab",
+      {
+        "gitlabUrl": "https://gitlab.uae.klaim.dev",
+        "assets":
+        [
+          {
+            "url": "https://gitlab.uae.klaim.dev/services/klaim-website/-/blob/master/CHANGELOG.md",
+            "label": "CHANGELOG.md"
+          }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/commit-analyzer", 
+      { 
+        "preset": "conventionalcommits" 
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "writerOpts": { "groupBy": "type" },
+        "commitGroupsSort": "title",
+        "commitsSort": "header",
+        "linkCompare": "true",
+        "linkReferences": "true",
+        "presetConfig":
+          {
+            "commitUrlFormat": "{{host}}/{{owner}}/{{repository}}/commits/{{hash}}",
+            "compareUrlFormat": "{{host}}/{{owner}}/{{repository}}/compare/{{currentTag}}...{{previousTag}}#diff",
+            "issueUrlFormat ": "{{host}}/{{owner}}/{{repository}}/issue/{{id}}",
+            "types":
+              [
+                {
+                  "type": "breaking",
+                  "section": "🧨 Breaking changes!",
+                  "hidden": false
+                },
+                { "type": "build", "section": "🦊 CI/CD", "hidden": false },
+                { "type": "chore", "section": "Other", "hidden": true },
+                { "type": "ci", "section": "🦊 CI/CD", "hidden": false },
+                { "type": "docs", "section": "📔 Docs", "hidden": false },
+                {
+                  "type": "example",
+                  "section": "📝 Examples",
+                  "hidden": false
+                },
+                { "type": "feat", "section": "🚀 Features", "hidden": false },
+                { "type": "fix", "section": "🛠 Fixes", "hidden": false },
+                {
+                  "type": "perf",
+                  "section": "⏩ Performance",
+                  "hidden": false
+                },
+                {
+                  "type": "refactor",
+                  "section": ":scissors: Refactor",
+                  "hidden": false
+                },
+                { "type": "revert", "section": "👀 Reverts", "hidden": false },
+                { "type": "style", "section": "💈 Style", "hidden": false },
+                { "type": "test", "section": "🧪 Tests", "hidden": false },
+                {
+                  "type": "improv",
+                  "section": "💎 Improvements",
+                  "hidden": false
+                },
+                {
+                  "type": "deps",
+                  "section": "🔩 Dependencies",
+                  "hidden": false
+                }
+              ]
+          }
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file. See\n[Conventional Commits](https://conventionalcommits.org) for commit guidelines."
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "package.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}
