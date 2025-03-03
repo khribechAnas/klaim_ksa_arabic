@@ -2,6 +2,10 @@
 
 This file contains the history of all releases.
 
+## 1.6.0
+
+- Update deployment
+
 ## 1.5.0
 
 ### feature/merge-home-kapital-screen

@@ -1,6 +1,6 @@
 {
   "name": "klaim-website",
-  "version": "1.3.0-develop.1",
+  "version": "1.6.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
