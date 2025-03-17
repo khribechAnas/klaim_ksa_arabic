@@ -1,10 +1,5 @@
 stages:
-  - version
   - build
-
-include:
-  - project: 'devops/ci-cd'
-    file: '.semantic.gitlab-ci.yml'
 
 variables:
   GIT_STRATEGY: clone
