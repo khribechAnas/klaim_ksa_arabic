@@ -2,6 +2,12 @@
 
 This file contains the history of all releases.
 
+## 1.6.1
+
+### hotfix/change-text-favicon-banner
+
+- Change health care text, favicon and banner image.
+
 ## 1.6.0
 
 - Update deployment
