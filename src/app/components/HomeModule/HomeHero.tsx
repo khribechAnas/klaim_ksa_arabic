@@ -64,7 +64,7 @@ const HomeHero = () => {
               </div>
             </div>
           </div>
-          <div className="">
+          <div className="z-[9999]">
             <video src="assets/videos/Klaim_Explainer_video_v4.mp4" controls className="w-full p-2 z-[9999]"/>
           </div>
         </div>
