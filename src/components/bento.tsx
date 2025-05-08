@@ -5,7 +5,60 @@ import {Button} from "./ui/button";
 import {ArrowRight, Sparkles} from "lucide-react";
 import Link from "next/link";
 
-export function BentoGridSection() {
+interface BentoGridSectionProps {
+  flowProvidesSubtitle?: string;
+  providesCard1Title?: string;
+  providesCard1Subtitle?: string;
+  providesCard2Title?: string;
+  providesCard2Subtitle?: string; 
+  providesCard3Title?: string;
+  providesCard3Subtitle?: string;
+  providesCard4Title?: string;
+  providesCard4Subtitle?: string;
+}
+
+export function BentoGridSection({
+  flowProvidesSubtitle = "KlaimFlow provides instant cash and peace of mind to focus your efforts on running and growing your business",
+  providesCard1Title = "Financial Stability",
+  providesCard1Subtitle = "Always have funds available for expenses, payroll, and reinvestment.",
+  providesCard2Title = "Predictable Cash Flow",
+  providesCard2Subtitle = "Know exactly when you'll get paid.",
+  providesCard3Title = "Less Time Managing Cash Flow",
+  providesCard3Subtitle = "Focus on growth, not chasing payments.",
+  providesCard4Title = "Confidence in Every Decision",
+  providesCard4Subtitle = "Plan ahead with certainty knowing your revenue is accessible.",
+}: BentoGridSectionProps) {
+  const items = [
+    {
+      title: providesCard1Title,
+      description: providesCard1Subtitle,
+      header: <FinancialStabilitySkeleton />,
+      className: "md:col-span-2",
+      icon: <IconWallet className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: providesCard2Title,
+      description: providesCard2Subtitle,
+      header: <PredictableCashFlowSkeleton />,
+      className: "md:col-span-1",
+      icon: <IconChartBar className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: providesCard3Title,
+      description: providesCard3Subtitle,
+      header: <LessTimeSkeleton />,
+      className: "md:col-span-1",
+      icon: <IconClock className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: providesCard4Title,
+      description: providesCard4Subtitle,
+      header: <ConfidenceSkeleton />,
+      className: "md:col-span-2",
+      icon: <IconBulb className="h-4 w-4 text-neutral-500" />,
+    },
+  ];
+
   return (
     <section
       id="what-klaimflow-provides"
@@ -28,7 +81,7 @@ export function BentoGridSection() {
             What <span className="text-primary dark:text-secondary">KlaimFlow</span> Provides
           </h2>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground">
-            KlaimFlow provides instant cash and peace of mind to focus your efforts on running and growing your business
+            {flowProvidesSubtitle}
           </p>
         </div>
         <BentoGrid className="max-w-7xl mx-auto md:auto-rows-[21rem]">
@@ -571,34 +624,3 @@ const ConfidenceSkeleton = () => {
     </div>
   );
 };
-
-const items = [
-  {
-    title: "Financial Stability",
-    description: "Always have funds available for expenses, payroll, and reinvestment.",
-    header: <FinancialStabilitySkeleton />,
-    className: "md:col-span-2",
-    icon: <IconWallet className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Predictable Cash Flow",
-    description: "Know exactly when you'll get paid.",
-    header: <PredictableCashFlowSkeleton />,
-    className: "md:col-span-1",
-    icon: <IconChartBar className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Less Time Managing Cash Flow",
-    description: "Focus on growth, not chasing payments.",
-    header: <LessTimeSkeleton />,
-    className: "md:col-span-1",
-    icon: <IconClock className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Confidence in Every Decision",
-    description: "Plan ahead with certainty knowing your revenue is accessible.",
-    header: <ConfidenceSkeleton />,
-    className: "md:col-span-2",
-    icon: <IconBulb className="h-4 w-4 text-neutral-500" />,
-  },
-];

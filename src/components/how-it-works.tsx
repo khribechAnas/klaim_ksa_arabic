@@ -2,36 +2,64 @@
 
 import {motion} from "motion/react";
 
-export default function HowItWorksSection() {
+interface HowItWorksSectionProps {
+  howTitle?: string;
+  howSubtitle?: string;
+  howStep1Title?: string;
+  howStep1Subtitle?: string;
+  howStep2Title?: string;
+  howStep2Subtitle?: string;
+  howStep3Title?: string;
+  howStep3Subtitle?: string;
+  howStep4Title?: string;
+  howStep4Subtitle?: string;
+  howStep5Title?: string;
+  howStep5Subtitle?: string;
+}
+
+export default function HowItWorksSection({
+  howTitle,
+  howSubtitle,
+  howStep1Title,
+  howStep1Subtitle,
+  howStep2Title,
+  howStep2Subtitle,
+  howStep3Title,
+  howStep3Subtitle,
+  howStep4Title,
+  howStep4Subtitle,
+  howStep5Title,
+  howStep5Subtitle,
+}: HowItWorksSectionProps) {
   const steps = [
     {
       number: "01",
-      title: "Qualification & Eligibility",
-      description: "Quick 2-minute application to check your eligibility",
+      title: howStep1Title || "",
+      description: howStep1Subtitle || "",
       color: "bg-primary dark:bg-secondary dark:text-black",
     },
     {
       number: "02",
-      title: "Documents & Invoices Submission",
-      description: "Upload required documents and submit your invoices for review",
+      title: howStep2Title || "",
+      description: howStep2Subtitle || "",
       color: "bg-primary dark:bg-secondary dark:text-black",
     },
     {
       number: "03",
-      title: "Custom Proposal",
-      description: "Receive a tailored funding proposal based on your submitted invoices",
+      title: howStep3Title || "",
+      description: howStep3Subtitle || "",
       color: "bg-primary dark:bg-secondary dark:text-black",
     },
     {
       number: "04",
-      title: "1 Time Onboarding",
-      description: "Complete a one-time onboarding process to start receiving funds",
+      title: howStep4Title || "",
+      description: howStep4Subtitle || "",
       color: "bg-primary dark:bg-secondary dark:text-black",
     },
     {
       number: "05",
-      title: "Get paid in 24 hrs",
-      description: "Receive funds directly in your bank account within 24 hours of approval",
+      title: howStep5Title || "",
+      description: howStep5Subtitle || "",
       color: "bg-primary dark:bg-secondary dark:text-black",
     },
   ];
@@ -45,8 +73,8 @@ export default function HowItWorksSection() {
           whileInView={{opacity: 1, y: 0}}
           viewport={{once: true}}
           transition={{duration: 0.5}}>
-          <h2 className="text-3xl font-poppins md:text-4xl lg:text-5xl font-semibold tracking-tight  mb-4">How It Works</h2>
-          <p className="text-lg md:text-xl text-muted-foreground">Get paid in 24 hours with our simple five-step process</p>
+          <h2 className="text-3xl font-poppins md:text-4xl lg:text-5xl font-semibold tracking-tight  mb-4">{howTitle}</h2>
+          <p className="text-lg md:text-xl text-muted-foreground">{howSubtitle}</p>
         </motion.div>
 
         {/* Mobile timeline (vertical) */}

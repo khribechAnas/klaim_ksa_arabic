@@ -5,7 +5,17 @@ import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-const Hero = () => {
+interface HeroProps {
+  heroTitleBlack?: string;
+  heroTitlePurple?: string;
+  heroSubtitle?: string;
+}
+
+const Hero: React.FC<HeroProps> = ({
+  heroTitleBlack = "Financial Clarity & Peace of Mind for", // Default value
+  heroTitlePurple = "Your Business", // Default value
+  heroSubtitle = "Running a business comes with enough surprises — your cash flow shouldn't be one of them. KlaimFlow ensures you get paid in 24 hours, so you can focus on building your business instead of worrying about billing and collections of your already earned revenue.", // Default value
+}) => {
   const primary_gradient =
     "bg-gradient-to-r from-primary-300 to-primary-600 filter blur-[900px]";
   const secondary_gradient =
@@ -41,9 +51,9 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              Financial Clarity & Peace of Mind for{" "}
+              {heroTitleBlack}{" "}
               <span className="text-primary dark:text-secondary">
-                Your Business
+                {heroTitlePurple}
               </span>
             </motion.h1>
 
@@ -53,11 +63,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              Running a business comes with enough surprises — your cash flow
-              shouldn't be one of them. KlaimFlow ensures you get paid in 24
-              hours, so you can focus on building your business instead of
-              worrying about billing and collections of your already earned
-              revenue.
+              {heroSubtitle}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}

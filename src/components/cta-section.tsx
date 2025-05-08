@@ -8,7 +8,19 @@ import {Input} from "@/components/ui/input";
 import {Label} from "@/components/ui/label";
 import Link from "next/link";
 
-export default function CtaSection() {
+interface CtaSectionProps {
+  ctaTitle?: string;
+  ctaBullet1?: string;
+  ctaBullet2?: string;
+  ctaBullet3?: string;
+}
+
+export default function CtaSection({
+  ctaTitle,
+  ctaBullet1,
+  ctaBullet2,
+  ctaBullet3,
+}: CtaSectionProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const sectionRef = useRef(null);
@@ -75,7 +87,7 @@ export default function CtaSection() {
                 animate={isInView ? {opacity: 1, x: 0} : {opacity: 0, x: -30}}
                 transition={{duration: 0.6, ease: "easeOut", delay: 0.2}}>
                 <h2 className="text-2xl font-poppins sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 leading-tight">
-                  Unlock the Capital You've Already Earned, Free Your Mind & Resources to Focus on Business, Not Billing.
+                  {ctaTitle}
                 </h2>
 
                 <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
@@ -86,7 +98,7 @@ export default function CtaSection() {
                     transition={{duration: 0.5, delay: 0.3}}>
                     <Unlock className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 text-white" />
                     <p className="text-base sm:text-lg text-white/90">
-                      Untie your hands, unlock instant cash flow, and free your mind from financial worries.
+                      {ctaBullet1}
                     </p>
                   </motion.div>
 
@@ -96,7 +108,9 @@ export default function CtaSection() {
                     animate={isInView ? {opacity: 1, y: 0} : {opacity: 0, y: 20}}
                     transition={{duration: 0.5, delay: 0.4}}>
                     <Clock className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 text-white" />
-                    <p className="text-base sm:text-lg text-white/90">Reclaim the time and energy spent managing cash flow gaps.</p>
+                    <p className="text-base sm:text-lg text-white/90">
+                      {ctaBullet2}
+                    </p>
                   </motion.div>
 
                   <motion.div
@@ -106,7 +120,7 @@ export default function CtaSection() {
                     transition={{duration: 0.5, delay: 0.5}}>
                     <Target className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5 text-white" />
                     <p className="text-base sm:text-lg text-white/90">
-                      Focus on growing your business, closing more deals, and winning in your industry.
+                      {ctaBullet3}
                     </p>
                   </motion.div>
                 </div>

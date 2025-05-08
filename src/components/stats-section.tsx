@@ -8,7 +8,15 @@ import {Sparkles} from "lucide-react";
 import {InfiniteSlider} from "./ui/infinite-slider";
 import {ProgressiveBlur} from "./ui/progressive-blur";
 
-export default function StatsSection() {
+interface StatsSectionProps {
+  aboutTitle?: string;
+  aboutSubtitle?: string;
+}
+
+export default function StatsSection({
+  aboutTitle,
+  aboutSubtitle,
+}: StatsSectionProps) {
   const statsRef = useRef(null);
   const statsInView = useInView(statsRef, {once: true, amount: 0.3});
 
@@ -73,15 +81,13 @@ export default function StatsSection() {
             <Sparkles className="h-5 w-5 text-primary dark:text-secondary-400 mr-2" />
             <span className="text-sm font-medium text-primary dark:text-secondary-400">The Klaim Story</span>
           </motion.div>
-          <h2 className="text-3xl font-poppins md:text-4xl lg:text-5xl font-semibold tracking-tight mb-16">About us</h2>
+          <h2 className="text-3xl font-poppins md:text-4xl lg:text-5xl font-semibold tracking-tight mb-16">{aboutTitle}</h2>
           <motion.p
             className="text-lg font-inter md:text-xl text-slate-600 dark:text-slate-300 mx-auto"
             initial={{opacity: 0, y: 20}}
             animate={statsInView ? {opacity: 1, y: 0} : {opacity: 0, y: 20}}
             transition={{duration: 0.6, delay: 0.2}}>
-            Klaim is an award-winning fintech company headquartered in Abu Dhabi Global Market AGDM, Abu Dhabi, UAE with offices in Dubai, Abu Dhabi,
-            Riyadh. Since 2019 we've been pioneering payment acceleration for SMEs, specifically in healthcare industry. With Klaim Flow we distilled
-            5 years of expertise and best practices into a product tailored made for SMEs across all sectors.
+            {aboutSubtitle}
           </motion.p>
         </motion.div>
 

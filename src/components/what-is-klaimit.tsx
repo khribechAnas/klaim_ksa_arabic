@@ -7,7 +7,17 @@ import {Button} from "@/components/ui/button";
 import {Compare} from "./ui/compare";
 import Link from "next/link";
 
-export default function WhatIsKlaimFlow() {
+interface WhatIsKlaimFlowProps {    
+  klaimFlowSubtitle?: string;
+  klaimFlowTitle2?: string;
+  klaimFlowDescription2?: string;
+}
+
+export default function WhatIsKlaimFlow({
+  klaimFlowSubtitle,
+  klaimFlowTitle2,
+  klaimFlowDescription2,
+} : WhatIsKlaimFlowProps) {
   const sectionRef = useRef(null);
   const contentRef = useRef(null);
   const isInView = useInView(contentRef, {once: true, amount: 0.2});
@@ -134,7 +144,7 @@ export default function WhatIsKlaimFlow() {
               initial={{opacity: 0, y: 20}}
               animate={isInView ? {opacity: 1, y: 0} : {opacity: 0, y: 20}}
               transition={{duration: 0.6, delay: 0.3}}>
-              A revolutionary receivables financing solution that turns your outstanding invoices into immediate cash flow
+              {klaimFlowSubtitle}
             </motion.p>
           </motion.div>
 
@@ -189,11 +199,9 @@ export default function WhatIsKlaimFlow() {
                 <div className="relative">
                   <div className="absolute -left-4 top-0 bottom-0 w-1 bg-secondary rounded-full"></div>
                   <div className="pl-6">
-                    <h3 className="text-2xl font-poppins font-semibold text-slate-900 dark:text-white mb-4">The KlaimFlow Advantage</h3>
+                    <h3 className="text-2xl font-poppins font-semibold text-slate-900 dark:text-white mb-4">{klaimFlowTitle2}</h3>
                     <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      KlaimFlow is a receivables financing solution that turns receivables into instant cash. Instead of waiting for your business
-                      invoices to reach their payment terms to get paid, KlaimFlow advances up to 90% of your receivables within 24 hours. Once your
-                      customer pays on the due date, the remaining balance is settled.
+                      {klaimFlowDescription2}
                     </p>
                   </div>
                 </div>
