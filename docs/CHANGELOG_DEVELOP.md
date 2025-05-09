@@ -5,6 +5,3 @@ placed in the CHANGELOG.md under particular release number.
 
 ## Current
 
-### feature/cta-form-submission
-
-- Add form submission data to strapi

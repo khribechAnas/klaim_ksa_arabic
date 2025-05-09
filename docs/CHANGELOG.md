@@ -2,6 +2,12 @@
 
 This file contains the history of all releases.
 
+## 1.6.4
+
+### feature/cta-form-submission
+
+- Add form submission data to strapi
+
 ## 1.6.3
 
 ### feature/klaim-flow
