@@ -281,7 +281,7 @@ export default function CtaSection({
                       <Check className="w-6 h-6 text-green-600" />
                     </div>
                     <h3 className="text-xl sm:text-2xl font-poppins font-bold text-white mb-3">Thank you!</h3>
-                    <p className="text-white/90 mb-6">Your information has been submitted successfully. We'll be in touch with you soon.</p>
+                    <p className="text-white/90 mb-6">Your information has been submitted successfully. We will be in touch with you soon.</p>
                   </div>
                 ) : (
                   <>
