@@ -5,3 +5,6 @@ placed in the CHANGELOG.md under particular release number.
 
 ## Current
 
+### feature/improve-footer-buttons
+
+- Improve footer and buttons
