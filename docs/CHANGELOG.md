@@ -2,6 +2,12 @@
 
 This file contains the history of all releases.
 
+## 1.6.6
+
+### feature/improve-footer-buttons
+
+- Improve footer and buttons
+
 ## 1.6.5
 
 ### bugfix/fix-build-error
