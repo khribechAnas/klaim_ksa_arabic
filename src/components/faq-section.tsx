@@ -79,7 +79,7 @@ export default function FaqSection() {
           <h2 className="text-3xl font-poppins md:text-5xl font-semibold tracking-tight mb-4">
             Frequently Asked <span className="text-primary dark:text-secondary">Questions</span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">Find answers to common questions about KlaimFlow's receivables financing solution.</p>
+          <p className="text-lg text-gray-600 dark:text-gray-300">Find answers to common questions about KlaimFlow&apos;s receivables financing solution.</p>
         </motion.div>
 
         {/* Search bar */}

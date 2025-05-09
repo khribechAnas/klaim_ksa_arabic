@@ -45,6 +45,7 @@ export function ProgressiveBlur({
         )})`;
 
         return (
+          //@ts-ignore
           <motion.div
             key={index}
             className='pointer-events-none absolute inset-0 rounded-[inherit]'

@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({
                 href="#"
                 className="font-poppins group bg-primary dark:bg-secondary dark:text-black dark:hover:bg-secondary/90 text-white font-medium rounded-xl px-8 sm:px-10 md:px-14 py-3 sm:py-4 text-[16px] sm:text-[18px] flex items-center gap-x-2 sm:gap-x-3 max-w-fit transition-all duration-300 hero-cta"
               >
-                I'm Interested
+                I&apos;m Interested
                 <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
               </a>
             </motion.div>
