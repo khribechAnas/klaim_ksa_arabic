@@ -234,7 +234,7 @@ export default function WhatIsKlaimFlow({
                     <Button
                       size="lg"
                       className="group w-full sm:w-auto text-sm sm:text-base py-8 sm:py-6 bg-primary text-white shadow-lg transition-all">
-                      <span className="whitespace-normal font-poppins sm:whitespace-nowrap">Apply Now & Secure Immediate Funding</span>{" "}
+                      <span className="whitespace-normal font-poppins sm:whitespace-nowrap">Apply Now</span>{" "}
                       <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
