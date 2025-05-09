@@ -5,6 +5,3 @@ placed in the CHANGELOG.md under particular release number.
 
 ## Current
 
-### bugfix/fix-build-error
-
-- Fix linter error
