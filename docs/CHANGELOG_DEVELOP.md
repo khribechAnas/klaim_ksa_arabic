@@ -5,7 +5,3 @@ placed in the CHANGELOG.md under particular release number.
 
 ## Current
 
-### feature/klaim-flow
-
-- Add klaim flow page
-- Connect with strapi
