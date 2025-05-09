@@ -15,6 +15,15 @@ interface CtaSectionProps {
   ctaBullet3?: string;
 }
 
+// Define validation errors interface
+interface ValidationErrors {
+  name?: string;
+  companyName?: string;
+  email?: string;
+  phoneNumber?: string;
+  annualRevenue?: string;
+}
+
 export default function CtaSection({
   ctaTitle,
   ctaBullet1,
@@ -23,6 +32,18 @@ export default function CtaSection({
 }: CtaSectionProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [validationErrors, setValidationErrors] = useState<ValidationErrors>({});
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    companyName: "",
+    email: "",
+    phoneNumber: "",
+    annualRevenue: "",
+  });
+
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
     once: true,
@@ -30,15 +51,118 @@ export default function CtaSection({
     margin: "-100px 0px",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  // Validate form data
+  const validateForm = (): boolean => {
+    const errors: ValidationErrors = {};
+    let isValid = true;
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    // Check if fields are empty
+    if (!formData.name.trim()) {
+      errors.name = "Name is required";
+      isValid = false;
+    }
+
+    if (!formData.companyName.trim()) {
+      errors.companyName = "Company name is required";
+      isValid = false;
+    }
+
+    if (!formData.email.trim()) {
+      errors.email = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = "Please enter a valid email address";
+      isValid = false;
+    }
+
+    if (!formData.phoneNumber.trim()) {
+      errors.phoneNumber = "Phone number is required";
+      isValid = false;
+    }
+
+    if (!formData.annualRevenue.trim()) {
+      errors.annualRevenue = "Annual revenue is required";
+      isValid = false;
+    } else if (isNaN(Number(formData.annualRevenue)) || Number(formData.annualRevenue) <= 0) {
+      errors.annualRevenue = "Please enter a valid revenue amount";
+      isValid = false;
+    }
+
+    setValidationErrors(errors);
+    return isValid;
+  };
+
+  // Handle input change
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    
+    // Map form field IDs to Strapi model fields
+    const fieldMapping: Record<string, string> = {
+      name: "name",
+      company: "companyName",
+      email: "email", 
+      phone: "phoneNumber",
+      revenue: "annualRevenue"
+    };
+    
+    const strapiField = fieldMapping[id];
+    
+    // Clear validation error when field is edited
+    if (validationErrors[strapiField as keyof ValidationErrors]) {
+      setValidationErrors({
+        ...validationErrors,
+        [strapiField]: undefined
+      });
+    }
+    
+    setFormData({
+      ...formData,
+      [strapiField]: value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate form before submission
+    if (!validateForm()) {
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      // Format phone number to include UAE code
+      const formattedData = {
+        ...formData,
+        phoneNumber: formData.phoneNumber ? `971${formData.phoneNumber.replace(/\D/g, '')}` : "",
+        annualRevenue: formData.annualRevenue ? parseInt(formData.annualRevenue, 10) : 0,
+      };
+
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_STRAPI_ENDPOINT}/flow-ctas`, 
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ data: formattedData }),
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error?.message || 'Failed to submit form');
+      }
+
       setIsSubmitted(true);
-    }, 1500);
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setError(err instanceof Error ? err.message : 'Failed to submit form');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -151,98 +275,150 @@ export default function CtaSection({
                 initial={{opacity: 0, x: 30}}
                 animate={isInView ? {opacity: 1, x: 0} : {opacity: 0, x: 30}}
                 transition={{duration: 0.6, ease: "easeOut", delay: 0.4}}>
-                <h3 className="text-xl sm:text-2xl font-poppins font-bold text-white mb-5 sm:mb-6">Tell us about yourself</h3>
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label htmlFor="name" className="text-white text-sm sm:text-base">
-                      Name
-                    </Label>
-                    <Input
-                      id="name"
-                      placeholder="Jane Smith"
-                      required
-                      className="bg-white/20 border-white/30 text-white placeholder:text-white/70 h-10 sm:h-12 text-base"
-                      autoComplete="name"
-                    />
-                  </div>
-
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label htmlFor="company" className="text-white text-sm sm:text-base">
-                      Company name
-                    </Label>
-                    <Input
-                      id="company"
-                      placeholder="Jane's company"
-                      required
-                      className="bg-white/20 border-white/30 text-white placeholder:text-white/70 h-10 sm:h-12 text-base"
-                      autoComplete="organization"
-                    />
-                  </div>
-
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label htmlFor="email" className="text-white text-sm sm:text-base">
-                      Email
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="jane@janeco.com"
-                      required
-                      className="bg-white/20 border-white/30 text-white placeholder:text-white/70 h-10 sm:h-12 text-base"
-                      autoComplete="email"
-                    />
-                  </div>
-
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label htmlFor="phone" className="text-white text-sm sm:text-base">
-                      Phone Number
-                    </Label>
-                    <div className="flex">
-                      <div className="bg-white/20 border border-white/30 rounded-l-md px-3 flex items-center text-white h-10 sm:h-12 text-sm sm:text-base">
-                        +971
-                      </div>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        placeholder="55 123 4567"
-                        required
-                        className="bg-white/20 border-white/30 text-white placeholder:text-white/70 rounded-l-none h-10 sm:h-12 text-base"
-                        autoComplete="tel"
-                      />
+                {isSubmitted ? (
+                  <div className="text-center py-8">
+                    <div className="mx-auto w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                      <Check className="w-6 h-6 text-green-600" />
                     </div>
+                    <h3 className="text-xl sm:text-2xl font-poppins font-bold text-white mb-3">Thank you!</h3>
+                    <p className="text-white/90 mb-6">Your information has been submitted successfully. We'll be in touch with you soon.</p>
                   </div>
+                ) : (
+                  <>
+                    <h3 className="text-xl sm:text-2xl font-poppins font-bold text-white mb-5 sm:mb-6">Tell us about yourself</h3>
+                    {error && (
+                      <div className="mb-4 p-3 bg-red-500/20 border border-red-600/30 rounded-lg text-white">
+                        {error}
+                      </div>
+                    )}
+                    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                      <div className="space-y-1 sm:space-y-2">
+                        <Label htmlFor="name" className="text-white text-sm sm:text-base">
+                          Name
+                        </Label>
+                        <Input
+                          id="name"
+                          placeholder="Jane Smith"
+                          required
+                          className={`bg-white/20 border-white/30 text-white placeholder:text-white/70 h-10 sm:h-12 text-base ${
+                            validationErrors.name ? "border-red-400" : ""
+                          }`}
+                          autoComplete="name"
+                          onChange={handleChange}
+                          value={formData.name}
+                        />
+                        {validationErrors.name && (
+                          <p className="text-red-300 text-sm mt-1">{validationErrors.name}</p>
+                        )}
+                      </div>
 
-                  <div className="space-y-1 sm:space-y-2">
-                    <Label htmlFor="revenue" className="text-white text-sm sm:text-base">
-                      Annual B2B revenue (AED)
-                    </Label>
-                    <Input
-                      id="revenue"
-                      type="number"
-                      placeholder="100000"
-                      required
-                      className="bg-white/20 border-white/30 text-white placeholder:text-white/70 h-10 sm:h-12 text-base"
-                      min="0"
-                      inputMode="numeric"
-                    />
-                  </div>
+                      <div className="space-y-1 sm:space-y-2">
+                        <Label htmlFor="company" className="text-white text-sm sm:text-base">
+                          Company name
+                        </Label>
+                        <Input
+                          id="company"
+                          placeholder="Jane's company"
+                          required
+                          className={`bg-white/20 border-white/30 text-white placeholder:text-white/70 h-10 sm:h-12 text-base ${
+                            validationErrors.companyName ? "border-red-400" : ""
+                          }`}
+                          autoComplete="organization"
+                          onChange={handleChange}
+                          value={formData.companyName}
+                        />
+                        {validationErrors.companyName && (
+                          <p className="text-red-300 text-sm mt-1">{validationErrors.companyName}</p>
+                        )}
+                      </div>
 
-                  <motion.div
-                    initial={{opacity: 0, y: 20}}
-                    animate={isInView ? {opacity: 1, y: 0} : {opacity: 0, y: 20}}
-                    transition={{duration: 0.5, delay: 0.6}}
-                    whileHover={{scale: 1.03}}
-                    whileTap={{scale: 0.97}}
-                    className="pt-2">
-                    <Button
-                      type="submit"
-                      className="w-full bg-white dark:bg-white dark:hover:bg-gray-100 dark:text-primary text-primary hover:bg-gray-100 mt-2 sm:mt-4 group h-12 text-base"
-                      disabled={isSubmitting}>
-                      {isSubmitting ? "Submitting..." : "Submit"}
-                      <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </motion.div>
-                </form>
+                      <div className="space-y-1 sm:space-y-2">
+                        <Label htmlFor="email" className="text-white text-sm sm:text-base">
+                          Email
+                        </Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="jane@janeco.com"
+                          required
+                          className={`bg-white/20 border-white/30 text-white placeholder:text-white/70 h-10 sm:h-12 text-base ${
+                            validationErrors.email ? "border-red-400" : ""
+                          }`}
+                          autoComplete="email"
+                          onChange={handleChange}
+                          value={formData.email}
+                        />
+                        {validationErrors.email && (
+                          <p className="text-red-300 text-sm mt-1">{validationErrors.email}</p>
+                        )}
+                      </div>
+
+                      <div className="space-y-1 sm:space-y-2">
+                        <Label htmlFor="phone" className="text-white text-sm sm:text-base">
+                          Phone Number
+                        </Label>
+                        <div className="flex">
+                          <div className="bg-white/20 border border-white/30 rounded-l-md px-3 flex items-center text-white h-10 sm:h-12 text-sm sm:text-base">
+                            +971
+                          </div>
+                          <Input
+                            id="phone"
+                            type="tel"
+                            placeholder="55 123 4567"
+                            required
+                            className={`bg-white/20 border-white/30 text-white placeholder:text-white/70 rounded-l-none h-10 sm:h-12 text-base ${
+                              validationErrors.phoneNumber ? "border-red-400" : ""
+                            }`}
+                            autoComplete="tel"
+                            onChange={handleChange}
+                            value={formData.phoneNumber}
+                          />
+                        </div>
+                        {validationErrors.phoneNumber && (
+                          <p className="text-red-300 text-sm mt-1">{validationErrors.phoneNumber}</p>
+                        )}
+                      </div>
+
+                      <div className="space-y-1 sm:space-y-2">
+                        <Label htmlFor="revenue" className="text-white text-sm sm:text-base">
+                          Annual B2B revenue (AED)
+                        </Label>
+                        <Input
+                          id="revenue"
+                          type="number"
+                          placeholder="100000"
+                          required
+                          className={`bg-white/20 border-white/30 text-white placeholder:text-white/70 h-10 sm:h-12 text-base ${
+                            validationErrors.annualRevenue ? "border-red-400" : ""
+                          }`}
+                          min="0"
+                          inputMode="numeric"
+                          onChange={handleChange}
+                          value={formData.annualRevenue}
+                        />
+                        {validationErrors.annualRevenue && (
+                          <p className="text-red-300 text-sm mt-1">{validationErrors.annualRevenue}</p>
+                        )}
+                      </div>
+
+                      <motion.div
+                        initial={{opacity: 0, y: 20}}
+                        animate={isInView ? {opacity: 1, y: 0} : {opacity: 0, y: 20}}
+                        transition={{duration: 0.5, delay: 0.6}}
+                        whileHover={{scale: 1.03}}
+                        whileTap={{scale: 0.97}}
+                        className="pt-2">
+                        <Button
+                          type="submit"
+                          className="w-full bg-white dark:bg-white dark:hover:bg-gray-100 dark:text-primary text-primary hover:bg-gray-100 mt-2 sm:mt-4 group h-12 text-base"
+                          disabled={isSubmitting}>
+                          {isSubmitting ? "Submitting..." : "Submit"}
+                          <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </motion.div>
+                    </form>
+                  </>
+                )}
               </motion.div>
 
               {/* Mobile CTA Button */}
