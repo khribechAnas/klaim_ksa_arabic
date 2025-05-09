@@ -2,6 +2,13 @@
 
 This file contains the history of all releases.
 
+## 1.6.3
+
+### feature/klaim-flow
+
+- Add klaim flow page
+- Connect with strapi
+
 ## 1.6.2
 
 - Fix video opening on safari.
