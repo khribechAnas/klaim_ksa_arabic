@@ -2,6 +2,12 @@
 
 This file contains the history of all releases.
 
+## 1.6.7
+
+### feature/small-improvements-ui
+
+- Text changes
+
 ## 1.6.6
 
 ### feature/improve-footer-buttons
