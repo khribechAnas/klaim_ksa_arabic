@@ -103,7 +103,7 @@ export default async function LandingPage() {
         ctaBullet2={flowContent.ctaBullet2}
         ctaBullet3={flowContent.ctaBullet3}
       />
-      <FaqSection />
+      {/* <FaqSection /> */}
       <ContactForm />
     </>
   );

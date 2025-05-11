@@ -71,7 +71,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-gray-600 dark:text-gray-300 mb-5 max-w-xs">
-              Turning receivables into instant cash within 24 hours. Empowering businesses across the UAE, KSA, and Oman.
+              Empowering businesses across the UAE, KSA, and Oman.
             </p>
 
             <div className="space-y-2">

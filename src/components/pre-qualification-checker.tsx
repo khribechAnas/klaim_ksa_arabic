@@ -313,7 +313,7 @@ export default function PreQualificationChecker() {
             Instant <span className="text-primary dark:text-secondary">Pre-Qualification</span> Check
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Find out if your business can qualify for receivables financing within 24 hours
+            Find out if your business may be eligible for KlaimFlow receivables purchasing solution
           </p>
         </motion.div>
 
@@ -336,7 +336,7 @@ export default function PreQualificationChecker() {
                   Business Pre-Qualification Checker
                 </CardTitle>
                 <CardDescription className="text-gray-600 dark:text-gray-300 mt-2">
-                  Complete the form below to check if your business qualifies for our financing solutions
+                  Complete the form below to check if your business may be eligible for KlaimFlow
                 </CardDescription>
               </CardHeader>
 
