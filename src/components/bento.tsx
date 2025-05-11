@@ -78,7 +78,7 @@ export function BentoGridSection({
             <span className="text-sm font-medium text-primary dark:text-secondary-400">Peace of Mind</span>
           </div>
           <h2 className="text-3xl font-poppins md:text-4xl lg:text-5xl font-semibold tracking-tight">
-            What <span className="text-primary dark:text-secondary">KlaimFlow</span> Provides
+            <span className="text-primary dark:text-secondary">KlaimFlow</span> Provides
           </h2>
           <p className="mt-4 text-lg md:text-xl text-muted-foreground">
             {flowProvidesSubtitle}
