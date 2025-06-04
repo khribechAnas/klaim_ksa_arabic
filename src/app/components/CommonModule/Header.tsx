@@ -192,24 +192,24 @@ const Header = () => {
             </li>
             <ul className="min-[1024px]:flex absolute top-0 bottom-0 right-0 flex items-center justify-center hidden">
               <li className="bg-[#6135FB] px-5 py-2 rounded-lg font-semibold text-white mx-2.5">
-                <a href="https://portal.uae.klaim.ai/sign-in" target="_blank">
+                <a href="https://portal.uae.klaim.ai" target="_blank">
                   Sign In
                 </a>
               </li>
               <li className="px-5 py-2 rounded-lg font-semibold border border-[#6135FB] ml-2.5 text-[#6135FB]">
-                <a href="https://portal.uae.klaim.ai/sign-up" target="_blank">
+                <a href="https://portal.uae.klaim.ai" target="_blank">
                   Sign Up
                 </a>
               </li>
             </ul>
             <ul className="min-[1024px]:hidden items-center justify-start flex mb-3 ml-5 min-[992px]:ml-0 mt-5 min-[992px]:mt-0">
               <li className="bg-[#6135FB] px-5 py-2 rounded-lg font-semibold text-white mx-2.5">
-                <a href="https://portal.uae.klaim.ai/sign-in" target="_blank">
+                <a href="https://portal.uae.klaim.ai" target="_blank">
                   Sign In
                 </a>
               </li>
               <li className="px-5 py-2 rounded-lg font-semibold border border-[#6135FB] ml-2.5 text-[#6135FB]">
-                <a href="https://portal.uae.klaim.ai/sign-up" target="_blank">
+                <a href="https://portal.uae.klaim.ai" target="_blank">
                   Sign Up
                 </a>
               </li>
