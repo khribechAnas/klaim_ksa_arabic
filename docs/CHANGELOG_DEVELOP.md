@@ -4,3 +4,7 @@ This file contains all changes for development channel. Before issue a release, 
 placed in the CHANGELOG.md under particular release number.
 
 ## Current
+
+### feature/change-sign-up-sign-in-links
+
+- Change sign up and sign in links

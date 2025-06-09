@@ -130,7 +130,7 @@ const KapitalHowItWorks = () => {
         </div>
       </div>
       <div className="text-center py-4 mt-8">
-        <ButtonPrimary title="Sign Up Today" href="https://portal.uae.klaim.ai/sign-up" target="_blank" />
+        <ButtonPrimary title="Sign Up Today" href="https://portal.uae.klaim.ai" target="_blank" />
       </div>
     </section>
   );
