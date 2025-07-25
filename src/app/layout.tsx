@@ -90,7 +90,7 @@ export default function RootLayout({
           </>
         )}
         <PostHogProvider>
-            {children}
+          {children}
         </PostHogProvider>
       </body>
     </html>
