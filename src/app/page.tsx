@@ -25,9 +25,8 @@ import KapitalFAQ from "./components/KapitalModule/KapitalFAQ";
 export default function Home() {
   return (
     <>
-     
-     {/* NEW HOME PAGE */}
 
+     {/* NEW HOME PAGE */}
       <Header />
       <HomeHero />
       <HomeClients />
@@ -44,7 +43,7 @@ export default function Home() {
       <KapitalAccelerate/>
       <KapitalFAQ/>
       <Footer />
-    
+
      {/* OLD HOME PAGE */}
 
       {/* <Header />
