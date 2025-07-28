@@ -11,4 +11,4 @@ const PostHogProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default PostHogProvider; // ✅ default export
+export default PostHogProvider;
