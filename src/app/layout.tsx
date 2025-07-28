@@ -2,6 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
+import dynamic from "next/dynamic";
+
+const PostHogProvider = dynamic(() => import('@/app/providers/posthogProvider'), { ssr: false });
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -88,7 +91,9 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        {children}
+        <PostHogProvider>
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   );
