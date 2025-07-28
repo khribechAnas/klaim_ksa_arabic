@@ -8,3 +8,7 @@ placed in the CHANGELOG.md under particular release number.
 ### feature/change-sign-up-sign-in-links
 
 - Change sign up and sign in links
+
+### feature/add-posthog-analytics-2
+
+- Add posthog analytics
