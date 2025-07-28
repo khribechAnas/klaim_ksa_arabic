@@ -9,6 +9,6 @@ placed in the CHANGELOG.md under particular release number.
 
 - Change sign up and sign in links
 
-### feature/add-posthog-analytics-2
+### feature/add-analytics-posthog
 
 - Add posthog analytics
