@@ -6,7 +6,7 @@ import {
   ReasoningContent,
   ReasoningResponse,
 } from "@/components/ui/reasoning";
-import { AnimatePresence, motion, useInView } from "motion/react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 interface ChatConversation {

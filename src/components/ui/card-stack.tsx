@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 let interval: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 

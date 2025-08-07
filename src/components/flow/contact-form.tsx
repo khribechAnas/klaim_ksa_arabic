@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useId } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Loader2 } from "lucide-react";
 import { submitCampaignLead } from "@/lib/api";
 

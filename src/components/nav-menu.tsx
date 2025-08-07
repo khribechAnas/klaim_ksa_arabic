@@ -1,7 +1,7 @@
 "use client";
 
 import { siteConfig } from "@/lib/config";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import React, { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Building2, Home, Briefcase } from "lucide-react";

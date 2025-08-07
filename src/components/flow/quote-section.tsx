@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "motion/react";
+import { motion, useInView } from "framer-motion";
 import { StatsCard } from "../ui/stats-card";
 import { AnimatedCounter } from "../ui/animated-counter";
 import { useRef } from "react";

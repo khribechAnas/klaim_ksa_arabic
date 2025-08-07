@@ -10,7 +10,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { AnimatePresence, motion, useWillChange } from "motion/react";
+import { AnimatePresence, motion, useWillChange } from "framer-motion";
 
 const stiffness = 400;
 const damping = 30;

@@ -4,7 +4,7 @@ import { SparklesDemo } from "@/components/ui/sparkles-demo";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { Globe } from "@/components/ui/globe";
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
+
 import Image from "next/image";
 import { FirstBentoSkeleton } from "@/components/flow/first-bento-skeleton";
 import { SecondBentoSkeleton } from "@/components/flow/second-bento-skeleton";
@@ -720,19 +720,14 @@ export const siteConfig = {
                 </defs>
               </svg>
             </div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="size-full"
-            >
+            <div className="size-full">
               <FlickeringGrid
                 className="size-full"
                 gridGap={4}
                 squareSize={2}
                 maxOpacity={0.5}
               />
-            </motion.div>
+            </div>
           </div>
         ),
 
