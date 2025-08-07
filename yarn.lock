@@ -4178,12 +4178,14 @@ __metadata:
   version: 0.3.5
   resolution: "for-each@npm:0.3.5"
   dependencies:
-    is-callable "^1.2.7"
+    is-callable: "npm:^1.2.7"
+  checksum: 10/330cc2439f85c94f4609de3ee1d32c5693ae15cdd7fe3d112c4fd9efd4ce7143f2c64ef6c2c9e0cfdb0058437f33ef05b5bdae5b98fcc903fb2143fbaf0fea0f
+  languageName: node
+  linkType: hard
 
-framer-motion@^12.18.1:
-  version "12.23.12"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.23.12.tgz#80cf6fd7c111073a0c558e336c85ca36cca80d3d"
-  integrity sha512-6e78rdVtnBvlEVgu6eFEAgG9v3wLnYEboM8I5O5EXvfKC8gxGQB8wXJdhkMy10iVcn05jl6CNw7/HTsTCfwcWg==
+"foreground-child@npm:^3.1.0":
+  version: 3.3.1
+  resolution: "foreground-child@npm:3.3.1"
   dependencies:
     cross-spawn: "npm:^7.0.6"
     signal-exit: "npm:^4.0.1"
@@ -4191,7 +4193,7 @@ framer-motion@^12.18.1:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^12.18.1, framer-motion@npm:^12.23.12":
+"framer-motion@npm:^12.18.1":
   version: 12.23.12
   resolution: "framer-motion@npm:12.23.12"
   dependencies:
@@ -5117,7 +5119,6 @@ framer-motion@^12.18.1:
     framer-motion: "npm:^12.18.1"
     lucide-react: "npm:^0.479.0"
     marked: "npm:^15.0.7"
-    motion: "npm:^12.18.1"
     next: "npm:15.2.2"
     next-themes: "npm:^0.4.6"
     posthog-js: "npm:^1.258.5"
@@ -6083,27 +6084,6 @@ framer-motion@^12.18.1:
   version: 12.23.6
   resolution: "motion-utils@npm:12.23.6"
   checksum: 10/fae741319e72389eca8f3e73e644ffe6501409d00c7febb2f9b836629ae86ef735e73d670d0591706ca5e93ce10228ddbcff0ecdeb09b4cd8df14df7007aedd9
-  languageName: node
-  linkType: hard
-
-"motion@npm:^12.18.1":
-  version: 12.23.12
-  resolution: "motion@npm:12.23.12"
-  dependencies:
-    framer-motion: "npm:^12.23.12"
-    tslib: "npm:^2.4.0"
-  peerDependencies:
-    "@emotion/is-prop-valid": "*"
-    react: ^18.0.0 || ^19.0.0
-    react-dom: ^18.0.0 || ^19.0.0
-  peerDependenciesMeta:
-    "@emotion/is-prop-valid":
-      optional: true
-    react:
-      optional: true
-    react-dom:
-      optional: true
-  checksum: 10/95670351c14d6925e891fac3d12719ed2e46000366abd38096870c46271071e3f22d0e9fa523809e614ee58aaeb1865fc19398dc8b408c2594512dc0eef392db
   languageName: node
   linkType: hard
 
