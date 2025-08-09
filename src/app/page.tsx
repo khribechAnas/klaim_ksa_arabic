@@ -1,67 +1,33 @@
-import Footer from "./components/CommonModule/Footer";
-import Header from "./components/CommonModule/Header";
-import HomeAwards from "./components/HomeModule/HomeAwards";
-import HomeBusinessGrowth from "./components/HomeModule/HomeBusinessGrowth";
-import HomeCashFlow from "./components/HomeModule/HomeCashFlow";
-import HomeClients from "./components/HomeModule/HomeClients";
-import HomeGoodNews from "./components/HomeModule/HomeGoodNews";
-import HomeHero from "./components/HomeModule/HomeHero";
-import HomeHowToEliminate from "./components/HomeModule/HomeHowToEliminate";
-import HomeSolutions from "./components/HomeModule/HomeSolutions";
-import HomeKlaimHelps from "./components/HomeModule/HomeKlaimHelps";
-import HomeTestimonials from "./components/HomeModule/HomeTestimonials";
-import HomeCardBanner from "./components/HomeModule/HomeCardBanner";
-import HomeGetStarted from "./components/HomeModule/HomeGetStarted";
-import HomeFAQ from "./components/HomeModule/HomeFAQ";
-import KapitalWhatWould from "./components/KapitalModule/KapitalWhatWould";
-import KapitalHowItWorks from "./components/KapitalModule/KapitalHowItWorks";
-import KapitalCardsBanner2 from "./components/KapitalModule/KapitalCardsBanner2";
-import KapitalCardsBanner from "./components/KapitalModule/KapitalCardsBanner";
-import KapitalTable from "./components/KapitalModule/KapitalTable";
-import KapitalWhatToExpect from "./components/KapitalModule/KapitalWhatToExpect";
-import KapitalAccelerate from "./components/KapitalModule/KapitalAccelerate";
-import KapitalFAQ from "./components/KapitalModule/KapitalFAQ";
+import { BentoSection } from "@/components/sections/bento-section";
+import { CompanyShowcase } from "@/components/sections/company-showcase";
+import { CTASection } from "@/components/sections/cta-section";
+import { FAQSection } from "@/components/sections/faq-section";
+import { FeatureSection } from "@/components/sections/feature-section";
+import { FooterSection } from "@/components/sections/footer-section";
+import { HeroSection } from "@/components/sections/hero-section";
+import { IndustrySection } from "@/components/sections/industry-section";
+import { QuoteSection } from "@/components/sections/quote-section";
+import { TestimonialSection } from "@/components/sections/testimonial-section";
+import { BlogSection } from "@/components/sections/blog-section";
+import { ContactSection } from "@/components/sections/contact-section";
 
 export default function Home() {
   return (
-    <>
-     
-     {/* NEW HOME PAGE */}
-
-      <Header />
-      <HomeHero />
-      <HomeClients />
-      <HomeCashFlow />
-      <HomeGoodNews />
-      <KapitalWhatWould/>
-      <KapitalHowItWorks/>
-      <KapitalCardsBanner/>
-      <HomeAwards />
-      <HomeTestimonials />
-      <KapitalTable/>
-      <KapitalWhatToExpect/>
-      <HomeCardBanner />
-      <KapitalAccelerate/>
-      <KapitalFAQ/>
-      <Footer />
-    
-     {/* OLD HOME PAGE */}
-
-      {/* <Header />
-      <HomeHero />
-      <HomeClients />
-      <HomeHowToEliminate />
-      <HomeCashFlow />
-      <HomeGoodNews />
-      <HomeBusinessGrowth />
-      <HomeKlaimHelps />
-      <HomeSolutions />
-      <HomeAwards />
-      <HomeTestimonials />
-      <HomeCardBanner />
-      <HomeGetStarted />
-      <HomeFAQ />
-      <Footer /> */}
-    </>
+    <main className="flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full">
+      <HeroSection />
+      <IndustrySection />
+      <QuoteSection />
+      <BentoSection />
+      <FeatureSection />
+      {/* <GrowthSection /> */}
+      {/* <PricingSection /> */}
+      <CompanyShowcase />
+      <TestimonialSection />
+      <BlogSection />
+      <FAQSection />
+      <CTASection />
+      <ContactSection />
+      <FooterSection />
+    </main>
   );
 }
