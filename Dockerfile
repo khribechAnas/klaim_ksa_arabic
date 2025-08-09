@@ -4,6 +4,18 @@ FROM node:20
 # Set working directory
 WORKDIR /app
 
+# Build-time arguments for env values
+ARG KLAIM_API_URL
+ARG KLAIM_API_KEY
+ARG NEXT_PUBLIC_POSTHOG_KEY
+ARG NEXT_PUBLIC_POSTHOG_HOST
+
+# Expose them to the build step environment
+ENV KLAIM_API_URL=${KLAIM_API_URL} \
+    KLAIM_API_KEY=${KLAIM_API_KEY} \
+    NEXT_PUBLIC_POSTHOG_KEY=${NEXT_PUBLIC_POSTHOG_KEY} \
+    NEXT_PUBLIC_POSTHOG_HOST=${NEXT_PUBLIC_POSTHOG_HOST}
+
 # Copy package files
 COPY package.json ./
 
