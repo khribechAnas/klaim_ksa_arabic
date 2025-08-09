@@ -1,0 +1,27 @@
+stages:
+  - build
+
+build_docker:
+  image: docker:latest
+  cache: []
+  stage: build
+  services:
+    - docker
+  before_script:
+    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+  script:
+    - |
+      if [[ "${CI_COMMIT_BRANCH}" == "master" ]]; then
+        TAG="prod-${CI_COMMIT_SHORT_SHA}"
+        BUILD_ARGS="--build-arg KLAIM_API_URL=https://salesuae.klaim.ai KLAIM_API_KEY=gUbB97FwySsF NEXT_PUBLIC_POSTHOG_KEY=phc_hweQ5klcb0ki6yNSx1eBY4vO9ozNxfoYiVXubAQDSV4 NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com"
+      elif [[ "${CI_COMMIT_BRANCH}" == "develop" ]]; then
+        TAG="dev-${CI_COMMIT_SHORT_SHA}"
+        BUILD_ARGS="--build-arg KLAIM_API_URL=https://klaim.ai KLAIM_API_KEY=api-key NEXT_PUBLIC_POSTHOG_KEY=phc_devkey NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com"
+      else
+        echo "Branch ${CI_COMMIT_BRANCH} is not master or develop. Skipping build and push."
+        exit 0
+      fi
+    - docker build $BUILD_ARGS -t ${CI_REGISTRY_PATH}/${CI_PROJECT_PATH}:${TAG} .
+    - docker push ${CI_REGISTRY_PATH}/${CI_PROJECT_PATH}:${TAG}
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
