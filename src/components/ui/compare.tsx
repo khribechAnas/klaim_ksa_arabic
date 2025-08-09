@@ -1,9 +1,10 @@
 "use client";
-import React, {useState, useEffect, useRef, useCallback} from "react";
-import {SparklesCore} from "@/components/ui/sparkles";
-import {AnimatePresence, motion} from "motion/react";
-import {cn} from "@/lib/utils";
-import {IconDotsVertical} from "@tabler/icons-react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { SparklesCore } from "@/components/ui/sparkles-klaimflow";
+import { AnimatePresence, motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { IconDotsVertical } from "@tabler/icons-react";
+import Image from "next/image";
 
 interface CompareProps {
   firstImage?: string;
@@ -38,8 +39,6 @@ export const Compare = ({
 
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  const [isMouseOver, setIsMouseOver] = useState(false);
-
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   const startAutoplay = useCallback(() => {
@@ -48,7 +47,8 @@ export const Compare = ({
     const startTime = Date.now();
     const animate = () => {
       const elapsedTime = Date.now() - startTime;
-      const progress = (elapsedTime % (autoplayDuration * 2)) / autoplayDuration;
+      const progress =
+        (elapsedTime % (autoplayDuration * 2)) / autoplayDuration;
       const percentage = progress <= 1 ? progress * 100 : (2 - progress) * 100;
 
       setSliderXPercent(percentage);
@@ -71,12 +71,10 @@ export const Compare = ({
   }, [startAutoplay, stopAutoplay]);
 
   function mouseEnterHandler() {
-    setIsMouseOver(true);
     stopAutoplay();
   }
 
   function mouseLeaveHandler() {
-    setIsMouseOver(false);
     if (slideMode === "hover") {
       setSliderXPercent(initialSliderPercentage);
     }
@@ -86,14 +84,11 @@ export const Compare = ({
     startAutoplay();
   }
 
-  const handleStart = useCallback(
-    (clientX: number) => {
-      if (slideMode === "drag") {
-        setIsDragging(true);
-      }
-    },
-    [slideMode]
-  );
+  const handleStart = useCallback(() => {
+    if (slideMode === "drag") {
+      setIsDragging(true);
+    }
+  }, [slideMode]);
 
   const handleEnd = useCallback(() => {
     if (slideMode === "drag") {
@@ -116,18 +111,18 @@ export const Compare = ({
     [slideMode, isDragging]
   );
 
-  const handleMouseDown = useCallback((e: React.MouseEvent) => handleStart(e.clientX), [handleStart]);
+  const handleMouseDown = useCallback(() => handleStart(), [handleStart]);
   const handleMouseUp = useCallback(() => handleEnd(), [handleEnd]);
-  const handleMouseMove = useCallback((e: React.MouseEvent) => handleMove(e.clientX), [handleMove]);
-
-  const handleTouchStart = useCallback(
-    (e: React.TouchEvent) => {
-      if (!autoplay) {
-        handleStart(e.touches[0].clientX);
-      }
-    },
-    [handleStart, autoplay]
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent) => handleMove(e.clientX),
+    [handleMove]
   );
+
+  const handleTouchStart = useCallback(() => {
+    if (!autoplay) {
+      handleStart();
+    }
+  }, [handleStart, autoplay]);
 
   const handleTouchEnd = useCallback(() => {
     if (!autoplay) {
@@ -159,7 +154,8 @@ export const Compare = ({
       onMouseUp={handleMouseUp}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      onTouchMove={handleTouchMove}>
+      onTouchMove={handleTouchMove}
+    >
       <AnimatePresence initial={false}>
         <motion.div
           className="h-full w-px absolute top-0 m-auto z-30 bg-gradient-to-b from-transparent from-[5%] to-[95%] via-indigo-500 to-transparent"
@@ -168,7 +164,8 @@ export const Compare = ({
             top: "0",
             zIndex: 40,
           }}
-          transition={{duration: 0}}>
+          transition={{ duration: 0 }}
+        >
           <div className="w-36 h-full [mask-image:radial-gradient(100px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-indigo-400 via-transparent to-transparent z-20 opacity-50" />
           <div className="w-10 h-1/2 [mask-image:radial-gradient(50px_at_left,white,transparent)] absolute top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-cyan-400 via-transparent to-transparent z-10 opacity-100" />
           <div className="w-10 h-3/4 top-1/2 -translate-y-1/2 absolute -right-10 [mask-image:radial-gradient(100px_at_left,white,transparent)]">
@@ -198,20 +195,31 @@ export const Compare = ({
               style={{
                 clipPath: `inset(0 ${100 - sliderXPercent}% 0 0)`,
               }}
-              transition={{duration: 0}}>
-              <div className="absolute inset-0 z-20 w-full h-full">{firstContent}</div>
+              transition={{ duration: 0 }}
+            >
+              <div className="absolute inset-0 z-20 w-full h-full">
+                {firstContent}
+              </div>
             </motion.div>
           ) : firstImage ? (
             <motion.div
-              className={cn("absolute inset-0 z-20 rounded-2xl shrink-0 w-full h-full select-none overflow-hidden", firstImageClassName)}
+              className={cn(
+                "absolute inset-0 z-20 rounded-2xl shrink-0 w-full h-full select-none overflow-hidden",
+                firstImageClassName
+              )}
               style={{
                 clipPath: `inset(0 ${100 - sliderXPercent}% 0 0)`,
               }}
-              transition={{duration: 0}}>
-              <img
+              transition={{ duration: 0 }}
+            >
+              <Image
                 alt="first image"
                 src={firstImage}
-                className={cn("absolute inset-0  z-20 rounded-2xl shrink-0 w-full h-full select-none", firstImageClassName)}
+                fill
+                className={cn(
+                  "object-cover z-20 rounded-2xl shrink-0 select-none",
+                  firstImageClassName
+                )}
                 draggable={false}
               />
             </motion.div>
@@ -222,12 +230,18 @@ export const Compare = ({
       {/* Second Content/Image (Right side) */}
       <AnimatePresence initial={false}>
         {secondContent ? (
-          <div className="absolute top-0 left-0 z-[19] w-full h-full select-none">{secondContent}</div>
+          <div className="absolute top-0 left-0 z-[19] w-full h-full select-none">
+            {secondContent}
+          </div>
         ) : secondImage ? (
-          <motion.img
-            className={cn("absolute top-0 left-0 z-[19] rounded-2xl w-full h-full select-none", secondImageClassname)}
+          <Image
+            className={cn(
+              "object-cover z-[19] rounded-2xl select-none",
+              secondImageClassname
+            )}
             alt="second image"
             src={secondImage}
+            fill
             draggable={false}
           />
         ) : null}
