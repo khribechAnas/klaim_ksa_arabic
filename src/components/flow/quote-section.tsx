@@ -11,12 +11,12 @@ export function QuoteSection() {
 
   const stats = [
     {
-      value: 270,
+      value: 400,
       prefix: "AED ",
       suffix: "million",
       label: "Disbursed in claim payments",
       from: 0,
-      to: 270,
+      to: 400,
       duration: 2500,
       formatter: (value: number) => `AED ${value.toFixed(0)} million`,
     },
