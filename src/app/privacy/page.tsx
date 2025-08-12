@@ -114,7 +114,7 @@ export default function PrivacyPolicyPage() {
                   </p>
                   <p>
                     <strong>Postal address:</strong> Dubai - JLT Cluster F -
-                    Indigo Icon Tower 3404
+                    Indigo Icon Tower 2705
                   </p>
                   <p>
                     <strong>Phone number:</strong>{" "}
