@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { TrackedGetStartedButton } from "@/components/ui/tracked-button";
 import { BUTTON_LOCATIONS } from "@/hooks/use-posthog-tracking";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 const INITIAL_WIDTH = "70rem";
 const MAX_WIDTH = "800px";
@@ -57,7 +58,7 @@ export function Navbar() {
   const isFlowPage = pathname === "/flow";
   const isHealthPage = pathname === "/health";
   const isEstatePage = pathname === "/estate";
-
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const flowNavigation = [
     { id: 1, name: "Home", href: "#hero" },
     {
@@ -223,12 +224,10 @@ export function Navbar() {
                     : "Klaim"
                 }
                 width={
-                  isFlowPage
-                    ? 220
-                    : isHealthPage
-                    ? 250
-                    : isEstatePage
-                    ? 250
+                  (isFlowPage || isHealthPage || isEstatePage)
+                    ? isMobile
+                      ? 170
+                      : 250
                     : 130
                 }
                 height={130}
@@ -256,12 +255,10 @@ export function Navbar() {
                     : "Klaim"
                 }
                 width={
-                  isFlowPage
-                    ? 220
-                    : isHealthPage
-                    ? 250
-                    : isEstatePage
-                    ? 250
+                  (isFlowPage || isHealthPage || isEstatePage)
+                    ? isMobile
+                      ? 170
+                      : 250
                     : 130
                 }
                 height={130}
@@ -283,16 +280,16 @@ export function Navbar() {
                   trackingLocation={BUTTON_LOCATIONS.NAVBAR}
                   href={
                     isFlowPage
-                      ? "#contact"
+                      ? "https://flow.klaim.ai"
                       : isHealthPage
                       ? "https://portal.uae.klaim.ai"
                       : isEstatePage
-                      ? "#contact"
+                      ? "https://estate.klaim.ai"
                       : "#contact"
                   }
                   variant="default"
                   target={
-                    isHealthPage
+                    isHealthPage || isEstatePage || isFlowPage
                       ? "_blank"
                       : undefined
                   }
@@ -496,8 +493,26 @@ export function Navbar() {
                 <div className="flex flex-col gap-2">
                   <TrackedGetStartedButton
                     trackingLocation={BUTTON_LOCATIONS.NAVBAR}
-                    href="#contact"
+                    href={
+                      isFlowPage
+                        ? "https://flow.klaim.ai"
+                        : isHealthPage
+                        ? "https://portal.uae.klaim.ai"
+                        : isEstatePage
+                        ? "https://estate.klaim.ai"
+                        : "#contact"
+                    }
                     variant="default"
+                    target={
+                      isHealthPage || isEstatePage || isFlowPage
+                        ? "_blank"
+                        : undefined
+                    }
+                    rel={
+                      isHealthPage
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
                     className="bg-secondary h-8 flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-full px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
                   />
                 </div>

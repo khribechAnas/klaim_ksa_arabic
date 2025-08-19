@@ -1,9 +1,12 @@
+"use client";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export function HeroSection() {
   const { hero } = siteConfig;
+  const [showBookingModal, setShowBookingModal] = useState(false);
 
   return (
     <section id="hero" className="w-full relative">
@@ -22,17 +25,19 @@ export function HeroSection() {
           </div>
           <div className="flex items-center gap-2.5 flex-wrap justify-center">
             <Link
-              href="#contact"
+              href="https://estate.klaim.ai"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-secondary h-9 flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-32 px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
             >
               {hero.cta.primary.text}
             </Link>
-            <Link
-              href={hero.cta.secondary.href}
+            <button
+              onClick={() => setShowBookingModal(true)}
               className="h-10 flex items-center justify-center w-32 px-5 text-sm font-normal tracking-wide text-primary rounded-full hover:text-secondary transition-all ease-out active:scale-95 bg-white dark:bg-background border border-[#E5E7EB] dark:border-[#27272A] hover:bg-white/80 dark:hover:bg-background/80"
             >
               {hero.cta.secondary.text}
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -45,6 +50,25 @@ export function HeroSection() {
           className="w-full h-full object-cover rounded-3xl"
         />
       </div>
+
+      {/* Booking Modal */}
+      {showBookingModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="relative bg-white rounded-lg max-w-2xl w-full h-[80vh] mx-4">
+            <button
+              onClick={() => setShowBookingModal(false)}
+              className="absolute top-4 right-4 z-10 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 text-2xl font-bold"
+            >
+              ×
+            </button>
+            <iframe 
+              src='https://outlook.office.com/book/KlaimEstate@klaim.ai/?ismsaljsauthenabled' 
+              style={{border: 0, borderRadius: '10px', }}
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

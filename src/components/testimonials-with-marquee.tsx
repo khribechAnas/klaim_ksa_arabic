@@ -76,7 +76,7 @@ export function TestimonialsSection({
       </SectionHeader>
 
       <div className="w-full max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center rounded-xl mb-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center rounded-xl mb-12">
           {/* Video Section */}
           <div className="relative rounded-xl">
             <HeroVideoDialog
@@ -89,10 +89,10 @@ export function TestimonialsSection({
           </div>
 
           {/* Quote Section */}
-          <div className="flex flex-col gap-6">
-            <div className="relative min-h-[200px] flex items-center">
+          <div className="flex flex-col gap-6 p-5 md:p-0 rounded-xl md:rounded-none border border-border md:border-0 bg-background/60 md:bg-transparent shadow-sm md:shadow-none">
+            <div className="relative min-h-[140px] md:min-h-[200px] flex items-center text-center">
               <svg
-                className="absolute -top-4 -left-4 h-8 w-8 text-primary/20"
+                className="absolute top-0 left-0 md:-top-4 md:-left-4 h-6 w-6 md:h-8 md:w-8 text-primary/20"
                 fill="currentColor"
                 viewBox="0 0 32 32"
                 aria-hidden="true"
@@ -110,14 +110,14 @@ export function TestimonialsSection({
                     duration: 0.5, 
                     ease: [0.25, 0.1, 0.25, 1] 
                   }}
-                  className="text-xl md:text-2xl font-medium leading-relaxed text-balance"
+                  className="text-lg sm:text-xl md:text-2xl font-medium leading-relaxed text-balance max-w-prose mx-auto"
                 >
                   &ldquo;{currentTestimonial.quote}&rdquo;
                 </motion.blockquote>
               </AnimatePresence>
             </div>
             
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 text-center">
               <AnimatePresence mode="wait">
                 <motion.cite
                   key={`author-${currentIndex}`}
@@ -154,7 +154,7 @@ export function TestimonialsSection({
             </div>
 
             {/* Dots indicator */}
-            <div className="flex gap-2 mt-4">
+            <div className="flex gap-2 mt-2 md:mt-4 justify-center">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
