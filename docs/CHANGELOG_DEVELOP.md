@@ -5,3 +5,10 @@ placed in the CHANGELOG.md under particular release number.
 
 ## Current
 
+## 2.0.1
+
+- Change office location, update stats numbers
+
+## 2.0.2
+
+- Update Copy, Get Started Button Behavior, Link onboardings to Get Started Buttons

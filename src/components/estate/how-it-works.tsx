@@ -21,14 +21,14 @@ const HowItWorks = () => {
       
       <div className="w-full h-full md:ml-10 lg:h-[250px] flex items-center justify-center">
         {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 ml-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 ml-0 lg:ml-12">
           {/* One-Time Onboarding Section */}
           <div className="space-y-8">
             <h3 className="text-2xl font-medium tracking-tight text-primary text-center">
-              One-Time onboarding
+              One-Time Onboarding
             </h3>
             
-            <div className="flex flex-row items-start justify-center space-x-6">
+            <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-6">
               {/* Step 1 */}
               <div className="flex flex-col items-center space-y-3">
                 <div className="w-16 h-16 flex items-center justify-center">
@@ -47,8 +47,8 @@ const HowItWorks = () => {
               </div>
 
               {/* Arrow 1 */}
-              <div className="flex items-center mt-8">
-                <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-center md:mt-8">
+                <svg className="transform md:rotate-0 rotate-90" width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 5H18M18 5L14 1M18 5L14 9" stroke="#5cc2ac" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
@@ -71,8 +71,8 @@ const HowItWorks = () => {
               </div>
 
               {/* Arrow 2 */}
-              <div className="flex items-center mt-8">
-                <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-center md:mt-8">
+                <svg className="transform md:rotate-0 rotate-90" width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 5H18M18 5L14 1M18 5L14 9" stroke="#5cc2ac" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
@@ -95,8 +95,8 @@ const HowItWorks = () => {
               </div>
 
               {/* Arrow 3 */}
-              <div className="flex items-center mt-8">
-                <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-center md:mt-8">
+                <svg className="transform md:rotate-0 rotate-90" width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 5H18M18 5L14 1M18 5L14 9" stroke="#5cc2ac" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
@@ -126,7 +126,7 @@ const HowItWorks = () => {
               Ongoing Flow
             </h3>
             
-            <div className="flex flex-row items-start justify-center space-x-6">
+            <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-6">
               {/* Ongoing Step 1 */}
               <div className="flex flex-col items-center space-y-3">
                 <div className="w-16 h-16 flex items-center justify-center">
@@ -145,13 +145,13 @@ const HowItWorks = () => {
               </div>
 
               {/* Middle Arrows - Left and Right */}
-              <div className="flex flex-col items-center mt-8 space-y-2">
+              <div className="flex flex-row md:flex-col items-center mt-4 md:mt-8 space-x-2 md:space-x-0 md:space-y-2">
                 {/* Right Arrow */}
-                <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="transform rotate-90 md:rotate-0" width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 5H18M18 5L14 1M18 5L14 9" stroke="#5cc2ac" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 {/* Left Arrow */}
-                <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="transform rotate-90 md:rotate-0" width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2 5H20M2 5L6 1M2 5L6 9" stroke="#5cc2ac" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>

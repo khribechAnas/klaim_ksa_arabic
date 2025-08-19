@@ -3,16 +3,13 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  ArrowRight,
   DollarSign,
   BarChart4,
   Clock,
   Hourglass,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Compare } from "@/components/ui/compare";
 import { SectionHeader } from "@/components/section-header";
-import Link from "next/link";
 
 export default function WhatIsKlaimFlow() {
   const sectionRef = useRef(null);
@@ -94,10 +91,10 @@ export default function WhatIsKlaimFlow() {
               >
                 <div className="relative">
                   <div className="pl-8 pr-4">
-                    <h3 className="text-2xl font-poppins font-semibold text-primary mb-4">
+                    <h3 className="text-xl md:text-2xl font-poppins font-semibold text-primary mb-4">
                       The KlaimFlow Advantage
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                       KlaimFlow is a receivables purchasing solution that turns
                       receivables into instant cash. Instead of waiting for your
                       business invoices to reach their payment terms to get
@@ -107,7 +104,7 @@ export default function WhatIsKlaimFlow() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-4 ml-6">
+                <div className="grid grid-cols-1 gap-4 mx-2 md:mx-0 md:ml-6">
                   {features.map((feature, index) => (
                     <motion.div
                       key={index}
@@ -118,43 +115,21 @@ export default function WhatIsKlaimFlow() {
                       }
                       transition={{ duration: 0.5, delay: feature.delay + 0.4 }}
                     >
-                      <div className="flex items-center">
-                        <div
-                          className={`w-12 h-12 rounded-lg ${feature.color} flex items-center justify-center mr-4`}
-                        >
-                          {feature.icon}
+                                              <div className="flex items-center">
+                          <div
+                            className={`w-10 h-10 md:w-12 md:h-12 rounded-lg ${feature.color} flex items-center justify-center mr-3 md:mr-4 flex-shrink-0`}
+                          >
+                            {feature.icon}
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-medium font-poppins text-primary text-sm md:text-md leading-tight">
+                              {feature.title}
+                            </h4>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-medium font-poppins text-primary text-md">
-                            {feature.title}
-                          </h4>
-                        </div>
-                      </div>
                     </motion.div>
                   ))}
                 </div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                  }
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="pt-4 ml-6"
-                >
-                  <Link href="#contact">
-                    <Button
-                      size="lg"
-                      className="group w-full rounded-full sm:w-auto text-sm sm:text-base py-8 sm:py-6 bg-secondary hover:bg-secondary/80 text-white shadow-lg transition-all"
-                    >
-                      <span className="whitespace-normal font-poppins sm:whitespace-nowrap">
-                        Apply Now
-                      </span>{" "}
-                      <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </motion.div>
               </motion.div>
 
               {/* Right side - Visual */}
