@@ -87,33 +87,11 @@ export default function PreQualificationChecker() {
   const handleSubmit = () => {
     setIsSubmitting(true);
 
-    // Simulate API call
+
     setTimeout(() => {
       setIsSubmitting(false);
 
-      // Simple qualification logic (can be replaced with actual logic)
-      const yearsRange = formData.yearsOperating;
-      const usesAccountingSoftware = formData.usesAccountingSoftware === "yes";
-      const hasLoans = formData.hasBusinessLoans === "yes";
-      const hasRegularClients =
-        formData.regularClients !== "None" &&
-        formData.regularClients !== "1-3 clients";
-
-      // If business has enough regular clients and meets other criteria, they qualify
-      if (
-        (yearsRange === "3-5 years" ||
-          yearsRange === "6-10 years" ||
-          yearsRange === "More than 10 years") &&
-        usesAccountingSoftware &&
-        hasRegularClients &&
-        !hasLoans
-      ) {
-        setResult("qualified");
-      }
-      // All other cases go to pending
-      else {
-        setResult("pending");
-      }
+      setResult("qualified");
     }, 1500);
   };
 
@@ -348,7 +326,7 @@ export default function PreQualificationChecker() {
       <div className="flex w-full flex-col items-center justify-center">
         <SectionHeader>
           <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
-            Instant Pre-Qualification Check
+            Initial Assessment Questionnaire
           </h2>
           <p className="text-muted-foreground font-inter font-medium text-center text-balance">
             Find out if your business can qualify for receivables purchasing
@@ -375,7 +353,7 @@ export default function PreQualificationChecker() {
                   <div className="mr-3 p-2 bg-accent/50 rounded-lg">
                     <CheckCircle className="h-6 w-6 text-secondary" />
                   </div>
-                  1-Minute Business Check
+                  Initial Assessment Questionnaire
                 </CardTitle>
                 <CardDescription className="text-muted-foreground mt-2">
                   Complete the form below to check if your business qualifies
