@@ -5,6 +5,10 @@ placed in the CHANGELOG.md under particular release number.
 
 ## Current
 
+## feature/update-copy
+
+- Update Initial Assessment Questionnaire copy, and make it always display Qualified stage
+
 ## 2.0.1
 
 - Change office location, update stats numbers
