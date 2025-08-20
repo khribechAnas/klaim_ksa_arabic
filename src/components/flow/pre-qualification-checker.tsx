@@ -21,12 +21,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
   Card,
   CardContent,
   CardDescription,
@@ -93,33 +87,11 @@ export default function PreQualificationChecker() {
   const handleSubmit = () => {
     setIsSubmitting(true);
 
-    // Simulate API call
+
     setTimeout(() => {
       setIsSubmitting(false);
 
-      // Simple qualification logic (can be replaced with actual logic)
-      const yearsRange = formData.yearsOperating;
-      const usesAccountingSoftware = formData.usesAccountingSoftware === "yes";
-      const hasLoans = formData.hasBusinessLoans === "yes";
-      const hasRegularClients =
-        formData.regularClients !== "None" &&
-        formData.regularClients !== "1-3 clients";
-
-      // If business has enough regular clients and meets other criteria, they qualify
-      if (
-        (yearsRange === "3-5 years" ||
-          yearsRange === "6-10 years" ||
-          yearsRange === "More than 10 years") &&
-        usesAccountingSoftware &&
-        hasRegularClients &&
-        !hasLoans
-      ) {
-        setResult("qualified");
-      }
-      // All other cases go to pending
-      else {
-        setResult("pending");
-      }
+      setResult("qualified");
     }, 1500);
   };
 
@@ -157,30 +129,20 @@ export default function PreQualificationChecker() {
     },
   };
 
-  // Helper function to get accounting software display value
-  const getAccountingSoftwareDisplay = () => {
-    return formData.usesAccountingSoftware === "yes" ? "Yes" : "No";
-  };
-
-  // Helper function to get loan status display value
-  const getBusinessLoansDisplay = () => {
-    return formData.hasBusinessLoans === "yes" ? "Yes" : "No";
-  };
-
   const renderQualificationResult = () => {
     if (!result) return null;
 
     const resultContent = {
       qualified: {
-        title: "Congratulations! Your Business Pre-Qualifies",
+        title: "Initial Assessment Submitted",
         description:
-          "Based on the information provided, your business meets our initial qualification criteria. Our team can process your application within 24 hours.",
+          "Your basic business information has been received. The next step is our Pre-Qualification stage, where we'll review key financial details to determine your fit for receivables purchasing.",
         icon: <CheckCircle className="h-16 w-16 text-green-500" />,
         color:
           "bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800",
         primaryButton: {
-          text: "Complete Full Qualification form in under 5 minutes",
-          href: "https://forms.office.com/Pages/DesignPageV2.aspx?origin=NeoPortalPage&subpage=design&id=pK2jBIbs6EuMWwLoFClm_MV694s1RNFArmrtVf2Tdh5URjNNMVJDUUI4WTVLRzdLNFVDQjRWTUgzWC4u&topview=Prefill",
+          text: "Start Your Journey",
+          href: "https://flow.klaim.ai",
           icon: (
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           ),
@@ -202,8 +164,8 @@ export default function PreQualificationChecker() {
         color:
           "bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800",
         primaryButton: {
-          text: "Complete Full Qualification form in under 5 minutes",
-          href: "https://forms.office.com/Pages/DesignPageV2.aspx?origin=NeoPortalPage&subpage=design&id=pK2jBIbs6EuMWwLoFClm_MV694s1RNFArmrtVf2Tdh5URjNNMVJDUUI4WTVLRzdLNFVDQjRWTUgzWC4u&topview=Prefill",
+          text: "Start Your Journey",
+          href: "https://flow.klaim.ai",
           icon: (
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           ),
@@ -249,10 +211,13 @@ export default function PreQualificationChecker() {
             {content.description}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-xl">
+          <div className="flex flex-col sm:flex-row gap-4 w-full justify-between items-center max-w-xl">
             {content.primaryButton && (
-              <Link href={content.primaryButton.href}>
+              <Link 
+              target="_blank"
+              href={content.primaryButton.href}>
                 <Button
+                 
                   className={`${content.primaryButton.class} group text-sm px-5 py-3 h-auto font-medium shadow-md hover:shadow-lg transition-all flex-1 whitespace-normal text-center`}
                 >
                   <span className="block leading-tight">
@@ -361,7 +326,7 @@ export default function PreQualificationChecker() {
       <div className="flex w-full flex-col items-center justify-center">
         <SectionHeader>
           <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
-            Instant Pre-Qualification Check
+            Initial Assessment Questionnaire
           </h2>
           <p className="text-muted-foreground font-inter font-medium text-center text-balance">
             Find out if your business can qualify for receivables purchasing
@@ -388,7 +353,7 @@ export default function PreQualificationChecker() {
                   <div className="mr-3 p-2 bg-accent/50 rounded-lg">
                     <CheckCircle className="h-6 w-6 text-secondary" />
                   </div>
-                  Business Pre-Qualification Checker
+                  Initial Assessment Questionnaire
                 </CardTitle>
                 <CardDescription className="text-muted-foreground mt-2">
                   Complete the form below to check if your business qualifies
@@ -403,7 +368,7 @@ export default function PreQualificationChecker() {
                   <>
                     {renderQualificationResult()}
 
-                    <motion.div
+                    {/* <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.4 }}
@@ -465,7 +430,7 @@ export default function PreQualificationChecker() {
                           </AccordionContent>
                         </AccordionItem>
                       </Accordion>
-                    </motion.div>
+                    </motion.div> */}
                   </>
                 ) : (
                   <div className="space-y-8">
@@ -679,7 +644,7 @@ export default function PreQualificationChecker() {
                     {step === 1 ? (
                       <Button
                         onClick={() => setStep(2)}
-                        className="w-full bg-secondary hover:bg-secondary/90 text-primary-foreground h-12 group shadow-md hover:shadow-lg transition-all text-base"
+                        className="w-full bg-secondary dark:text-white hover:bg-secondary/90 text-primary-foreground h-12 group shadow-md hover:shadow-lg transition-all text-base"
                         disabled={
                           !formData.yearsOperating ||
                           !formData.invoiceAmount ||
@@ -702,7 +667,7 @@ export default function PreQualificationChecker() {
                         </Button>
                         <Button
                           onClick={handleSubmit}
-                          className="w-full sm:w-1/2 bg-secondary hover:bg-secondary/90 text-primary-foreground h-12 group shadow-md hover:shadow-lg transition-all text-base"
+                          className="w-full sm:w-1/2 bg-secondary dark:text-white hover:bg-secondary/90 text-primary-foreground h-12 group shadow-md hover:shadow-lg transition-all text-base"
                           disabled={
                             !formData.usesAccountingSoftware ||
                             !formData.hasBusinessLoans ||
@@ -738,7 +703,7 @@ export default function PreQualificationChecker() {
                   <Button
                     variant="outline"
                     onClick={resetForm}
-                    className="w-full bg-secondary hover:bg-secondary/90 text-primary-foreground h-12 group shadow-md hover:shadow-lg transition-all text-base"
+                    className="w-full bg-secondary dark:text-white hover:bg-secondary/90 text-primary-foreground h-12 group shadow-md hover:shadow-lg transition-all text-base"
                   >
                     Start New Check
                   </Button>
@@ -753,10 +718,6 @@ export default function PreQualificationChecker() {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <p>
-              This is a preliminary check only. Final qualification is subject
-              to additional verification.
-            </p>
           </motion.div>
         </div>
       </div>

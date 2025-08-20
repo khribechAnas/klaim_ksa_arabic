@@ -109,7 +109,7 @@ export function FooterSection() {
             <p className="text-sm font-semibold text-primary mb-2">
               Subscribe to our newsletter
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex items-center gap-2">
+            <form onSubmit={handleNewsletterSubmit} className="flex items-center gap-2 mb-4">
               <input
                 type="email"
                 value={email}
@@ -163,21 +163,9 @@ export function FooterSection() {
               </ul>
             ))}
           </div>
-          <div className="flex items-center gap-2 justify-end mt-8">
-            <div className="flex items-center gap-2 dark:hidden">
-              <Icons.soc2 className="size-12" />
-              <Icons.hipaa className="size-12" />
-              <Icons.gdpr className="size-12" />
-            </div>
-            <div className="dark:flex items-center gap-2 hidden">
-              <Icons.soc2Dark className="size-12" />
-              <Icons.hipaaDark className="size-12" />
-              <Icons.gdprDark className="size-12" />
-            </div>
-          </div>
         </div>
       </div>
-      <div className="w-full h-48 md:h-64 relative mt-24 z-0">
+      <div className="w-full h-48 md:h-64 relative mt-24 z-0 hidden md:block">
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-40%" />
         <div className="absolute inset-0 mx-6">
           <FlickeringGrid
