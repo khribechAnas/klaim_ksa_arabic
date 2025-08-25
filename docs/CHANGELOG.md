@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.2.0
+### feature/dynamic-forms
+
+- Add dynamic api calls for each form/newsletter etc, update questonnaire to include input for ERP system, add number of employees dropdown question
+
 ## 2.1.0
 # feature/update-copy
 
