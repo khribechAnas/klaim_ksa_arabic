@@ -16,30 +16,52 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="text-lg text-muted-foreground font-medium leading-relaxed">
-            Last updated: July 6, 2023
+            Last updated: 3 March 2025
           </p>
         </header>
+
+        {/* Table of Contents */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
+            CONTENTS
+          </h2>
+          <div className="space-y-2 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+            <p>1. Important information and who we are</p>
+            <p>2. The types of personal data we collect about you</p>
+            <p>3. How is your personal data collected?</p>
+            <p>4. How we use your personal data</p>
+            <p>5. Disclosures of your personal data</p>
+            <p>6. International transfers</p>
+            <p>7. Data security</p>
+            <p>8. Data retention</p>
+            <p>9. Your legal rights</p>
+            <p>10. Contact details</p>
+            <p>11. Complaints</p>
+            <p>12. Changes to the privacy policy and your duty to inform us of changes</p>
+            <p>13. Third-party links</p>
+          </div>
+        </section>
 
         {/* Introduction Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            Introduction
+            KLAIM.AI PRIVACY POLICY
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
             <p>
-              Welcome to the privacy policy of KLAIM Holdings Limited (referred
-              to as the &quot;Company&quot;, &quot;we,&quot; &quot;us,&quot; or
-              &quot;our&quot; throughout this Privacy Policy). We value your
-              privacy and are committed to protecting your personal data. This
-              Privacy Policy will provide you about details on how we handle
-              your personal data when you access our website (regardless of the
-              location from which you access our website) and inform you about
-              your privacy rights and the legal protections in place to ensure
-              your privacy.
+              This privacy policy sets out how KLAIM uses and protects your personal data.
             </p>
             <p>
-              Please refer the Glossary to understand some of the terms used in
-              this Privacy Policy.
+              Klaim collects and uses your personal data to provide and improve its services. This includes information like your name, contact details, and how you use the website. Data is collected directly from you, through your interactions with the site, and from third parties.
+            </p>
+            <p>
+              Your data is used for things like account setup, service delivery, customer support, marketing (with your consent), and legal compliance. Klaim may share your data with trusted partners and service providers but only for specific purposes.
+            </p>
+            <p>
+              You have rights over your data, including access, correction, deletion, and objection to certain uses. Klaim takes data security seriously and will notify you promptly if a data breach occurs.
+            </p>
+            <p>
+              For any privacy-related questions or requests, you can contact Klaim at <a href="mailto:dataprivacy@klaim.ai" className="text-primary hover:underline">dataprivacy@klaim.ai</a>
             </p>
           </div>
         </section>
@@ -47,34 +69,19 @@ export default function PrivacyPolicyPage() {
         {/* Important Information Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            Important Information and our Identity
+            1. Important information and who we are
           </h2>
 
           <div className="mb-8">
             <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
-              Purpose of this Privacy Policy
+              Privacy policy
             </h3>
             <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
               <p>
-                This Privacy Policy aims to give you information on how the
-                Company collects and processes your personal data when you use
-                this website, including any data you may provide through this
-                website.
+                This privacy policy gives you information about how KLAIM collects and uses your personal data through your use of this website, including any data you may provide when you register with us.
               </p>
               <p>
-                Please note that this website is not intended for children and
-                we do not knowingly collect data relating to children.
-              </p>
-              <p>
-                It is important that you read this Privacy Policy together with
-                any other privacy policy or fair processing policy that we may
-                provide on specific occasions when we collect or process your
-                personal data or information. This is to ensure that we fully
-                provide you with the necessary information for you to have a
-                complete understanding of how and why we are collecting or
-                processing your data. This Privacy Policy complements other
-                notices and privacy policies and is not intended to override
-                them.
+                This website is not intended for children, anyone under the age of 21, and we do not knowingly collect data relating to children.
               </p>
             </div>
           </div>
@@ -85,82 +92,10 @@ export default function PrivacyPolicyPage() {
             </h3>
             <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
               <p>
-                The Company is the controller and is responsible for your
-                personal data.
+                The KLAIM Group (the &quot;Group&quot;) is made up of different legal entities, details of which can be found here. This privacy policy is issued on behalf of the Group so when we mention &quot;Klaim&quot;, &quot;we&quot;, &quot;us&quot; or &quot;our&quot; in this privacy policy, we are referring to the relevant company in the Group responsible for processing your data. Klaim Technologies DMCC is the controller and responsible for this website.
               </p>
               <p>
-                If you have any inquiries regarding this Privacy Policy,
-                including any requests to exercise your legal rights, please be
-                free to contact us using the contact information set out below.
-              </p>
-
-              <div className="bg-accent/50 rounded-lg p-6 mt-6">
-                <h4 className="text-lg font-medium text-foreground mb-4">
-                  Contact Information
-                </h4>
-                <div className="space-y-2 text-sm">
-                  <p>
-                    <strong>Full name of legal entity:</strong> KLAIM Holdings
-                    Limited
-                  </p>
-                  <p>
-                    <strong>Email address:</strong>{" "}
-                    <a
-                      href="mailto:dataprivacy@klaim.ai"
-                      className="text-primary hover:underline"
-                    >
-                      dataprivacy@klaim.ai
-                    </a>
-                  </p>
-                  <p>
-                    <strong>Postal address:</strong> Dubai - JLT Cluster F -
-                    Indigo Icon Tower 2705
-                  </p>
-                  <p>
-                    <strong>Phone number:</strong>{" "}
-                    <a
-                      href="tel:+97148764096"
-                      className="text-primary hover:underline"
-                    >
-                      +971 (0)4 876 4096
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
-              Changes to the Privacy Policy and your obligation to inform us of
-              changes
-            </h3>
-            <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
-              <p>
-                We keep our privacy policy under regular review. This version
-                was last reviewed and updated on 6 July 2023.
-              </p>
-              <p>
-                It is important that the personal data we hold about you is
-                accurate and up-to-date. Therefore, please inform us promptly if
-                your personal data changes during your relationship with us.
-              </p>
-            </div>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
-              Third-Party links
-            </h3>
-            <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
-              <p>
-                On this website, you may encounter links to third-party
-                websites, plug-ins, and applications. Clicking on those links or
-                enabling such connections may allow third parties to collect or
-                share data about you. We do not control these third-party
-                websites and are not responsible for their privacy statements.
-                When you leave our website, we recommend that you carefully read
-                the privacy policy of every website you visit.
+                If you have any questions about this privacy policy, including any requests to exercise your legal rights (paragraph 9), please contact us using the information set out in the contact details section (paragraph 10).
               </p>
             </div>
           </div>
@@ -169,18 +104,14 @@ export default function PrivacyPolicyPage() {
         {/* Data Collection Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            The data we collect about you
+            2. The types of personal data we collect about you
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed mb-6">
             <p>
-              Personal data, or personal information, refers to any information
-              that can directly or indirectly identify an individual. It
-              excludes data where the identity has been removed such as
-              anonymous data.
+              Personal data means any information about an individual from which that person can be identified.
             </p>
             <p>
-              We may collect, use, store, and transfer various types of personal
-              data about you which we have categorized as follows:
+              We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:
             </p>
           </div>
 
@@ -188,42 +119,35 @@ export default function PrivacyPolicyPage() {
             {[
               {
                 title: "Identity Data",
-                description:
-                  "includes first name, maiden name, last name, username or similar identifier, marital status, title, date of birth, and gender;",
+                description: "includes first name, last name, any previous names, username or similar identifier, marital status, title, date of birth and gender.",
               },
               {
                 title: "Contact Data",
-                description:
-                  "includes billing address, delivery address, email address, and telephone numbers;",
+                description: "includes business address, email address and telephone numbers.",
               },
               {
                 title: "Financial Data",
                 description: "includes bank account and payment card details;",
               },
               {
-                title: "Transaction Data",
-                description:
-                  "includes details about payments to and from you and other details of products and services you have purchased from us;",
+                title: "Technical Data",
+                description: "includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, device ID and other technology on the devices you use to access this website.",
               },
               {
-                title: "Technical Data",
-                description:
-                  "includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website;",
+                title: "Transaction Data",
+                description: "includes details about payments to and from you and other details of products and services you have purchased from us;",
               },
               {
                 title: "Profile Data",
-                description:
-                  "includes your username and password, purchases or orders made by you, your interests, preferences, feedback, and survey responses;",
+                description: "includes your username and password, preferences, and feedback.",
               },
               {
                 title: "Usage Data",
-                description:
-                  "includes information about how you use our website, products, and services; and",
+                description: "includes information about how you interact with and use our website and services.",
               },
               {
                 title: "Marketing and Communications Data",
-                description:
-                  "includes your preferences in receiving marketing from us and our third parties and your communication preferences.",
+                description: "includes your preferences in receiving marketing from us and our third parties and your communication preferences.",
               },
             ].map((item, index) => (
               <div key={index} className="border border-border rounded-lg p-4">
@@ -239,60 +163,38 @@ export default function PrivacyPolicyPage() {
 
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed mt-6">
             <p>
-              We also collect, use and share Aggregated Data such as anonymized
-              statistical or demographic information. Aggregated Data could be
-              derived from your personal data but is not considered personal
-              data under the law as this data will not directly or indirectly
-              reveal your identity. For example, we may aggregate your Usage
-              Data to determine the percentage of users accessing a specific
-              website feature. However, if we combine or connect Aggregated Data
-              with your personal data in a manner that can directly or
-              indirectly identify you, we treat the combined data as personal
-              data and handle it in accordance with this Privacy Policy.
+              We also collect, use and share aggregated data such as statistical or demographic data which is not personal data as it does not directly (or indirectly) reveal your identity. For example, we may aggregate individuals&apos; Usage Data to calculate the percentage of users accessing a specific website feature to analyse general trends in how users are interacting with our website to help improve the website and our service offering.
             </p>
-          </div>
-
-          <div className="mb-8 mt-8">
-            <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
-              If you fail to provide Personal Data
-            </h3>
-            <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
-              <p>
-                In situations where we are required by law, or have a
-                contractual obligation to collect personal data from you, and
-                you fail to provide the requested data, we may be unable to
-                fulfill the contract we have or are trying to enter into with
-                you. For example, if we need necessary information to provide
-                you with goods or services, we may have to cancel a product or
-                service you have with us. However, if such a situation arises,
-                we will notify you accordingly.
-              </p>
-            </div>
           </div>
         </section>
 
         {/* Data Collection Methods Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            How is your personal data collected?
+            3. How is your personal data collected?
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed mb-6">
             <p>
-              We use different methods to collect data from and about you
-              including through:
+              We use different methods to collect data from and about you including through:
             </p>
           </div>
 
           <div className="space-y-6">
             <div>
               <h4 className="text-lg font-medium text-foreground mb-3">
-                Direct interactions
+                Your interactions with us
               </h4>
-              <p className="text-base text-muted-foreground">
-                You may provide us with your personal data by filling out forms
-                or corresponding with us via post, phone, email, or other means
-                of communication.
+              <p className="text-base text-muted-foreground mb-4">
+                You may give us your personal data by filling in online forms or by corresponding with us by post, phone, email or otherwise. This includes personal data you provide when you:
               </p>
+              <ul className="list-disc ml-6 space-y-2 text-sm text-muted-foreground">
+                <li>apply for our services;</li>
+                <li>create an account on our website;</li>
+                <li>subscribe to our publications;</li>
+                <li>request marketing to be sent to you;</li>
+                <li>enter a survey; or</li>
+                <li>give us feedback or contact us.</li>
+              </ul>
             </div>
 
             <div>
@@ -300,10 +202,16 @@ export default function PrivacyPolicyPage() {
                 Automated technologies or interactions
               </h4>
               <p className="text-base text-muted-foreground">
-                When you interact with our website, we automatically collect
-                Technical Data about your equipment, browsing activities
-                actions, and patterns. We collect this personal data by using
-                cookies, server logs, and other similar technologies.
+                As you interact with our website, we will automatically collect Technical Data about your equipment, browsing actions and patterns. We collect this personal data by using cookies, server logs and other similar technologies
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-medium text-foreground mb-3">
+                Cookies
+              </h4>
+              <p className="text-base text-muted-foreground">
+                We use cookies and similar technologies to enhance your experience on our website. These tools help us understand how visitors interact with the site, improve performance, personalize content, and deliver relevant advertisements. Cookies also support essential functions such as login authentication and security.
               </p>
             </div>
 
@@ -312,29 +220,27 @@ export default function PrivacyPolicyPage() {
                 Third parties or publicly available sources
               </h4>
               <p className="text-base text-muted-foreground mb-4">
-                We may receive personal data about you from various third
-                parties as set out below.
+                We will receive personal data about you from various third parties and public sources as set out below:
               </p>
               <div className="space-y-3 ml-4">
                 <div>
                   <h5 className="font-medium text-foreground">
-                    Technical Data from the following parties:
+                    Technical Data is collected from the following parties:
                   </h5>
                   <ul className="list-disc ml-6 mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>Analytics providers;</li>
-                    <li>Advertising networks; and</li>
-                    <li>Search information providers.</li>
+                    <li>analytics providers;</li>
+                    <li>advertising networks; and</li>
+                    <li>search information providers.</li>
                   </ul>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Contact, Financial and Transaction Data from providers of
-                  technical, payment, and delivery services.
+                  Contact, Financial and Transaction Data is collected from providers of technical, payment and delivery services.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Identity and Contact Data from data brokers or aggregators.
+                  Identity and Contact Data is collected from data brokers.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Identity and Contact Data from publicly available sources.
+                  Identity and Contact Data is collected from publicly available sources.
                 </p>
               </div>
             </div>
@@ -344,79 +250,41 @@ export default function PrivacyPolicyPage() {
         {/* Data Usage Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            How we use your Personal Data
+            4. How we use your personal data
           </h2>
-          <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
-            <p>
-              We will only use your personal data when permitted by law. The
-              most common circumstances under which we use your personal data
-              are as follows:
-            </p>
-          </div>
-
-          <div className="space-y-6 mt-6">
-            <div className="border border-border rounded-lg p-4">
-              <h4 className="font-medium text-foreground mb-2">
-                Contractual Necessity
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                We use your personnel data when it is necessary to fulfill the
-                contract we are about to enter into or have entered into with
-                you;
-              </p>
-            </div>
-
-            <div className="border border-border rounded-lg p-4">
-              <h4 className="font-medium text-foreground mb-2">
-                Legitimate Interests
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                We may use your personnel data when it is necessary for our
-                Legitimate Interests or the legitimate interests of a third
-                party, provided that your interests and fundamental rights do
-                not override those interests; or
-              </p>
-            </div>
-
-            <div className="border border-border rounded-lg p-4">
-              <h4 className="font-medium text-foreground mb-2">
-                Legal Obligation
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                We may use your personnel data to comply with a legal
-                obligation.
-              </p>
-            </div>
-          </div>
-
-          <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed mt-6">
-            <p>
-              In general, we do not rely on your consent as a legal basis for
-              processing your personal data. However, we will seek your consent
-              before sending you direct marketing communications from third
-              parties via email or text message. You have the right to withdraw
-              consent for marketing purposes at any time by contacting us.
-            </p>
-          </div>
-
-          <div className="mb-8 mt-8">
+          
+          <div className="mb-8">
             <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
-              Purposes for which we will use your Personal Data
+              Legal basis
             </h3>
             <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
               <p>
-                In the table, we have provided a description of how we intend to
-                use your personal data along with the legal bases on which we
-                rely for each purpose. We have also indicated our Legitimate
-                Interests where applicable.
+                The law requires us to have a legal basis for collecting and using your personal data. We rely on one or more of the following legal bases:
               </p>
+              <ul className="list-disc ml-6 space-y-2">
+                <li>
+                  <strong>Performance of a contract with you:</strong> Where we need to perform the contract we are about to enter or have entered with you.
+                </li>
+                <li>
+                  <strong>Legitimate interests:</strong> We may use your personal data where it is necessary to conduct our business and pursue our legitimate interests, for example to prevent fraud and enable us to give you the best and most secure customer experience. We make sure we consider and balance any potential impact on you and your rights (both positive and negative) before we process your personal data for our legitimate interests. We do not use your personal data for activities where our interests are overridden by the impact on you (unless we have your consent or are otherwise required or permitted to by law).
+                </li>
+                <li>
+                  <strong>Legal obligation:</strong> We may use your personal data where it is necessary for compliance with a legal obligation that we are subject to. We will identify the relevant legal obligation when we rely on this legal basis.
+                </li>
+                <li>
+                  <strong>Consent:</strong> We rely on consent only where we have obtained your active agreement to use your personal data for a specified purpose, for example if you subscribe to an email newsletter.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mb-8">
+            <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
+              Purposes for which we will use your personal data
+            </h3>
+            <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
               <p>
-                Please note that we may process your personal data for more than
-                one lawful ground, depending on the specific purpose for which
-                we are using your data. If you require further details regarding
-                the specific legal ground we rely on for processing your
-                personal data when multiple grounds are mentioned in the table
-                below, please reach out to us.
+                We have set out below, in a table format, a description of all the ways we plan to use the various categories of your personal data, and which of the legal bases we rely on to do so. We have also identified what our legitimate interests are where appropriate.
               </p>
             </div>
           </div>
@@ -427,311 +295,164 @@ export default function PrivacyPolicyPage() {
               <thead>
                 <tr className="bg-accent/50">
                   <th className="border border-border p-4 text-left font-medium text-foreground">
-                    Purpose/Activity
+                    Purpose/Use
                   </th>
                   <th className="border border-border p-4 text-left font-medium text-foreground">
                     Type of data
                   </th>
                   <th className="border border-border p-4 text-left font-medium text-foreground">
-                    Lawful basis for processing including basis of Legitimate
-                    Interest
+                    Legal basis
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    To register you as a new customer.
+                    To register you as a new customer
                   </td>
                   <td className="border border-border p-4 text-sm text-primary">
-                    Identity;
-                    <br />
-                    Contact;
+                    (a) Identity<br />
+                    (b) Contact
                   </td>
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    Performance of a contract with you.
+                    Performance of a contract with you
                   </td>
                 </tr>
 
                 <tr className="bg-accent/20">
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    To process and deliver your order including:
-                    <ul className="list-disc ml-6 mt-2 space-y-1">
-                      <li>Manage payments, fees and charges;</li>
-                      <li>Collect and recover money owed to us.</li>
-                    </ul>
+                    To process and deliver your order including:<br />
+                    (a) Manage payments, fees and charges<br />
+                    (b) Collect and recover money owed to us
                   </td>
                   <td className="border border-border p-4 text-sm text-primary">
-                    Identity;
-                    <br />
-                    Contact;
-                    <br />
-                    Financial;
-                    <br />
-                    Transaction;
-                    <br />
-                    Marketing and Communications.
+                    (a) Identity<br />
+                    (b) Contact<br />
+                    (c) Financial<br />
+                    (d) Transaction<br />
+                    (e) Marketing and Communications
                   </td>
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    Performance of a contract with you;
-                    <br />
-                    <br />
-                    Necessary for our Legitimate Interests (to recover debts due
-                    to us).
+                    (a) Performance of a contract with you<br />
+                    (b) Necessary for our legitimate interests (to recover debts due to us)
                   </td>
                 </tr>
 
                 <tr>
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    To manage our relationship with you which will include:
-                    <ul className="list-disc ml-6 mt-2 space-y-1">
-                      <li>
-                        Notifying you about changes to our terms or privacy
-                        policy;
-                      </li>
-                      <li>Asking you to leave a review or take a survey.</li>
-                    </ul>
+                    To manage our relationship with you which will include:<br />
+                    (a) Notifying you about changes to our terms or privacy policy<br />
+                    (b) Dealing with your requests, complaints and queries
                   </td>
                   <td className="border border-border p-4 text-sm text-primary">
-                    Identity;
-                    <br />
-                    Contact;
-                    <br />
-                    Profile;
-                    <br />
-                    Marketing and Communications.
+                    (a) Identity<br />
+                    (b) Contact<br />
+                    (c) Profile<br />
+                    (d) Marketing and Communications
                   </td>
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    Performance of a contract with you;
-                    <br />
-                    <br />
-                    Necessary to comply with a legal obligation;
-                    <br />
-                    <br />
-                    Necessary for our Legitimate Interests (to keep our records
-                    updated and to study how customers use our
-                    products/services).
+                    (a) Performance of a contract with you<br />
+                    (b) Necessary to comply with a legal obligation<br />
+                    (c) Necessary for our legitimate interests (to keep our records updated and manage our relationship with you
                   </td>
                 </tr>
 
                 <tr className="bg-accent/20">
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    To enable you to participate in a prize draw, competition or
-                    complete a survey.
+                    To administer and protect our business and this website (including troubleshooting, data analysis, testing, system maintenance, support, reporting and hosting of data)
                   </td>
                   <td className="border border-border p-4 text-sm text-primary">
-                    Identity;
-                    <br />
-                    Contact;
-                    <br />
-                    Profile;
-                    <br />
-                    Usage;
-                    <br />
-                    Marketing and Communications.
+                    (a) Identity<br />
+                    (b) Contact<br />
+                    (c) Technical
                   </td>
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    Performance of a contract with you;
-                    <br />
-                    <br />
-                    Necessary for our Legitimate Interests (to study how
-                    customers use our products/services, to develop them and
-                    grow our business).
+                    (a) Necessary for our legitimate interests (for running our business, provision of administration and IT services, network security, to prevent fraud and in the context of a business reorganisation or group restructuring exercise)<br />
+                    (b) Necessary to comply with a legal obligation
                   </td>
                 </tr>
 
                 <tr>
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    To administer and protect our business and website
-                    (including troubleshooting, data analysis, testing, system
-                    maintenance, support, reporting and hosting of data).
+                    To deliver relevant website content and online advertisements to you and measure or understand the effectiveness of the advertising we serve to you
                   </td>
                   <td className="border border-border p-4 text-sm text-primary">
-                    Identity;
-                    <br />
-                    Contact;
-                    <br />
-                    Technical.
+                    (a) Identity<br />
+                    (b) Contact<br />
+                    (c) Profile<br />
+                    (d) Usage<br />
+                    (e) Marketing and Communications<br />
+                    (f) Technical
                   </td>
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    Necessary for our Legitimate Interests (for running our
-                    business, provision of administration and IT services,
-                    network security, to prevent fraud and in the context of a
-                    business reorganization or group restructuring exercise);
-                    <br />
-                    <br />
-                    Necessary to comply with a legal obligation.
+                    Necessary for our legitimate interests (to study how customers use our products/services, to develop them, to grow our business and to inform our marketing strategy)
                   </td>
                 </tr>
 
                 <tr className="bg-accent/20">
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    To deliver relevant website content and advertisements to
-                    you and measure or understand the effectiveness of the
-                    advertising we serve to you.
+                    To use data analytics to improve our website, products/services, customer relationships and experiences and to measure the effectiveness of our communications and marketing
                   </td>
                   <td className="border border-border p-4 text-sm text-primary">
-                    Identity;
-                    <br />
-                    Contact;
-                    <br />
-                    Profile;
-                    <br />
-                    Usage;
-                    <br />
-                    Marketing and Communications;
-                    <br />
-                    Technical.
+                    (a) Technical<br />
+                    (b) Usage
                   </td>
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    Necessary for our Legitimate Interests (to study how
-                    customers use our products/services, to develop them, to
-                    grow our business and to inform our marketing strategy).
+                    Necessary for our legitimate interests (to define types of customers for our products and services, to keep our website updated and relevant, to develop our business and to inform our marketing strategy)
                   </td>
                 </tr>
 
                 <tr>
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    To use data analytics to improve our website,
-                    products/services, marketing, customer relationships and
-                    experiences.
+                    To send you relevant marketing communications and make personalised suggestions and recommendations to you about goods or services that may be of interest to you based on your Profile Data
                   </td>
                   <td className="border border-border p-4 text-sm text-primary">
-                    Technical;
-                    <br />
-                    Usage.
+                    (a) Identity<br />
+                    (b) Contact<br />
+                    (c) Technical<br />
+                    (d) Usage<br />
+                    (e) Profile<br />
+                    (f) Marketing and Communications
                   </td>
                   <td className="border border-border p-4 text-sm text-muted-foreground">
-                    Necessary for our Legitimate Interests (to define types of
-                    customers for our products and services, to keep our website
-                    updated and relevant, to develop our business and to inform
-                    our marketing strategy).
-                  </td>
-                </tr>
-
-                <tr className="bg-accent/20">
-                  <td className="border border-border p-4 text-sm text-muted-foreground">
-                    To make suggestions and recommendations to you about goods
-                    or services that may be of interest to you.
-                  </td>
-                  <td className="border border-border p-4 text-sm text-primary">
-                    Identity;
-                    <br />
-                    Contact;
-                    <br />
-                    Technical;
-                    <br />
-                    Usage;
-                    <br />
-                    Profile;
-                    <br />
-                    Marketing and Communications.
-                  </td>
-                  <td className="border border-border p-4 text-sm text-muted-foreground">
-                    Necessary for our Legitimate Interests (to develop our
-                    products/services and grow our business).
+                    Necessary for our legitimate interests (to carry out direct marketing, develop our products/services and grow our business) OR Consent, having obtained your prior consent to receiving direct marketing communications
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </section>
 
-        {/* Marketing Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            Marketing
-          </h2>
-          <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed mb-6">
-            <p>
-              We strive to provide you with choices regarding certain personal
-              data uses, particularly around marketing and advertising.
-            </p>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
-              Promotional offers from us
-            </h3>
-            <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
-              <p>
-                In order to provide you with relevant products, services, and
-                offers, We may analyse your Identity, Contact, Technical, Usage
-                and Profile Data to understand your preferences and interests.
-                This is how we determine which products, services and offers are
-                likely to be of interest to you (referred to as marketing). You
-                will receive marketing communications from us if you have
-                requested information from us or purchased from us and you have
-                not opted out of receiving that marketing.
+          <div className="mt-8 space-y-6">
+            <div>
+              <h4 className="text-lg font-medium text-foreground mb-3">
+                Direct marketing
+              </h4>
+              <p className="text-base text-muted-foreground">
+                During the process on our website when your personal data is collected, you will be asked to indicate your preferences for receiving direct marketing communications from Klaim.
+              </p>
+              <p className="text-base text-muted-foreground mt-2">
+                We may also analyse your Identity, Contact, Technical, Usage and Profile Data to form a view which products, services and offers may be of interest to you so that we can then send you relevant marketing communications.
               </p>
             </div>
-          </div>
 
-          <div className="mb-8">
-            <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
-              Third-party marketing
-            </h3>
-            <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
-              <p>
-                We will obtain your explicit opt-in consent before sharing your
-                personal data with any third party for marketing purposes.
+            <div>
+              <h4 className="text-lg font-medium text-foreground mb-3">
+                Third-party marketing
+              </h4>
+              <p className="text-base text-muted-foreground">
+                We will get your express consent before we share your personal data with any third party for their own direct marketing purposes.
               </p>
             </div>
-          </div>
 
-          <div className="mb-8">
-            <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
-              Opting out
-            </h3>
-            <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
-              <p>
-                You may have the option that we or third parties cease sending
-                you marketing messages at any time by contacting us or the third
-                party directly.
+            <div>
+              <h4 className="text-lg font-medium text-foreground mb-3">
+                Opting out of marketing
+              </h4>
+              <p className="text-base text-muted-foreground">
+                You can ask to stop sending you marketing communications at any time by following the opt-out links within any marketing communication sent to you or by contacting us <a href="https://klaim.ai/#contact" className="text-primary hover:underline">Klaim – Connect with KLAIM</a>
               </p>
-            </div>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
-              Cookies
-            </h3>
-            <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
-              <p>
-                A cookie is a small text file which is placed on your device
-                when you access our website. We use cookies and other online
-                tracking devices to make your online experience more efficient
-                and enjoyable. You may set your browser settings to reject all
-                or some browser cookies, or to receive alerts when websites set
-                or access cookies. If you disable or refuse cookies, please note
-                that some parts of this website may become inaccessible or not
-                function properly.
-              </p>
-            </div>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
-              Change of purpose
-            </h3>
-            <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
-              <p>
-                We will only use your personal data for the purposes for which
-                it was initially collected, unless we reasonably consider that
-                we need to use it for another purpose that is compatible with
-                the original purpose. If you wish to get an explanation as to
-                how the processing for the new purpose is compatible with the
-                original purpose, please contact us.
-              </p>
-              <p>
-                If we need to use your personal data for an unrelated purpose,
-                we will notify you and explain the legal basis which allows us
-                to do so.
-              </p>
-              <p>
-                Please note that we may process your personal data without your
-                knowledge or consent, in compliance with the above rules, where
-                it is required or permitted by law.
+              <p className="text-base text-muted-foreground mt-2">
+                If you opt out of receiving marketing communications, you will still receive service-related communications that are essential for administrative or customer service purposes.
               </p>
             </div>
           </div>
@@ -740,61 +461,32 @@ export default function PrivacyPolicyPage() {
         {/* Disclosures Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            Disclosures of your Personal Data
+            5. Disclosures of your personal data
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
             <p>
-              We may share your personal data with the following parties for the
-              purposes outlined in the table set out in the &quot;Purposes for
-              which we will use your Personal Data&quot; section:
+              We may share your personal data within the Klaim Group or to third parties to whom we may choose to sell, transfer or merge parts of our business or our assets. Alternatively, we may seek to acquire other businesses or merge with them. If a change happens to our business, then the new owners may use your personal data in the same way as set out in this privacy policy.
             </p>
-            <ul className="list-disc ml-6 space-y-2">
-              <li>Internal Third Parties;</li>
-              <li>External Third Parties;</li>
-              <li>
-                third parties involved in the sale, transfer or merger of parts
-                of our business or assets. If a change of control occurs in our
-                business, the new owners may use your personal data in the same
-                manner as described in this Privacy Policy;
-              </li>
-              <li>
-                any other third party if we have a legal obligation to disclose
-                or share your personal data, or to protect the rights, property
-                and safety of the Company, our personnel or others; and
-              </li>
-              <li>
-                any other third party when required by a court, regulator or
-                government agency, such as complying with a search warrant or
-                court order or applicable law or regulation.
-              </li>
-            </ul>
             <p>
-              We require all third parties to respect the security of your
-              personal data and to treat it in accordance with the law. We do
-              not allow our third party service providers to use your personal
-              data for their own purposes, and only permit them to process your
-              personal data for specified purposes and all in accordance with
-              our instructions.
+              We require all third parties to respect the security of your personal data and to treat it in accordance with the law. We do not allow our third-party service providers to use your personal data for their own purposes and only permit them to process your personal data for specified purposes and in accordance with our instructions.
+            </p>
+            <p>
+              Klaim is committed to ethical data practices. We will never use your personal data to exploit, manipulate, or harm you in any way. All data collected is processed lawfully, fairly, and transparently, and solely for legitimate business purposes that respect your rights.
             </p>
           </div>
         </section>
 
-        {/* Cross-Border Transfers Section */}
+        {/* International Transfers Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            Cross-Border Transfers
+            6. International transfers
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
-            <p>We do not transfer your personal data outside the UAE</p>
             <p>
-              Whenever we transfer your personal data out of the UAE, we ensure
-              that it receives a similar degree of protection by ensuring at
-              least one of the following safeguards is implemented:
+              We may share your personal data within the KLAIM Group. This will involve transferring your data (if you are a customer from Oman or the Kingdom of Saudi Arabia) to our offices in the United Arab Emirates (&quot;UAE&quot;).
             </p>
             <p>
-              Please feel free to contact us if you would like further
-              information about the specific mechanism we use when transferring
-              your personal data out of the UAE.
+              Whenever we transfer your personal data to our offices in the UAE, we always ensure that the minimum degree of protection required by the General Data Protection Regulation (&quot;GDPR&quot;) and ADGM Data Protection Regulations 2021 is afforded to it.
             </p>
           </div>
         </section>
@@ -802,33 +494,35 @@ export default function PrivacyPolicyPage() {
         {/* Data Security Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            Data Security
+            7. Data security
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
             <p>
-              We have implemented appropriate security measures to prevent your
-              personal data from being accidentally lost, used, or accessed in
-              an unauthorized way, altered, or disclosed. In addition, we limit
-              access to your personal data to those employees, agents,
-              contractors, and other third parties who have a business need to
-              know. They will only process your personal data on our
-              instructions, and they are bound by confidentiality obligations.
+              We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorised way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions, and they are subject to a duty of confidentiality.
             </p>
             <p>
-              However, it is important to note that no transmission of data over
-              the internet is guaranteed to be completely secure. It may be
-              possible for unauthorized third parties to intercept or access
-              transmissions or private communications unlawfully. While we
-              strive to protect your personal data, we cannot ensure or warrant
-              the security of any personal data you transmit to us. Any such
-              transmission is done at your own risk. If you believe that the
-              security of your interaction with us has been compromised, please
-              contact us.
+              Klaim has implemented procedures to detect, investigate, and respond to personal data breaches in accordance with applicable data protection laws, including the EU GDPR and ADGM DPR 2021.
             </p>
             <p>
-              We have established procedures to deal with any suspected personal
-              data breaches, and where legally required, we will notify you and
-              the applicable regulatory authority of such breaches.
+              In the event of a personal data breach that is likely to result in a high risk to your rights and freedoms, we will notify you without undue delay and, where feasible, within 72 hours of becoming aware of the breach. Notification will be made via:
+            </p>
+            <ul className="list-disc ml-6 space-y-2">
+              <li>Email to the address associated with your account;</li>
+              <li>Public notice on our website if direct contact is not possible;</li>
+              <li>Other appropriate communication channels, depending on the nature and severity of the breach.</li>
+            </ul>
+            <p>
+              The notification will include:
+            </p>
+            <ul className="list-disc ml-6 space-y-2">
+              <li>A description of the nature of the breach;</li>
+              <li>The categories and approximate number of individuals and records affected;</li>
+              <li>The likely consequences of the breach;</li>
+              <li>Measures taken or proposed to address the breach and mitigate its impact;</li>
+              <li>Contact details for further information, including how to reach our Data Protection Officer at <a href="mailto:dataprivacy@klaim.ai" className="text-primary hover:underline">dataprivacy@klaim.ai</a>.</li>
+            </ul>
+            <p>
+              We will also notify the relevant supervisory authority, such as the Commissioner of Data Protection in ADGM, within the required legal timeframe.
             </p>
           </div>
         </section>
@@ -836,48 +530,22 @@ export default function PrivacyPolicyPage() {
         {/* Data Retention Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            Data Retention
+            8. Data retention
           </h2>
 
           <div className="mb-8">
             <h3 className="text-xl md:text-2xl font-medium tracking-tight mb-4">
-              How long will my personal data be used?
+              How long will you use my personal data for?
             </h3>
             <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
               <p>
-                We will only retain your personal data for as long as reasonably
-                necessary to fulfill the purposes we collected it for, including
-                satisfying any legal, regulatory, tax, accounting, or reporting
-                requirements. We may retain your personal data for an extended
-                period in the event of a complaint or if we reasonably believe
-                there is a prospect of litigation in respect to our relationship
-                with you.
+                We will only retain your personal data for as long as reasonably necessary to fulfil the purposes we collected it for, including for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements. We may retain your personal data for a longer period in the event of a complaint or if we reasonably believe there is a prospect of litigation in respect to our relationship with you.
               </p>
               <p>
-                To determine the appropriate retention period for personal data,
-                we consider the quantity, nature, and sensitivity of the
-                personal data, the potential risk of harm associated with
-                unauthorized use or disclosure of your personal data, the
-                purposes for which we process your personal data and whether we
-                can achieve those purposes through other means, and any
-                applicable legal, regulatory, tax, accounting, or other
-                requirements.
+                To determine the appropriate retention period for personal data, we consider the amount, nature and sensitivity of the personal data, the potential risk of harm from unauthorised use or disclosure of your personal data, the purposes for which we process your personal data and whether we can achieve those purposes through other means, and the applicable legal, regulatory, tax, accounting or other requirements.
               </p>
               <p>
-                In some circumstances, you can request the deletion of your
-                data: see Your Legal Rights at section 9 below for further
-                information.
-              </p>
-              <p>
-                In some circumstances, we will anonymize your personal data (so
-                that it can no longer be associated with you) for research or
-                statistical purposes, in which case we may use this anonymized
-                information indefinitely without further notice to you.
-              </p>
-              <p>
-                Whilst we continue to process your personal data we ensure that
-                it is treated in accordance with this Privacy Policy. Otherwise,
-                we securely erase your information once it is no longer needed.
+                In some circumstances we will anonymise your personal data (so that it can no longer be associated with you) for research or statistical purposes, in which case we may use this information indefinitely without further notice to you.
               </p>
             </div>
           </div>
@@ -886,19 +554,14 @@ export default function PrivacyPolicyPage() {
         {/* Your Legal Rights Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            Your Legal Rights
+            9. Your legal rights
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed mb-8">
             <p>
-              Under certain circumstances, you have rights under data protection
-              laws in relation to your personal data. The various rights are not
-              absolute and each is subject to certain exceptions or
-              qualifications. We will grant your request only to the extent that
-              it follows from our assessment of your request that we are allowed
-              and required to do so under data protection laws. Nothing in this
-              privacy policy is intended to provide you with rights beyond or in
-              addition to your rights as a data subject under data protection
-              laws. You have the right to:
+              You have a number of rights under data protection laws in relation to your personal data.
+            </p>
+            <p>
+              You have the right to:
             </p>
           </div>
 
@@ -908,9 +571,7 @@ export default function PrivacyPolicyPage() {
                 Request access to your personal data
               </h4>
               <p className="text-sm text-muted-foreground">
-                (commonly known as a &quot;data subject access request&quot;).
-                This enables you to receive a copy of the personal data we hold
-                about you and to check that we are lawfully processing it;
+                (commonly known as a &quot;subject access request&quot;). This enables you to receive a copy of the personal data we hold about you and to check that we are lawfully processing it.
               </p>
             </div>
 
@@ -919,9 +580,7 @@ export default function PrivacyPolicyPage() {
                 Request correction of the personal data
               </h4>
               <p className="text-sm text-muted-foreground">
-                that we hold about you. This enables you to have any incomplete
-                or inaccurate data we hold about you corrected, though we may
-                need to verify the accuracy of the new data you provide to us;
+                that we hold about you. This enables you to have any incomplete or inaccurate data we hold about you corrected, though we may need to verify the accuracy of the new data you provide to us.
               </p>
             </div>
 
@@ -930,16 +589,7 @@ export default function PrivacyPolicyPage() {
                 Request erasure of your personal data
               </h4>
               <p className="text-sm text-muted-foreground">
-                This enables you to request the deletion or removal of your
-                personal data where there is no good reason for us continuing to
-                process it. You also have the right to ask us to delete or
-                remove your personal data where you have successfully exercised
-                your right to object to processing (see below), where we may
-                have processed your information unlawfully or where we are
-                required to erase your personal data to comply with local law.
-                Please note that we may not always be able to comply with your
-                request of erasure for specific legal reasons which will be
-                notified to you, if applicable, at the time of your request;
+                in certain circumstances. This enables you to ask us to delete or remove personal data where there is no good reason for us continuing to process it. You also have the right to ask us to delete or remove your personal data where you have successfully exercised your right to object to processing (see below), where we may have processed your information unlawfully or where we are required to erase your personal data to comply with local law. Note, however, that we may not always be able to comply with your request of erasure for specific legal reasons which will be notified to you, if applicable, at the time of your request.
               </p>
             </div>
 
@@ -948,14 +598,19 @@ export default function PrivacyPolicyPage() {
                 Object to processing of your personal data
               </h4>
               <p className="text-sm text-muted-foreground">
-                where we are relying on a Legitimate Interest (or those of a
-                third party) and there is something about your particular
-                situation that leads you to object to the processing as it
-                impacts your fundamental rights and freedoms. You also have the
-                right to object when we process your personal data for direct
-                marketing purposes. In some cases, we may demonstrate compelling
-                legitimate grounds to process your information which override
-                your rights and freedoms;
+                where we are relying on a legitimate interest (or those of a third party) as the legal basis for that particular use of your data (including carrying out profiling based on our legitimate interests). In some cases, we may demonstrate that we have compelling legitimate grounds to process your information which override your right to object.
+              </p>
+              <p className="text-sm text-muted-foreground mt-2">
+                You also have the absolute right to object any time to the processing of your personal data for direct marketing purposes
+              </p>
+            </div>
+
+            <div className="border border-border rounded-lg p-4">
+              <h4 className="font-medium text-foreground mb-2">
+                Request the transfer of your personal data
+              </h4>
+              <p className="text-sm text-muted-foreground">
+                to you or to a third party. We will provide to you, or a third party you have chosen, your personal data in a structured, commonly used, machine-readable format. Note that this right only applies to automated information which you initially provided consent for us to use or where we used the information to perform a contract with you.
               </p>
             </div>
 
@@ -964,63 +619,20 @@ export default function PrivacyPolicyPage() {
                 Request restriction of processing
               </h4>
               <p className="text-sm text-muted-foreground mb-2">
-                of your personal data. This enables you to ask us to suspend the
-                processing of your personal data in the following scenarios:
+                of your personal data. This enables you to ask us to suspend the processing of your personal data in one of the following scenarios:
               </p>
               <ul className="list-disc ml-6 text-sm text-muted-foreground space-y-1">
-                <li>
-                  where you want us to establish the data&apos;s accuracy;
-                </li>
-                <li>
-                  where our use of the data is unlawful but you do not want us
-                  to erase it;
-                </li>
-                <li>
-                  where you need us to hold the data even if we no longer
-                  require it as you need it to establish, exercise or defend
-                  legal claims; or
-                </li>
-                <li>
-                  you have objected to our use of your data but we need to
-                  verify whether we have overriding legitimate grounds to use
-                  it;
-                </li>
+                <li>If you want us to establish the data&apos;s accuracy;</li>
+                <li>Where our use of the data is unlawful but you do not want us to erase it;</li>
+                <li>Where you need us to hold the data even if we no longer require it as you need it to establish, exercise or defend legal claims; or</li>
+                <li>You have objected to our use of your data but we need to verify whether we have overriding legitimate grounds to use it.</li>
               </ul>
-            </div>
-
-            <div className="border border-border rounded-lg p-4">
-              <h4 className="font-medium text-foreground mb-2">
-                Request the transfer of your personal data
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                to yourself or to a third party. We will provide to you, or a
-                third party you have chosen, your personal data in a structured,
-                commonly used, machine-readable format. Note that this right
-                only applies to automated information which you initially
-                provided consent for us to use or where we used the information
-                to perform a contract with you; and
-              </p>
-            </div>
-
-            <div className="border border-border rounded-lg p-4">
-              <h4 className="font-medium text-foreground mb-2">
-                Withdraw consent at any time
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                when we are relying on consent to process your personal data.
-                However, this will not affect the lawfulness of any processing
-                carried out before you withdraw your consent. If you withdraw
-                your consent, we may not be able to provide certain products or
-                services to you. We will advise you if this is the case at the
-                time you withdraw your consent.
-              </p>
             </div>
           </div>
 
           <div className="mt-8 space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
             <p>
-              If you wish to exercise any of the rights set out above, please
-              contact us.
+              If you wish to exercise any of the rights set out above, please contact us.
             </p>
           </div>
 
@@ -1030,11 +642,7 @@ export default function PrivacyPolicyPage() {
             </h3>
             <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
               <p>
-                You will not ordinarily have to pay a fee to access your
-                personal data (or to exercise any of the other rights). However,
-                we may charge a reasonable fee if your request is clearly
-                unfounded, repetitive or excessive. Alternatively, we could
-                refuse to comply with your request in these circumstances.
+                You will not have to pay a fee to access your personal data (or to exercise any of the other rights). However, we may charge a reasonable fee if your request is clearly unfounded, repetitive or excessive. Alternatively, we could refuse to comply with your request in these circumstances.
               </p>
             </div>
           </div>
@@ -1045,13 +653,7 @@ export default function PrivacyPolicyPage() {
             </h3>
             <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
               <p>
-                We may need to request specific information from you to help us
-                confirm your identity and ensure your right to access your
-                personal data (or to exercise any of your other rights). This is
-                a security measure to ensure that personal data is not disclosed
-                to any person who has no right to receive it. We may also
-                contact you to ask you for further information in relation to
-                your request to expedite our response.
+                We may need to request specific information from you to help us confirm your identity and ensure your right to access your personal data (or to exercise any of your other rights). This is a security measure to ensure that personal data is not disclosed to any person who has no right to receive it. We may also contact you to ask you for further information in relation to your request to speed up our response.
               </p>
             </div>
           </div>
@@ -1062,62 +664,65 @@ export default function PrivacyPolicyPage() {
             </h3>
             <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
               <p>
-                We make every effort to respond to all legitimate requests
-                within one month. Occasionally it could take us longer if your
-                request is particularly complex or you have made a number of
-                requests. In this case, we will notify you and keep you updated.
+                We try to respond to all legitimate requests within one month. Occasionally it could take us longer than a month if your request is particularly complex or you have made a number of requests. In this case, we will notify you and keep you updated.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Glossary Section */}
+        {/* Contact Details Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            Glossary
+            10. Contact details
           </h2>
+          <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+            <p>
+              If you have any questions about this privacy policy or about the use of your personal data or you want to exercise your privacy rights, please contact us in the following ways:
+            </p>
+            <ul className="list-disc ml-6 space-y-2">
+              <li>Email address: <a href="mailto:hello@klaim.ai" className="text-primary hover:underline">hello@klaim.ai</a></li>
+              <li>Postal address: Klaim Kapital Technologies Limited, Attn: Data Protection Officer and Legal, DD-14-124-026 and DD-14-124-032, Level 14, WeWork Hub71, Al Khatem Tower, Abu Dhabi Global Market Square, Al Maryah Island, Abu Dhabi, United Arab Emirates</li>
+              <li>Telephone number: <a href="tel:+97148764096" className="text-primary hover:underline">+971 4 876 4096</a></li>
+            </ul>
+          </div>
+        </section>
 
-          <div className="space-y-6">
-            <div className="border border-border rounded-lg p-6">
-              <h4 className="font-medium text-foreground mb-3">
-                Legitimate Interest
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                means the interest of our business in conducting and managing
-                our operations to enable us to provide you with the best
-                service/product and the best and most secure experience. We make
-                sure we consider and balance any potential impact on you (both
-                positive and negative) and your rights before we process your
-                personal data for our Legitimate Interests. We do not use your
-                personal data for activities where our interests are overridden
-                by the impact on you (unless we have your consent or are
-                otherwise required or permitted to by law). If you would like
-                further information on how we assess our Legitimate Interests
-                against any potential impact on you in respect of specific
-                activities, please contact us.
-              </p>
-            </div>
+        {/* Complaints Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
+            11. Complaints
+          </h2>
+          <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+            <p>
+              You have the right to make a complaint at any time to the UAE Data Office, the UAE regulator for data protection issues. We would, however, appreciate the chance to deal with your concerns before you approach the relevant government entities so, please contact us in the first instance.
+            </p>
+          </div>
+        </section>
 
-            <div className="border border-border rounded-lg p-6">
-              <h4 className="font-medium text-foreground mb-3">
-                Performance of Contract
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                means processing your data where it is necessary for the
-                performance of a contract to which you are a party or to take
-                steps at your request before entering into such a contract.
-              </p>
-            </div>
+        {/* Changes Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
+            12. Changes to the privacy policy and your duty to inform us of changes
+          </h2>
+          <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+            <p>
+              We keep our privacy policy under regular review. This version was last updated on 3 March 2025.
+            </p>
+            <p>
+              It is important that the personal data we hold about you is accurate and current. Please keep us informed if your personal data changes during your relationship with us, for example a new address or email address.
+            </p>
+          </div>
+        </section>
 
-            <div className="border border-border rounded-lg p-6">
-              <h4 className="font-medium text-foreground mb-3">
-                Comply with a legal obligation
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                means processing your personal data where it is necessary for
-                compliance with a legal obligation that we are subject to.
-              </p>
-            </div>
+        {/* Third-party Links Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
+            13. Third-party links
+          </h2>
+          <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+            <p>
+              This website may include links to third-party websites, plug-ins and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements. When you leave our website, we encourage you to read the privacy policy of every website you visit.
+            </p>
           </div>
         </section>
 
@@ -1128,9 +733,7 @@ export default function PrivacyPolicyPage() {
               Questions about this Privacy Policy?
             </h3>
             <p className="text-muted-foreground mb-6">
-              If you have any questions about this Privacy Policy or how we
-              handle your personal data, please don&apos;t hesitate to contact
-              us.
+              If you have any questions about this Privacy Policy or how we handle your personal data, please don&apos;t hesitate to contact us.
             </p>
             <a
               href="mailto:dataprivacy@klaim.ai"
