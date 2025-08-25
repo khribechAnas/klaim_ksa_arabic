@@ -43,20 +43,18 @@ export default function PreQualificationChecker() {
     customInvoiceAmount: "",
     regularClients: "",
     usesAccountingSoftware: "",
+    accountingSoftware: "",
     hasBusinessLoans: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [result, setResult] = useState<
-    "qualified" | "pending" | null
-  >(null);
+  const [result, setResult] = useState<"qualified" | "pending" | null>(null);
 
   const regularClientOptions = [
-    "1-3 clients",
-    "4-10 clients",
-    "11-20 clients",
-    "21-50 clients",
-    "More than 50 clients",
-    "None",
+    "1-10 employees",
+    "11-50 employees",
+    "51-200 employees",
+    "201-1,000 employees",
+    "More than 1,000 employees",
   ];
 
   const invoiceRanges = [
@@ -87,7 +85,6 @@ export default function PreQualificationChecker() {
   const handleSubmit = () => {
     setIsSubmitting(true);
 
-
     setTimeout(() => {
       setIsSubmitting(false);
 
@@ -102,6 +99,7 @@ export default function PreQualificationChecker() {
       customInvoiceAmount: "",
       regularClients: "",
       usesAccountingSoftware: "",
+      accountingSoftware: "",
       hasBusinessLoans: "",
     });
     setStep(1);
@@ -213,11 +211,8 @@ export default function PreQualificationChecker() {
 
           <div className="flex flex-col sm:flex-row gap-4 w-full justify-between items-center max-w-xl">
             {content.primaryButton && (
-              <Link 
-              target="_blank"
-              href={content.primaryButton.href}>
+              <Link target="_blank" href={content.primaryButton.href}>
                 <Button
-                 
                   className={`${content.primaryButton.class} group text-sm px-5 py-3 h-auto font-medium shadow-md hover:shadow-lg transition-all flex-1 whitespace-normal text-center`}
                 >
                   <span className="block leading-tight">
@@ -538,11 +533,9 @@ export default function PreQualificationChecker() {
                             htmlFor="regular-clients"
                             className="text-lg font-medium text-primary mb-3 block"
                           >
-                            How many clients regularly pay you?
+                            What is the total number of employees in your
+                            organization?
                           </Label>
-                          <div className="text-sm text-muted-foreground mb-4">
-                            *Regularly - at least 4 times within a year
-                          </div>
                           <Select
                             value={formData.regularClients}
                             onValueChange={(value) =>
@@ -553,7 +546,7 @@ export default function PreQualificationChecker() {
                               id="regular-clients"
                               className="h-12 bg-muted/50 border-border focus:border-primary"
                             >
-                              <SelectValue placeholder="Select number of regular clients" />
+                              <SelectValue placeholder="Select number of employees" />
                             </SelectTrigger>
                             <SelectContent>
                               {regularClientOptions.map((option) => (
@@ -602,6 +595,31 @@ export default function PreQualificationChecker() {
                               <SelectItem value="no">No</SelectItem>
                             </SelectContent>
                           </Select>
+
+                          {formData.usesAccountingSoftware === "yes" && (
+                            <motion.div
+                              className="mt-4"
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              transition={{ duration: 0.3 }}
+                            >
+                              <Label
+                                htmlFor="accounting-software"
+                                className="text-base font-medium text-primary mb-2 block"
+                              >
+                                Which accounting software does your business currently use?
+                              </Label>
+                              <Input
+                                id="accounting-software"
+                                placeholder="e.g., QuickBooks, Xero, Sage, etc."
+                                value={formData.accountingSoftware}
+                                onChange={(e) =>
+                                  handleChange("accountingSoftware", e.target.value)
+                                }
+                                className="h-12 bg-muted/50 border-border focus:border-primary"
+                              />
+                            </motion.div>
+                          )}
                         </motion.div>
 
                         <motion.div
@@ -670,6 +688,7 @@ export default function PreQualificationChecker() {
                           className="w-full sm:w-1/2 bg-secondary dark:text-white hover:bg-secondary/90 text-primary-foreground h-12 group shadow-md hover:shadow-lg transition-all text-base"
                           disabled={
                             !formData.usesAccountingSoftware ||
+                            (formData.usesAccountingSoftware === "yes" && !formData.accountingSoftware) ||
                             !formData.hasBusinessLoans ||
                             isSubmitting
                           }
@@ -717,8 +736,7 @@ export default function PreQualificationChecker() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-          >
-          </motion.div>
+          ></motion.div>
         </div>
       </div>
     </section>

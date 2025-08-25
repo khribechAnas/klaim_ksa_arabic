@@ -41,6 +41,47 @@ export default function TermsOfServicePage() {
           </div>
         </section>
 
+        {/* Definitions Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
+            Definitions
+          </h2>
+          <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+            <p>
+              In these Terms of Service, the following terms shall have the meanings set out below:
+            </p>
+            <ul className="list-disc ml-6 space-y-2">
+              <li>
+                <strong>&quot;Site&quot;</strong> refers to the website located at klaim.ai, including all content, services, and functionality made available through it.
+              </li>
+              <li>
+                <strong>&quot;Klaim&quot;</strong>, <strong>&quot;We&quot;</strong>, <strong>&quot;Us&quot;</strong>, or <strong>&quot;Our&quot;</strong> refers to Klaim Kapital Technologies Limited and Klaim Holdings Limited, collectively referred to as the Klaim Group.
+              </li>
+              <li>
+                <strong>&quot;User&quot;</strong>, <strong>&quot;You&quot;</strong>, or <strong>&quot;Your&quot;</strong> refers to any individual or entity accessing or using the Site.
+              </li>
+              <li>
+                <strong>&quot;Terms&quot;</strong> means these Terms of Service, including any referenced policies such as the Privacy Policy and Cookie Policy.
+              </li>
+              <li>
+                <strong>&quot;Permitted Territory&quot;</strong> refers to Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, the United Arab Emirates, Tunisia, Algeria, Morocco, Egypt, and Turkey.
+              </li>
+              <li>
+                <strong>&quot;Content&quot;</strong> means all text, graphics, images, software, audio, video, and other materials available on or through the Site.
+              </li>
+              <li>
+                <strong>&quot;Account&quot;</strong> refers to a registered user profile created to access certain features or services on the Site.
+              </li>
+              <li>
+                <strong>&quot;Service&quot;</strong> refers to any functionality, tools, or offerings provided through the Site.
+              </li>
+              <li>
+                <strong>&quot;Intellectual Property&quot;</strong> refers to all copyrights, trademarks, patents, trade secrets, and other proprietary rights associated with the Site and its content.
+              </li>
+            </ul>
+          </div>
+        </section>
+
         {/* Who we are Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
@@ -48,16 +89,16 @@ export default function TermsOfServicePage() {
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
             <p>
-              Klaim.ai is a site operated by KLAIM KAPITAL TECHNOLOGIES LIMITED, a limited liability company incorporated in Abu Dhabi Global Markets with license number 000006006, having its registered office at DD-14-124-014, Level 14, Wework Hub71, Al Khatem Tower, Abu Dhabi Global Market Square, Al Maryah Island, Abu Dhabi, United Arab Emirates ( &quot;KKTL&quot; )
+              Klaim.ai is a site operated by KLAIM KAPITAL TECHNOLOGIES LIMITED, a limited liability company incorporated in Abu Dhabi Global Markets with license number 000006006, having its registered office at DD-14-124-014, Level 14, Wework Hub71, Al Khatem Tower, Abu Dhabi Global Market Square, Al Maryah Island, Abu Dhabi, United Arab Emirates (&quot;KKTL&quot;)
             </p>
             <p>
-              KKTL is a wholly owned subsidiary of KLAIM HOLDINGS LIMITED, a private company limited by shares incorporated under the laws of Abu Dhabi Global Market with company number 000004976 and whose registered office is at DD-15-134-004 - 007, Level 15, Wework Hub71, Al Khatem Tower, Abu Dhabi Global Market Square, Al Maryah Island, Abu Dhabi, United Arab Emirates ( &quot;KHL&quot; ).
+              KKTL is a wholly owned subsidiary of KLAIM HOLDINGS LIMITED, a private company limited by shares incorporated under the laws of Abu Dhabi Global Market with company number 000004976 and whose registered office is at DD-15-134-004 - 007, Level 15, Wework Hub71, Al Khatem Tower, Abu Dhabi Global Market Square, Al Maryah Island, Abu Dhabi, United Arab Emirates (&quot;KHL&quot;).
             </p>
             <p>
               (KKTL and KHL may be referred to collectively as &quot;Klaim Group&quot; or &quot;We&quot;).
             </p>
             <p>
-              You may reach us at the following emails and telephone numbers listed here.
+              You may reach us at the following emails and telephone numbers listed here: <a href="https://klaim.ai/#contact" className="text-primary hover:underline">Klaim – Connect with KLAIM</a>
             </p>
           </div>
         </section>
@@ -65,7 +106,7 @@ export default function TermsOfServicePage() {
         {/* Accept terms Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            By using our site you accept these terms
+            By using our site, you accept these terms
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
             <p>
@@ -85,7 +126,7 @@ export default function TermsOfServicePage() {
             </p>
             <ul className="list-disc ml-6 space-y-2">
               <li>
-                Our Privacy Policy, which explains how we collect, use and store your personal data.
+                Our Privacy Policy, which explains how we collect, use and store your personal data. <a href="/privacy" className="text-primary hover:underline">Website Privacy Policy</a>
               </li>
               <li>
                 Our Cookie Policy, which sets out information about the cookies on our site.
@@ -173,7 +214,7 @@ export default function TermsOfServicePage() {
               We have the right to disable any user identification code or password, whether chosen by you or allocated by us, at any time, if in our reasonable opinion you have failed to comply with any of the provisions of these terms of service.
             </p>
             <p>
-              If you know or suspect that anyone other than you knows your user identification code or password, you must promptly notify here.
+              If you know or suspect that anyone other than you knows your user identification code or password, you must promptly notify <a href="https://klaim.ai/#contact" className="text-primary hover:underline">Klaim – Connect with KLAIM</a>
             </p>
           </div>
         </section>
@@ -185,7 +226,7 @@ export default function TermsOfServicePage() {
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
             <p>
-              We are the owner or the licensee of all intellectual property rights in our site, and in the material published on it. Those works are protected by copyright laws and treaties around the world. All such rights are reserved.
+              We are the owner or the licensee of all intellectual property rights on our site, and in the material published on it. Those works are protected by copyright laws and treaties around the world. All such rights are reserved.
             </p>
             <p>
               You may print off one copy, and may download extracts, of any page(s) from our site for your personal use and you may draw the attention of others within your organisation to content posted on our site.
@@ -197,7 +238,7 @@ export default function TermsOfServicePage() {
               Our status (and that of any identified contributors) as the authors of content on our site must always be acknowledged (except where the content is user-generated).
             </p>
             <p>
-              You must not use any part of the content on our site for commercial purposes without obtaining a licence to do so from us or our licensors.
+              You must not use any part of the content on our site for commercial purposes without obtaining a license to do so from us or our licensors.
             </p>
             <p>
               If you print off, copy, download, share or repost any part of our site in breach of these terms of service, your right to use our site will cease immediately and you must, at our option, return or destroy any copies of the materials you have made (except that you are permitted to print off a copy of these terms of service).
@@ -250,7 +291,7 @@ export default function TermsOfServicePage() {
               You must not establish a link in such a way as to suggest any form of association, approval or endorsement on our part where none exists.
             </p>
             <p>
-              You must not establish a link to our site in any website that is not owned by you.
+              You must not establish a link to our site on any website that is not owned by you.
             </p>
             <p>
               Our site must not be framed on any other site, nor may you create a link to any part of our site other than the home page.
@@ -259,7 +300,10 @@ export default function TermsOfServicePage() {
               We reserve the right to withdraw linking permission without notice.
             </p>
             <p>
-              If you wish to link to or make any use of content on our site other than that set out above, please contact [EMAIL ADDRESS].
+              Klaim reserves the right to suspend or terminate your account at any time, without prior notice, if we determine that you have violated these Terms of Service, engaged in fraudulent or abusive behavior, or used the site in a manner that may harm Klaim, its users, or its partners. Additionally, accounts that remain inactive for an extended period may be subject to suspension or deletion in accordance with our data retention policies.
+            </p>
+            <p>
+              If you wish to link to or make any use of content on our site other than that set out above, please contact <a href="mailto:hello@klaim.ai" className="text-primary hover:underline">hello@klaim.ai</a>
             </p>
           </div>
         </section>
@@ -267,11 +311,11 @@ export default function TermsOfServicePage() {
         {/* Trade marks Section */}
         <section className="mb-12">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
-            Our trade marks are registered
+            Our trademarks are registered
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
             <p>
-              &quot;Klaim&quot; is a trade mark of Klaim Holdings Limited. You are not permitted to use it without our approval.
+              &quot;Klaim&quot; is a trademark of Klaim Holdings Limited. You are not permitted to use it without our approval.
             </p>
           </div>
         </section>
@@ -328,7 +372,7 @@ export default function TermsOfServicePage() {
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
             <p>
-              You must not misuse our site by knowingly introducing viruses, trojans, worms, logic bombs or other material that is malicious or technologically harmful, or otherwise harmfully interacting with our site or any part of it. You must not attempt to gain unauthorised access to our site, the server on which our site is stored or any server, computer or database connected to our site or any other equipment or network connected with our site. You must not interfere with, damage or disrupt any software used in the provision of our site or any equipment or network or software owned or used by any third party on which this site relies in any way. You must not attack our site via a denial-of-service attack or a distributed denial-of-service attack. We will report any such breach to the relevant law enforcement authorities and we will co-operate with those authorities by disclosing your identity to them. In the event of such a breach, your right to use our site will cease immediately.
+              You must not misuse our site by knowingly introducing viruses, trojans, worms, logic bombs or other material that is malicious or technologically harmful, or otherwise harmfully interacting with our site or any part of it. You must not attempt to gain unauthorised access to our site, the server on which our site is stored or any server, computer or database connected to our site, or any other equipment or network connected with our site. You must not interfere with, damage or disrupt any software used in the provision of our site or any equipment or network or software owned or used by any third party on which this site relies in any way. You must not attack our site via a denial-of-service attack or a distributed denial-of-service attack. We will report any such breach to the relevant law enforcement authorities, and we will co-operate with those authorities by disclosing your identity to them. In the event of such a breach, your right to use our site will cease immediately.
             </p>
           </div>
         </section>
@@ -382,7 +426,22 @@ export default function TermsOfServicePage() {
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
             <p>
-              We will only use your personal information as set out in our Privacy Policy.
+              We will only use your personal information as set out in our Privacy Policy. <a href="/privacy" className="text-primary hover:underline">Website Privacy Policy</a>
+            </p>
+            <p>
+              We retain personal data for a period of [INSERT RETENTION PERIOD], or as long as necessary to fulfill the purposes for which it was collected, including to comply with legal, regulatory, or operational requirements.
+            </p>
+            <p>
+              Your data may be deleted or anonymized earlier if:
+            </p>
+            <ul className="list-disc ml-6 space-y-2">
+              <li>It is no longer needed for the stated purposes;</li>
+              <li>You request its deletion and we are legally permitted to do so;</li>
+              <li>It reaches the end of its retention period;</li>
+              <li>We are required to delete it under applicable law or internal policy.</li>
+            </ul>
+            <p>
+              Specific retention timelines and criteria may vary depending on the type of data and the context in which it was collected. For more details, please refer to our Privacy Policy or contact us at <a href="mailto:hello@klaim.ai" className="text-primary hover:underline">hello@klaim.ai</a>
             </p>
           </div>
         </section>
@@ -399,6 +458,18 @@ export default function TermsOfServicePage() {
           </div>
         </section>
 
+        {/* Service warranty Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">
+            Service Warranty
+          </h2>
+          <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+            <p>
+              The Service is provided &quot;as is&quot; and &quot;as available,&quot; without any warranties. To the fullest extent allowed by law, Klaim and its affiliates disclaim all express or implied warranties, including those of merchantability, fitness for a particular purpose, and non-infringement. We do not guarantee that the Service will meet your needs, work without errors, or be compatible with other systems.
+            </p>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section className="mt-16 pt-8 border-t border-border">
           <div className="bg-accent/30 rounded-xl p-8 text-center">
@@ -409,7 +480,7 @@ export default function TermsOfServicePage() {
               If you have any questions about these Terms of Service, please don&apos;t hesitate to contact us.
             </p>
             <a
-              href="mailto:legal@klaim.ai"
+              href="mailto:hello@klaim.ai"
               className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               Contact Legal Team
