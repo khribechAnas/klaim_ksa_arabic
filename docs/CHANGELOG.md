@@ -1,12 +1,17 @@
 # Changelog
 
+## 2.2.1
+### hotfix/env-fix
+
+- Fix env variables for production deployment
+
 ## 2.2.0
 ### feature/dynamic-forms
 
 - Add dynamic api calls for each form/newsletter etc, update questonnaire to include input for ERP system, add number of employees dropdown question
 
 ## 2.1.0
-# feature/update-copy
+### feature/update-copy
 
 - Update Initial Assessment Questionnaire copy, and make it always display Qualified stage
 
