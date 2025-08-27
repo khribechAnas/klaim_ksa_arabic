@@ -18,27 +18,49 @@ export function FooterSection() {
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    console.log('📝 [FOOTER] Newsletter form submitted:', {
+      email: email,
+      timestamp: new Date().toISOString(),
+      userAgent: typeof window !== 'undefined' ? window.navigator.userAgent : 'server-side',
+    });
+    
     if (!email.trim()) {
+      console.log('❌ [FOOTER] Empty email submitted');
       setMessage({ type: 'error', text: 'Please enter your email address.' });
       return;
     }
 
     setIsSubmitting(true);
     setMessage(null);
+    
+    console.log('🔄 [FOOTER] Starting newsletter submission...');
 
     try {
       const result = await submitNewsletterLead(email);
       
+      console.log('📊 [FOOTER] Newsletter submission result:', {
+        success: result.success,
+        message: result.message,
+        timestamp: new Date().toISOString(),
+      });
+      
       if (result.success) {
+        console.log('✅ [FOOTER] Newsletter subscription successful');
         setMessage({ type: 'success', text: 'Thank you for subscribing to our newsletter!' });
         setEmail("");
       } else {
+        console.log('❌ [FOOTER] Newsletter subscription failed:', result.message);
         setMessage({ type: 'error', text: result.message });
       }
-    } catch {
+    } catch (error) {
+      console.error('💥 [FOOTER] Newsletter submission error:', {
+        error: error instanceof Error ? error.message : error,
+        timestamp: new Date().toISOString(),
+      });
       setMessage({ type: 'error', text: 'Failed to subscribe. Please try again later.' });
     } finally {
       setIsSubmitting(false);
+      console.log('🏁 [FOOTER] Newsletter submission completed');
     }
   };
 
