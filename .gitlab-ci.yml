@@ -17,10 +17,10 @@ build_docker:
     - |
       if [[ "${CI_COMMIT_BRANCH}" == "master" ]]; then
         TAG="prod-${CI_COMMIT_SHORT_SHA}"
-        BUILD_ARGS="--build-arg KLAIM_API_URL=https://salesuae.klaim.ai --build-arg KLAIM_API_KEY=gUbB97FwySsF --build-arg NEXT_PUBLIC_POSTHOG_KEY=phc_hweQ5klcb0ki6yNSx1eBY4vO9ozNxfoYiVXubAQDSV4 --build-arg NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com"
+        BUILD_ARGS="--build-arg KLAIM_API_URL=https://x.klaim.ai --build-arg KLAIM_API_KEY=MRtJbKkj6dRW --build-arg KLAIM_LEGACY_API_URL=https://salesuae.klaim.ai --build-arg KLAIM_LEGACY_API_KEY=aSdFGhjklZXcvb --build-arg NEXT_PUBLIC_POSTHOG_KEY=phc_hweQ5klcb0ki6yNSx1eBY4vO9ozNxfoYiVXubAQDSV4 --build-arg NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com"
       elif [[ "${CI_COMMIT_BRANCH}" == "develop" ]]; then
         TAG="dev-${CI_COMMIT_SHORT_SHA}"
-        BUILD_ARGS="--build-arg KLAIM_API_URL=https://klaim.ai --build-arg KLAIM_API_KEY=api-key --build-arg NEXT_PUBLIC_POSTHOG_KEY=phc_devkey --build-arg NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com"
+        BUILD_ARGS="--build-arg KLAIM_API_URL=https://x.klaim.ai --build-arg KLAIM_API_KEY=MRtJbKkj6dRW --build-arg KLAIM_LEGACY_API_URL=https://salesuae.klaim.ai --build-arg KLAIM_LEGACY_API_KEY=aSdFGhjklZXcvb --build-arg NEXT_PUBLIC_POSTHOG_KEY=phc_devkey --build-arg NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com"
       else
         echo "Branch ${CI_COMMIT_BRANCH} is not master or develop. Skipping build and push."
         exit 0
@@ -28,4 +28,4 @@ build_docker:
     - docker build $BUILD_ARGS -t ${CI_REGISTRY_PATH}/${CI_PROJECT_PATH}:${TAG} .
     - docker push ${CI_REGISTRY_PATH}/${CI_PROJECT_PATH}:${TAG}
   rules:
-    - if: '$CI_COMMIT_BRANCH'
+    - if: "$CI_COMMIT_BRANCH"

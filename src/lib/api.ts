@@ -7,14 +7,7 @@ interface ApiResponse {
 }
 
 export async function submitNewsletterLead(email: string): Promise<ApiResponse> {
-  console.log('📧 [CLIENT API] Newsletter submission started:', {
-    email: email,
-    timestamp: new Date().toISOString(),
-    userAgent: typeof window !== 'undefined' ? window.navigator.userAgent : 'server-side',
-  });
-
   if (!email || !email.includes('@')) {
-    console.log('❌ [CLIENT API] Invalid email format:', email);
     return {
       success: false,
       message: 'Please enter a valid email address.',
@@ -22,8 +15,6 @@ export async function submitNewsletterLead(email: string): Promise<ApiResponse> 
   }
 
   try {
-    console.log('🌐 [CLIENT API] Making request to /api/newsletter');
-    
     const response = await fetch('/api/newsletter', {
       method: 'POST',
       headers: {
@@ -32,47 +23,22 @@ export async function submitNewsletterLead(email: string): Promise<ApiResponse> 
       body: JSON.stringify({ email: email.trim() }),
     });
 
-    console.log('📡 [CLIENT API] Response received:', {
-      status: response.status,
-      statusText: response.statusText,
-      ok: response.ok,
-      timestamp: new Date().toISOString(),
-    });
-
     const result = await response.json();
     
-    console.log('📄 [CLIENT API] Response body:', {
-      result,
-      timestamp: new Date().toISOString(),
-    });
-    
     if (!response.ok) {
-      console.log('❌ [CLIENT API] Request failed:', {
-        status: response.status,
-        message: result.message,
-        timestamp: new Date().toISOString(),
-      });
-      
       return {
         success: false,
         message: result.message || 'Failed to subscribe. Please try again later.',
       };
     }
 
-    console.log('✅ [CLIENT API] Newsletter submission successful');
-    
     return {
       success: true,
       message: result.message || 'Thank you for subscribing to our newsletter!',
       data: result.data,
     };
   } catch (error) {
-    console.error('💥 [CLIENT API] Newsletter submission error:', {
-      error: error instanceof Error ? error.message : error,
-      stack: error instanceof Error ? error.stack : undefined,
-      timestamp: new Date().toISOString(),
-    });
-    
+    console.error('Newsletter submission error:', error);
     return {
       success: false,
       message: 'Network error. Please try again later.',
