@@ -6,6 +6,7 @@ import { parkinsans, inter } from "@/lib/fonts";
 import "./globals.css";
 
 import { PostHogProvider } from "@/components/PostHogProvider";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 
 export const viewport: Viewport = {
   themeColor: "black",
@@ -25,6 +26,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-KWKV399D";
+  const ga4MeasurementId =
+    process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || "G-ZDR00YYTN0";
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -45,6 +50,8 @@ export default function RootLayout({
             </div>
           </ThemeProvider>
         </PostHogProvider>
+        <GoogleTagManager gtmId={gtmId} />
+        <GoogleAnalytics gaId={ga4MeasurementId} />
       </body>
     </html>
   );

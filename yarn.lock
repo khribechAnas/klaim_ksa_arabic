@@ -905,6 +905,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/third-parties@npm:^15.5.2":
+  version: 15.5.2
+  resolution: "@next/third-parties@npm:15.5.2"
+  dependencies:
+    third-party-capital: "npm:1.0.20"
+  peerDependencies:
+    next: ^13.0.0 || ^14.0.0 || ^15.0.0
+    react: ^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
+  checksum: 10/07cd18b2d910096eff41009c23f01501279c52467c04fdaa0cb4be900ea7b45460a5c2a87af80b02dd47f9b530234f992933d1fba1dace57a2f36dc3f97b2f24
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -5092,6 +5104,7 @@ __metadata:
   resolution: "klaim-website@workspace:."
   dependencies:
     "@eslint/eslintrc": "npm:^3"
+    "@next/third-parties": "npm:^15.5.2"
     "@number-flow/react": "npm:^0.5.7"
     "@radix-ui/react-accordion": "npm:^1.2.3"
     "@radix-ui/react-avatar": "npm:^1.1.10"
@@ -7588,6 +7601,13 @@ __metadata:
     mkdirp: "npm:^3.0.1"
     yallist: "npm:^5.0.0"
   checksum: 10/12a2a4fc6dee23e07cc47f1aeb3a14a1afd3f16397e1350036a8f4cdfee8dcac7ef5978337a4e7b2ac2c27a9a6d46388fc2088ea7c80cb6878c814b1425f8ecf
+  languageName: node
+  linkType: hard
+
+"third-party-capital@npm:1.0.20":
+  version: 1.0.20
+  resolution: "third-party-capital@npm:1.0.20"
+  checksum: 10/40e2531b428a21f05531fc62ef82859c0071211eff09588baf75d4b525096bbdb4f93e17e2d538849db8d4fc3cceb074933d7be59fddc26f86718fbbe852a97f
   languageName: node
   linkType: hard
 
