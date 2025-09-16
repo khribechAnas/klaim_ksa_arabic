@@ -4,7 +4,3 @@ This file contains all changes for development channel. Before issue a release, 
 placed in the CHANGELOG.md under particular release number.
 
 ## Current
-
-### feature/seo-optimization
-
-- Add files for robots.txt and sitemap.xml
