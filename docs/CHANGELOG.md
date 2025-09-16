@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.0
+
+### feature/seo-optimization
+
+- Add files for robots.txt and sitemap.xml
+
 ## 2.3.0
 
 - Add Google Analytics 4 and Google Tag Manager
