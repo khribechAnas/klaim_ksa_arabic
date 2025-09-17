@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.4.1
+### hotfix/site-map-correct-domain
+
+- Removed the domain as tr and added correct domain.
+
 ## 2.4.0
 
 ### feature/seo-optimization

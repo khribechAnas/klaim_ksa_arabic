@@ -97,5 +97,5 @@ export function getBaseUrl(): string {
   }
 
   // Fallback to the production URL
-  return 'https://klaim.com.tr'
+  return 'https://klaim.ai'
 }
