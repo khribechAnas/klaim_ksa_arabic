@@ -110,6 +110,7 @@ export async function submitCampaignLead(campaignData: {
   email: string;
   company: string;
   phone: string;
+  message?: string;
 }): Promise<ApiResponse> {
   if (!campaignData.name || !campaignData.email || !campaignData.company || !campaignData.phone) {
     return {
@@ -136,6 +137,7 @@ export async function submitCampaignLead(campaignData: {
         email: campaignData.email.trim(),
         company: campaignData.company.trim(),
         phone: campaignData.phone.trim(),
+        message: campaignData.message?.trim() || '',
       }),
     });
 

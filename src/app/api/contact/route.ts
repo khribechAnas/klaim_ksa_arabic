@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const API_BASE_URL = process.env.KLAIM_API_URL || process.env.NEXT_PUBLIC_KLAIM_API_URL;
-const LEGACY_API_BASE_URL = process.env.KLAIM_LEGACY_API_URL || process.env.NEXT_PUBLIC_KLAIM_LEGACY_API_URL || API_BASE_URL;
-const API_KEY = process.env.KLAIM_API_KEY || process.env.NEXT_PUBLIC_KLAIM_API_KEY;
-const LEGACY_API_KEY = process.env.KLAIM_LEGACY_API_KEY || process.env.NEXT_PUBLIC_KLAIM_LEGACY_API_KEY || API_KEY;
+const SALES_UAE_API_BASE_URL = process.env.SALES_UAE_API_BASE_URL;
+const SALES_UAE_API_KEY = process.env.SALES_UAE_API_KEY;
 
-if (!API_BASE_URL || !API_KEY) {
-  throw new Error('Missing required environment variables: KLAIM_API_URL and KLAIM_API_KEY');
+if (!SALES_UAE_API_BASE_URL || !SALES_UAE_API_KEY) {
+  throw new Error('Missing required environment variables: SALES_UAE_API_BASE_URL and SALES_UAE_API_KEY');
 }
 
 export async function POST(request: NextRequest) {
@@ -27,57 +25,42 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const getCompanyIdFromRequest = (req: NextRequest): number | undefined => {
+    const getSectorFromRequest = (req: NextRequest): string | undefined => {
       try {
         const referer = req.headers.get('referer') || '';
         if (referer) {
           const url = new URL(referer);
           const path = url.pathname.toLowerCase();
-          if (path.startsWith('/flow')) return 1;
-          if (path.startsWith('/estate')) return 2;
-          if (path.startsWith('/health')) return 3;
+          if (path.startsWith('/flow')) return 'Klaim Flow';
+          if (path.startsWith('/estate')) return 'Klaim Estate';
+          if (path.startsWith('/health')) return 'Klaim Health';
         }
       } catch {}
       return undefined;
     };
 
-    const companyId = getCompanyIdFromRequest(request);
+    const sector = getSectorFromRequest(request);
+    const originalMessage = message?.trim() || '';
+    const description = sector
+      ? `[${sector}]: ${originalMessage}`
+      : originalMessage;
 
-    const response = companyId
-      ? await fetch(`${API_BASE_URL}/public-api/lead`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'api-key': API_KEY!,
-          },
-          body: JSON.stringify({
-            data: [{
-              company_id: companyId,
-              source: 'Website Contact Us',
-              contact_name: name.trim(),
-              email_from: email.trim(),
-              partner_name: company.trim(),
-              phone: phone?.trim() || '',
-              description: (message?.trim() || '').replace(/\n/g, '<br/>'),
-            }]
-          }),
-        })
-      : await fetch(`${LEGACY_API_BASE_URL}/public-api/lead/contact-us`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'API-KEY': LEGACY_API_KEY!,
-          },
-          body: JSON.stringify({
-            data: [{
-              contact_name: name.trim(),
-              email_from: email.trim(),
-              partner_name: company.trim(),
-              phone: phone?.trim() || '',
-              description: (message?.trim() || '').replace(/\n/g, '<br/>'),
-            }]
-          }),
-        });
+    const response = await fetch(`${SALES_UAE_API_BASE_URL}/public-api/lead/contact-us`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'API-KEY': SALES_UAE_API_KEY!,
+      },
+      body: JSON.stringify({
+        data: [{
+          contact_name: name.trim(),
+          email_from: email.trim(),
+          partner_name: company.trim(),
+          phone: phone?.trim() || '',
+          description: description.replace(/\n/g, '<br/>'),
+        }]
+      }),
+    });
 
     if (!response.ok) {
       const errorText = await response.text().catch(() => 'Unknown error');
