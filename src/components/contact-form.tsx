@@ -12,6 +12,7 @@ export function ContactFormGridWithDetails() {
     name: "",
     email: "",
     company: "",
+    phone: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,7 +26,7 @@ export function ContactFormGridWithDetails() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name.trim() || !formData.email.trim() || !formData.company.trim()) {
+    if (!formData.name.trim() || !formData.email.trim() || !formData.company.trim() || !formData.phone.trim()) {
       setMessage({ type: 'error', text: 'Please fill in all required fields.' });
       return;
     }
@@ -38,12 +39,13 @@ export function ContactFormGridWithDetails() {
         name: formData.name,
         email: formData.email,
         company: formData.company,
+        phone: formData.phone,
         message: formData.message,
       });
       
       if (result.success) {
         setMessage({ type: 'success', text: 'Thank you for contacting us! We\'ll get back to you soon.' });
-        setFormData({ name: "", email: "", company: "", message: "" });
+        setFormData({ name: "", email: "", company: "", phone: "", message: "" });
       } else {
         setMessage({ type: 'error', text: result.message });
       }
@@ -132,6 +134,24 @@ export function ContactFormGridWithDetails() {
             onChange={handleInputChange}
             disabled={isSubmitting}
             placeholder="john@doe.com"
+            className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            required
+          />
+        </div>
+        <div className="relative z-20 mb-4 w-full">
+          <label
+            className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
+            htmlFor="phone"
+          >
+            Phone Number *
+          </label>
+          <input
+            id="phone"
+            type="tel"
+            value={formData.phone}
+            onChange={handleInputChange}
+            disabled={isSubmitting}
+            placeholder="Your Phone Number"
             className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
             required
           />

@@ -13,11 +13,12 @@ export function ContactFormGridWithDetails() {
     email: "",
     company: "",
     phone: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData(prev => ({ ...prev, [id]: value }));
   };
@@ -39,11 +40,12 @@ export function ContactFormGridWithDetails() {
         email: formData.email,
         company: formData.company,
         phone: formData.phone,
+        message: formData.message,
       });
       
       if (result.success) {
         setMessage({ type: 'success', text: 'Thank you for your interest! We\'ll contact you soon to discuss KlaimFlow.' });
-        setFormData({ name: "", email: "", company: "", phone: "" });
+        setFormData({ name: "", email: "", company: "", phone: "", message: "" });
       } else {
         setMessage({ type: 'error', text: result.message });
       }
@@ -139,6 +141,24 @@ export function ContactFormGridWithDetails() {
         <div className="relative z-20 mb-4 w-full">
           <label
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
+            htmlFor="phone"
+          >
+            Phone Number *
+          </label>
+          <input
+            id="phone"
+            type="tel"
+            value={formData.phone}
+            onChange={handleInputChange}
+            disabled={isSubmitting}
+            placeholder="Your Phone Number"
+            className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            required
+          />
+        </div>
+        <div className="relative z-20 mb-4 w-full">
+          <label
+            className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
             htmlFor="company"
           >
             Company *
@@ -157,22 +177,20 @@ export function ContactFormGridWithDetails() {
         <div className="relative z-20 mb-4 w-full">
           <label
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
-            htmlFor="phone"
+            htmlFor="message"
           >
-            Phone Number *
+            Message
           </label>
-          <input
-            id="phone"
-            type="tel"
-            value={formData.phone}
+          <textarea
+            id="message"
+            rows={4}
+            value={formData.message}
             onChange={handleInputChange}
             disabled={isSubmitting}
-            placeholder="Your Phone Number"
-            className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
-            required
+            placeholder="Type your message here"
+            className="shadow-input w-full rounded-md border border-transparent bg-white pl-4 pt-2 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           />
         </div>
-
 
         {message && (
           <div className={`relative z-20 mb-4 w-full p-3 rounded-md text-sm ${

@@ -14,7 +14,6 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
       debug: process.env.NODE_ENV === "development",
       session_recording: {
         maskAllInputs: true,
-        maskTextSelector: '*',
       },
     })
   }, [])
