@@ -4,3 +4,12 @@ This file contains all changes for development channel. Before issue a release, 
 placed in the CHANGELOG.md under particular release number.
 
 ## Current
+
+=== feature/renew-contact-forms
+
+- Renew contact forms and fix API flow
+- Update gitlab-ci.yml
+
+=== feature/posthog-session-recording
+
+- Add session recording to Posthog
