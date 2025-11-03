@@ -1,0 +1,10 @@
+ingress:
+  hostname: klaim.ai
+
+build:
+  - --build-arg KLAIM_X_API_BASE_URL=https://x.klaim.ai
+  - --build-arg KLAIM_X_API_KEY=MRtJbKkj6dRW
+  - --build-arg SALES_UAE_API_BASE_URL=https://salesuae.klaim.ai
+  - --build-arg SALES_UAE_API_KEY=gUbB97FwySsF
+  - --build-arg NEXT_PUBLIC_POSTHOG_KEY=phc_hweQ5klcb0ki6yNSx1eBY4vO9ozNxfoYiVXubAQDSV4
+  - --build-arg NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com"
