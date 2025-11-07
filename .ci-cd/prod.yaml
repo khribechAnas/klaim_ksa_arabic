@@ -1,5 +1,7 @@
 ingress:
-  hostname: klaim.ai
+  hostnames:
+    - klaim.ai
+    - www.klaim.ai
 
 build:
   - --build-arg KLAIM_X_API_BASE_URL=https://x.klaim.ai

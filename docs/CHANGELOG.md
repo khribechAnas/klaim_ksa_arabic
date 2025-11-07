@@ -1,9 +1,12 @@
 # Changelog
 
-## 2.4.1
-### hotfix/site-map-correct-domain
+## 2.4.3
 
-- Removed the domain as tr and added correct domain.
+- Fix CI/CD pipeline.
+
+## 2.4.2
+
+- Fix contact forms.
 
 ## 2.4.0
 
