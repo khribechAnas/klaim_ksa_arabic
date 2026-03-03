@@ -25,7 +25,7 @@ export function ContactFormGridWithDetails() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name.trim() || !formData.email.trim() || !formData.company.trim() || !formData.phone.trim()) {
       setMessage({ type: 'error', text: 'Please fill in all required fields.' });
       return;
@@ -42,7 +42,7 @@ export function ContactFormGridWithDetails() {
         phone: formData.phone,
         message: formData.message,
       });
-      
+
       if (result.success) {
         setMessage({ type: 'success', text: 'Thank you for contacting us! We\'ll get back to you soon.' });
         setFormData({ name: "", email: "", company: "", phone: "", message: "" });
@@ -74,18 +74,18 @@ export function ContactFormGridWithDetails() {
             <Mail className="h-4 w-4" />
             <p className="text-sm text-muted-foreground">hello@klaim.ai</p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground">helloksa@klaim.ai</p>
-            <div className="h-1 w-1 rounded-full bg-muted-foreground" />
             <p className="text-sm text-muted-foreground">hellooman@klaim.ai</p>
+            <div className="h-1 w-1 rounded-full bg-muted-foreground" />
+            <p className="text-sm text-muted-foreground">helloksa@klaim.ai</p>
           </div>
 
           <div className="flex flex-wrap items-center justify-start gap-2 md:gap-4">
             <Phone className="h-4 w-4" />
             <p className="text-sm text-muted-foreground">+971 4 876 4096</p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground">+966 11 510 2972</p>
-            <div className="h-1 w-1 rounded-full bg-muted-foreground" />
             <p className="text-sm text-muted-foreground">+968 7 173 4424</p>
+            <div className="h-1 w-1 rounded-full bg-muted-foreground" />
+            <p className="text-sm text-muted-foreground"></p>
           </div>
         </div>
         <div className="div relative mt-20 flex w-[600px] flex-shrink-0 -translate-x-10 items-center justify-center [perspective:800px] [transform-style:preserve-3d] sm:-translate-x-0 lg:-translate-x-32">
@@ -200,7 +200,7 @@ export function ContactFormGridWithDetails() {
             {message.text}
           </div>
         )}
-        <button 
+        <button
           type="submit"
           disabled={isSubmitting}
           className="relative z-10 flex items-center justify-center rounded-md border border-transparent bg-secondary px-4 py-2 text-sm font-medium text-white shadow-[0px_1px_0px_0px_#FFFFFF20_inset] transition duration-200 hover:bg-neutral-900 md:text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-secondary"
