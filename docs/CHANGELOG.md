@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.4 
+
+### hotfix/delete-phone
+
+- Delete KSA phone.
+
 ## 2.4.3
 
 - Fix CI/CD pipeline.
@@ -13,6 +19,7 @@
 ### feature/seo-optimization
 
 - Add files for robots.txt and sitemap.xml
+- 
 
 ## 2.3.0
 
