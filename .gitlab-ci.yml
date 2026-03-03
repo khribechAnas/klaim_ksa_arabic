@@ -1,4 +1,4 @@
 include:
   - project: devops/ci-cd
-    ref: 1.0.1
+    ref: 1.2.0
     file: pipelines/docker.gitlab-ci.yml
