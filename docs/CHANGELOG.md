@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.5
+
+### hotfix/fix-build
+
+- Fix ci ref.
+
 ## 2.4.4 
 
 ### hotfix/delete-phone
