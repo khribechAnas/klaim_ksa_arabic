@@ -18,7 +18,20 @@
 
 ## 2.4.2
 
-- Fix contact forms.
+### feature/renew-contact-forms
+
+- Renew contact forms and fix API flow
+- Update gitlab-ci.yml
+
+### feature/posthog-session-recording
+
+- Add session recording to Posthog
+
+## 2.4.1
+
+### hotfix/site-map-correct-domain
+
+- Removed the domain as tr and added correct domain.
 
 ## 2.4.0
 
