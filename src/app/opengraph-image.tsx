@@ -1,4 +1,3 @@
-import { headers } from "next/headers";
 import { ImageResponse } from "next/og";
 
 // Configuration exports
@@ -10,13 +9,16 @@ export const size = {
 };
 export const contentType = "image/png";
 
+/** Base URL for OG image – from env only; never use Host header (SSRF risk). */
+function getBaseUrl(): string {
+  if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return "https://klaim.ai";
+}
+
 export default async function Image() {
   try {
-    // Get the host from headers
-    const headersList = await headers();
-    const host = headersList.get("host") || "";
-    const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
-    const baseUrl = `${protocol}://${host}`;
+    const baseUrl = getBaseUrl();
 
     return new ImageResponse(
       (
