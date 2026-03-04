@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.4.6
+
+- Upgrade outdated package versions with vulnerabilities.
+
 ## 2.4.5
 
 ### hotfix/fix-build
