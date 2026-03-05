@@ -74,18 +74,18 @@ export function ContactFormGridWithDetails() {
             <Mail className="h-4 w-4" />
             <p className="text-sm text-muted-foreground">hello@klaim.ai</p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground">hellooman@klaim.ai</p>
-            <div className="h-1 w-1 rounded-full bg-muted-foreground" />
             <p className="text-sm text-muted-foreground">helloksa@klaim.ai</p>
+            <div className="h-1 w-1 rounded-full bg-muted-foreground" />
+            <p className="text-sm text-muted-foreground">hellooman@klaim.ai</p>
           </div>
 
           <div className="flex flex-wrap items-center justify-start gap-2 md:gap-4">
             <Phone className="h-4 w-4" />
             <p className="text-sm text-muted-foreground">+971 4 876 4096</p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground">+968 7 173 4424</p>
+            <p className="text-sm text-muted-foreground">+966 568 154 527</p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground"></p>
+            <p className="text-sm text-muted-foreground">+968 7 173 4424</p>
           </div>
         </div>
         <div className="div relative mt-20 flex w-[600px] flex-shrink-0 -translate-x-10 items-center justify-center [perspective:800px] [transform-style:preserve-3d] sm:-translate-x-0 lg:-translate-x-32">
