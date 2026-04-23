@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - Klaim AI",
+  title: "Terms of Service (UAE) - Klaim AI",
   description:
-    "Terms of Service for KLAIM KAPITAL TECHNOLOGIES LIMITED - Learn about the rules for using our website klaim.ai.",
+    "Terms of Service for KLAIM in the United Arab Emirates — rules for using klaim.ai.",
 };
 
-export default function TermsOfServicePage() {
+export default function TermsOfServiceUaePage() {
   return (
     <main className="container mx-auto py-12 px-6 max-w-6xl">
       <div className="prose prose-lg max-w-none">
@@ -126,7 +126,7 @@ export default function TermsOfServicePage() {
             </p>
             <ul className="list-disc ml-6 space-y-2">
               <li>
-                Our Privacy Policy, which explains how we collect, use and store your personal data. <a href="/privacy" className="text-primary hover:underline">Website Privacy Policy</a>
+                Our Privacy Policy, which explains how we collect, use and store your personal data. <a href="/privacy/uae" className="text-primary hover:underline">Website Privacy Policy</a>
               </li>
               <li>
                 Our Cookie Policy, which sets out information about the cookies on our site.
@@ -426,7 +426,7 @@ export default function TermsOfServicePage() {
           </h2>
           <div className="space-y-4 text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
             <p>
-              We will only use your personal information as set out in our Privacy Policy. <a href="/privacy" className="text-primary hover:underline">Website Privacy Policy</a>
+              We will only use your personal information as set out in our Privacy Policy. <a href="/privacy/uae" className="text-primary hover:underline">Website Privacy Policy</a>
             </p>
             <p>
               We retain personal data for a period of [INSERT RETENTION PERIOD], or as long as necessary to fulfill the purposes for which it was collected, including to comply with legal, regulatory, or operational requirements.
@@ -490,4 +490,4 @@ export default function TermsOfServicePage() {
       </div>
     </main>
   );
-} 
+}

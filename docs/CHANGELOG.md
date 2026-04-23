@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.8
+
+### hotfix/privacy-ksa
+
+- Make seperate privacy policy for uae and ksa
+
 ## 2.4.7
 
 ### hotfix/add-ksa-phone

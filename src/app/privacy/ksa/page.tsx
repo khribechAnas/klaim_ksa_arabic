@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Klaim AI",
+  title: "Privacy Policy (KSA) - Klaim AI",
   description:
-    "Privacy Policy for KLAIM Holdings Limited - Learn how we collect, use, and protect your personal data.",
+    "Privacy Policy for KLAIM in the Kingdom of Saudi Arabia — how we collect, use, and protect your personal data.",
 };
 
-export default function PrivacyPolicyPage() {
+export default function PrivacyPolicyKsaPage() {
   return (
     <main className="container mx-auto py-12 px-6 max-w-6xl">
       <div className="prose prose-lg max-w-none">
