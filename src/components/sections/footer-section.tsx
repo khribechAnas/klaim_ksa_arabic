@@ -1,14 +1,99 @@
 "use client";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { siteConfig } from "@/lib/config";
-import { ChevronRightIcon } from "@radix-ui/react-icons";
+import { type FooterLinkItem, siteConfig } from "@/lib/config";
+import { ChevronDownIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import Image from "next/image";
 import { Icons } from "../icons";
 import { SendHorizonal, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { submitNewsletterLead } from "@/lib/api";
+import { cn } from "@/lib/utils";
+
+function FooterGroupedLinkRow({
+  link,
+}: {
+  link: Extract<FooterLinkItem, { items: unknown }>;
+}) {
+  const [pinnedOpen, setPinnedOpen] = useState(false);
+  const [hoverOpen, setHoverOpen] = useState(false);
+  const expanded = pinnedOpen || hoverOpen;
+
+  return (
+    <li className="flex flex-col gap-y-1">
+      <div
+        onMouseEnter={() => setHoverOpen(true)}
+        onMouseLeave={() => setHoverOpen(false)}
+      >
+        <button
+          type="button"
+          className="group inline-flex cursor-pointer items-center justify-start gap-1 text-[15px]/snug text-muted-foreground"
+          aria-expanded={expanded}
+          aria-controls={`footer-submenu-${link.id}`}
+          id={`footer-submenu-trigger-${link.id}`}
+          onClick={() => setPinnedOpen((open) => !open)}
+        >
+          <span>{link.title}</span>
+          <ChevronDownIcon
+            className={cn(
+              "size-4 shrink-0 transition-transform duration-200 text-muted-foreground",
+              expanded && "rotate-180"
+            )}
+            aria-hidden
+          />
+        </button>
+        <ul
+          id={`footer-submenu-${link.id}`}
+          role="list"
+          aria-labelledby={`footer-submenu-trigger-${link.id}`}
+          className={cn(
+            "mt-1 flex flex-col gap-y-1.5 border-l border-border pl-3 pt-0.5",
+            !expanded && "hidden"
+          )}
+        >
+          {link.items.map((sub) => (
+            <li
+              key={sub.id}
+              className="group inline-flex cursor-pointer items-center justify-start gap-1 text-[15px]/snug text-muted-foreground"
+            >
+              <Link href={sub.url}>{sub.title}</Link>
+              <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
+                <ChevronRightIcon className="h-4 w-4 " />
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </li>
+  );
+}
+
+function FooterFlatLinkRow({
+  link,
+}: {
+  link: Extract<FooterLinkItem, { url: string }>;
+}) {
+  return (
+    <li className="group inline-flex cursor-pointer items-center justify-start gap-1 text-[15px]/snug text-muted-foreground">
+      <Link href={link.url}>{link.title}</Link>
+      <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
+        <ChevronRightIcon className="h-4 w-4 " />
+      </div>
+    </li>
+  );
+}
+
+function FooterLinkRow({ link }: { link: FooterLinkItem }) {
+  if ("items" in link && link.items) {
+    return <FooterGroupedLinkRow link={link} />;
+  }
+  if ("url" in link) {
+    return <FooterFlatLinkRow link={link} />;
+  }
+  return null;
+}
+
 export function FooterSection() {
   const tablet = useMediaQuery("(max-width: 1024px)");
   const [email, setEmail] = useState("");
@@ -143,22 +228,14 @@ export function FooterSection() {
           </div>
         </div>
         <div className="md:w-1/2 flex flex-col gap-y-5">
-          <div className="flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between gap-y-5">
+          <div className="flex flex-col items-start justify-start md:flex-row md:items-start md:justify-between gap-y-5">
             {siteConfig.footerLinks.map((column, columnIndex) => (
               <ul key={columnIndex} className="flex flex-col gap-y-2">
                 <li className="mb-2 text-sm text-secondary font-semibold">
                   {column.title}
                 </li>
                 {column.links.map((link) => (
-                  <li
-                    key={link.id}
-                    className="group inline-flex cursor-pointer items-center justify-start gap-1 text-[15px]/snug text-muted-foreground"
-                  >
-                    <Link href={link.url}>{link.title}</Link>
-                    <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                      <ChevronRightIcon className="h-4 w-4 " />
-                    </div>
-                  </li>
+                  <FooterLinkRow key={link.id} link={link} />
                 ))}
               </ul>
             ))}
