@@ -1,16 +1,10 @@
 # Changelog
 
-## 2.4.9
+## 2.4.8
 
 ### hotfix/privacy&term-separated
 
 - Make separate privacy and terms of service for UAE and KSA
-
-## 2.4.8
-
-### hotfix/privacy-ksa
-
-- Make seperate privacy policy for uae and ksa
 
 ## 2.4.7
 
