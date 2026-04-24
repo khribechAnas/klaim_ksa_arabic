@@ -28,7 +28,7 @@ function FooterGroupedLinkRow({
       >
         <button
           type="button"
-          className="inline-flex items-center gap-1 text-left text-[15px] font-medium text-foreground/90 hover:text-foreground rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="group inline-flex cursor-pointer items-center justify-start gap-1 text-[15px]/snug text-muted-foreground"
           aria-expanded={expanded}
           aria-controls={`footer-submenu-${link.id}`}
           id={`footer-submenu-trigger-${link.id}`}
