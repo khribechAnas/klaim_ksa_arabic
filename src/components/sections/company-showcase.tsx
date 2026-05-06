@@ -1,6 +1,12 @@
 import { siteConfig } from "@/lib/config";
 
-export function CompanyShowcase() {
+interface CompanyShowcaseProps {
+  title?: string;
+}
+
+export function CompanyShowcase({
+  title = "Trusted by 200+ businesses",
+}: CompanyShowcaseProps) {
   const { companyShowcase } = siteConfig;
   return (
     <section
@@ -8,7 +14,7 @@ export function CompanyShowcase() {
       className="flex flex-col items-center justify-center gap-10 py-10 pt-10 w-full relative px-6"
     >
       <p className="text-muted-foreground font-medium">
-        Trusted by 200+ businesses
+        {title}
       </p>
       <div className="grid w-full max-w-7xl grid-cols-2 md:grid-cols-5 overflow-hidden border-y border-border items-center justify-center z-20">
         {companyShowcase.companyLogos.map((logo) => (

@@ -7,8 +7,26 @@ import {
 import { SectionHeader } from "@/components/section-header";
 import { siteConfig } from "@/lib/config";
 
-export function FAQSection() {
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQSectionProps {
+  title?: string;
+  description?: string;
+  items?: FAQItem[];
+}
+
+export function FAQSection({
+  title,
+  description,
+  items,
+}: FAQSectionProps) {
   const { faqSection } = siteConfig;
+  const faqTitle = title ?? faqSection.title;
+  const faqDescription = description ?? faqSection.description;
+  const faqItems = items ?? faqSection.faQitems;
 
   return (
     <section
@@ -17,10 +35,10 @@ export function FAQSection() {
     >
       <SectionHeader>
         <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
-          {faqSection.title}
+          {faqTitle}
         </h2>
         <p className="text-muted-foreground text-center text-balance font-medium">
-          {faqSection.description}
+          {faqDescription}
         </p>
       </SectionHeader>
 
@@ -30,7 +48,7 @@ export function FAQSection() {
           collapsible
           className="w-full border-b-0 grid gap-2"
         >
-          {faqSection.faQitems.map((faq, index) => (
+          {faqItems.map((faq, index) => (
             <AccordionItem
               key={index}
               value={index.toString()}

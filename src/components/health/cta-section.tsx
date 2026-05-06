@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { cn } from "@/lib/utils";
 
 export function CTASection() {
   const t = useTranslations('health.cta');
+  const locale = useLocale();
+  const isRtl = locale === "ar";
   const { ctaSection } = siteConfig;
 
   return (
@@ -25,11 +30,28 @@ export function CTASection() {
           />
 
           {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent" />
+          <div
+            className={cn(
+              "absolute inset-0",
+              isRtl
+                ? "bg-gradient-to-l from-black/40 via-black/10 to-transparent"
+                : "bg-gradient-to-r from-black/40 via-black/10 to-transparent"
+            )}
+          />
 
-          <div className="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-12 lg:px-16">
+          <div
+            className={cn(
+              "absolute inset-0 flex flex-col justify-center px-6 md:px-12 lg:px-16",
+              isRtl ? "items-end" : "items-start"
+            )}
+          >
             <div className="max-w-md md:max-w-xl">
-              <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter text-left mb-12">
+              <h1
+                className={cn(
+                  "text-white text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter mb-12",
+                  isRtl ? "text-right" : "text-left"
+                )}
+              >
                 {t('title')}
               </h1>
               <div className="flex flex-col">

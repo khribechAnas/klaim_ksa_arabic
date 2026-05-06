@@ -1,9 +1,22 @@
 "use client";
 
 import { SectionHeader } from "@/components/section-header";
-import { ContactFormGridWithDetails } from "../contact-form";
+import {
+  ContactFormGridWithDetails,
+  type ContactFormCopy,
+} from "../contact-form";
 
-export function ContactSection() {
+interface ContactSectionProps {
+  title?: string;
+  description?: string;
+  form?: ContactFormCopy;
+}
+
+export function ContactSection({
+  title = "Contact us",
+  description = "Contact us and let us know how we can help you.",
+  form,
+}: ContactSectionProps) {
   return (
     <section
       id="contact"
@@ -11,13 +24,13 @@ export function ContactSection() {
     >
       <SectionHeader>
         <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
-          Contact us
+          {title}
         </h2>
         <p className="text-muted-foreground text-center text-balance font-medium">
-          Contact us and let us know how we can help you.
+          {description}
         </p>
       </SectionHeader>
-      <ContactFormGridWithDetails />
+      <ContactFormGridWithDetails copy={form} />
     </section>
   );
 }

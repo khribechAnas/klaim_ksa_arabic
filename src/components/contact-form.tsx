@@ -7,7 +7,66 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
 import { submitContactLead } from "@/lib/api";
 
-export function ContactFormGridWithDetails() {
+export interface ContactFormCopy {
+  intro: string;
+  address: string;
+  mapAlt: string;
+  pinLabel: string;
+  labels: {
+    name: string;
+    email: string;
+    phone: string;
+    company: string;
+    message: string;
+  };
+  placeholders: {
+    name: string;
+    email: string;
+    phone: string;
+    company: string;
+    message: string;
+  };
+  validationError: string;
+  successMessage: string;
+  submitError: string;
+  submit: string;
+  submitting: string;
+}
+
+const defaultCopy: ContactFormCopy = {
+  intro:
+    "We are always looking for ways to improve our products and services. Contact us and let us know how we can help you.",
+  address: "Indigo Icon Tower Unit 2705 - Dubai, United Arab Emirates",
+  mapAlt: "world map",
+  pinLabel: "We are here",
+  labels: {
+    name: "Full name *",
+    email: "Email Address *",
+    phone: "Phone Number *",
+    company: "Company *",
+    message: "Message",
+  },
+  placeholders: {
+    name: "John Doe",
+    email: "john@doe.com",
+    phone: "Your Phone Number",
+    company: "Your Company",
+    message: "Type your message here",
+  },
+  validationError: "Please fill in all required fields.",
+  successMessage: "Thank you for contacting us! We'll get back to you soon.",
+  submitError: "Failed to send message. Please try again later.",
+  submit: "Submit",
+  submitting: "Submitting...",
+};
+
+interface ContactFormGridWithDetailsProps {
+  copy?: ContactFormCopy;
+}
+
+export function ContactFormGridWithDetails({
+  copy = defaultCopy,
+}: ContactFormGridWithDetailsProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,7 +86,7 @@ export function ContactFormGridWithDetails() {
     e.preventDefault();
 
     if (!formData.name.trim() || !formData.email.trim() || !formData.company.trim() || !formData.phone.trim()) {
-      setMessage({ type: 'error', text: 'Please fill in all required fields.' });
+      setMessage({ type: 'error', text: copy.validationError });
       return;
     }
 
@@ -44,13 +103,13 @@ export function ContactFormGridWithDetails() {
       });
 
       if (result.success) {
-        setMessage({ type: 'success', text: 'Thank you for contacting us! We\'ll get back to you soon.' });
+        setMessage({ type: 'success', text: copy.successMessage });
         setFormData({ name: "", email: "", company: "", phone: "", message: "" });
       } else {
         setMessage({ type: 'error', text: result.message });
       }
     } catch {
-      setMessage({ type: 'error', text: 'Failed to send message. Please try again later.' });
+      setMessage({ type: 'error', text: copy.submitError });
     } finally {
       setIsSubmitting(false);
     }
@@ -60,14 +119,13 @@ export function ContactFormGridWithDetails() {
     <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 py-10 md:px-12 md:py-20 lg:grid-cols-2">
       <div className="relative flex flex-col items-center overflow-hidden lg:items-start">
         <p className="mt-8 max-w-lg text-center text-base text-neutral-600 md:text-left dark:text-neutral-400">
-          We are always looking for ways to improve our products and services.
-          Contact us and let us know how we can help you.
+          {copy.intro}
         </p>
 
         <div className="mt-10 hidden flex-col items-left gap-4 lg:flex">
           <p className="text-sm text-muted-foreground text-center flex items-center gap-2">
             <MapPin className="h-4 w-4" />
-            Indigo Icon Tower Unit 2705 - Dubai, United Arab Emirates
+            {copy.address}
           </p>
 
           <div className="flex flex-wrap items-center justify-start gap-2 md:gap-4">
@@ -89,13 +147,13 @@ export function ContactFormGridWithDetails() {
           </div>
         </div>
         <div className="div relative mt-20 flex w-[600px] flex-shrink-0 -translate-x-10 items-center justify-center [perspective:800px] [transform-style:preserve-3d] sm:-translate-x-0 lg:-translate-x-32">
-          <Pin className="top-2 right-12" />
+          <Pin className="top-2 right-12" label={copy.pinLabel} />
 
           <Image
             src="/world.svg"
             width={500}
             height={500}
-            alt="world map"
+            alt={copy.mapAlt}
             className="[transform:rotateX(45deg)_translateZ(0px)] dark:invert dark:filter"
           />
         </div>
@@ -107,7 +165,7 @@ export function ContactFormGridWithDetails() {
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
             htmlFor="name"
           >
-            Full name *
+            {copy.labels.name}
           </label>
           <input
             id="name"
@@ -115,7 +173,7 @@ export function ContactFormGridWithDetails() {
             value={formData.name}
             onChange={handleInputChange}
             disabled={isSubmitting}
-            placeholder="John Doe"
+            placeholder={copy.placeholders.name}
             className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
             required
           />
@@ -125,7 +183,7 @@ export function ContactFormGridWithDetails() {
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
             htmlFor="email"
           >
-            Email Address *
+            {copy.labels.email}
           </label>
           <input
             id="email"
@@ -133,7 +191,7 @@ export function ContactFormGridWithDetails() {
             value={formData.email}
             onChange={handleInputChange}
             disabled={isSubmitting}
-            placeholder="john@doe.com"
+            placeholder={copy.placeholders.email}
             className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
             required
           />
@@ -143,7 +201,7 @@ export function ContactFormGridWithDetails() {
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
             htmlFor="phone"
           >
-            Phone Number *
+            {copy.labels.phone}
           </label>
           <input
             id="phone"
@@ -151,7 +209,7 @@ export function ContactFormGridWithDetails() {
             value={formData.phone}
             onChange={handleInputChange}
             disabled={isSubmitting}
-            placeholder="Your Phone Number"
+            placeholder={copy.placeholders.phone}
             className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
             required
           />
@@ -161,7 +219,7 @@ export function ContactFormGridWithDetails() {
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
             htmlFor="company"
           >
-            Company *
+            {copy.labels.company}
           </label>
           <input
             id="company"
@@ -169,7 +227,7 @@ export function ContactFormGridWithDetails() {
             value={formData.company}
             onChange={handleInputChange}
             disabled={isSubmitting}
-            placeholder="Your Company"
+            placeholder={copy.placeholders.company}
             className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
             required
           />
@@ -179,7 +237,7 @@ export function ContactFormGridWithDetails() {
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
             htmlFor="message"
           >
-            Message
+            {copy.labels.message}
           </label>
           <textarea
             id="message"
@@ -187,7 +245,7 @@ export function ContactFormGridWithDetails() {
             value={formData.message}
             onChange={handleInputChange}
             disabled={isSubmitting}
-            placeholder="Type your message here"
+            placeholder={copy.placeholders.message}
             className="shadow-input w-full rounded-md border border-transparent bg-white pt-4 pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           />
         </div>
@@ -208,10 +266,10 @@ export function ContactFormGridWithDetails() {
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Submitting...
+              {copy.submitting}
             </>
           ) : (
-            'Submit'
+            copy.submit
           )}
         </button>
       </form>
@@ -219,7 +277,13 @@ export function ContactFormGridWithDetails() {
   );
 }
 
-const Pin = ({ className }: { className?: string }) => {
+const Pin = ({
+  className,
+  label,
+}: {
+  className?: string;
+  label: string;
+}) => {
   return (
     <motion.div
       style={{ transform: "translateZ(1px)" }}
@@ -230,7 +294,7 @@ const Pin = ({ className }: { className?: string }) => {
     >
       <div className="h-full w-full">
         <div className="absolute inset-x-0 top-0 z-20 mx-auto inline-block w-fit rounded-lg bg-neutral-200 px-2 py-1 text-xs font-normal text-neutral-700 dark:bg-neutral-800 dark:text-white">
-          We are here
+          {label}
           <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-secondary/0 via-secondary/90 to-secondary/0 transition-opacity duration-500"></span>
         </div>
 

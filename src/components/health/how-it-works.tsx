@@ -1,9 +1,18 @@
+"use client";
+
 import { SectionHeader } from "@/components/section-header";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 export function HowItWorks() {
   const t = useTranslations('health.howItWorks');
+  const locale = useLocale();
+  const isRtl = locale === 'ar';
+  const arrowClassName = cn(
+    "transform rotate-90 md:rotate-0",
+    isRtl && "md:scale-x-[-1]"
+  );
 
   return (
     <section
@@ -19,7 +28,7 @@ export function HowItWorks() {
         </p>
       </SectionHeader>
       
-      <div className="w-full h-full md:ml-10 lg:h-[250px] flex items-center justify-center">
+      <div className="w-full h-full md:ms-10 lg:h-[250px] flex items-center justify-center">
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* One-Time Onboarding Section */}
@@ -48,7 +57,7 @@ export function HowItWorks() {
 
               {/* Arrow 1 */}
               <div className="flex items-center md:mt-8">
-                <svg className="transform md:rotate-0 rotate-90" width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className={arrowClassName} width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 5H18M18 5L14 1M18 5L14 9" stroke="#5cc2ac" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
@@ -75,7 +84,7 @@ export function HowItWorks() {
 
               {/* Arrow 2 */}
               <div className="flex items-center md:mt-8">
-                <svg className="transform md:rotate-0 rotate-90" width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className={arrowClassName} width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 5H18M18 5L14 1M18 5L14 9" stroke="#5cc2ac" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
@@ -126,11 +135,11 @@ export function HowItWorks() {
               {/* Middle Arrows - Left and Right */}
               <div className="flex flex-row md:flex-col items-center mt-4 md:mt-8 space-x-2 md:space-x-0 md:space-y-2">
                 {/* Right Arrow */}
-                <svg className="transform rotate-90 md:rotate-0" width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className={arrowClassName} width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 5H18M18 5L14 1M18 5L14 9" stroke="#5cc2ac" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 {/* Left Arrow */}
-                <svg className="transform rotate-90 md:rotate-0" width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className={arrowClassName} width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2 5H20M2 5L6 1M2 5L6 9" stroke="#5cc2ac" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>

@@ -22,6 +22,10 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
   const { lang } = await searchParams;
   const locale = lang === "ar" ? "ar" : "en";
   const messages = (await import(`@/locales/${locale}.json`)).default;
+  const companyShowcaseTitle = messages.health.companyShowcase.title;
+  const testimonials = messages.health.testimonials;
+  const faq = messages.health.faq;
+  const contact = messages.health.contact;
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
@@ -29,21 +33,34 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
         className="flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full"
         dir={locale === "ar" ? "rtl" : "ltr"}
       >
-        <HeroSection />
-        <ProblemSection />
-        <BentoSection />
-        <Banner src="/klaim-healthcare-banner.png" height="xl" />
-        <HowItWorks />
-        <CompanyShowcase />
-        <TestimonialsSection
+        {/* <HeroSection /> */}
+        {/* <ProblemSection /> */}
+        {/* <BentoSection /> */}
+        {/* <Banner src="/klaim-healthcare-banner.png" height="xl" /> */}
+        {/* <HowItWorks /> */}
+        {/* <CompanyShowcase title={companyShowcaseTitle} /> */}
+        {/* <TestimonialsSection
           videoSrc="/testimonials/health-testimonial.MP4"
           thumbnailSrc="/thumbnail.png"
+          title={testimonials.title}
+          description={testimonials.description}
+          testimonials={testimonials.items}
+          thumbnailAlt={testimonials.thumbnailAlt}
+          dotAriaLabel={testimonials.dotAriaLabel}
+        /> */}
+        {/* <ValueProposition /> */}
+        {/* <CTASection /> */}
+        {/* <FAQSection
+          title={faq.title}
+          description={faq.description}
+          items={faq.items}
+        /> */}
+        <ContactSection
+          title={contact.title}
+          description={contact.description}
+          form={contact.form}
         />
-        <ValueProposition />
-        <CTASection />
-        <FAQSection />
-        <ContactSection />
-        <FooterSection />
+        {/* <FooterSection /> */}
       </main>
     </NextIntlClientProvider>
   );

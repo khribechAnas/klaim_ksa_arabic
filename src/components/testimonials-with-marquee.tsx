@@ -16,35 +16,22 @@ interface TestimonialsSectionProps {
   videoSrc: string;
   thumbnailSrc?: string;
   className?: string;
+  title: string;
+  description: string;
+  testimonials: Testimonial[];
+  thumbnailAlt: string;
+  dotAriaLabel: string;
 }
-
-const testimonials: Testimonial[] = [
-  {
-    quote: "Klaim makes it easy for us to run our business. No more waiting for the insurance reimbursement for months.",
-    author: "Anas Walid Chenno",
-    company: "Infiniti Medical Center"
-  },
-  {
-    quote: "Bank turnaround time was too complex and long. Klaim's seamless end to end process took less than a week",
-    author: "Mr. Raj K.V",
-    company: "Life Works Compassionate Health"
-  },
-  {
-    quote: "We started facing some cash flow delays and Klaim came in with an immediate resolution",
-    author: "Dr. Zain Akasier",
-    company: "Al Mazroui Medical Centre"
-  },
-  {
-    quote: "Worrying about payment delays is a thing of the past. Klaim helped us concentrate on the quality of our medical services",
-    author: "Jeslin Saju",
-    company: "Transform Specialist Medical Center"
-  }
-];
 
 export function TestimonialsSection({
   videoSrc,
   thumbnailSrc,
   className,
+  title,
+  description,
+  testimonials,
+  thumbnailAlt,
+  dotAriaLabel,
 }: TestimonialsSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -54,7 +41,7 @@ export function TestimonialsSection({
     }, 5000); // Change quote every 5 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   const currentTestimonial = testimonials[currentIndex];
 
@@ -68,10 +55,10 @@ export function TestimonialsSection({
     >
       <SectionHeader>
         <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance pb-1">
-          What Our Customers Say
+          {title}
         </h2>
         <p className="text-muted-foreground text-center text-balance font-medium">
-          Hear from our customers about their experience with Klaim Health.
+          {description}
         </p>
       </SectionHeader>
 
@@ -82,7 +69,7 @@ export function TestimonialsSection({
             <HeroVideoDialog
               videoSrc={videoSrc}
               thumbnailSrc={thumbnailSrc}
-              thumbnailAlt={`${currentTestimonial.author} testimonial video`}
+              thumbnailAlt={thumbnailAlt}
               animationStyle="from-center"
               className="w-full rounded-xl"
             />
@@ -165,7 +152,7 @@ export function TestimonialsSection({
                       ? "bg-primary scale-125" 
                       : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                   )}
-                  aria-label={`Go to testimonial ${index + 1}`}
+                  aria-label={`${dotAriaLabel} ${index + 1}`}
                 />
               ))}
             </div>
