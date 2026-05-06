@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { useTranslations } from 'next-intl';
 import {
   IconCloud,
   IconCurrencyDollar,
@@ -8,36 +9,32 @@ import {
 } from "@tabler/icons-react";
 
 export function FeaturesSectionDemo() {
+  const t = useTranslations('health');
   const features = [
     {
-      title: "Get up to 90% of claim value in 24h",
-      description:
-        "Fast claim processing with immediate cash flow to keep your practice running smoothly.",
+      title: t('features.0.title'),
+      description: t('features.0.description'),
       icon: <IconCurrencyDollar />,
     },
 
     {
-      title: "Predictable cash flow for smooth operations",
-      description:
-        "Consistent revenue stream allows you to plan ahead and focus on growing your practice.",
+      title: t('features.1.title'),
+      description: t('features.1.description'),
       icon: <IconCloud />,
     },
     {
-      title: "Focus on patient care, not collections",
-      description:
-        "Let us handle the paperwork while you concentrate on what matters most - your patients.",
+      title: t('features.2.title'),
+      description: t('features.2.description'),
       icon: <IconHelp />,
     },
     {
-      title: "AI-powered denial prediction & claim insights",
-      description:
-        "Advanced analytics help prevent denials before they happen and optimize your claims.",
+      title: t('features.3.title'),
+      description: t('features.3.description'),
       icon: <IconTerminal2 />,
     },
     {
-      title: "Zero debt, no collateral, performance-based fees",
-      description:
-        "No upfront costs or hidden fees. You only pay when we successfully collect your claims.",
+      title: t('features.4.title'),
+      description: t('features.4.description'),
       icon: <IconEaseInOut />,
     },
   ];

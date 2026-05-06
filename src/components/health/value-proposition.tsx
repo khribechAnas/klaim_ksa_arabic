@@ -2,8 +2,11 @@
 
 import { SectionHeader } from "@/components/section-header";
 import { ThreeBento } from "./three-bento";
+import { useTranslations } from 'next-intl';
 
 export function ValueProposition() {
+  const t = useTranslations('health.valueProposition');
+
   return (
     <section
       id="bento"
@@ -15,7 +18,7 @@ export function ValueProposition() {
 
         <SectionHeader>
           <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance pb-1">
-            Why Healthcare CFOs & GMs Choose Klaim Health
+            {t('title')}
           </h2>
         </SectionHeader>
 

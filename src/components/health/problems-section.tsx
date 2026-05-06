@@ -4,6 +4,7 @@ import { motion, Variants } from "framer-motion";
 import { Clock, AlertTriangle, DollarSign } from "lucide-react";
 import { SectionHeader } from "@/components/section-header";
 import InfinityLoopDiagram from "@/components/ui/infinity-loop-diagram";
+import { useTranslations } from 'next-intl';
 
 interface ProblemPoint {
   icon: React.ReactNode;
@@ -19,32 +20,36 @@ interface ProblemSectionProps {
 }
 
 export const ProblemSection: React.FC<ProblemSectionProps> = ({
-  headline = "Why is Your Revenue Stuck in Insurance Cycles?",
-  problems = [
+  headline,
+  problems,
+  className = "",
+}) => {
+  const t = useTranslations();
+
+  const defaultHeadline = t('health.problems.headline');
+  const defaultProblems = [
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "Claims take 90-120 days to get paid",
-      description:
-        "Extended payment cycles create cash flow gaps that strain operations",
-      impact: "90-120 days",
+      title: t('health.problems.items.0.title'),
+      description: t('health.problems.items.0.description'),
+      impact: t('health.problems.items.0.impact'),
     },
     {
       icon: <AlertTriangle className="w-6 h-6" />,
-      title: "Denials & delays disrupt cash flow & operations",
-      description:
-        "Unexpected rejections and processing delays compound financial stress",
-      impact: "30-40% denial rate",
+      title: t('health.problems.items.1.title'),
+      description: t('health.problems.items.1.description'),
+      impact: t('health.problems.items.1.impact'),
     },
     {
       icon: <DollarSign className="w-6 h-6" />,
-      title: "Traditional financing adds debt & stress",
-      description:
-        "Conventional loans increase liability without solving the root problem",
-      impact: "High interest burden",
+      title: t('health.problems.items.2.title'),
+      description: t('health.problems.items.2.description'),
+      impact: t('health.problems.items.2.impact'),
     },
-  ],
-  className = "",
-}) => {
+  ];
+
+  const finalHeadline = headline || defaultHeadline;
+  const finalProblems = problems || defaultProblems;
   const [currentProblem, setCurrentProblem] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -53,13 +58,13 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
       if (progress < 100) {
         setProgress((prev) => prev + 100 / 40);
       } else {
-        setCurrentProblem((prev) => (prev + 1) % problems.length);
+        setCurrentProblem((prev) => (prev + 1) % finalProblems.length);
         setProgress(0);
       }
     }, 100);
 
     return () => clearInterval(timer);
-  }, [progress, problems.length]);
+  }, [progress, finalProblems.length]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -88,11 +93,10 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
     >
       <SectionHeader>
         <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance pb-1">
-          {headline}
+          {finalHeadline}
         </h2>
         <p className="text-muted-foreground text-center text-balance font-medium">
-          Healthcare providers face unique cash flow challenges that traditional
-          financing cannot solve
+          {t('health.problems.description')}
         </p>
       </SectionHeader>
 
@@ -105,9 +109,12 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
           {/* Content Section */}
-          <motion.div variants={itemVariants} className="space-y-8 ml-6">
+          <motion.div
+            variants={itemVariants}
+            className="space-y-8 ml-6"
+          >
             <motion.div className="space-y-6" variants={itemVariants}>
-              {problems.map((problem, index) => (
+              {finalProblems.map((problem, index) => (
                 <motion.div
                   key={index}
                   className={`bg-background cursor-default rounded-xl p-5 border border-border hover:shadow-md transition-all duration-300 ${
@@ -145,7 +152,7 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
                             : "text-muted-foreground"
                         }`}
                       >
-                        Impact: {problem.impact}
+                        {t('health.problems.impactLabel')}: {problem.impact}
                       </div>
                     </div>
                   </div>
@@ -155,7 +162,7 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
 
             {/* Progress indicators */}
             <motion.div className="flex gap-2" variants={itemVariants}>
-              {problems.map((_, index) => (
+              {finalProblems.map((_, index) => (
                 <div
                   key={index}
                   className="flex-1 h-1 bg-muted rounded-full overflow-hidden"
@@ -179,7 +186,10 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
           </motion.div>
 
           {/* Visual Section - Infinity Loop Diagram */}
-          <motion.div variants={itemVariants} className="relative">
+          <motion.div
+            variants={itemVariants}
+            className="relative"
+          >
             <div className="relative z-10 bg-background rounded-2xl overflow-hidden border border-border shadow-xl">
               <InfinityLoopDiagram />
             </div>

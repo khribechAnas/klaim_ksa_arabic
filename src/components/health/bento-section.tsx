@@ -2,8 +2,11 @@
 
 import { SectionHeader } from "@/components/section-header";
 import { FeaturesSectionDemo } from "./simple-bento";
+import { useTranslations } from 'next-intl';
 
 export function BentoSection() {
+  const t = useTranslations('health.bento');
+
   return (
     <section
       id="bento"
@@ -15,10 +18,10 @@ export function BentoSection() {
 
         <SectionHeader>
           <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance pb-1">
-            Klaim Health
+            {t('title')}
           </h2>
           <p className="text-muted-foreground text-center text-balance font-medium">
-            Accelerating Your Payments, Predicting Your Cash Flow.
+            {t('description')}
           </p>
         </SectionHeader>
 

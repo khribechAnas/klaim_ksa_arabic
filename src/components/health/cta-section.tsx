@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 export function CTASection() {
+  const t = useTranslations('health.cta');
   const { ctaSection } = siteConfig;
 
   return (
@@ -28,14 +30,14 @@ export function CTASection() {
           <div className="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-12 lg:px-16">
             <div className="max-w-md md:max-w-xl">
               <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter text-left mb-12">
-                Ready to Boost Your Cash Flow Without Taking on Debt?
+                {t('title')}
               </h1>
               <div className="flex flex-col">
                 <Link
                   href="#contact"
                   className="bg-white text-black font-semibold text-sm h-12 w-fit px-6 rounded-full flex items-center justify-center shadow-md hover:bg-gray-100 transition-colors duration-200"
                 >
-                  Get Started
+                  {t('button')}
                 </Link>
                 {/* <span className="text-white/90 text-sm">
                   {ctaSection.subtext}

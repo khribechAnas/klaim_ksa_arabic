@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, easeInOut } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 
 const InfinityLoopDiagram = () => {
+  const t = useTranslations('health.problems.loop');
   const [activeCorner, setActiveCorner] = useState(0);
 
   const Background = () => {
@@ -24,25 +26,25 @@ const InfinityLoopDiagram = () => {
     { 
       id: 0, 
       position: { x: 105, y: 65 },
-      label: "Long commission delays stall momentum",
+      label: t('items.0'),
       color: "teal"
     },
     { 
       id: 1, 
       position: { x: 105, y: 135 },
-      label: "Agents chase payments, instead of closing new deals",
+      label: t('items.1'),
       color: "teal"
     },
     { 
       id: 2, 
       position: { x: 295, y: 65 },
-      label: "Loans come with interest, risk, and red tape",
+      label: t('items.2'),
       color: "purple"
     },
     { 
       id: 3, 
       position: { x: 295, y: 135 },
-      label: "Time lost = Opportunities missed",
+      label: t('items.3'),
       color: "purple"
     }
   ];
@@ -229,10 +231,10 @@ const InfinityLoopDiagram = () => {
             transition={{ delay: 0.5 }}
           >
             <h3 className="text-base md:text-sm lg:text-md font-bold text-foreground mb-1">
-              Cash flow uncertainty
+              {t('center.title')}
             </h3>
             <p className="text-xs md:text-sm text-muted-foreground">
-              hurts growth and reputation
+              {t('center.description')}
             </p>
           </motion.div>
         </div>

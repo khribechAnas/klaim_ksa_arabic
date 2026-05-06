@@ -1,7 +1,10 @@
 import { SectionHeader } from "@/components/section-header";
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 
 export function HowItWorks() {
+  const t = useTranslations('health.howItWorks');
+
   return (
     <section
       id="features"
@@ -9,12 +12,10 @@ export function HowItWorks() {
     >
       <SectionHeader>
         <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
-          How Klaim Health Works
+          {t('title')}
         </h2>
         <p className="text-muted-foreground font-inter text-center text-balance font-medium">
-        Klaim Health makes the process
-seamless, secure, and quick so you can focus on treating
-patients, not chasing claims.
+          {t('description')}
         </p>
       </SectionHeader>
       
@@ -24,7 +25,7 @@ patients, not chasing claims.
           {/* One-Time Onboarding Section */}
           <div className="space-y-8">
             <h3 className="text-2xl font-medium tracking-tight text-primary text-center">
-              One-Time Onboarding
+              {t('onboarding.title')}
             </h3>
             
             <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-6">
@@ -33,14 +34,14 @@ patients, not chasing claims.
                 <div className="w-16 h-16 flex items-center justify-center">
                   <Image 
                     src="/how-it-works/flow/step1.svg" 
-                    alt="Financial Assessment" 
+                    alt={t('onboarding.alt.0')} 
                     width={64} 
                     height={64} 
                   />
                 </div>
                 <div className="text-center max-w-[120px]">
                   <p className="text-sm font-medium text-primary leading-tight">
-                    Financial Assessment
+                    {t('onboarding.steps.0')}
                   </p>
                 </div>
               </div>
@@ -57,17 +58,17 @@ patients, not chasing claims.
                 <div className="w-16 h-16 flex items-center justify-center">
                   <Image 
                     src="/how-it-works/flow/step2.svg" 
-                    alt="RPA Request" 
+                    alt={t('onboarding.alt.1')} 
                     width={64} 
                     height={64} 
                   />
                 </div>
                 <div className="text-center max-w-[120px]">
                   <p className="text-sm font-medium text-primary leading-tight">
-                    RPA Request
+                    {t('onboarding.steps.1')}
                   </p>
                   <p className="text-xs text-muted-foreground leading-tight mt-1">
-                    (Receivables Purchase Agreement)
+                    {t('onboarding.rpaSubtitle')}
                   </p>
                 </div>
               </div>
@@ -84,14 +85,14 @@ patients, not chasing claims.
                 <div className="w-16 h-16 flex items-center justify-center">
                   <Image 
                     src="/how-it-works/health/step3.svg" 
-                    alt="Get your funds" 
+                    alt={t('onboarding.alt.2')} 
                     width={64} 
                     height={64} 
                   />
                 </div>
                 <div className="text-center max-w-[120px]">
                   <p className="text-sm font-medium text-primary leading-tight">
-                    Get your funds in 24 hours  
+                    {t('onboarding.steps.2')}
                   </p>
                 </div>
               </div>
@@ -101,7 +102,7 @@ patients, not chasing claims.
           {/* Ongoing Flow Section */}
           <div className="space-y-8">
             <h3 className="text-2xl font-medium tracking-tight text-primary text-center">
-              Ongoing Flow
+              {t('ongoing.title')}
             </h3>
             
             <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-6">
@@ -110,14 +111,14 @@ patients, not chasing claims.
                 <div className="w-16 h-16 flex items-center justify-center">
                   <Image 
                     src="/how-it-works/flow/ongoing1.svg" 
-                    alt="Share your invoices" 
+                    alt={t('ongoing.alt.0')} 
                     width={64} 
                     height={64} 
                   />
                 </div>
                 <div className="text-center max-w-[120px]">
                   <p className="text-sm font-medium text-primary leading-tight">
-                    Share your invoices
+                    {t('ongoing.steps.0')}
                   </p>
                 </div>
               </div>
@@ -139,14 +140,14 @@ patients, not chasing claims.
                 <div className="w-16 h-16 flex items-center justify-center">
                   <Image 
                     src="/how-it-works/flow/ongoing2.svg" 
-                    alt="Get paid" 
+                    alt={t('ongoing.alt.1')} 
                     width={64} 
                     height={64} 
                   />
                 </div>
                 <div className="text-center max-w-[120px]">
                   <p className="text-sm font-medium text-primary leading-tight">
-                    Get paid in 24 hours
+                    {t('ongoing.steps.1')}
                   </p>
                 </div>
               </div>

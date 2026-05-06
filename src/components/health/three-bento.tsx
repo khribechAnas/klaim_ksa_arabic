@@ -1,24 +1,23 @@
 import { cn } from "@/lib/utils";
+import { useTranslations } from 'next-intl';
 import { IconClock, IconShieldCheck, IconBrain } from "@tabler/icons-react";
 
 export function ThreeBento() {
+  const t = useTranslations('health');
   const features = [
     {
-      title: "Faster Access to Revenue",
-      description:
-        "Get up to 90% of your claim value within 24 hours. No more waiting months for insurance payments.",
+      title: t('valueFeatures.0.title'),
+      description: t('valueFeatures.0.description'),
       icon: <IconClock />,
     },
     {
-      title: "No Debt, No Collateral",
-      description:
-        "You get your money without taking on debt or putting up collateral. Performance-based fees only.",
+      title: t('valueFeatures.1.title'),
+      description: t('valueFeatures.1.description'),
       icon: <IconShieldCheck />,
     },
     {
-      title: "AI-Powered Revenue Protection",
-      description:
-        "Advanced denial prediction technology identifies and prevents claim issues before they impact your revenue.",
+      title: t('valueFeatures.2.title'),
+      description: t('valueFeatures.2.description'),
       icon: <IconBrain />,
     },
   ];

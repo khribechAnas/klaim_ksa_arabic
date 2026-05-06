@@ -1,3 +1,4 @@
+import { NextIntlClientProvider } from "next-intl";
 import { BentoSection } from "@/components/health/bento-section";
 import { CompanyShowcase } from "@/components/sections/company-showcase";
 import { CTASection } from "@/components/health/cta-section";
@@ -11,24 +12,39 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { FooterSection } from "@/components/sections/footer-section";
 import { Banner } from "@/components/ui/banner";
 
-export default function FlowPage() {
+interface HealthPageProps {
+  searchParams: Promise<{
+    lang?: string;
+  }>;
+}
+
+export default async function HealthPage({ searchParams }: HealthPageProps) {
+  const { lang } = await searchParams;
+  const locale = lang === "ar" ? "ar" : "en";
+  const messages = (await import(`@/locales/${locale}.json`)).default;
+
   return (
-    <main className="flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full">
-      <HeroSection />
-      <ProblemSection />
-      <BentoSection />
-      <Banner src="/klaim-healthcare-banner.png" height="xl" />
-      <HowItWorks />
-      <CompanyShowcase />
-      <TestimonialsSection
-        videoSrc="/testimonials/health-testimonial.MP4"
-        thumbnailSrc="/thumbnail.png"
-      />
-      <ValueProposition />
-      <CTASection />
-      <FAQSection />
-      <ContactSection />
-      <FooterSection />
-    </main>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <main
+        className="flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full"
+        dir={locale === "ar" ? "rtl" : "ltr"}
+      >
+        <HeroSection />
+        <ProblemSection />
+        <BentoSection />
+        <Banner src="/klaim-healthcare-banner.png" height="xl" />
+        <HowItWorks />
+        <CompanyShowcase />
+        <TestimonialsSection
+          videoSrc="/testimonials/health-testimonial.MP4"
+          thumbnailSrc="/thumbnail.png"
+        />
+        <ValueProposition />
+        <CTASection />
+        <FAQSection />
+        <ContactSection />
+        <FooterSection />
+      </main>
+    </NextIntlClientProvider>
   );
 }
