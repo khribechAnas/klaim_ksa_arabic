@@ -1,0 +1,122 @@
+{
+  "health": {
+    "hero": {
+      "title": "Tired of chasing Insurance Claims?",
+      "description": "You've treated the patients but your payments are stuck in processing? Klaim Health helps you unlock your pending claims in just 24 hours, so you can focus on care, not cash.",
+      "cta": {
+        "primary": "Get Started",
+        "secondary": "Book a Call"
+      }
+    },
+    "problems": {
+      "headline": "Why is Your Revenue Stuck in Insurance Cycles?",
+      "description": "Healthcare providers face unique cash flow challenges that traditional financing cannot solve",
+      "impactLabel": "Impact",
+      "loop": {
+        "items": [
+          "Long commission delays stall momentum",
+          "Agents chase payments, instead of closing new deals",
+          "Loans come with interest, risk, and red tape",
+          "Time lost = Opportunities missed"
+        ],
+        "center": {
+          "title": "Cash flow uncertainty",
+          "description": "hurts growth and reputation"
+        }
+      },
+      "items": [
+        {
+          "title": "Claims take 90-120 days to get paid",
+          "description": "Extended payment cycles create cash flow gaps that strain operations",
+          "impact": "90-120 days"
+        },
+        {
+          "title": "Denials & delays disrupt cash flow & operations",
+          "description": "Unexpected rejections and processing delays compound financial stress",
+          "impact": "30-40% denial rate"
+        },
+        {
+          "title": "Traditional financing adds debt & stress",
+          "description": "Conventional loans increase liability without solving the root problem",
+          "impact": "High interest burden"
+        }
+      ]
+    },
+    "bento": {
+      "title": "Klaim Health",
+      "description": "Accelerating Your Payments, Predicting Your Cash Flow."
+    },
+    "features": [
+      {
+        "title": "Get up to 90% of claim value in 24h",
+        "description": "Fast claim processing with immediate cash flow to keep your practice running smoothly."
+      },
+      {
+        "title": "Predictable cash flow for smooth operations",
+        "description": "Consistent revenue stream allows you to plan ahead and focus on growing your practice."
+      },
+      {
+        "title": "Focus on patient care, not collections",
+        "description": "Let us handle the paperwork while you concentrate on what matters most - your patients."
+      },
+      {
+        "title": "AI-powered denial prediction & claim insights",
+        "description": "Advanced analytics help prevent denials before they happen and optimize your claims."
+      },
+      {
+        "title": "Zero debt, no collateral, performance-based fees",
+        "description": "No upfront costs or hidden fees. You only pay when we successfully collect your claims."
+      }
+    ],
+    "howItWorks": {
+      "title": "How Klaim Health Works",
+      "description": "Klaim Health makes the process seamless, secure, and quick so you can focus on treating patients, not chasing claims.",
+      "onboarding": {
+        "title": "One-Time Onboarding",
+        "steps": [
+          "Financial Assessment",
+          "RPA Request",
+          "Get your funds in 24 hours"
+        ],
+        "rpaSubtitle": "(Receivables Purchase Agreement)",
+        "alt": [
+          "Financial Assessment",
+          "RPA Request",
+          "Get your funds"
+        ]
+      },
+      "ongoing": {
+        "title": "Ongoing Flow",
+        "steps": [
+          "Share your invoices",
+          "Get paid in 24 hours"
+        ],
+        "alt": [
+          "Share your invoices",
+          "Get paid"
+        ]
+      }
+    },
+    "valueProposition": {
+      "title": "Why Healthcare CFOs & GMs Choose Klaim Health"
+    },
+    "valueFeatures": [
+      {
+        "title": "Faster Access to Revenue",
+        "description": "Get up to 90% of your claim value within 24 hours. No more waiting months for insurance payments."
+      },
+      {
+        "title": "No Debt, No Collateral",
+        "description": "You get your money without taking on debt or putting up collateral. Performance-based fees only."
+      },
+      {
+        "title": "AI-Powered Revenue Protection",
+        "description": "Advanced denial prediction technology identifies and prevents claim issues before they impact your revenue."
+      }
+    ],
+    "cta": {
+      "title": "Ready to Boost Your Cash Flow Without Taking on Debt?",
+      "button": "Get Started"
+    }
+  }
+}
