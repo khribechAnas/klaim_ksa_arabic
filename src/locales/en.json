@@ -223,6 +223,63 @@
         "submit": "Submit",
         "submitting": "Submitting..."
       }
+    },
+    "footer": {
+      "tagline": "Join 200+ business growing with Klaim",
+      "newsletterTitle": "Subscribe to our newsletter",
+      "emailPlaceholder": "Enter your email",
+      "emailAriaLabel": "Email for newsletter",
+      "validationError": "Please enter your email address.",
+      "successMessage": "Thank you for subscribing to our newsletter!",
+      "submitError": "Failed to subscribe. Please try again later.",
+      "gridText": "Get Paid in 24 Hours",
+      "footerLinks": [
+        {
+          "title": "Company",
+          "links": [
+            { "id": 1, "title": "About", "url": "#bento" },
+            { "id": 2, "title": "Contact", "url": "#contact" },
+            { "id": 3, "title": "How Klaim Works", "url": "#features" }
+          ]
+        },
+        {
+          "title": "Sectors",
+          "links": [
+            { "id": 4, "title": "Klaim Flow", "url": "/flow" },
+            { "id": 5, "title": "Klaim Health", "url": "/health" },
+            { "id": 6, "title": "Klaim Estate", "url": "/estate" }
+          ]
+        },
+        {
+          "title": "Resources",
+          "links": [
+            { "id": 7, "title": "FAQ", "url": "#faq" },
+            { "id": 8, "title": "How it Works", "url": "#features" },
+            { "id": 9, "title": "Testimonials", "url": "#testimonials" }
+          ]
+        },
+        {
+          "title": "Legal",
+          "links": [
+            {
+              "id": 10,
+              "title": "Privacy Policy",
+              "items": [
+                { "id": 101, "title": "UAE", "url": "/privacy/uae" },
+                { "id": 102, "title": "KSA", "url": "/privacy/ksa" }
+              ]
+            },
+            {
+              "id": 11,
+              "title": "Terms of Service",
+              "items": [
+                { "id": 111, "title": "UAE", "url": "/terms/uae" },
+                { "id": 112, "title": "KSA", "url": "/terms/ksa" }
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

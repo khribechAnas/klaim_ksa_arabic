@@ -223,6 +223,63 @@
         "submit": "إرسال",
         "submitting": "جارٍ الإرسال..."
       }
+    },
+    "footer": {
+      "tagline": "انضم إلى أكثر من 200 شركة تنمو مع كلايم",
+      "newsletterTitle": "اشترك في نشرتنا البريدية",
+      "emailPlaceholder": "أدخل بريدك الإلكتروني",
+      "emailAriaLabel": "البريد الإلكتروني للنشرة البريدية",
+      "validationError": "يرجى إدخال بريدك الإلكتروني.",
+      "successMessage": "شكرًا لاشتراكك في نشرتنا البريدية!",
+      "submitError": "تعذر الاشتراك. يرجى المحاولة مرة أخرى لاحقًا.",
+      "gridText": "احصل على الدفع خلال 24 ساعة",
+      "footerLinks": [
+        {
+          "title": "الشركة",
+          "links": [
+            { "id": 1, "title": "من نحن", "url": "#bento" },
+            { "id": 2, "title": "تواصل معنا", "url": "#contact" },
+            { "id": 3, "title": "كيف يعمل كلايم", "url": "#features" }
+          ]
+        },
+        {
+          "title": "القطاعات",
+          "links": [
+            { "id": 4, "title": "كلايم فلو", "url": "/flow" },
+            { "id": 5, "title": "كلايم هيلث", "url": "/health" },
+            { "id": 6, "title": "كلايم إستيت", "url": "/estate" }
+          ]
+        },
+        {
+          "title": "الموارد",
+          "links": [
+            { "id": 7, "title": "الأسئلة الشائعة", "url": "#faq" },
+            { "id": 8, "title": "كيف يعمل", "url": "#features" },
+            { "id": 9, "title": "آراء العملاء", "url": "#testimonials" }
+          ]
+        },
+        {
+          "title": "القانوني",
+          "links": [
+            {
+              "id": 10,
+              "title": "سياسة الخصوصية",
+              "items": [
+                { "id": 101, "title": "الإمارات", "url": "/privacy/uae" },
+                { "id": 102, "title": "السعودية", "url": "/privacy/ksa" }
+              ]
+            },
+            {
+              "id": 11,
+              "title": "شروط الخدمة",
+              "items": [
+                { "id": 111, "title": "الإمارات", "url": "/terms/uae" },
+                { "id": 112, "title": "السعودية", "url": "/terms/ksa" }
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

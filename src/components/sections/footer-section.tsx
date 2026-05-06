@@ -11,6 +11,33 @@ import { useState } from "react";
 import { submitNewsletterLead } from "@/lib/api";
 import { cn } from "@/lib/utils";
 
+export interface FooterCopy {
+  tagline: string;
+  newsletterTitle: string;
+  emailPlaceholder: string;
+  emailAriaLabel: string;
+  validationError: string;
+  successMessage: string;
+  submitError: string;
+  gridText: string;
+  footerLinks: Array<{
+    title: string;
+    links: FooterLinkItem[];
+  }>;
+}
+
+const defaultCopy: FooterCopy = {
+  tagline: "Join 200+ business growing with Klaim",
+  newsletterTitle: "Subscribe to our newsletter",
+  emailPlaceholder: "Enter your email",
+  emailAriaLabel: "Email for newsletter",
+  validationError: "Please enter your email address.",
+  successMessage: "Thank you for subscribing to our newsletter!",
+  submitError: "Failed to subscribe. Please try again later.",
+  gridText: "Get Paid in 24 Hours",
+  footerLinks: siteConfig.footerLinks,
+};
+
 function FooterGroupedLinkRow({
   link,
 }: {
@@ -94,7 +121,11 @@ function FooterLinkRow({ link }: { link: FooterLinkItem }) {
   return null;
 }
 
-export function FooterSection() {
+interface FooterSectionProps {
+  copy?: FooterCopy;
+}
+
+export function FooterSection({ copy = defaultCopy }: FooterSectionProps) {
   const tablet = useMediaQuery("(max-width: 1024px)");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -104,7 +135,7 @@ export function FooterSection() {
     e.preventDefault();
     
     if (!email.trim()) {
-      setMessage({ type: 'error', text: 'Please enter your email address.' });
+      setMessage({ type: 'error', text: copy.validationError });
       return;
     }
 
@@ -115,13 +146,13 @@ export function FooterSection() {
       const result = await submitNewsletterLead(email);
       
       if (result.success) {
-        setMessage({ type: 'success', text: 'Thank you for subscribing to our newsletter!' });
+        setMessage({ type: 'success', text: copy.successMessage });
         setEmail("");
       } else {
         setMessage({ type: 'error', text: result.message });
       }
     } catch {
-      setMessage({ type: 'error', text: 'Failed to subscribe. Please try again later.' });
+      setMessage({ type: 'error', text: copy.submitError });
     } finally {
       setIsSubmitting(false);
     }
@@ -150,8 +181,7 @@ export function FooterSection() {
             />
           </Link>
           <p className="tracking-tight text-muted-foreground font-medium">
-            {/* {siteConfig.hero.description} */}
-            Join 200+ business growing with Klaim
+            {copy.tagline}
           </p>
 
           {/* Social Media Icons */}
@@ -192,17 +222,17 @@ export function FooterSection() {
 
           <div className="w-full mt-2">
             <p className="text-sm font-semibold text-primary mb-2">
-              Subscribe to our newsletter
+              {copy.newsletterTitle}
             </p>
             <form onSubmit={handleNewsletterSubmit} className="flex items-center gap-2 mb-4">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
+                placeholder={copy.emailPlaceholder}
                 disabled={isSubmitting}
                 className="w-full px-3 py-2 text-sm border border-border rounded-md focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-background text-foreground placeholder:text-muted-foreground disabled:opacity-50 disabled:cursor-not-allowed"
-                aria-label="Email for newsletter"
+                aria-label={copy.emailAriaLabel}
               />
               <button
                 type="submit"
@@ -229,7 +259,7 @@ export function FooterSection() {
         </div>
         <div className="md:w-1/2 flex flex-col gap-y-5">
           <div className="flex flex-col items-start justify-start md:flex-row md:items-start md:justify-between gap-y-5">
-            {siteConfig.footerLinks.map((column, columnIndex) => (
+            {copy.footerLinks.map((column, columnIndex) => (
               <ul key={columnIndex} className="flex flex-col gap-y-2">
                 <li className="mb-2 text-sm text-secondary font-semibold">
                   {column.title}
@@ -245,9 +275,10 @@ export function FooterSection() {
       <div className="w-full h-48 md:h-64 relative mt-24 z-0 hidden md:block">
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-40%" />
         <div className="absolute inset-0 mx-6">
+      
           <FlickeringGrid
-            text={tablet ? "Klaim" : "Get Paid in 24 Hours"}
-            fontSize={tablet ? 70 : 120}
+            text={tablet ? "Klaim" : copy.gridText}
+            fontSize={tablet ? 50 : 90}
             className="h-full w-full"
             squareSize={1.5}
             gridGap={tablet ? 2 : 3}
