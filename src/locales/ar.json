@@ -281,5 +281,18 @@
         }
       ]
     }
-  }
+   
+  },
+   "navbar": {
+        "home": "الرئيسية",
+        "sectors": "القطاعات",
+        "howItWorks": "كيف يعمل",
+        "contact": "تواصل معنا",
+        "solutions": "الحلول",
+        "faq": "الأسئلة الشائعة",
+        "klaimFlow": "كلايم فلو",
+        "klaimHealth": "كلايم هيلث",
+        "klaimEstate": "كلايم إستيت",
+        "getStarted": "ابدأ"
+        }
 }

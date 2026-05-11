@@ -9,11 +9,13 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { TrackedGetStartedButton } from "@/components/ui/tracked-button";
 import { BUTTON_LOCATIONS } from "@/hooks/use-posthog-tracking";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import enTranslations from "@/locales/en.json";
+import arTranslations from "@/locales/ar.json";
 
 const INITIAL_WIDTH = "70rem";
 const MAX_WIDTH = "800px";
@@ -56,58 +58,78 @@ const drawerMenuVariants = {
 
 export function Navbar() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const locale = searchParams?.get("lang") === "ar" ? "ar" : "en";
+  const messages = locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const isFlowPage = pathname === "/flow";
   const isHealthPage = pathname === "/health";
   const isEstatePage = pathname === "/estate";
   const isMobile = useMediaQuery("(max-width: 768px)");
   const flowNavigation = [
-    { id: 1, name: "Home", href: "#hero" },
+    { id: 1, name: messages.home, href: "#hero" },
     {
       id: 2,
-      name: "Sectors",
+      name: messages.sectors,
       href: "#",
       children: [
-        { name: "Klaim Flow", href: "/flow" },
-        { name: "Klaim Estate", href: "/estate" },
-        { name: "Klaim Health", href: "/health" },
+        { name: messages.klaimFlow, href: "/flow" },
+        { name: messages.klaimEstate, href: "/estate" },
+        { name: messages.klaimHealth, href: "/health" },
       ],
     },
-    { id: 4, name: "How it Works", href: "#features" },
-    { id: 5, name: "Contact", href: "#contact" },
+    { id: 4, name: messages.howItWorks, href: "#features" },
+    { id: 5, name: messages.contact, href: "#contact" },
   ];
 
   const healthNavigation = [
-    { id: 1, name: "Home", href: "#hero" },
+    { id: 1, name: messages.home, href: "#hero" },
     {
       id: 2,
-      name: "Sectors",
+      name: messages.sectors,
       href: "#",
       children: [
-        { name: "Klaim Flow", href: "/flow" },
-        { name: "Klaim Estate", href: "/estate" },
-        { name: "Klaim Health", href: "/health" },
+        { name: messages.klaimFlow, href: "/flow" },
+        { name: messages.klaimEstate, href: "/estate" },
+        { name: messages.klaimHealth, href: "/health" },
       ],
     },
-    { id: 3, name: "Solutions", href: "#bento" },
-    { id: 4, name: "FAQ", href: "#faq" },
-    { id: 5, name: "Contact", href: "#contact" },
+    { id: 3, name: messages.solutions, href: "#bento" },
+    { id: 4, name: messages.faq, href: "#faq" },
+    { id: 5, name: messages.contact, href: "#contact" },
   ];
 
   const estateNavigation = [
-    { id: 1, name: "Home", href: "#hero" },
+    { id: 1, name: messages.home, href: "#hero" },
     {
       id: 2,
-      name: "Sectors",
+      name: messages.sectors,
       href: "#",
       children: [
-        { name: "Klaim Flow", href: "/flow" },
-        { name: "Klaim Estate", href: "/estate" },
-        { name: "Klaim Health", href: "/health" },
+        { name: messages.klaimFlow, href: "/flow" },
+        { name: messages.klaimEstate, href: "/estate" },
+        { name: messages.klaimHealth, href: "/health" },
       ],
     },
-    { id: 3, name: "Solutions", href: "#bento" },
-    { id: 4, name: "FAQ", href: "#faq" },
-    { id: 5, name: "Contact", href: "#contact" },
+    { id: 3, name: messages.solutions, href: "#bento" },
+    { id: 4, name: messages.faq, href: "#faq" },
+    { id: 5, name: messages.contact, href: "#contact" },
+  ];
+
+  const defaultNavigation = [
+    { id: 1, name: messages.home, href: "#hero" },
+    {
+      id: 2,
+      name: messages.sectors,
+      href: "#",
+      children: [
+        { name: messages.klaimFlow, href: "/flow" },
+        { name: messages.klaimEstate, href: "/estate" },
+        { name: messages.klaimHealth, href: "/health" },
+      ],
+    },
+    { id: 3, name: messages.howItWorks, href: "#features" },
+    { id: 4, name: messages.faq, href: "#faq" },
+    { id: 5, name: messages.contact, href: "#contact" },
   ];
 
   const navigationItems = isFlowPage
@@ -116,7 +138,7 @@ export function Navbar() {
     ? healthNavigation
     : isEstatePage
     ? estateNavigation
-    : siteConfig.nav.links;
+    : defaultNavigation;
 
   const { scrollY } = useScroll();
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -526,3 +548,5 @@ export function Navbar() {
     </header>
   );
 }
+
+

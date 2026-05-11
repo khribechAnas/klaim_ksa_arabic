@@ -1,5 +1,5 @@
 {
-  "health": {
+"health": {
     "hero": {
       "title": "Tired of chasing Insurance Claims?",
       "description": "You've treated the patients but your payments are stuck in processing? Klaim Health helps you unlock your pending claims in just 24 hours, so you can focus on care, not cash.",
@@ -281,5 +281,17 @@
         }
       ]
     }
-  }
+},
+"navbar": {
+        "home": "Home",
+        "sectors": "Sectors",
+        "howItWorks": "How it Works",
+        "contact": "Contact",
+        "solutions": "Solutions",
+        "faq": "FAQ",
+        "klaimFlow": "Klaim Flow",
+        "klaimHealth": "Klaim Health",
+        "klaimEstate": "Klaim Estate",
+        "getStarted": "Get Started"
+}
 }

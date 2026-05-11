@@ -8,6 +8,9 @@ import "./globals.css";
 import { PostHogProvider } from "@/components/PostHogProvider";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+
 export const viewport: Viewport = {
   themeColor: "black",
 };
@@ -21,35 +24,44 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params: { locale }
+}: {
   children: React.ReactNode;
-}>) {
+  params: { locale: string };
+}) {
+  const messages = await getMessages();
+
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-KWKV399D";
   const ga4MeasurementId =
     process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || "G-ZDR00YYTN0";
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale ?? "en"} suppressHydrationWarning>
       <body
         className={`${parkinsans.variable} ${inter.variable} antialiased font-sans bg-background`}
       >
         <PostHogProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="max-w-7xl mx-auto border-x relative">
-              <div className="block w-px h-full border-l border-border absolute top-0 left-6 z-10"></div>
-              <div className="block w-px h-full border-r border-border absolute top-0 right-6 z-10"></div>
-              <Navbar />
-              {children}
-            </div>
-          </ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <div className="max-w-7xl mx-auto border-x relative">
+                <div className="block w-px h-full border-l border-border absolute top-0 left-6 z-10"></div>
+                <div className="block w-px h-full border-r border-border absolute top-0 right-6 z-10"></div>
+
+                <Navbar />
+
+                {children}
+              </div>
+            </ThemeProvider>
+          </NextIntlClientProvider>
         </PostHogProvider>
+
         <GoogleTagManager gtmId={gtmId} />
         <GoogleAnalytics gaId={ga4MeasurementId} />
       </body>

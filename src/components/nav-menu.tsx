@@ -17,9 +17,9 @@ const navs: NavItem[] = siteConfig.nav.links;
 
 // Icons for the sector items
 const sectorIcons = {
-  "Klaim Flow": Briefcase,
-  "Klaim Estate": Home,
-  "Klaim Health": Building2,
+  "/flow": Briefcase,
+  "/estate": Home,
+  "/health": Building2,
 };
 
 export function NavMenu({
@@ -179,10 +179,9 @@ export function NavMenu({
                       <div className="w-max h-full p-4">
                         <div className="flex flex-col space-y-4 text-sm">
                           {item.children.map((child) => {
-                            const IconComponent =
-                              sectorIcons[
-                                child.name as keyof typeof sectorIcons
-                              ];
+                            const IconComponent = sectorIcons[
+                              child.href as keyof typeof sectorIcons
+                            ];
                             return (
                               <a
                                 key={child.name}
