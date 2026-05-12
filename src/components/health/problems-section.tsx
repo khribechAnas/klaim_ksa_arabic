@@ -4,7 +4,7 @@ import { motion, Variants } from "framer-motion";
 import { Clock, AlertTriangle, DollarSign } from "lucide-react";
 import { SectionHeader } from "@/components/section-header";
 import InfinityLoopDiagram from "@/components/ui/infinity-loop-diagram";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 interface ProblemPoint {
   icon: React.ReactNode;
@@ -25,6 +25,8 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
   className = "",
 }) => {
   const t = useTranslations();
+  const locale = useLocale();
+  const isRtl = locale === "ar";
 
   const defaultHeadline = t('health.problems.headline');
   const defaultProblems = [
@@ -111,7 +113,7 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
           {/* Content Section */}
           <motion.div
             variants={itemVariants}
-            className="space-y-8 ml-6"
+            className={`space-y-8 ${isRtl ? "lg:-translate-x-4" : "ml-6"}`}
           >
             <motion.div className="space-y-6" variants={itemVariants}>
               {finalProblems.map((problem, index) => (
@@ -128,9 +130,11 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="flex items-center">
+                  <div className={`flex items-center ${isRtl ? "gap-4" : ""}`}>
                     <div
-                      className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 transition-colors duration-300 ${
+                      className={`w-12 h-12 rounded-lg flex items-center justify-center transition-colors duration-300 ${
+                        isRtl ? "shrink-0" : "mr-4"
+                      } ${
                         index === currentProblem
                           ? "bg-secondary/20 text-secondary"
                           : "bg-accent/50 text-primary"
@@ -138,7 +142,7 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
                     >
                       {problem.icon}
                     </div>
-                    <div className="flex-1">
+                    <div className={`flex-1 ${isRtl ? "min-w-0 text-start" : ""}`}>
                       <h4 className="font-medium font-poppins text-primary text-md mb-1">
                         {problem.title}
                       </h4>
