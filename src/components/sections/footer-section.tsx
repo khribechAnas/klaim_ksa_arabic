@@ -10,6 +10,7 @@ import { SendHorizonal, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { submitNewsletterLead } from "@/lib/api";
 import { cn } from "@/lib/utils";
+import { useLocale } from "next-intl";
 
 export interface FooterCopy {
   tagline: string;
@@ -126,6 +127,8 @@ interface FooterSectionProps {
 }
 
 export function FooterSection({ copy = defaultCopy }: FooterSectionProps) {
+  const locale = useLocale();
+  const isRtl = locale === "ar";
   const tablet = useMediaQuery("(max-width: 1024px)");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -242,7 +245,9 @@ export function FooterSection({ copy = defaultCopy }: FooterSectionProps) {
                 {isSubmitting ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
                 ) : (
-                  <SendHorizonal className="h-4 w-4" />
+                  <SendHorizonal
+                    className={cn("h-4 w-4", isRtl && "rotate-180")}
+                  />
                 )}
               </button>
             </form>
