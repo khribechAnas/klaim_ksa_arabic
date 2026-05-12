@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
 import { submitContactLead } from "@/lib/api";
+import { useLocale } from "next-intl";
 
 export interface ContactFormCopy {
   intro: string;
@@ -67,6 +68,8 @@ interface ContactFormGridWithDetailsProps {
 export function ContactFormGridWithDetails({
   copy = defaultCopy,
 }: ContactFormGridWithDetailsProps) {
+  const locale = useLocale();
+  const isRtl = locale === "ar";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -117,33 +120,67 @@ export function ContactFormGridWithDetails({
 
   return (
     <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 py-10 md:px-12 md:py-20 lg:grid-cols-2">
-      <div className="relative flex flex-col items-center overflow-hidden lg:items-start">
-        <p className="mt-8 max-w-lg text-center text-base text-neutral-600 md:text-left dark:text-neutral-400">
+      <div
+        className={cn(
+          "relative flex flex-col items-center overflow-hidden",
+          isRtl ? "lg:items-end" : "lg:items-start"
+        )}
+      >
+        <p
+          dir={isRtl ? "rtl" : "ltr"}
+          className={cn(
+            "mt-8 max-w-lg text-center text-base text-neutral-600 dark:text-neutral-400",
+            isRtl ? "md:text-right" : "md:text-left"
+          )}
+        >
           {copy.intro}
         </p>
 
-        <div className="mt-10 hidden flex-col items-left gap-4 lg:flex">
-          <p className="text-sm text-muted-foreground text-center flex items-center gap-2">
-            <MapPin className="h-4 w-4" />
-            {copy.address}
+        <div
+          className={cn(
+            "mt-10 hidden w-full max-w-lg flex-col gap-4 lg:flex",
+            isRtl ? "self-end items-end text-right" : "self-start items-start text-left"
+          )}
+        >
+          <p
+            dir={isRtl ? "rtl" : "ltr"}
+            className={cn(
+              "flex w-full items-center gap-2 text-sm text-muted-foreground",
+              isRtl ? "justify-start text-right" : "justify-start text-left"
+            )}
+          >
+            <MapPin className="h-4 w-4 shrink-0" />
+            <span>{copy.address}</span>
           </p>
 
-          <div className="flex flex-wrap items-center justify-start gap-2 md:gap-4">
-            <Mail className="h-4 w-4" />
-            <p className="text-sm text-muted-foreground">hello@klaim.ai</p>
+          <div
+            dir={isRtl ? "rtl" : "ltr"}
+            className={cn(
+              "flex w-full flex-wrap items-center gap-2 md:gap-4",
+              isRtl ? "justify-start text-right" : "justify-start text-left"
+            )}
+          >
+            <Mail className="h-4 w-4 shrink-0" />
+            <p className="text-sm text-muted-foreground" dir="ltr">hello@klaim.ai</p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground">helloksa@klaim.ai</p>
+            <p className="text-sm text-muted-foreground" dir="ltr">helloksa@klaim.ai</p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground">hellooman@klaim.ai</p>
+            <p className="text-sm text-muted-foreground" dir="ltr">hellooman@klaim.ai</p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-start gap-2 md:gap-4">
-            <Phone className="h-4 w-4" />
-            <p className="text-sm text-muted-foreground">+971 4 876 4096</p>
+          <div
+            dir={isRtl ? "rtl" : "ltr"}
+            className={cn(
+              "flex w-full flex-wrap items-center gap-2 md:gap-4",
+              isRtl ? "justify-start text-right" : "justify-start text-left"
+            )}
+          >
+            <Phone className="h-4 w-4 shrink-0" />
+            <p className="text-sm text-muted-foreground" dir="ltr">+971 4 876 4096</p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground">+966 568 154 527</p>
+            <p className="text-sm text-muted-foreground" dir="ltr">+966 568 154 527</p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground">+968 7 173 4424</p>
+            <p className="text-sm text-muted-foreground" dir="ltr">+968 7 173 4424</p>
           </div>
         </div>
         <div className="div relative mt-20 flex w-[600px] flex-shrink-0 -translate-x-10 items-center justify-center [perspective:800px] [transform-style:preserve-3d] sm:-translate-x-0 lg:-translate-x-32">
@@ -158,11 +195,21 @@ export function ContactFormGridWithDetails({
           />
         </div>
       </div>
-      <form onSubmit={handleSubmit} className="relative mx-auto flex w-full max-w-2xl flex-col items-start gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-gray-100 to-gray-200 p-4 sm:p-10 dark:from-neutral-900 dark:to-neutral-950">
+      <form
+        onSubmit={handleSubmit}
+        dir={isRtl ? "rtl" : "ltr"}
+        className={cn(
+          "relative mx-auto flex w-full max-w-2xl flex-col gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-gray-100 to-gray-200 p-4 sm:p-10 dark:from-neutral-900 dark:to-neutral-950",
+          isRtl ? "items-end" : "items-start"
+        )}
+      >
         <Grid size={20} />
         <div className="relative z-20 mb-4 w-full">
           <label
-            className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
+            className={cn(
+              "mb-2 inline-block w-full text-sm font-medium text-neutral-600 dark:text-neutral-300",
+              isRtl ? "text-right" : "text-left"
+            )}
             htmlFor="name"
           >
             {copy.labels.name}
@@ -174,13 +221,19 @@ export function ContactFormGridWithDetails({
             onChange={handleInputChange}
             disabled={isSubmitting}
             placeholder={copy.placeholders.name}
-            className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            className={cn(
+              "shadow-input h-10 w-full rounded-md border border-transparent bg-white text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed",
+              isRtl ? "pr-4 text-right" : "pl-4 text-left"
+            )}
             required
           />
         </div>
         <div className="relative z-20 mb-4 w-full">
           <label
-            className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
+            className={cn(
+              "mb-2 inline-block w-full text-sm font-medium text-neutral-600 dark:text-neutral-300",
+              isRtl ? "text-right" : "text-left"
+            )}
             htmlFor="email"
           >
             {copy.labels.email}
@@ -192,13 +245,19 @@ export function ContactFormGridWithDetails({
             onChange={handleInputChange}
             disabled={isSubmitting}
             placeholder={copy.placeholders.email}
-            className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            className={cn(
+              "shadow-input h-10 w-full rounded-md border border-transparent bg-white text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed",
+              isRtl ? "pr-4 text-right" : "pl-4 text-left"
+            )}
             required
           />
         </div>
         <div className="relative z-20 mb-4 w-full">
           <label
-            className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
+            className={cn(
+              "mb-2 inline-block w-full text-sm font-medium text-neutral-600 dark:text-neutral-300",
+              isRtl ? "text-right" : "text-left"
+            )}
             htmlFor="phone"
           >
             {copy.labels.phone}
@@ -210,13 +269,19 @@ export function ContactFormGridWithDetails({
             onChange={handleInputChange}
             disabled={isSubmitting}
             placeholder={copy.placeholders.phone}
-            className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            className={cn(
+              "shadow-input h-10 w-full rounded-md border border-transparent bg-white text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed",
+              isRtl ? "pr-4 text-right" : "pl-4 text-left"
+            )}
             required
           />
         </div>
         <div className="relative z-20 mb-4 w-full">
           <label
-            className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
+            className={cn(
+              "mb-2 inline-block w-full text-sm font-medium text-neutral-600 dark:text-neutral-300",
+              isRtl ? "text-right" : "text-left"
+            )}
             htmlFor="company"
           >
             {copy.labels.company}
@@ -228,13 +293,19 @@ export function ContactFormGridWithDetails({
             onChange={handleInputChange}
             disabled={isSubmitting}
             placeholder={copy.placeholders.company}
-            className="shadow-input h-10 w-full rounded-md border border-transparent bg-white pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            className={cn(
+              "shadow-input h-10 w-full rounded-md border border-transparent bg-white text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed",
+              isRtl ? "pr-4 text-right" : "pl-4 text-left"
+            )}
             required
           />
         </div>
         <div className="relative z-20 mb-4 w-full">
           <label
-            className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
+            className={cn(
+              "mb-2 inline-block w-full text-sm font-medium text-neutral-600 dark:text-neutral-300",
+              isRtl ? "text-right" : "text-left"
+            )}
             htmlFor="message"
           >
             {copy.labels.message}
@@ -246,7 +317,10 @@ export function ContactFormGridWithDetails({
             onChange={handleInputChange}
             disabled={isSubmitting}
             placeholder={copy.placeholders.message}
-            className="shadow-input w-full rounded-md border border-transparent bg-white pt-4 pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            className={cn(
+              "shadow-input w-full rounded-md border border-transparent bg-white pt-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed",
+              isRtl ? "pr-4 text-right" : "pl-4 text-left"
+            )}
           />
         </div>
         {message && (
