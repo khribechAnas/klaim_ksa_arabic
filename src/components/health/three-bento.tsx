@@ -1,9 +1,11 @@
 import { cn } from "@/lib/utils";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { IconClock, IconShieldCheck, IconBrain } from "@tabler/icons-react";
 
 export function ThreeBento() {
   const t = useTranslations('health');
+  const locale = useLocale();
+  const isRtl = locale === "ar";
   const features = [
     {
       title: t('valueFeatures.0.title'),
@@ -31,6 +33,7 @@ export function ThreeBento() {
             key={feature.title}
             {...feature}
             isLast={index === features.length - 1}
+            isRtl={isRtl}
           />
         ))}
       </div>
@@ -43,11 +46,13 @@ const Feature = ({
   description,
   icon,
   isLast,
+  isRtl,
 }: {
   title: string;
   description: string;
   icon: React.ReactNode;
   isLast: boolean;
+  isRtl: boolean;
 }) => {
   return (
     <div
@@ -63,8 +68,20 @@ const Feature = ({
 
       {/* Title */}
       <div className="font-semibold mb-4 relative z-10 text-foreground text-xl">
-        <div className="absolute -left-2 inset-y-0 w-1 rounded-full bg-transparent group-hover/feature:bg-secondary transition-all duration-300" />
-        <span className="group-hover/feature:translate-x-2 transition-all duration-300 inline-block">
+        <div
+          className={cn(
+            "absolute inset-y-0 w-1 rounded-full bg-transparent group-hover/feature:bg-secondary transition-all duration-300",
+            isRtl ? "-right-2" : "-left-2"
+          )}
+        />
+        <span
+          className={cn(
+            "transition-all duration-300 inline-block",
+            isRtl
+              ? "group-hover/feature:-translate-x-2"
+              : "group-hover/feature:translate-x-2"
+          )}
+        >
           {title}
         </span>
       </div>

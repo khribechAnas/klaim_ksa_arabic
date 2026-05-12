@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import {
   IconCloud,
   IconCurrencyDollar,
@@ -10,6 +10,8 @@ import {
 
 export function FeaturesSectionDemo() {
   const t = useTranslations('health');
+  const locale = useLocale();
+  const isRtl = locale === "ar";
   const features = [
     {
       title: t('features.0.title'),
@@ -44,14 +46,14 @@ export function FeaturesSectionDemo() {
       {/* Top 3 items */}
       <div className="grid grid-cols-1 border-b border-border md:grid-cols-3 gap-px   overflow-hidden mb-px">
         {features.slice(0, 3).map((feature) => (
-          <Feature key={feature.title} {...feature} isTopRow={true} />
+          <Feature key={feature.title} {...feature} isTopRow={true} isRtl={isRtl} />
         ))}
       </div>
 
       {/* Bottom 2 items (larger) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px  overflow-hidden">
         {features.slice(3, 5).map((feature) => (
-          <Feature key={feature.title} {...feature} isTopRow={false} />
+          <Feature key={feature.title} {...feature} isTopRow={false} isRtl={isRtl} />
         ))}
       </div>
     </div>
@@ -63,11 +65,13 @@ const Feature = ({
   description,
   icon,
   isTopRow,
+  isRtl,
 }: {
   title: string;
   description: string;
   icon: React.ReactNode;
   isTopRow: boolean;
+  isRtl: boolean;
 }) => {
   return (
     <div
@@ -93,8 +97,20 @@ const Feature = ({
           isTopRow ? "text-xl" : "text-2xl"
         )}
       >
-        <div className="absolute -left-2 inset-y-0 w-1 rounded-full bg-transparent group-hover/feature:bg-secondary transition-all duration-300" />
-        <span className="group-hover/feature:translate-x-2 transition-all duration-300 inline-block">
+        <div
+          className={cn(
+            "absolute inset-y-0 w-1 rounded-full bg-transparent group-hover/feature:bg-secondary transition-all duration-300",
+            isRtl ? "-right-2" : "-left-2"
+          )}
+        />
+        <span
+          className={cn(
+            "transition-all duration-300 inline-block",
+            isRtl
+              ? "group-hover/feature:-translate-x-2"
+              : "group-hover/feature:translate-x-2"
+          )}
+        >
           {title}
         </span>
       </div>
