@@ -65,6 +65,9 @@ export function Navbar() {
   const isHealthPage = pathname === "/health";
   const isEstatePage = pathname === "/estate";
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const healthLogoSrc = locale === "ar" ? "/Klaimksa.png" : "/klaim-health.png";
+  const healthLogoWidth = locale === "ar" ? (isMobile ? 70 : 130) : isMobile ? 170 : 250;
+  const mobileHealthLogoWidth = locale === "ar" ? 46 : 150;
   const flowNavigation = [
     { id: 1, name: messages.home, href: "#hero" },
     {
@@ -232,7 +235,7 @@ export function Navbar() {
                   isFlowPage
                     ? "/klaimflow.png"
                     : isHealthPage
-                    ? "/klaim-health.png"
+                    ? healthLogoSrc
                     : isEstatePage
                     ? "/klaim-estate.png"
                     : "/logo-dark.svg"
@@ -247,7 +250,9 @@ export function Navbar() {
                     : "Klaim"
                 }
                 width={
-                  (isFlowPage || isHealthPage || isEstatePage)
+                  isHealthPage
+                    ? healthLogoWidth
+                    : (isFlowPage || isEstatePage)
                     ? isMobile
                       ? 170
                       : 250
@@ -263,7 +268,7 @@ export function Navbar() {
                   isFlowPage
                     ? "/klaimflow.png"
                     : isHealthPage
-                    ? "/klaim-health.png"
+                    ? healthLogoSrc
                     : isEstatePage
                     ? "/klaim-estate.png"
                     : "/logo-white.svg"
@@ -278,7 +283,9 @@ export function Navbar() {
                     : "Klaim"
                 }
                 width={
-                  (isFlowPage || isHealthPage || isEstatePage)
+                  isHealthPage
+                    ? healthLogoWidth
+                    : (isFlowPage || isEstatePage)
                     ? isMobile
                       ? 170
                       : 250
@@ -371,7 +378,7 @@ export function Navbar() {
                         isFlowPage
                           ? "/klaimflow.png"
                           : isHealthPage
-                          ? "/klaim-health.png"
+                          ? healthLogoSrc
                           : isEstatePage
                           ? "/klaim-estate.png"
                           : "/logo-dark.svg"
@@ -385,7 +392,7 @@ export function Navbar() {
                           ? "Klaim Estate"
                           : "Klaim"
                       }
-                      width={isFlowPage ? 130 : isHealthPage ? 150 : 120}
+                      width={isFlowPage ? 130 : isHealthPage ? mobileHealthLogoWidth : 120}
                       height={120}
                       quality={100}
                       style={{ objectFit: "contain" }}
@@ -396,7 +403,7 @@ export function Navbar() {
                         isFlowPage
                           ? "/klaimflow.png"
                           : isHealthPage
-                          ? "/klaim-health.png"
+                          ? healthLogoSrc
                           : isEstatePage
                           ? "/klaim-estate.png"
                           : "/logo-white.svg"
@@ -410,7 +417,7 @@ export function Navbar() {
                           ? "Klaim Estate"
                           : "Klaim"
                       }
-                      width={isFlowPage ? 130 : isHealthPage ? 150 : 120}
+                      width={isFlowPage ? 130 : isHealthPage ? mobileHealthLogoWidth : 120}
                       height={120}
                       quality={100}
                       style={{ objectFit: "contain" }}
