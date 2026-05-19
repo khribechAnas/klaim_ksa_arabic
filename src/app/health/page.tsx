@@ -37,7 +37,7 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
         <HeroSection />
         <ProblemSection />
         <BentoSection />
-        <Banner src="/klaim-healthcare-banner.png" height="xl" />
+        <Banner src="/klaim-healthcare-banner-arabic.png" height="xl" />
         <HowItWorks />
         <CompanyShowcase title={companyShowcaseTitle} />
         <TestimonialsSection
@@ -49,7 +49,7 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
           thumbnailAlt={testimonials.thumbnailAlt}
           dotAriaLabel={testimonials.dotAriaLabel}
         />
-        <ValueProposition />
+        <ValueProposition /> 
         <CTASection />
         <FAQSection
           title={faq.title}
