@@ -24,8 +24,10 @@ const sectorIcons = {
 
 export function NavMenu({
   navigationItems = navs,
+  isRTL = false,
 }: {
   navigationItems?: NavItem[];
+  isRTL?: boolean;
 }) {
   const ref = useRef<HTMLUListElement>(null);
   const [left, setLeft] = useState(0);
@@ -35,25 +37,44 @@ export function NavMenu({
   const [isManualScroll, setIsManualScroll] = useState(false);
   const [hoveredDropdown, setHoveredDropdown] = useState<string | null>(null);
 
-  React.useEffect(() => {
-    // Initialize with first nav item
-    const firstItem = ref.current?.querySelector(
-      `[href="#${navigationItems[0].href.substring(1)}"]`
+  const getSectionItems = React.useCallback(
+    () =>
+      navigationItems.filter(
+        (item) => item.href.startsWith("#") && item.href.length > 1
+      ),
+    [navigationItems]
+  );
+
+  const updateIndicator = React.useCallback((section: string) => {
+    const navList = ref.current;
+    const navItem = navList?.querySelector(
+      `[href="#${section}"]`
     )?.parentElement;
-    if (firstItem) {
-      const rect = firstItem.getBoundingClientRect();
-      setLeft(firstItem.offsetLeft);
-      setWidth(rect.width);
-      setIsReady(true);
+
+    if (!navList || !navItem) return;
+
+    const listRect = navList.getBoundingClientRect();
+    const itemRect = navItem.getBoundingClientRect();
+
+    setLeft(itemRect.left - listRect.left);
+    setWidth(itemRect.width);
+    setIsReady(true);
+  }, []);
+
+  React.useEffect(() => {
+    const firstSection = getSectionItems()[0]?.href.substring(1);
+    if (firstSection) {
+      setActiveSection(firstSection);
+      updateIndicator(firstSection);
     }
-  }, [navigationItems]);
+  }, [getSectionItems, updateIndicator, isRTL]);
 
   React.useEffect(() => {
     const handleScroll = () => {
       // Skip scroll handling during manual click scrolling
       if (isManualScroll) return;
 
-      const sections = navigationItems.map((item) => item.href.substring(1));
+      const sections = getSectionItems().map((item) => item.href.substring(1));
 
       // Find the section closest to viewport top
       let closestSection = sections[0];
@@ -73,20 +94,17 @@ export function NavMenu({
 
       // Update active section and nav indicator
       setActiveSection(closestSection);
-      const navItem = ref.current?.querySelector(
-        `[href="#${closestSection}"]`
-      )?.parentElement;
-      if (navItem) {
-        const rect = navItem.getBoundingClientRect();
-        setLeft(navItem.offsetLeft);
-        setWidth(rect.width);
-      }
+      updateIndicator(closestSection);
     };
 
+    window.addEventListener("resize", handleScroll);
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isManualScroll, navigationItems]);
+    return () => {
+      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [getSectionItems, isManualScroll, updateIndicator]);
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -110,12 +128,7 @@ export function NavMenu({
 
       // Immediately update nav state
       setActiveSection(targetId);
-      const navItem = e.currentTarget.parentElement;
-      if (navItem) {
-        const rect = navItem.getBoundingClientRect();
-        setLeft(navItem.offsetLeft);
-        setWidth(rect.width);
-      }
+      updateIndicator(targetId);
 
       // Calculate exact scroll position
       const elementPosition = element.getBoundingClientRect().top;
@@ -130,12 +143,13 @@ export function NavMenu({
       // Reset manual scroll flag after animation completes
       setTimeout(() => {
         setIsManualScroll(false);
+        updateIndicator(targetId);
       }, 500); // Adjust timing to match scroll animation duration
     }
   };
 
   return (
-    <div className="w-full hidden md:block">
+    <div className="w-full hidden md:block" dir={isRTL ? "rtl" : "ltr"}>
       <ul
         className="relative mx-auto flex w-fit rounded-full h-11 px-2 items-center justify-center"
         ref={ref}
@@ -175,7 +189,12 @@ export function NavMenu({
                     }}
                     className="absolute top-[calc(100%_+_0.5rem)] left-1/2 transform -translate-x-1/2  z-50"
                   >
-                    <div className="bg-background dark:bg-background backdrop-blur-sm rounded-2xl overflow-hidden border border-border shadow-xl">
+                    <div
+                      className={cn(
+                        "bg-background dark:bg-background backdrop-blur-sm rounded-2xl overflow-hidden border border-border shadow-xl",
+                        isRTL && "text-right"
+                      )}
+                    >
                       <div className="w-max h-full p-4">
                         <div className="flex flex-col space-y-4 text-sm">
                           {item.children.map((child) => {
@@ -186,7 +205,10 @@ export function NavMenu({
                               <a
                                 key={child.name}
                                 href={child.href}
-                                className="flex items-center space-x-2 text-primary/60 hover:text-primary transition-colors"
+                                className={cn(
+                                  "flex items-center gap-2 text-primary/60 hover:text-primary transition-colors",
+                                  isRTL && "justify-end"
+                                )}
                                 onClick={() => setHoveredDropdown(null)}
                               >
                                 {IconComponent && (
@@ -209,7 +231,7 @@ export function NavMenu({
           <motion.li
             animate={{ left, width }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="absolute inset-0 my-1.5 rounded-full bg-accent/60 border border-border"
+            className="absolute inset-y-0 left-0 my-1.5 rounded-full bg-accent/60 border border-border"
           />
         )}
       </ul>

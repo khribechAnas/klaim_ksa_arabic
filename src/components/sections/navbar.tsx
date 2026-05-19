@@ -60,12 +60,13 @@ export function Navbar() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const locale = searchParams?.get("lang") === "ar" ? "ar" : "en";
+  const isRTL = locale === "ar";
   const messages = locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const isFlowPage = pathname === "/flow";
   const isHealthPage = pathname === "/health";
   const isEstatePage = pathname === "/estate";
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const healthLogoSrc = locale === "ar" ? "/Klaimksa.png" : "/klaim-health.png";
+  const healthLogoSrc = locale === "ar" ? "/klaimksa.png" : "/klaim-health.png";
   const healthLogoWidth = locale === "ar" ? (isMobile ? 70 : 130) : isMobile ? 170 : 250;
   const mobileHealthLogoWidth = locale === "ar" ? 46 : 150;
   const flowNavigation = [
@@ -210,6 +211,7 @@ export function Navbar() {
 
   return (
     <header
+      dir={isRTL ? "rtl" : "ltr"}
       className={cn(
         "sticky z-50 mx-4 flex justify-center transition-all duration-300 md:mx-0",
         hasScrolled ? "top-6" : "top-4 mx-0"
@@ -302,7 +304,7 @@ export function Navbar() {
               />
             </Link>
 
-            <NavMenu navigationItems={navigationItems} />
+            <NavMenu navigationItems={navigationItems} isRTL={isRTL} />
 
             <div className="flex flex-row items-center gap-1 md:gap-3 shrink-0">
               <div className="flex items-center space-x-6">
@@ -363,7 +365,11 @@ export function Navbar() {
             />
 
             <motion.div
-              className="fixed inset-x-0 w-[95%] mx-auto bottom-3 bg-background border border-border p-4 rounded-xl shadow-lg"
+              dir={isRTL ? "rtl" : "ltr"}
+              className={cn(
+                "fixed inset-x-0 w-[95%] mx-auto bottom-3 bg-background border border-border p-4 rounded-xl shadow-lg",
+                isRTL && "text-right"
+              )}
               initial="hidden"
               animate="visible"
               exit="exit"
@@ -437,7 +443,10 @@ export function Navbar() {
                 </div>
 
                 <motion.ul
-                  className="flex flex-col text-sm mb-4 border border-border rounded-md"
+                  className={cn(
+                    "flex flex-col text-sm mb-4 border border-border rounded-md",
+                    isRTL && "text-right"
+                  )}
                   variants={drawerMenuContainerVariants}
                 >
                   <AnimatePresence>
@@ -473,14 +482,22 @@ export function Navbar() {
                                   exit={{ opacity: 0, height: 0 }}
                                   className="overflow-hidden"
                                 >
-                                  <div className="pl-4 pb-2 space-y-2 border-t border-border/50 pt-2">
+                                  <div
+                                    className={cn(
+                                      "pb-2 space-y-2 border-t border-border/50 pt-2",
+                                      isRTL ? "pr-4" : "pl-4"
+                                    )}
+                                  >
                                     {item.children.map((child) => {
                                       return (
                                         <Link
                                           key={child.name}
                                           href={child.href}
                                           onClick={() => setIsDrawerOpen(false)}
-                                          className="flex items-center space-x-2 p-1.5 text-primary/60 hover:text-primary/80 transition-colors"
+                                          className={cn(
+                                            "flex items-center gap-2 p-1.5 text-primary/60 hover:text-primary/80 transition-colors",
+                                            isRTL && "justify-end"
+                                          )}
                                         >
                                           <span>{child.name}</span>
                                         </Link>
