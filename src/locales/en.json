@@ -292,6 +292,8 @@
         "klaimFlow": "Klaim Flow",
         "klaimHealth": "Klaim Health",
         "klaimEstate": "Klaim Estate",
-        "getStarted": "Get Started"
+        "getStarted": "Get Started",
+        "languageEnglish": "EN",
+        "languageArabic": "AR"
 }
 }

@@ -2,12 +2,19 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
+import enTranslations from "@/locales/en.json";
+import arTranslations from "@/locales/ar.json";
 
 export function LanguageToggle() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const locale = searchParams.get("lang") === "ar" ? "ar" : "en";
+  const messages = locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
+  const labels = {
+    en: messages.languageEnglish,
+    ar: messages.languageArabic,
+  };
 
   const navigate = (target: "en" | "ar") => {
     if (target === locale) {
@@ -38,12 +45,12 @@ export function LanguageToggle() {
           onClick={() => navigate(target)}
           aria-pressed={locale === target}
           className={cn(
-            "cursor-pointer h-6 min-w-8 rounded-full px-2 text-[11px] font-medium uppercase leading-none text-primary/60 transition-all hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
+            "cursor-pointer h-6 min-w-8 rounded-full px-2 text-[11px] font-medium leading-none text-primary/60 transition-all hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
             locale === target &&
               "bg-secondary text-primary-foreground shadow-[inset_0_1px_1px_rgba(255,255,255,0.24),0_1px_2px_rgba(16,24,40,0.10)] dark:text-secondary-foreground"
           )}
         >
-          {target}
+          {labels[target]}
         </button>
       ))}
     </div>

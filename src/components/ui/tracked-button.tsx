@@ -8,7 +8,9 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Briefcase, Home, Building2 } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import enTranslations from "@/locales/en.json";
+import arTranslations from "@/locales/ar.json";
 
 interface TrackedButtonProps extends React.ComponentProps<typeof Button> {
   trackingLocation: keyof typeof BUTTON_LOCATIONS;
@@ -52,7 +54,10 @@ export function TrackedButton({
                         typeof child === 'string'
                       ) as string;
 
-    if (buttonText?.toLowerCase().includes('get started')) {
+    if (
+      buttonText?.toLowerCase().includes("get started") ||
+      buttonText?.includes("ابدأ")
+    ) {
       trackGetStartedClick(trackingLocation);
     } else if (buttonText?.toLowerCase().includes('book') || buttonText?.toLowerCase().includes('call')) {
       trackBookCallClick(trackingLocation);
@@ -96,6 +101,9 @@ export function TrackedGetStartedButton({
   ...props 
 }: Omit<TrackedButtonProps, 'children'>) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const locale = searchParams.get("lang") === "ar" ? "ar" : "en";
+  const messages = locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const isHomePage = pathname === "/";
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const { trackGetStartedClick } = usePostHogTracking();
@@ -109,7 +117,7 @@ export function TrackedGetStartedButton({
           className={cn(buttonVariants({ variant: "default", size: "sm", className: props.className }))}
           {...props}
         >
-          Get Started
+          {messages.getStarted}
           <ChevronDown className={cn(
             "ml-2 h-4 w-4 transition-transform",
             isDropdownOpen && "rotate-180"
@@ -172,7 +180,7 @@ export function TrackedGetStartedButton({
       href={href}
       {...props}
     >
-      Get Started
+      {messages.getStarted}
     </TrackedButton>
   );
 }
