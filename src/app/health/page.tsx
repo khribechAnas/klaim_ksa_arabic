@@ -37,7 +37,14 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
         <HeroSection />
         <ProblemSection />
         <BentoSection />
-        <Banner src="/klaim-healthcare-banner-arabic.png" height="xl" />
+        <Banner
+          src={
+            locale === "ar"
+              ? "/klaim-healthcare-banner-arabic.png"
+              : "/klaim-healthcare-banner.png"
+          }
+          height="xl"
+        />
         <HowItWorks />
         <CompanyShowcase title={companyShowcaseTitle} />
         <TestimonialsSection
@@ -50,7 +57,7 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
           dotAriaLabel={testimonials.dotAriaLabel}
         />
         <ValueProposition /> 
-        <CTASection />
+        <CTASection locale={locale} />
         <FAQSection
           title={faq.title}
           description={faq.description}
