@@ -1,12 +1,13 @@
 "use client";
 
+import { Suspense } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import enTranslations from "@/locales/en.json";
 import arTranslations from "@/locales/ar.json";
 import { getLocaleFromLang, HEALTH_DEFAULT_LOCALE } from "@/lib/locale";
 
-export function LanguageToggle() {
+function LanguageToggleContent() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -65,5 +66,13 @@ export function LanguageToggle() {
         </button>
       ))}
     </div>
+  );
+}
+
+export function LanguageToggle() {
+  return (
+    <Suspense fallback={null}>
+      <LanguageToggleContent />
+    </Suspense>
   );
 }

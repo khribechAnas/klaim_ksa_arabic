@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { usePostHogTracking, BUTTON_LOCATIONS } from "@/hooks/use-posthog-tracking";
 import { buttonVariants } from "@/components/ui/button";
@@ -96,11 +96,11 @@ export function TrackedButton({
 }
 
 // Specialized tracked button components
-export function TrackedGetStartedButton({ 
-  trackingLocation, 
+function TrackedGetStartedButtonContent({
+  trackingLocation,
   href = "#contact",
-  ...props 
-}: Omit<TrackedButtonProps, 'children'>) {
+  ...props
+}: Omit<TrackedButtonProps, "children">) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const locale = getLocaleFromLang(
@@ -186,6 +186,28 @@ export function TrackedGetStartedButton({
     >
       {messages.getStarted}
     </TrackedButton>
+  );
+}
+
+export function TrackedGetStartedButton({
+  trackingLocation,
+  href = "#contact",
+  ...props
+}: Omit<TrackedButtonProps, "children">) {
+  return (
+    <Suspense
+      fallback={
+        <TrackedButton trackingLocation={trackingLocation} href={href} {...props}>
+          {enTranslations.navbar.getStarted}
+        </TrackedButton>
+      }
+    >
+      <TrackedGetStartedButtonContent
+        trackingLocation={trackingLocation}
+        href={href}
+        {...props}
+      />
+    </Suspense>
   );
 }
 

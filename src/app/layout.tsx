@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Navbar } from "@/components/sections/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/lib/site";
@@ -26,11 +27,9 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params: { locale }
-}: {
+}: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
-}) {
+}>) {
   const messages = await getMessages();
 
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-KWKV399D";
@@ -38,7 +37,7 @@ export default async function RootLayout({
     process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || "G-ZDR00YYTN0";
 
   return (
-    <html lang={locale ?? "en"} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${parkinsans.variable} ${inter.variable} antialiased font-sans bg-background`}
       >
@@ -54,7 +53,9 @@ export default async function RootLayout({
                 <div className="block w-px h-full border-l border-border absolute top-0 left-6 z-10"></div>
                 <div className="block w-px h-full border-r border-border absolute top-0 right-6 z-10"></div>
 
-                <Navbar />
+                <Suspense fallback={null}>
+                  <Navbar />
+                </Suspense>
 
                 {children}
               </div>

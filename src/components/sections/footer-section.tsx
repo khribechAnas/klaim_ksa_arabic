@@ -122,17 +122,28 @@ function FooterLinkRow({ link }: { link: FooterLinkItem }) {
   return null;
 }
 
+const SECTOR_COLUMN_TITLES = new Set(["Sectors", "القطاعات"]);
+
 interface FooterSectionProps {
   copy?: FooterCopy;
+  /** Hide the Sectors column (used on /health only). */
+  hideSectors?: boolean;
 }
 
-export function FooterSection({ copy = defaultCopy }: FooterSectionProps) {
+export function FooterSection({
+  copy = defaultCopy,
+  hideSectors = false,
+}: FooterSectionProps) {
   const locale = useLocale();
   const isRtl = locale === "ar";
   const tablet = useMediaQuery("(max-width: 1024px)");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  const footerColumns = hideSectors
+    ? copy.footerLinks.filter((column) => !SECTOR_COLUMN_TITLES.has(column.title))
+    : copy.footerLinks;
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -264,7 +275,7 @@ export function FooterSection({ copy = defaultCopy }: FooterSectionProps) {
         </div>
         <div className="md:w-1/2 flex flex-col gap-y-5">
           <div className="flex flex-col items-start justify-start md:flex-row md:items-start md:justify-between gap-y-5">
-            {copy.footerLinks.map((column, columnIndex) => (
+            {footerColumns.map((column, columnIndex) => (
               <ul key={columnIndex} className="flex flex-col gap-y-2">
                 <li className="mb-2 text-sm text-secondary font-semibold">
                   {column.title}

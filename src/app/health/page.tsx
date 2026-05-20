@@ -69,7 +69,7 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
           description={contact.description}
           form={contact.form}
         />
-        <FooterSection copy={footer} />
+        <FooterSection copy={footer} hideSectors />
       </main>
     </NextIntlClientProvider>
   );

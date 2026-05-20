@@ -1049,6 +1049,14 @@ export const siteConfig = {
       ],
     },
     {
+      title: "Sectors",
+      links: [
+        { id: 4, title: "Klaim Flow", url: "/flow" },
+        { id: 5, title: "Klaim Health", url: "/health" },
+        { id: 6, title: "Klaim Estate", url: "/estate" },
+      ],
+    },
+    {
       title: "Resources",
       links: [
         { id: 7, title: "FAQ", url: "#faq" },
@@ -1059,8 +1067,22 @@ export const siteConfig = {
     {
       title: "Legal",
       links: [
-        { id: 10, title: "Privacy Policy", url: "/privacy" },
-        { id: 11, title: "Terms of Service", url: "/terms" },
+        {
+          id: 10,
+          title: "Privacy Policy",
+          items: [
+            { id: 101, title: "UAE", url: "/privacy/uae" },
+            { id: 102, title: "KSA", url: "/privacy/ksa" },
+          ],
+        },
+        {
+          id: 11,
+          title: "Terms of Service",
+          items: [
+            { id: 111, title: "UAE", url: "/terms/uae" },
+            { id: 112, title: "KSA", url: "/terms/ksa" },
+          ],
+        },
       ] satisfies FooterLinkItem[],
     },
   ],

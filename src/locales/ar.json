@@ -253,8 +253,22 @@
         {
           "title": "القانوني",
           "links": [
-            { "id": 10, "title": "سياسة الخصوصية", "url": "/privacy" },
-            { "id": 11, "title": "شروط الخدمة", "url": "/terms" }
+            {
+              "id": 10,
+              "title": "سياسة الخصوصية",
+              "items": [
+                { "id": 101, "title": "الإمارات", "url": "/privacy/uae" },
+                { "id": 102, "title": "السعودية", "url": "/privacy/ksa" }
+              ]
+            },
+            {
+              "id": 11,
+              "title": "شروط الخدمة",
+              "items": [
+                { "id": 111, "title": "الإمارات", "url": "/terms/uae" },
+                { "id": 112, "title": "السعودية", "url": "/terms/ksa" }
+              ]
+            }
           ]
         }
       ]

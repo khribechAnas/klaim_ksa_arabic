@@ -1,13 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-const SALES_UAE_API_BASE_URL = process.env.SALES_UAE_API_BASE_URL;
-const SALES_UAE_API_KEY = process.env.SALES_UAE_API_KEY;
-
-if (!SALES_UAE_API_BASE_URL || !SALES_UAE_API_KEY) {
-  throw new Error('Missing required environment variables: SALES_UAE_API_BASE_URL and SALES_UAE_API_KEY');
-}
+import { getSalesUaeApiConfig } from '@/lib/sales-uae-api';
 
 export async function POST(request: NextRequest) {
+  const salesUaeApi = getSalesUaeApiConfig();
+  if (!salesUaeApi) {
+    console.error(
+      'Missing required environment variables: SALES_UAE_API_BASE_URL and SALES_UAE_API_KEY'
+    );
+    return NextResponse.json(
+      { success: false, message: 'Service is not configured. Please try again later.' },
+      { status: 503 }
+    );
+  }
+
   try {
     const { email } = await request.json();
 
@@ -18,11 +23,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const response = await fetch(`${SALES_UAE_API_BASE_URL}/public-api/lead/newsletter`, {
+    const response = await fetch(`${salesUaeApi.baseUrl}/public-api/lead/newsletter`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'API-KEY': SALES_UAE_API_KEY!,
+        'API-KEY': salesUaeApi.apiKey,
       },
       body: JSON.stringify({
         data: [{ email_from: email.trim() }]

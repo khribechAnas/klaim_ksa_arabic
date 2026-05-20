@@ -3,7 +3,6 @@
 import { NavMenu } from "@/components/nav-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
-import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
@@ -57,6 +56,13 @@ const drawerMenuVariants = {
   visible: { opacity: 1 },
 };
 
+type NavItem = {
+  id: number;
+  name: string;
+  href: string;
+  children?: { name: string; href: string }[];
+};
+
 export function Navbar() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -73,7 +79,7 @@ export function Navbar() {
   const healthLogoSrc = locale === "ar" ? "/klaimksa.png" : "/klaim-health.png";
   const healthLogoWidth = locale === "ar" ? (isMobile ? 70 : 130) : isMobile ? 170 : 250;
   const mobileHealthLogoWidth = locale === "ar" ? 46 : 150;
-  const flowNavigation = [
+  const flowNavigation: NavItem[] = [
     { id: 1, name: messages.home, href: "#hero" },
     {
       id: 2,
@@ -89,14 +95,14 @@ export function Navbar() {
     { id: 5, name: messages.contact, href: "#contact" },
   ];
 
-  const healthNavigation = [
+  const healthNavigation: NavItem[] = [
     { id: 1, name: messages.home, href: "#hero" },
     { id: 3, name: messages.solutions, href: "#bento" },
     { id: 4, name: messages.faq, href: "#faq" },
     { id: 5, name: messages.contact, href: "#contact" },
   ];
 
-  const estateNavigation = [
+  const estateNavigation: NavItem[] = [
     { id: 1, name: messages.home, href: "#hero" },
     {
       id: 2,
@@ -113,7 +119,7 @@ export function Navbar() {
     { id: 5, name: messages.contact, href: "#contact" },
   ];
 
-  const defaultNavigation = [
+  const defaultNavigation: NavItem[] = [
     { id: 1, name: messages.home, href: "#hero" },
     {
       id: 2,
