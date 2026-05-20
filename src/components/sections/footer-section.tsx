@@ -283,7 +283,7 @@ export function FooterSection({ copy = defaultCopy }: FooterSectionProps) {
       
           <FlickeringGrid
             text={tablet ? "Klaim" : copy.gridText}
-            fontSize={tablet ? 50 : 90}
+            fontSize={tablet ? 50 : 70}
             className="h-full w-full"
             squareSize={1.5}
             gridGap={tablet ? 2 : 3}

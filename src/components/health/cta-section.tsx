@@ -18,11 +18,16 @@ export function CTASection({ locale }: { locale: "en" | "ar" }) {
             <Image
               src="/klaim-are-you-ready.png"
               alt="CTA Background"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-right-bottom"
               width={2000}
               height={2000}
               quality={100}
               priority
+            />
+            <Link
+              href="#contact"
+              aria-label="ابدأ الآن"
+              className="absolute z-10 left-[87%] top-[77%] w-[10%] h-[13%] rounded-full cursor-pointer transition-colors hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             />
           </div>
         </div>

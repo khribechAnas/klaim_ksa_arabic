@@ -42,7 +42,7 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-      <HeroVideoSection src="/klaim-health.mp4" />
+      <HeroVideoSection src="/klaim-health-arabic.mp4" />
     </section>
   );
 }
