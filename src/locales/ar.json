@@ -243,14 +243,6 @@
           ]
         },
         {
-          "title": "القطاعات",
-          "links": [
-            { "id": 4, "title": "كلايم فلو", "url": "/flow" },
-            { "id": 5, "title": "كلايم هيلث", "url": "/health" },
-            { "id": 6, "title": "كلايم إستيت", "url": "/estate" }
-          ]
-        },
-        {
           "title": "الموارد",
           "links": [
             { "id": 7, "title": "الأسئلة الشائعة", "url": "#faq" },
@@ -261,22 +253,8 @@
         {
           "title": "القانوني",
           "links": [
-            {
-              "id": 10,
-              "title": "سياسة الخصوصية",
-              "items": [
-                { "id": 101, "title": "الإمارات", "url": "/privacy/uae" },
-                { "id": 102, "title": "السعودية", "url": "/privacy/ksa" }
-              ]
-            },
-            {
-              "id": 11,
-              "title": "شروط الخدمة",
-              "items": [
-                { "id": 111, "title": "الإمارات", "url": "/terms/uae" },
-                { "id": 112, "title": "السعودية", "url": "/terms/ksa" }
-              ]
-            }
+            { "id": 10, "title": "سياسة الخصوصية", "url": "/privacy" },
+            { "id": 11, "title": "شروط الخدمة", "url": "/terms" }
           ]
         }
       ]
