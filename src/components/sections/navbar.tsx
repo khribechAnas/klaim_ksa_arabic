@@ -87,16 +87,6 @@ export function Navbar() {
 
   const healthNavigation = [
     { id: 1, name: messages.home, href: "#hero" },
-    {
-      id: 2,
-      name: messages.sectors,
-      href: "#",
-      children: [
-        { name: messages.klaimFlow, href: "/flow" },
-        { name: messages.klaimEstate, href: "/estate" },
-        { name: messages.klaimHealth, href: "/health" },
-      ],
-    },
     { id: 3, name: messages.solutions, href: "#bento" },
     { id: 4, name: messages.faq, href: "#faq" },
     { id: 5, name: messages.contact, href: "#contact" },
