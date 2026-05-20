@@ -4,12 +4,17 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import enTranslations from "@/locales/en.json";
 import arTranslations from "@/locales/ar.json";
+import { getLocaleFromLang, HEALTH_DEFAULT_LOCALE } from "@/lib/locale";
 
 export function LanguageToggle() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const locale = searchParams.get("lang") === "ar" ? "ar" : "en";
+  const isHealthPage = pathname === "/health";
+  const locale = getLocaleFromLang(
+    searchParams.get("lang"),
+    isHealthPage ? HEALTH_DEFAULT_LOCALE : "en"
+  );
   const messages = locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const labels = {
     en: messages.languageEnglish,
@@ -23,7 +28,13 @@ export function LanguageToggle() {
 
     const params = new URLSearchParams(searchParams.toString());
 
-    if (target === "ar") {
+    if (isHealthPage) {
+      if (target === "en") {
+        params.set("lang", "en");
+      } else {
+        params.delete("lang");
+      }
+    } else if (target === "ar") {
       params.set("lang", "ar");
     } else {
       params.delete("lang");

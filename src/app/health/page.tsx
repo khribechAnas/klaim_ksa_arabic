@@ -11,6 +11,7 @@ import { FAQSection } from "@/components/sections/faq-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { FooterSection } from "@/components/sections/footer-section";
 import { Banner } from "@/components/ui/banner";
+import { getLocaleFromLang, HEALTH_DEFAULT_LOCALE } from "@/lib/locale";
 
 interface HealthPageProps {
   searchParams: Promise<{
@@ -20,7 +21,7 @@ interface HealthPageProps {
 
 export default async function HealthPage({ searchParams }: HealthPageProps) {
   const { lang } = await searchParams;
-  const locale = lang === "ar" ? "ar" : "en";
+  const locale = getLocaleFromLang(lang, HEALTH_DEFAULT_LOCALE);
   const messages = (await import(`@/locales/${locale}.json`)).default;
   const companyShowcaseTitle = messages.health.companyShowcase.title;
   const testimonials = messages.health.testimonials;

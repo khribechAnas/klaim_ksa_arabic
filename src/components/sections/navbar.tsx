@@ -16,6 +16,7 @@ import { BUTTON_LOCATIONS } from "@/hooks/use-posthog-tracking";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import enTranslations from "@/locales/en.json";
 import arTranslations from "@/locales/ar.json";
+import { getLocaleFromLang, HEALTH_DEFAULT_LOCALE } from "@/lib/locale";
 
 const INITIAL_WIDTH = "70rem";
 const MAX_WIDTH = "800px";
@@ -59,12 +60,15 @@ const drawerMenuVariants = {
 export function Navbar() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const locale = searchParams?.get("lang") === "ar" ? "ar" : "en";
-  const isRTL = locale === "ar";
-  const messages = locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const isFlowPage = pathname === "/flow";
   const isHealthPage = pathname === "/health";
   const isEstatePage = pathname === "/estate";
+  const locale = getLocaleFromLang(
+    searchParams?.get("lang"),
+    isHealthPage ? HEALTH_DEFAULT_LOCALE : "en"
+  );
+  const isRTL = locale === "ar";
+  const messages = locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const isMobile = useMediaQuery("(max-width: 768px)");
   const healthLogoSrc = locale === "ar" ? "/klaimksa.png" : "/klaim-health.png";
   const healthLogoWidth = locale === "ar" ? (isMobile ? 70 : 130) : isMobile ? 170 : 250;

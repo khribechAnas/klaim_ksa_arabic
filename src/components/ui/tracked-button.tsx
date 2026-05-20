@@ -11,6 +11,7 @@ import { ChevronDown, Briefcase, Home, Building2 } from "lucide-react";
 import { usePathname, useSearchParams } from "next/navigation";
 import enTranslations from "@/locales/en.json";
 import arTranslations from "@/locales/ar.json";
+import { getLocaleFromLang, HEALTH_DEFAULT_LOCALE } from "@/lib/locale";
 
 interface TrackedButtonProps extends React.ComponentProps<typeof Button> {
   trackingLocation: keyof typeof BUTTON_LOCATIONS;
@@ -102,7 +103,10 @@ export function TrackedGetStartedButton({
 }: Omit<TrackedButtonProps, 'children'>) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const locale = searchParams.get("lang") === "ar" ? "ar" : "en";
+  const locale = getLocaleFromLang(
+    searchParams.get("lang"),
+    pathname === "/health" ? HEALTH_DEFAULT_LOCALE : "en"
+  );
   const messages = locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const isHomePage = pathname === "/";
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
