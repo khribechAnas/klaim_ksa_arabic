@@ -22,14 +22,14 @@ const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
     <Accordion.Item
       className={cn(
         "mt-px overflow-hidden focus-within:relative focus-within:z-10",
-        className
+        className,
       )}
       {...props}
       ref={forwardedRef}
     >
       {children}
     </Accordion.Item>
-  )
+  ),
 );
 AccordionItem.displayName = "AccordionItem";
 
@@ -44,7 +44,7 @@ const AccordionTrigger = forwardRef<HTMLButtonElement, AccordionTriggerProps>(
       <Accordion.Trigger
         className={cn(
           "group flex h-[45px] flex-1 cursor-pointer items-center justify-between p-3 text-[15px] leading-none outline-none",
-          className
+          className,
         )}
         {...props}
         ref={forwardedRef}
@@ -52,7 +52,7 @@ const AccordionTrigger = forwardRef<HTMLButtonElement, AccordionTriggerProps>(
         {children}
       </Accordion.Trigger>
     </Accordion.Header>
-  )
+  ),
 );
 AccordionTrigger.displayName = "AccordionTrigger";
 
@@ -66,14 +66,14 @@ const AccordionContent = forwardRef<HTMLDivElement, AccordionContentProps>(
     <Accordion.Content
       className={cn(
         "overflow-hidden text-[15px] font-medium data-[state=closed]:animate-slide-up data-[state=open]:animate-slide-down",
-        className
+        className,
       )}
       {...props}
       ref={forwardedRef}
     >
       <div className="p-3">{children}</div>
     </Accordion.Content>
-  )
+  ),
 );
 AccordionContent.displayName = "AccordionContent";
 
@@ -100,7 +100,7 @@ const Background = () => {
         "bg-[radial-gradient(circle_at_0.5px_0.5px,rgba(0,0,0,0.2)_0.5px,transparent_0)]",
         "dark:bg-[radial-gradient(circle_at_0.5px_0.5px,rgba(255,255,255,0.2)_0.5px,transparent_0)]",
         "bg-repeat",
-        "[background-size:8px_8px]"
+        "[background-size:8px_8px]",
       )}
     />
   );
@@ -194,7 +194,7 @@ export const InvoiceAnimation = ({
         const cardWidth = carousel.querySelector(".card")?.clientWidth || 0;
         const newIndex = Math.min(
           Math.floor(scrollLeft / cardWidth),
-          featureItems.length - 1
+          featureItems.length - 1,
         );
         setCurrentIndex(newIndex);
       };
@@ -237,7 +237,7 @@ export const InvoiceAnimation = ({
                   className={cn(
                     "bg-neutral-600/50 dark:bg-neutral-600/30 rounded animate-pulse",
                     line.width,
-                    line.height
+                    line.height,
                   )}
                 />
               ))}
@@ -484,7 +484,7 @@ export const InvoiceAnimation = ({
                   className={cn(
                     "bg-neutral-600/50 dark:bg-neutral-600/30 rounded animate-pulse",
                     line.width,
-                    line.height
+                    line.height,
                   )}
                 />
               ))}
@@ -547,7 +547,7 @@ export const InvoiceAnimation = ({
           <div
             className={cn(
               "flex items-center justify-center",
-              currentIndex === 0 ? "min-h-[120px]" : "min-h-[200px] py-8"
+              currentIndex === 0 ? "min-h-[120px]" : "min-h-[200px] py-8",
             )}
           >
             {renderStepContent(currentIndex)}
@@ -581,7 +581,7 @@ export const InvoiceAnimation = ({
                   className={cn(
                     "relative data-[state=open]:bg-white dark:data-[state=open]:bg-[#27272A] rounded-lg data-[state=closed]:rounded-none data-[state=closed]:border-0",
                     "dark:data-[state=open]:shadow-[0px_0px_0px_1px_rgba(249,250,251,0.06),0px_0px_0px_1px_var(--color-zinc-800,#27272A),0px_1px_2px_-0.5px_rgba(0,0,0,0.24),0px_2px_4px_-1px_rgba(0,0,0,0.24)]",
-                    "data-[state=open]:shadow-[0px_0px_1px_0px_rgba(0,0,0,0.16),0px_1px_2px_-0.5px_rgba(0,0,0,0.16)]"
+                    "data-[state=open]:shadow-[0px_0px_1px_0px_rgba(0,0,0,0.16),0px_1px_2px_-0.5px_rgba(0,0,0,0.16)]",
                   )}
                   value={`item-${index}`}
                 >
@@ -599,7 +599,7 @@ export const InvoiceAnimation = ({
                           linePosition === "top",
                         "left-0 right-0 bottom-0 h-0.5 w-full":
                           linePosition === "bottom",
-                      }
+                      },
                     )}
                     data-state={currentIndex === index ? "open" : "closed"}
                   >
@@ -609,10 +609,10 @@ export const InvoiceAnimation = ({
                         lineColor,
                         {
                           "left-0 top-0 w-full": ["left", "right"].includes(
-                            linePosition
+                            linePosition,
                           ),
                           "left-0 top-0 h-full": ["top", "bottom"].includes(
-                            linePosition
+                            linePosition,
                           ),
                         },
                         currentIndex === index
@@ -620,8 +620,8 @@ export const InvoiceAnimation = ({
                             ? "h-full"
                             : "w-full"
                           : ["left", "right"].includes(linePosition)
-                          ? "h-0"
-                          : "w-0"
+                            ? "h-0"
+                            : "w-0",
                       )}
                       style={{
                         transitionDuration:
@@ -678,7 +678,7 @@ export const InvoiceAnimation = ({
                         linePosition === "top",
                       "left-0 right-0 bottom-0 h-0.5 w-full":
                         linePosition === "bottom",
-                    }
+                    },
                   )}
                   data-state={currentIndex === index ? "open" : "closed"}
                 >
@@ -688,10 +688,10 @@ export const InvoiceAnimation = ({
                       lineColor,
                       {
                         "left-0 top-0 w-full": ["left", "right"].includes(
-                          linePosition
+                          linePosition,
                         ),
                         "left-0 top-0 h-full": ["top", "bottom"].includes(
-                          linePosition
+                          linePosition,
                         ),
                       },
                       currentIndex === index
@@ -699,8 +699,8 @@ export const InvoiceAnimation = ({
                           ? "h-full"
                           : "w-full"
                         : ["left", "right"].includes(linePosition)
-                        ? "h-0"
-                        : "w-0"
+                          ? "h-0"
+                          : "w-0",
                     )}
                     style={{
                       transitionDuration:

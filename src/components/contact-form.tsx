@@ -78,18 +78,28 @@ export function ContactFormGridWithDetails({
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [message, setMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
+    setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name.trim() || !formData.email.trim() || !formData.company.trim() || !formData.phone.trim()) {
-      setMessage({ type: 'error', text: copy.validationError });
+    if (
+      !formData.name.trim() ||
+      !formData.email.trim() ||
+      !formData.company.trim() ||
+      !formData.phone.trim()
+    ) {
+      setMessage({ type: "error", text: copy.validationError });
       return;
     }
 
@@ -106,13 +116,19 @@ export function ContactFormGridWithDetails({
       });
 
       if (result.success) {
-        setMessage({ type: 'success', text: copy.successMessage });
-        setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+        setMessage({ type: "success", text: copy.successMessage });
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          phone: "",
+          message: "",
+        });
       } else {
-        setMessage({ type: 'error', text: result.message });
+        setMessage({ type: "error", text: result.message });
       }
     } catch {
-      setMessage({ type: 'error', text: copy.submitError });
+      setMessage({ type: "error", text: copy.submitError });
     } finally {
       setIsSubmitting(false);
     }
@@ -123,14 +139,14 @@ export function ContactFormGridWithDetails({
       <div
         className={cn(
           "relative flex flex-col items-center overflow-hidden",
-          isRtl ? "lg:items-end" : "lg:items-start"
+          isRtl ? "lg:items-end" : "lg:items-start",
         )}
       >
         <p
           dir={isRtl ? "rtl" : "ltr"}
           className={cn(
             "mt-8 max-w-lg text-center text-base text-neutral-600 dark:text-neutral-400",
-            isRtl ? "md:text-right" : "md:text-left"
+            isRtl ? "md:text-right" : "md:text-left",
           )}
         >
           {copy.intro}
@@ -139,14 +155,16 @@ export function ContactFormGridWithDetails({
         <div
           className={cn(
             "mt-10 hidden w-full max-w-lg flex-col gap-4 lg:flex",
-            isRtl ? "self-end items-end text-right" : "self-start items-start text-left"
+            isRtl
+              ? "self-end items-end text-right"
+              : "self-start items-start text-left",
           )}
         >
           <p
             dir={isRtl ? "rtl" : "ltr"}
             className={cn(
               "flex w-full items-center gap-2 text-sm text-muted-foreground",
-              isRtl ? "justify-start text-right" : "justify-start text-left"
+              isRtl ? "justify-start text-right" : "justify-start text-left",
             )}
           >
             <MapPin className="h-4 w-4 shrink-0" />
@@ -157,30 +175,42 @@ export function ContactFormGridWithDetails({
             dir={isRtl ? "rtl" : "ltr"}
             className={cn(
               "flex w-full flex-wrap items-center gap-2 md:gap-4",
-              isRtl ? "justify-start text-right" : "justify-start text-left"
+              isRtl ? "justify-start text-right" : "justify-start text-left",
             )}
           >
             <Mail className="h-4 w-4 shrink-0" />
-            <p className="text-sm text-muted-foreground" dir="ltr">hello@klaim.ai</p>
+            <p className="text-sm text-muted-foreground" dir="ltr">
+              hello@klaim.ai
+            </p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground" dir="ltr">helloksa@klaim.ai</p>
+            <p className="text-sm text-muted-foreground" dir="ltr">
+              helloksa@klaim.ai
+            </p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground" dir="ltr">hellooman@klaim.ai</p>
+            <p className="text-sm text-muted-foreground" dir="ltr">
+              hellooman@klaim.ai
+            </p>
           </div>
 
           <div
             dir={isRtl ? "rtl" : "ltr"}
             className={cn(
               "flex w-full flex-wrap items-center gap-2 md:gap-4",
-              isRtl ? "justify-start text-right" : "justify-start text-left"
+              isRtl ? "justify-start text-right" : "justify-start text-left",
             )}
           >
             <Phone className="h-4 w-4 shrink-0" />
-            <p className="text-sm text-muted-foreground" dir="ltr">+971 4 876 4096</p>
+            <p className="text-sm text-muted-foreground" dir="ltr">
+              +971 4 876 4096
+            </p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground" dir="ltr">+966 568 154 527</p>
+            <p className="text-sm text-muted-foreground" dir="ltr">
+              +966 568 154 527
+            </p>
             <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground" dir="ltr">+968 7 173 4424</p>
+            <p className="text-sm text-muted-foreground" dir="ltr">
+              +968 7 173 4424
+            </p>
           </div>
         </div>
         <div className="div relative mt-20 flex w-[600px] flex-shrink-0 -translate-x-10 items-center justify-center [perspective:800px] [transform-style:preserve-3d] sm:-translate-x-0 lg:-translate-x-32">
@@ -200,7 +230,7 @@ export function ContactFormGridWithDetails({
         dir={isRtl ? "rtl" : "ltr"}
         className={cn(
           "relative mx-auto flex w-full max-w-2xl flex-col gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-gray-100 to-gray-200 p-4 sm:p-10 dark:from-neutral-900 dark:to-neutral-950",
-          isRtl ? "items-end" : "items-start"
+          isRtl ? "items-end" : "items-start",
         )}
       >
         <Grid size={20} />
@@ -208,7 +238,7 @@ export function ContactFormGridWithDetails({
           <label
             className={cn(
               "mb-2 inline-block w-full text-sm font-medium text-neutral-600 dark:text-neutral-300",
-              isRtl ? "text-right" : "text-left"
+              isRtl ? "text-right" : "text-left",
             )}
             htmlFor="name"
           >
@@ -223,7 +253,7 @@ export function ContactFormGridWithDetails({
             placeholder={copy.placeholders.name}
             className={cn(
               "shadow-input h-10 w-full rounded-md border border-transparent bg-white text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed",
-              isRtl ? "pr-4 text-right" : "pl-4 text-left"
+              isRtl ? "pr-4 text-right" : "pl-4 text-left",
             )}
             required
           />
@@ -232,7 +262,7 @@ export function ContactFormGridWithDetails({
           <label
             className={cn(
               "mb-2 inline-block w-full text-sm font-medium text-neutral-600 dark:text-neutral-300",
-              isRtl ? "text-right" : "text-left"
+              isRtl ? "text-right" : "text-left",
             )}
             htmlFor="email"
           >
@@ -247,7 +277,7 @@ export function ContactFormGridWithDetails({
             placeholder={copy.placeholders.email}
             className={cn(
               "shadow-input h-10 w-full rounded-md border border-transparent bg-white text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed",
-              isRtl ? "pr-4 text-right" : "pl-4 text-left"
+              isRtl ? "pr-4 text-right" : "pl-4 text-left",
             )}
             required
           />
@@ -256,7 +286,7 @@ export function ContactFormGridWithDetails({
           <label
             className={cn(
               "mb-2 inline-block w-full text-sm font-medium text-neutral-600 dark:text-neutral-300",
-              isRtl ? "text-right" : "text-left"
+              isRtl ? "text-right" : "text-left",
             )}
             htmlFor="phone"
           >
@@ -271,7 +301,7 @@ export function ContactFormGridWithDetails({
             placeholder={copy.placeholders.phone}
             className={cn(
               "shadow-input h-10 w-full rounded-md border border-transparent bg-white text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed",
-              isRtl ? "pr-4 text-right" : "pl-4 text-left"
+              isRtl ? "pr-4 text-right" : "pl-4 text-left",
             )}
             required
           />
@@ -280,7 +310,7 @@ export function ContactFormGridWithDetails({
           <label
             className={cn(
               "mb-2 inline-block w-full text-sm font-medium text-neutral-600 dark:text-neutral-300",
-              isRtl ? "text-right" : "text-left"
+              isRtl ? "text-right" : "text-left",
             )}
             htmlFor="company"
           >
@@ -295,7 +325,7 @@ export function ContactFormGridWithDetails({
             placeholder={copy.placeholders.company}
             className={cn(
               "shadow-input h-10 w-full rounded-md border border-transparent bg-white text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed",
-              isRtl ? "pr-4 text-right" : "pl-4 text-left"
+              isRtl ? "pr-4 text-right" : "pl-4 text-left",
             )}
             required
           />
@@ -304,7 +334,7 @@ export function ContactFormGridWithDetails({
           <label
             className={cn(
               "mb-2 inline-block w-full text-sm font-medium text-neutral-600 dark:text-neutral-300",
-              isRtl ? "text-right" : "text-left"
+              isRtl ? "text-right" : "text-left",
             )}
             htmlFor="message"
           >
@@ -319,16 +349,18 @@ export function ContactFormGridWithDetails({
             placeholder={copy.placeholders.message}
             className={cn(
               "shadow-input w-full rounded-md border border-transparent bg-white pt-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed",
-              isRtl ? "pr-4 text-right" : "pl-4 text-left"
+              isRtl ? "pr-4 text-right" : "pl-4 text-left",
             )}
           />
         </div>
         {message && (
-          <div className={`relative z-20 mb-4 w-full p-3 rounded-md text-sm ${
-            message.type === 'success' 
-              ? 'bg-green-50 text-green-700 border border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800' 
-              : 'bg-red-50 text-red-700 border border-red-200 dark:bg-red-900/20 dark:text-red-300 dark:border-red-800'
-          }`}>
+          <div
+            className={`relative z-20 mb-4 w-full p-3 rounded-md text-sm ${
+              message.type === "success"
+                ? "bg-green-50 text-green-700 border border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800"
+                : "bg-red-50 text-red-700 border border-red-200 dark:bg-red-900/20 dark:text-red-300 dark:border-red-800"
+            }`}
+          >
             {message.text}
           </div>
         )}
@@ -351,19 +383,13 @@ export function ContactFormGridWithDetails({
   );
 }
 
-const Pin = ({
-  className,
-  label,
-}: {
-  className?: string;
-  label: string;
-}) => {
+const Pin = ({ className, label }: { className?: string; label: string }) => {
   return (
     <motion.div
       style={{ transform: "translateZ(1px)" }}
       className={cn(
         "pointer-events-none absolute z-[60] flex h-40 w-96 items-center justify-center opacity-100 transition duration-500",
-        className
+        className,
       )}
     >
       <div className="h-full w-full">
@@ -432,13 +458,13 @@ export const FeatureIconContainer = ({
     <div
       className={cn(
         "relative h-14 w-14 rounded-md bg-gradient-to-b from-gray-50 to-neutral-200 p-[4px] dark:from-neutral-800 dark:to-neutral-950",
-        className
+        className,
       )}
     >
       <div
         className={cn(
           "relative z-20 h-full w-full rounded-[5px] bg-gray-50 dark:bg-neutral-800",
-          className
+          className,
         )}
       >
         {children}

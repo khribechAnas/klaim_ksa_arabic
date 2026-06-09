@@ -4,7 +4,7 @@ import { motion, Variants } from "framer-motion";
 import { Clock, AlertTriangle, DollarSign } from "lucide-react";
 import { SectionHeader } from "@/components/section-header";
 import InfinityLoopDiagram from "@/components/ui/infinity-loop-diagram";
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from "next-intl";
 
 interface ProblemPoint {
   icon: React.ReactNode;
@@ -28,25 +28,25 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
   const locale = useLocale();
   const isRtl = locale === "ar";
 
-  const defaultHeadline = t('health.problems.headline');
+  const defaultHeadline = t("health.problems.headline");
   const defaultProblems = [
     {
       icon: <Clock className="w-6 h-6" />,
-      title: t('health.problems.items.0.title'),
-      description: t('health.problems.items.0.description'),
-      impact: t('health.problems.items.0.impact'),
+      title: t("health.problems.items.0.title"),
+      description: t("health.problems.items.0.description"),
+      impact: t("health.problems.items.0.impact"),
     },
     {
       icon: <AlertTriangle className="w-6 h-6" />,
-      title: t('health.problems.items.1.title'),
-      description: t('health.problems.items.1.description'),
-      impact: t('health.problems.items.1.impact'),
+      title: t("health.problems.items.1.title"),
+      description: t("health.problems.items.1.description"),
+      impact: t("health.problems.items.1.impact"),
     },
     {
       icon: <DollarSign className="w-6 h-6" />,
-      title: t('health.problems.items.2.title'),
-      description: t('health.problems.items.2.description'),
-      impact: t('health.problems.items.2.impact'),
+      title: t("health.problems.items.2.title"),
+      description: t("health.problems.items.2.description"),
+      impact: t("health.problems.items.2.impact"),
     },
   ];
 
@@ -98,7 +98,7 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
           {finalHeadline}
         </h2>
         <p className="text-muted-foreground text-center text-balance font-medium">
-          {t('health.problems.description')}
+          {t("health.problems.description")}
         </p>
       </SectionHeader>
 
@@ -142,7 +142,9 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
                     >
                       {problem.icon}
                     </div>
-                    <div className={`flex-1 ${isRtl ? "min-w-0 text-start" : ""}`}>
+                    <div
+                      className={`flex-1 ${isRtl ? "min-w-0 text-start" : ""}`}
+                    >
                       <h4 className="font-medium font-poppins text-primary text-md mb-1">
                         {problem.title}
                       </h4>
@@ -156,7 +158,7 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
                             : "text-muted-foreground"
                         }`}
                       >
-                        {t('health.problems.impactLabel')}: {problem.impact}
+                        {t("health.problems.impactLabel")}: {problem.impact}
                       </div>
                     </div>
                   </div>
@@ -179,8 +181,8 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
                         index === currentProblem
                           ? `${progress}%`
                           : index < currentProblem
-                          ? "100%"
-                          : "0%",
+                            ? "100%"
+                            : "0%",
                     }}
                     transition={{ duration: 0.1 }}
                   />
@@ -190,10 +192,7 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({
           </motion.div>
 
           {/* Visual Section - Infinity Loop Diagram */}
-          <motion.div
-            variants={itemVariants}
-            className="relative"
-          >
+          <motion.div variants={itemVariants} className="relative">
             <div className="relative z-10 bg-background rounded-2xl overflow-hidden border border-border shadow-xl">
               <InfinityLoopDiagram />
             </div>

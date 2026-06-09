@@ -48,8 +48,8 @@ export function FirstBentoSkeleton() {
                   i === 0
                     ? "bg-gradient-to-br from-blue-400/90 to-purple-400/90 group-hover:shadow-xl"
                     : i === 1
-                    ? "bg-gradient-to-br from-green-400/90 to-emerald-300/90 -rotate-6 group-hover:-rotate-7 group-hover:shadow-xl"
-                    : "bg-gradient-to-br from-amber-300/90 to-orange-400/90 rotate-6 group-hover:rotate-7 group-hover:shadow-xl"
+                      ? "bg-gradient-to-br from-green-400/90 to-emerald-300/90 -rotate-6 group-hover:-rotate-7 group-hover:shadow-xl"
+                      : "bg-gradient-to-br from-amber-300/90 to-orange-400/90 rotate-6 group-hover:rotate-7 group-hover:shadow-xl"
                 }`}
                 style={{
                   transform: `translateY(${i * 6}px) rotate(${

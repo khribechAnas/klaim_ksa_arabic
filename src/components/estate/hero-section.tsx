@@ -61,9 +61,9 @@ export function HeroSection() {
             >
               ×
             </button>
-            <iframe 
-              src='https://outlook.office.com/book/KlaimEstate@klaim.ai/?ismsaljsauthenabled' 
-              style={{border: 0, borderRadius: '10px', }}
+            <iframe
+              src="https://outlook.office.com/book/KlaimEstate@klaim.ai/?ismsaljsauthenabled"
+              style={{ border: 0, borderRadius: "10px" }}
               className="w-full h-full"
             />
           </div>

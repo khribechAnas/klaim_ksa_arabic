@@ -32,7 +32,7 @@ export function TestimonialCard({
         "hover:from-muted/60 hover:to-muted/20",
         "max-w-[320px] sm:max-w-[320px]",
         "transition-colors duration-300",
-        className
+        className,
       )}
     >
       <div className="flex items-center gap-3">

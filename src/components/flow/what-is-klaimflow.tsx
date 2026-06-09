@@ -2,12 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import {
-  DollarSign,
-  BarChart4,
-  Clock,
-  Hourglass,
-} from "lucide-react";
+import { DollarSign, BarChart4, Clock, Hourglass } from "lucide-react";
 import { Compare } from "@/components/ui/compare";
 import { SectionHeader } from "@/components/section-header";
 
@@ -115,18 +110,18 @@ export default function WhatIsKlaimFlow() {
                       }
                       transition={{ duration: 0.5, delay: feature.delay + 0.4 }}
                     >
-                                              <div className="flex items-center">
-                          <div
-                            className={`w-10 h-10 md:w-12 md:h-12 rounded-lg ${feature.color} flex items-center justify-center mr-3 md:mr-4 flex-shrink-0`}
-                          >
-                            {feature.icon}
-                          </div>
-                          <div className="flex-1">
-                            <h4 className="font-medium font-poppins text-primary text-sm md:text-md leading-tight">
-                              {feature.title}
-                            </h4>
-                          </div>
+                      <div className="flex items-center">
+                        <div
+                          className={`w-10 h-10 md:w-12 md:h-12 rounded-lg ${feature.color} flex items-center justify-center mr-3 md:mr-4 flex-shrink-0`}
+                        >
+                          {feature.icon}
                         </div>
+                        <div className="flex-1">
+                          <h4 className="font-medium font-poppins text-primary text-sm md:text-md leading-tight">
+                            {feature.title}
+                          </h4>
+                        </div>
+                      </div>
                     </motion.div>
                   ))}
                 </div>

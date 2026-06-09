@@ -1,6 +1,9 @@
 import { HeroVideoSection } from "@/components/sections/hero-video-section";
 import { siteConfig } from "@/lib/config";
-import { TrackedGetStartedButton, TrackedBookCallButton } from "@/components/ui/tracked-button";
+import {
+  TrackedGetStartedButton,
+  TrackedBookCallButton,
+} from "@/components/ui/tracked-button";
 import { BUTTON_LOCATIONS } from "@/hooks/use-posthog-tracking";
 
 export function HeroSection() {
@@ -15,7 +18,7 @@ export function HeroSection() {
         <div className="relative z-10 pt-24 md:pt-32 max-w-5xl mx-auto h-full w-full flex flex-col gap-10 items-center justify-center">
           <div className="flex flex-col items-center justify-center gap-5">
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tighter text-balance text-center text-primary">
-            Tired of Chasing Your Payments?
+              Tired of Chasing Your Payments?
             </h1>
             <p className="text-base font-inter md:text-lg text-center text-muted-foreground font-medium text-balance leading-relaxed tracking-tight">
               You&apos;ve done the work but your payments are still pending.

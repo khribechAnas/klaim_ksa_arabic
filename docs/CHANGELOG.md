@@ -22,7 +22,7 @@
 
 - Fix ci ref.
 
-## 2.4.4 
+## 2.4.4
 
 ### hotfix/delete-phone
 
@@ -54,7 +54,7 @@
 ### feature/seo-optimization
 
 - Add files for robots.txt and sitemap.xml
-- 
+-
 
 ## 2.3.0
 

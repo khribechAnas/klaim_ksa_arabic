@@ -72,7 +72,7 @@ export function Tooltip({
             className={cn(
               "absolute z-50 px-3 py-2 text-sm font-medium text-white bg-black dark:text-black dark:bg-white rounded-2xl shadow-lg pointer-events-none whitespace-nowrap",
               positionClasses[side],
-              className
+              className,
             )}
           >
             {content}

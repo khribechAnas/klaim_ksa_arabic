@@ -14,9 +14,10 @@ function LanguageToggleContent() {
   const isHealthPage = pathname === "/health";
   const locale = getLocaleFromLang(
     searchParams.get("lang"),
-    isHealthPage ? HEALTH_DEFAULT_LOCALE : "en"
+    isHealthPage ? HEALTH_DEFAULT_LOCALE : "en",
   );
-  const messages = locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
+  const messages =
+    locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const labels = {
     en: messages.languageEnglish,
     ar: messages.languageArabic,
@@ -59,7 +60,7 @@ function LanguageToggleContent() {
           className={cn(
             "cursor-pointer h-6 min-w-8 rounded-full px-2 text-[11px] font-medium leading-none text-primary/60 transition-all hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
             locale === target &&
-              "bg-secondary text-primary-foreground shadow-[inset_0_1px_1px_rgba(255,255,255,0.24),0_1px_2px_rgba(16,24,40,0.10)] dark:text-secondary-foreground"
+              "bg-secondary text-primary-foreground shadow-[inset_0_1px_1px_rgba(255,255,255,0.24),0_1px_2px_rgba(16,24,40,0.10)] dark:text-secondary-foreground",
           )}
         >
           {labels[target]}

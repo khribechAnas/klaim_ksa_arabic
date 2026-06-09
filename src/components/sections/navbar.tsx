@@ -71,13 +71,15 @@ export function Navbar() {
   const isEstatePage = pathname === "/estate";
   const locale = getLocaleFromLang(
     searchParams?.get("lang"),
-    isHealthPage ? HEALTH_DEFAULT_LOCALE : "en"
+    isHealthPage ? HEALTH_DEFAULT_LOCALE : "en",
   );
   const isRTL = locale === "ar";
-  const messages = locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
+  const messages =
+    locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const isMobile = useMediaQuery("(max-width: 768px)");
   const healthLogoSrc = locale === "ar" ? "/klaimksa.png" : "/klaim-health.png";
-  const healthLogoWidth = locale === "ar" ? (isMobile ? 70 : 130) : isMobile ? 170 : 250;
+  const healthLogoWidth =
+    locale === "ar" ? (isMobile ? 70 : 130) : isMobile ? 170 : 250;
   const mobileHealthLogoWidth = locale === "ar" ? 46 : 150;
   const flowNavigation: NavItem[] = [
     { id: 1, name: messages.home, href: "#hero" },
@@ -139,17 +141,17 @@ export function Navbar() {
   const navigationItems = isFlowPage
     ? flowNavigation
     : isHealthPage
-    ? healthNavigation
-    : isEstatePage
-    ? estateNavigation
-    : defaultNavigation;
+      ? healthNavigation
+      : isEstatePage
+        ? estateNavigation
+        : defaultNavigation;
 
   const { scrollY } = useScroll();
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>(
-    {}
+    {},
   );
 
   useEffect(() => {
@@ -159,7 +161,7 @@ export function Navbar() {
           (item) =>
             item.href.startsWith("#") &&
             item.href !== "#sectors" &&
-            item.href !== "#"
+            item.href !== "#",
         )
         .map((item) => item.href.substring(1));
 
@@ -214,7 +216,7 @@ export function Navbar() {
       dir={isRTL ? "rtl" : "ltr"}
       className={cn(
         "sticky z-50 mx-4 flex justify-center transition-all duration-300 md:mx-0",
-        hasScrolled ? "top-6" : "top-4 mx-0"
+        hasScrolled ? "top-6" : "top-4 mx-0",
       )}
     >
       <motion.div
@@ -227,7 +229,7 @@ export function Navbar() {
             "mx-auto max-w-7xl rounded-2xl transition-all duration-300  xl:px-0",
             hasScrolled
               ? "px-2 border border-border backdrop-blur-lg bg-background/75"
-              : "shadow-none px-7"
+              : "shadow-none px-7",
           )}
         >
           <div className="flex h-[56px] items-center justify-between p-4">
@@ -237,28 +239,28 @@ export function Navbar() {
                   isFlowPage
                     ? "/klaimflow.png"
                     : isHealthPage
-                    ? healthLogoSrc
-                    : isEstatePage
-                    ? "/klaim-estate.png"
-                    : "/logo-dark.svg"
+                      ? healthLogoSrc
+                      : isEstatePage
+                        ? "/klaim-estate.png"
+                        : "/logo-dark.svg"
                 }
                 alt={
                   isFlowPage
                     ? "KlaimFlow"
                     : isHealthPage
-                    ? "Klaim Health"
-                    : isEstatePage
-                    ? "Klaim Estate"
-                    : "Klaim"
+                      ? "Klaim Health"
+                      : isEstatePage
+                        ? "Klaim Estate"
+                        : "Klaim"
                 }
                 width={
                   isHealthPage
                     ? healthLogoWidth
-                    : (isFlowPage || isEstatePage)
-                    ? isMobile
-                      ? 170
-                      : 250
-                    : 130
+                    : isFlowPage || isEstatePage
+                      ? isMobile
+                        ? 170
+                        : 250
+                      : 130
                 }
                 height={130}
                 quality={100}
@@ -270,28 +272,28 @@ export function Navbar() {
                   isFlowPage
                     ? "/klaimflow.png"
                     : isHealthPage
-                    ? healthLogoSrc
-                    : isEstatePage
-                    ? "/klaim-estate.png"
-                    : "/logo-white.svg"
+                      ? healthLogoSrc
+                      : isEstatePage
+                        ? "/klaim-estate.png"
+                        : "/logo-white.svg"
                 }
                 alt={
                   isFlowPage
                     ? "KlaimFlow"
                     : isHealthPage
-                    ? "Klaim Health"
-                    : isEstatePage
-                    ? "Klaim Estate"
-                    : "Klaim"
+                      ? "Klaim Health"
+                      : isEstatePage
+                        ? "Klaim Estate"
+                        : "Klaim"
                 }
                 width={
                   isHealthPage
                     ? healthLogoWidth
-                    : (isFlowPage || isEstatePage)
-                    ? isMobile
-                      ? 170
-                      : 250
-                    : 130
+                    : isFlowPage || isEstatePage
+                      ? isMobile
+                        ? 170
+                        : 250
+                      : 130
                 }
                 height={130}
                 quality={100}
@@ -314,10 +316,10 @@ export function Navbar() {
                     isFlowPage
                       ? "https://flow.klaim.ai"
                       : isHealthPage
-                      ? "https://portal.uae.klaim.ai"
-                      : isEstatePage
-                      ? "https://estate.klaim.ai"
-                      : "#contact"
+                        ? "https://portal.uae.klaim.ai"
+                        : isEstatePage
+                          ? "https://estate.klaim.ai"
+                          : "#contact"
                   }
                   variant="default"
                   target={
@@ -325,14 +327,10 @@ export function Navbar() {
                       ? "_blank"
                       : undefined
                   }
-                  rel={
-                    isHealthPage
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
+                  rel={isHealthPage ? "noopener noreferrer" : undefined}
                   className={cn(
                     "bg-secondary h-8 hidden md:flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-fit px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/90",
-                    isRTL && "min-w-15"
+                    isRTL && "min-w-15",
                   )}
                 />
               </div>
@@ -371,7 +369,7 @@ export function Navbar() {
               dir={isRTL ? "rtl" : "ltr"}
               className={cn(
                 "fixed inset-x-0 w-[95%] mx-auto bottom-3 bg-background border border-border p-4 rounded-xl shadow-lg",
-                isRTL && "text-right"
+                isRTL && "text-right",
               )}
               initial="hidden"
               animate="visible"
@@ -387,21 +385,27 @@ export function Navbar() {
                         isFlowPage
                           ? "/klaimflow.png"
                           : isHealthPage
-                          ? healthLogoSrc
-                          : isEstatePage
-                          ? "/klaim-estate.png"
-                          : "/logo-dark.svg"
+                            ? healthLogoSrc
+                            : isEstatePage
+                              ? "/klaim-estate.png"
+                              : "/logo-dark.svg"
                       }
                       alt={
                         isFlowPage
                           ? "KlaimFlow"
                           : isHealthPage
-                          ? "Klaim Health"
-                          : isEstatePage
-                          ? "Klaim Estate"
-                          : "Klaim"
+                            ? "Klaim Health"
+                            : isEstatePage
+                              ? "Klaim Estate"
+                              : "Klaim"
                       }
-                      width={isFlowPage ? 130 : isHealthPage ? mobileHealthLogoWidth : 120}
+                      width={
+                        isFlowPage
+                          ? 130
+                          : isHealthPage
+                            ? mobileHealthLogoWidth
+                            : 120
+                      }
                       height={120}
                       quality={100}
                       style={{ objectFit: "contain" }}
@@ -412,21 +416,27 @@ export function Navbar() {
                         isFlowPage
                           ? "/klaimflow.png"
                           : isHealthPage
-                          ? healthLogoSrc
-                          : isEstatePage
-                          ? "/klaim-estate.png"
-                          : "/logo-white.svg"
+                            ? healthLogoSrc
+                            : isEstatePage
+                              ? "/klaim-estate.png"
+                              : "/logo-white.svg"
                       }
                       alt={
                         isFlowPage
                           ? "KlaimFlow"
                           : isHealthPage
-                          ? "Klaim Health"
-                          : isEstatePage
-                          ? "Klaim Estate"
-                          : "Klaim"
+                            ? "Klaim Health"
+                            : isEstatePage
+                              ? "Klaim Estate"
+                              : "Klaim"
                       }
-                      width={isFlowPage ? 130 : isHealthPage ? mobileHealthLogoWidth : 120}
+                      width={
+                        isFlowPage
+                          ? 130
+                          : isHealthPage
+                            ? mobileHealthLogoWidth
+                            : 120
+                      }
                       height={120}
                       quality={100}
                       style={{ objectFit: "contain" }}
@@ -448,7 +458,7 @@ export function Navbar() {
                 <motion.ul
                   className={cn(
                     "flex flex-col text-sm mb-4 border border-border rounded-md",
-                    isRTL && "text-right"
+                    isRTL && "text-right",
                   )}
                   variants={drawerMenuContainerVariants}
                 >
@@ -488,7 +498,7 @@ export function Navbar() {
                                   <div
                                     className={cn(
                                       "pb-2 space-y-2 border-t border-border/50 pt-2",
-                                      isRTL ? "pr-4" : "pl-4"
+                                      isRTL ? "pr-4" : "pl-4",
                                     )}
                                   >
                                     {item.children.map((child) => {
@@ -499,7 +509,7 @@ export function Navbar() {
                                           onClick={() => setIsDrawerOpen(false)}
                                           className={cn(
                                             "flex items-center gap-2 p-1.5 text-primary/60 hover:text-primary/80 transition-colors",
-                                            isRTL && "justify-end"
+                                            isRTL && "justify-end",
                                           )}
                                         >
                                           <span>{child.name}</span>
@@ -520,7 +530,7 @@ export function Navbar() {
                               if (item.href.startsWith("#")) {
                                 e.preventDefault();
                                 const element = document.getElementById(
-                                  item.href.substring(1)
+                                  item.href.substring(1),
                                 );
                                 element?.scrollIntoView({ behavior: "smooth" });
                               }
@@ -548,10 +558,10 @@ export function Navbar() {
                       isFlowPage
                         ? "https://flow.klaim.ai"
                         : isHealthPage
-                        ? "https://portal.uae.klaim.ai"
-                        : isEstatePage
-                        ? "https://estate.klaim.ai"
-                        : "#contact"
+                          ? "https://portal.uae.klaim.ai"
+                          : isEstatePage
+                            ? "https://estate.klaim.ai"
+                            : "#contact"
                     }
                     variant="default"
                     target={
@@ -559,11 +569,7 @@ export function Navbar() {
                         ? "_blank"
                         : undefined
                     }
-                    rel={
-                      isHealthPage
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
+                    rel={isHealthPage ? "noopener noreferrer" : undefined}
                     className="bg-secondary h-8 flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-full px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
                   />
                 </div>
@@ -575,5 +581,3 @@ export function Navbar() {
     </header>
   );
 }
-
-

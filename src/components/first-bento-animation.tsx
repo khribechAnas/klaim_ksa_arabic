@@ -93,7 +93,7 @@ export function FirstBentoAnimation() {
 
       setTimeout(() => {
         setCurrentConversationIndex(
-          (prev) => (prev + 1) % conversations.length
+          (prev) => (prev + 1) % conversations.length,
         );
         setConversationCycle((prev) => prev + 1);
       }, 800); // Increased delay for smoother transition

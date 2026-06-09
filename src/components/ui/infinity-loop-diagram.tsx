@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence, easeInOut } from 'framer-motion';
-import { useTranslations } from 'next-intl';
-import { cn } from '@/lib/utils';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence, easeInOut } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { cn } from "@/lib/utils";
 
 const InfinityLoopDiagram = () => {
-  const t = useTranslations('health.problems.loop');
+  const t = useTranslations("health.problems.loop");
   const [activeCorner, setActiveCorner] = useState(0);
 
   const Background = () => {
@@ -15,38 +15,38 @@ const InfinityLoopDiagram = () => {
           "bg-[radial-gradient(circle_at_0.5px_0.5px,rgba(0,0,0,0.2)_0.5px,transparent_0)]",
           "dark:bg-[radial-gradient(circle_at_0.5px_0.5px,rgba(255,255,255,0.2)_0.5px,transparent_0)]",
           "bg-repeat",
-          "[background-size:8px_8px]"
+          "[background-size:8px_8px]",
         )}
       />
     );
   };
-  
+
   // Define the four corners with their positions and labels
   const corners = [
-    { 
-      id: 0, 
+    {
+      id: 0,
       position: { x: 105, y: 65 },
-      label: t('items.0'),
-      color: "teal"
+      label: t("items.0"),
+      color: "teal",
     },
-    { 
-      id: 1, 
+    {
+      id: 1,
       position: { x: 105, y: 135 },
-      label: t('items.1'),
-      color: "teal"
+      label: t("items.1"),
+      color: "teal",
     },
-    { 
-      id: 2, 
+    {
+      id: 2,
       position: { x: 295, y: 65 },
-      label: t('items.2'),
-      color: "purple"
+      label: t("items.2"),
+      color: "purple",
     },
-    { 
-      id: 3, 
+    {
+      id: 3,
       position: { x: 295, y: 135 },
-      label: t('items.3'),
-      color: "purple"
-    }
+      label: t("items.3"),
+      color: "purple",
+    },
   ];
 
   // Cycle through corners
@@ -54,49 +54,61 @@ const InfinityLoopDiagram = () => {
     const interval = setInterval(() => {
       setActiveCorner((prev) => (prev + 1) % 4);
     }, 3000); // Change every 2.5 seconds
-    
+
     return () => clearInterval(interval);
   }, []);
 
   // Animation for dots and labels
   const fadeVariants = {
     initial: { opacity: 0, scale: 0.5 },
-    animate: { 
-      opacity: 1, 
+    animate: {
+      opacity: 1,
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: easeInOut
-      }
+        ease: easeInOut,
+      },
     },
     exit: {
       opacity: 0,
       scale: 0.5,
       transition: {
         duration: 0.3,
-        ease: easeInOut
-      }
-    }
+        ease: easeInOut,
+      },
+    },
   };
 
   return (
     <div className="p-4 md:p-8 flex items-center justify-center relative">
-        <Background />  
+      <Background />
       <div className="relative w-full max-w-4xl">
         {/* SVG Infinity Loop */}
         <div className="relative mx-auto">
           <svg
             viewBox="0 0 400 200"
             className="w-full h-auto"
-            style={{ maxWidth: '600px', margin: '0 auto' }}
+            style={{ maxWidth: "600px", margin: "0 auto" }}
           >
             {/* Gradient definitions */}
             <defs>
-              <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient
+                id="tealGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
                 <stop offset="0%" stopColor="#14b8a6" />
                 <stop offset="100%" stopColor="#0d9488" />
               </linearGradient>
-              <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient
+                id="purpleGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
                 <stop offset="0%" stopColor="#a855f7" />
                 <stop offset="100%" stopColor="#9333ea" />
               </linearGradient>
@@ -119,7 +131,7 @@ const InfinityLoopDiagram = () => {
               strokeLinecap="round"
               opacity="0.9"
             />
-            
+
             {/* Right loop (purple) */}
             <path
               d="M 200,100
@@ -136,21 +148,22 @@ const InfinityLoopDiagram = () => {
 
             {/* Dots at corners */}
             <AnimatePresence mode="wait">
-              {corners.map((corner) => (
-                activeCorner === corner.id && (
-                  <motion.circle
-                    key={corner.id}
-                    cx={corner.position.x}
-                    cy={corner.position.y}
-                    r="9"
-                    fill="url(#centerGradient)"
-                    variants={fadeVariants}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                  />
-                )
-              ))}
+              {corners.map(
+                (corner) =>
+                  activeCorner === corner.id && (
+                    <motion.circle
+                      key={corner.id}
+                      cx={corner.position.x}
+                      cy={corner.position.y}
+                      r="9"
+                      fill="url(#centerGradient)"
+                      variants={fadeVariants}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                    />
+                  ),
+              )}
             </AnimatePresence>
           </svg>
         </div>
@@ -231,10 +244,10 @@ const InfinityLoopDiagram = () => {
             transition={{ delay: 0.5 }}
           >
             <h3 className="text-base md:text-sm lg:text-md font-bold text-foreground mb-1">
-              {t('center.title')}
+              {t("center.title")}
             </h3>
             <p className="text-xs md:text-sm text-muted-foreground">
-              {t('center.description')}
+              {t("center.description")}
             </p>
           </motion.div>
         </div>

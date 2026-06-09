@@ -22,7 +22,7 @@ export const Highlight = ({
     <span
       className={cn(
         "p-1 py-0.5 font-medium dark:font-semibold text-secondary",
-        className
+        className,
       )}
     >
       {children}
@@ -45,13 +45,7 @@ export const siteConfig = {
   description: "Klaim",
   cta: "Get Started",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
-  keywords: [
-    "Klaim",
-    "Klaim AI",
-    "Klaim Flow",
-    "Klaim Estate",
-    "Klaim Health",
-  ],
+  keywords: ["Klaim", "Klaim AI", "Klaim Flow", "Klaim Estate", "Klaim Health"],
   links: {
     email: "hello@klaim.ai",
     instagram: "https://instagram.com/klaim.ai/",
@@ -398,7 +392,15 @@ export const siteConfig = {
 
       {
         id: 1,
-        content: <Image src="/fintech-awards.svg" alt="Award-Winning Simplicity" width={300} height={300}  className="dark:invert-0 invert"/>,
+        content: (
+          <Image
+            src="/fintech-awards.svg"
+            alt="Award-Winning Simplicity"
+            width={300}
+            height={300}
+            className="dark:invert-0 invert"
+          />
+        ),
         title: "Award-Winning Simplicity",
         description:
           "Klaim was named Best User Experience 2025 for making working capital access simple, fast, and intuitive.",
@@ -1005,7 +1007,8 @@ export const siteConfig = {
       },
       {
         id: 7,
-        question: "Does using Klaim affect my existing billing or collection process?",
+        question:
+          "Does using Klaim affect my existing billing or collection process?",
         answer:
           "No. You continue operating as usual. Klaim simply purchases your approved receivables so you can access your funds sooner, without disrupting your operational workflows.",
       },
@@ -1023,7 +1026,8 @@ export const siteConfig = {
       },
       {
         id: 10,
-        question: "How is Klaim different from traditional financing or factoring?",
+        question:
+          "How is Klaim different from traditional financing or factoring?",
         answer:
           "Unlike loans or factoring, Klaim's true sale model means your receivable is sold outright without adding debt, interest, or liability to your business. This keeps your balance sheet clean and your cash flow predictable.",
       },

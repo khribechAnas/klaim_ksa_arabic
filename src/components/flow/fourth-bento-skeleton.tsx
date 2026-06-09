@@ -24,8 +24,8 @@ export const FourthBentoSkeleton = () => {
                     i < 14
                       ? "bg-white/60 dark:bg-gray-700/60 text-gray-800 dark:text-gray-200"
                       : i === 14
-                      ? "bg-green-400/90 text-white font-bold"
-                      : "bg-white/20 dark:bg-gray-800/20 text-white/70 dark:text-gray-400"
+                        ? "bg-green-400/90 text-white font-bold"
+                        : "bg-white/20 dark:bg-gray-800/20 text-white/70 dark:text-gray-400"
                   }`}
                 >
                   {i + 1}

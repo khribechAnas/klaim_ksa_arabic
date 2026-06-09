@@ -108,14 +108,14 @@ export const Compare = ({
         });
       }
     },
-    [slideMode, isDragging]
+    [slideMode, isDragging],
   );
 
   const handleMouseDown = useCallback(() => handleStart(), [handleStart]);
   const handleMouseUp = useCallback(() => handleEnd(), [handleEnd]);
   const handleMouseMove = useCallback(
     (e: React.MouseEvent) => handleMove(e.clientX),
-    [handleMove]
+    [handleMove],
   );
 
   const handleTouchStart = useCallback(() => {
@@ -136,7 +136,7 @@ export const Compare = ({
         handleMove(e.touches[0].clientX);
       }
     },
-    [handleMove, autoplay]
+    [handleMove, autoplay],
   );
 
   return (
@@ -205,7 +205,7 @@ export const Compare = ({
             <motion.div
               className={cn(
                 "absolute inset-0 z-20 rounded-2xl shrink-0 w-full h-full select-none overflow-hidden",
-                firstImageClassName
+                firstImageClassName,
               )}
               style={{
                 clipPath: `inset(0 ${100 - sliderXPercent}% 0 0)`,
@@ -218,7 +218,7 @@ export const Compare = ({
                 fill
                 className={cn(
                   "object-cover z-20 rounded-2xl shrink-0 select-none",
-                  firstImageClassName
+                  firstImageClassName,
                 )}
                 draggable={false}
               />
@@ -237,7 +237,7 @@ export const Compare = ({
           <Image
             className={cn(
               "object-cover z-[19] rounded-2xl select-none",
-              secondImageClassname
+              secondImageClassname,
             )}
             alt="second image"
             src={secondImage}

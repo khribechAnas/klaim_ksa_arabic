@@ -516,7 +516,7 @@ export default function PreQualificationChecker() {
                                 onChange={(e) =>
                                   handleChange(
                                     "customInvoiceAmount",
-                                    e.target.value
+                                    e.target.value,
                                   )
                                 }
                                 className="h-12 bg-muted/50 border-border focus:border-primary"
@@ -607,14 +607,18 @@ export default function PreQualificationChecker() {
                                 htmlFor="accounting-software"
                                 className="text-base font-medium text-primary mb-2 block"
                               >
-                                Which accounting software does your business currently use?
+                                Which accounting software does your business
+                                currently use?
                               </Label>
                               <Input
                                 id="accounting-software"
                                 placeholder="e.g., QuickBooks, Xero, Sage, etc."
                                 value={formData.accountingSoftware}
                                 onChange={(e) =>
-                                  handleChange("accountingSoftware", e.target.value)
+                                  handleChange(
+                                    "accountingSoftware",
+                                    e.target.value,
+                                  )
                                 }
                                 className="h-12 bg-muted/50 border-border focus:border-primary"
                               />
@@ -688,7 +692,8 @@ export default function PreQualificationChecker() {
                           className="w-full sm:w-1/2 bg-secondary dark:text-white hover:bg-secondary/90 text-primary-foreground h-12 group shadow-md hover:shadow-lg transition-all text-base"
                           disabled={
                             !formData.usesAccountingSoftware ||
-                            (formData.usesAccountingSoftware === "yes" && !formData.accountingSoftware) ||
+                            (formData.usesAccountingSoftware === "yes" &&
+                              !formData.accountingSoftware) ||
                             !formData.hasBusinessLoans ||
                             isSubmitting
                           }

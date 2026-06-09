@@ -101,10 +101,10 @@ export const SecondBentoSkeleton = () => {
                     i === 0
                       ? "#4ADE80"
                       : i === 1
-                      ? "#3B82F6"
-                      : i === 2
-                      ? "#EC4899"
-                      : "#A855F7",
+                        ? "#3B82F6"
+                        : i === 2
+                          ? "#EC4899"
+                          : "#A855F7",
                 }}
               ></div>
               <div className="flex-1 h-1.5 rounded-full bg-muted-foreground/30"></div>

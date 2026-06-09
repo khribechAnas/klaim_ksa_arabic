@@ -76,7 +76,7 @@ export const MenuItem = ({
           }}
           exit={{ opacity: 0, scale: 0.85, y: 10 }}
           className={cn(
-            "absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4"
+            "absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4",
           )}
         >
           <motion.div

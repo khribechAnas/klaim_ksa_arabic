@@ -2,7 +2,10 @@
 
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import { usePostHogTracking, BUTTON_LOCATIONS } from "@/hooks/use-posthog-tracking";
+import {
+  usePostHogTracking,
+  BUTTON_LOCATIONS,
+} from "@/hooks/use-posthog-tracking";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -32,35 +35,45 @@ const verticalIcons = {
 const verticalOptions = [
   { name: "Klaim Flow", href: "https://flow.klaim.ai", target: "_blank" },
   { name: "Klaim Estate", href: "https://estate.klaim.ai", target: "_blank" },
-  { name: "Klaim Health", href: "https://portal.uae.klaim.ai", target: "_blank", rel: "noopener noreferrer" },
+  {
+    name: "Klaim Health",
+    href: "https://portal.uae.klaim.ai",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
 ];
 
-export function TrackedButton({ 
-  trackingLocation, 
-  href, 
+export function TrackedButton({
+  trackingLocation,
+  href,
   target,
   rel,
-  children, 
+  children,
   onClick,
   className,
   variant,
   size,
-  ...props 
+  ...props
 }: TrackedButtonProps) {
   const { trackGetStartedClick, trackBookCallClick } = usePostHogTracking();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const buttonText = typeof children === 'string' ? children : 
-                      React.Children.toArray(children).find(child => 
-                        typeof child === 'string'
-                      ) as string;
+    const buttonText =
+      typeof children === "string"
+        ? children
+        : (React.Children.toArray(children).find(
+            (child) => typeof child === "string",
+          ) as string);
 
     if (
       buttonText?.toLowerCase().includes("get started") ||
       buttonText?.includes("ابدأ")
     ) {
       trackGetStartedClick(trackingLocation);
-    } else if (buttonText?.toLowerCase().includes('book') || buttonText?.toLowerCase().includes('call')) {
+    } else if (
+      buttonText?.toLowerCase().includes("book") ||
+      buttonText?.toLowerCase().includes("call")
+    ) {
       trackBookCallClick(trackingLocation);
     }
 
@@ -105,9 +118,10 @@ function TrackedGetStartedButtonContent({
   const searchParams = useSearchParams();
   const locale = getLocaleFromLang(
     searchParams.get("lang"),
-    pathname === "/health" ? HEALTH_DEFAULT_LOCALE : "en"
+    pathname === "/health" ? HEALTH_DEFAULT_LOCALE : "en",
   );
-  const messages = locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
+  const messages =
+    locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const isHomePage = pathname === "/";
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const { trackGetStartedClick } = usePostHogTracking();
@@ -118,14 +132,22 @@ function TrackedGetStartedButtonContent({
         <Button
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           onBlur={() => setTimeout(() => setIsDropdownOpen(false), 150)}
-          className={cn(buttonVariants({ variant: "default", size: "sm", className: props.className }))}
+          className={cn(
+            buttonVariants({
+              variant: "default",
+              size: "sm",
+              className: props.className,
+            }),
+          )}
           {...props}
         >
           {messages.getStarted}
-          <ChevronDown className={cn(
-            "ml-2 h-4 w-4 transition-transform",
-            isDropdownOpen && "rotate-180"
-          )} />
+          <ChevronDown
+            className={cn(
+              "ml-2 h-4 w-4 transition-transform",
+              isDropdownOpen && "rotate-180",
+            )}
+          />
         </Button>
 
         <AnimatePresence>
@@ -148,7 +170,10 @@ function TrackedGetStartedButtonContent({
                 <div className="w-max h-full p-4">
                   <div className="flex flex-col space-y-4 text-sm">
                     {verticalOptions.map((option) => {
-                      const IconComponent = verticalIcons[option.name as keyof typeof verticalIcons];
+                      const IconComponent =
+                        verticalIcons[
+                          option.name as keyof typeof verticalIcons
+                        ];
                       return (
                         <Link
                           key={option.name}
@@ -179,11 +204,7 @@ function TrackedGetStartedButtonContent({
   }
 
   return (
-    <TrackedButton 
-      trackingLocation={trackingLocation} 
-      href={href}
-      {...props}
-    >
+    <TrackedButton trackingLocation={trackingLocation} href={href} {...props}>
       {messages.getStarted}
     </TrackedButton>
   );
@@ -197,7 +218,11 @@ export function TrackedGetStartedButton({
   return (
     <Suspense
       fallback={
-        <TrackedButton trackingLocation={trackingLocation} href={href} {...props}>
+        <TrackedButton
+          trackingLocation={trackingLocation}
+          href={href}
+          {...props}
+        >
           {enTranslations.navbar.getStarted}
         </TrackedButton>
       }
@@ -211,18 +236,14 @@ export function TrackedGetStartedButton({
   );
 }
 
-export function TrackedBookCallButton({ 
-  trackingLocation, 
+export function TrackedBookCallButton({
+  trackingLocation,
   href = "#contact",
-  ...props 
-}: Omit<TrackedButtonProps, 'children'>) {
+  ...props
+}: Omit<TrackedButtonProps, "children">) {
   return (
-    <TrackedButton 
-      trackingLocation={trackingLocation} 
-      href={href}
-      {...props}
-    >
+    <TrackedButton trackingLocation={trackingLocation} href={href} {...props}>
       Book a Call
     </TrackedButton>
   );
-} 
+}

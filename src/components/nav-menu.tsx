@@ -40,15 +40,15 @@ export function NavMenu({
   const getSectionItems = React.useCallback(
     () =>
       navigationItems.filter(
-        (item) => item.href.startsWith("#") && item.href.length > 1
+        (item) => item.href.startsWith("#") && item.href.length > 1,
       ),
-    [navigationItems]
+    [navigationItems],
   );
 
   const updateIndicator = React.useCallback((section: string) => {
     const navList = ref.current;
     const navItem = navList?.querySelector(
-      `[href="#${section}"]`
+      `[href="#${section}"]`,
     )?.parentElement;
 
     if (!navList || !navItem) return;
@@ -108,7 +108,7 @@ export function NavMenu({
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    item: NavItem
+    item: NavItem,
   ) => {
     // Handle external navigation (like Home to /)
     if (!item.href.startsWith("#")) {
@@ -162,7 +162,7 @@ export function NavMenu({
               activeSection === item.href.substring(1)
                 ? "text-primary"
                 : "text-primary/60 hover:text-primary",
-              "tracking-tight"
+              "tracking-tight",
             )}
             onMouseEnter={() => item.children && setHoveredDropdown(item.name)}
             onMouseLeave={() => item.children && setHoveredDropdown(null)}
@@ -192,22 +192,23 @@ export function NavMenu({
                     <div
                       className={cn(
                         "bg-background dark:bg-background backdrop-blur-sm rounded-2xl overflow-hidden border border-border shadow-xl",
-                        isRTL && "text-right"
+                        isRTL && "text-right",
                       )}
                     >
                       <div className="w-max h-full p-4">
                         <div className="flex flex-col space-y-4 text-sm">
                           {item.children.map((child) => {
-                            const IconComponent = sectorIcons[
-                              child.href as keyof typeof sectorIcons
-                            ];
+                            const IconComponent =
+                              sectorIcons[
+                                child.href as keyof typeof sectorIcons
+                              ];
                             return (
                               <a
                                 key={child.name}
                                 href={child.href}
                                 className={cn(
                                   "flex items-center gap-2 text-primary/60 hover:text-primary transition-colors",
-                                  isRTL && "justify-end"
+                                  isRTL && "justify-end",
                                 )}
                                 onClick={() => setHoveredDropdown(null)}
                               >

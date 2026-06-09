@@ -36,7 +36,7 @@ function IndustryTabs({
     <div
       className={cn(
         "relative flex w-fit items-center rounded-full border p-0.5 backdrop-blur-sm cursor-pointer h-10 flex-row bg-muted",
-        className
+        className,
       )}
     >
       {["healthcare", "sme", "realestate"].map((tab) => (
@@ -44,7 +44,7 @@ function IndustryTabs({
           key={tab}
           onClick={() => setActiveTab(tab as Industry)}
           className={cn(
-            "relative z-[1] px-4 h-9 flex items-center justify-center cursor-pointer gap-2"
+            "relative z-[1] px-4 h-9 flex items-center justify-center cursor-pointer gap-2",
           )}
         >
           {activeTab === tab && (
@@ -65,7 +65,7 @@ function IndustryTabs({
               <Stethoscope
                 className={cn(
                   "w-4 h-4 transition-colors duration-200",
-                  activeTab === tab ? "text-primary" : "text-muted-foreground"
+                  activeTab === tab ? "text-primary" : "text-muted-foreground",
                 )}
               />
             )}
@@ -73,7 +73,7 @@ function IndustryTabs({
               <TrendingUp
                 className={cn(
                   "w-4 h-4 transition-colors duration-200",
-                  activeTab === tab ? "text-primary" : "text-muted-foreground"
+                  activeTab === tab ? "text-primary" : "text-muted-foreground",
                 )}
               />
             )}
@@ -81,21 +81,21 @@ function IndustryTabs({
               <Key
                 className={cn(
                   "w-4 h-4 transition-colors duration-200",
-                  activeTab === tab ? "text-primary" : "text-muted-foreground"
+                  activeTab === tab ? "text-primary" : "text-muted-foreground",
                 )}
               />
             )}
             <span
               className={cn(
                 "block text-sm font-medium duration-200 shrink-0",
-                activeTab === tab ? "text-primary" : "text-muted-foreground"
+                activeTab === tab ? "text-primary" : "text-muted-foreground",
               )}
             >
               {tab === "healthcare"
                 ? "Healthcare"
                 : tab === "sme"
-                ? "SME"
-                : "Real Estate"}
+                  ? "SME"
+                  : "Real Estate"}
             </span>
           </div>
         </button>
@@ -144,7 +144,10 @@ export function IndustrySection() {
   const [activeIndustry, setActiveIndustry] = useState<Industry>("sme");
   const [isAutoRotating, setIsAutoRotating] = useState(true);
 
-  const industries = useMemo<Industry[]>(() => ["healthcare", "sme", "realestate"], []);
+  const industries = useMemo<Industry[]>(
+    () => ["healthcare", "sme", "realestate"],
+    [],
+  );
 
   const getNextIndustry = useCallback(
     (current: Industry): Industry => {
@@ -152,7 +155,7 @@ export function IndustrySection() {
       const nextIndex = (currentIndex + 1) % industries.length;
       return industries[nextIndex];
     },
-    [industries]
+    [industries],
   );
 
   useEffect(() => {

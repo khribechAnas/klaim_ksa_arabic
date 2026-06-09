@@ -18,11 +18,7 @@ interface FAQSectionProps {
   items?: FAQItem[];
 }
 
-export function FAQSection({
-  title,
-  description,
-  items,
-}: FAQSectionProps) {
+export function FAQSection({ title, description, items }: FAQSectionProps) {
   const { faqSection } = siteConfig;
   const faqTitle = title ?? faqSection.title;
   const faqDescription = description ?? faqSection.description;

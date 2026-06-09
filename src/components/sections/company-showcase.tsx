@@ -13,9 +13,7 @@ export function CompanyShowcase({
       id="company"
       className="flex flex-col items-center justify-center gap-10 py-10 pt-10 w-full relative px-6"
     >
-      <p className="text-muted-foreground font-medium">
-        {title}
-      </p>
+      <p className="text-muted-foreground font-medium">{title}</p>
       <div className="grid w-full max-w-7xl grid-cols-2 md:grid-cols-5 overflow-hidden border-y border-border items-center justify-center z-20">
         {companyShowcase.companyLogos.map((logo) => (
           <div

@@ -3,7 +3,7 @@ export type AppLocale = "en" | "ar";
 /** Resolves locale from ?lang= query param; defaults to `defaultLocale` when absent. */
 export function getLocaleFromLang(
   lang: string | null | undefined,
-  defaultLocale: AppLocale = "en"
+  defaultLocale: AppLocale = "en",
 ): AppLocale {
   if (defaultLocale === "ar") {
     return lang === "en" ? "en" : "ar";

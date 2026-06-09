@@ -11,13 +11,13 @@ export const FeatureIconContainer = ({
     <div
       className={cn(
         "relative h-14 w-14 rounded-md bg-gradient-to-b from-gray-50 to-neutral-200 p-[4px] dark:from-neutral-800 dark:to-neutral-950",
-        className
+        className,
       )}
     >
       <div
         className={cn(
           "relative z-20 h-full w-full rounded-[5px] bg-gray-50 dark:bg-neutral-800",
-          className
+          className,
         )}
       >
         {children}

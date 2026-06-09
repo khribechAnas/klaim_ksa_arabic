@@ -224,4 +224,4 @@ So this looks like **exfiltrated data** from a successful or simulated RCE (env 
 
 ---
 
-*This report reflects a static code audit and incident review. For production, consider a penetration test and dependency scanning in CI.*
+_This report reflects a static code audit and incident review. For production, consider a penetration test and dependency scanning in CI._

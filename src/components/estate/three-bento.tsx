@@ -54,7 +54,7 @@ const Feature = ({
     <div
       className={cn(
         "flex flex-col relative group/feature hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-300 p-8 min-h-[280px]",
-        !isLast && "border-r border-border"
+        !isLast && "border-r border-border",
       )}
     >
       {/* Icon */}

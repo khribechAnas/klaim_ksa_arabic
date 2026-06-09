@@ -14,4 +14,3 @@ ingress:
 deployment:
   annotations:
     reloader.stakater.com/auto: "true"
-

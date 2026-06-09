@@ -1,5 +1,5 @@
 {
-"health": {
+  "health": {
     "hero": {
       "title": "Tired of chasing Insurance Claims?",
       "description": "You've treated the patients but your payments are stuck in processing? Klaim Health helps you unlock your pending claims in just 24 hours, so you can focus on care, not cash.",
@@ -79,22 +79,12 @@
           "Get your funds in 24 hours"
         ],
         "rpaSubtitle": "(Receivables Purchase Agreement)",
-        "alt": [
-          "Financial Assessment",
-          "RPA Request",
-          "Get your funds"
-        ]
+        "alt": ["Financial Assessment", "RPA Request", "Get your funds"]
       },
       "ongoing": {
         "title": "Ongoing Flow",
-        "steps": [
-          "Share your invoices",
-          "Get paid in 24 hours"
-        ],
-        "alt": [
-          "Share your invoices",
-          "Get paid"
-        ]
+        "steps": ["Share your invoices", "Get paid in 24 hours"],
+        "alt": ["Share your invoices", "Get paid"]
       }
     },
     "valueProposition": {
@@ -273,19 +263,19 @@
         }
       ]
     }
-},
-"navbar": {
-        "home": "Home",
-        "sectors": "Sectors",
-        "howItWorks": "How it Works",
-        "contact": "Contact",
-        "solutions": "Solutions",
-        "faq": "FAQ",
-        "klaimFlow": "Klaim Flow",
-        "klaimHealth": "Klaim Health",
-        "klaimEstate": "Klaim Estate",
-        "getStarted": "Get Started",
-        "languageEnglish": "EN",
-        "languageArabic": "AR"
-}
+  },
+  "navbar": {
+    "home": "Home",
+    "sectors": "Sectors",
+    "howItWorks": "How it Works",
+    "contact": "Contact",
+    "solutions": "Solutions",
+    "faq": "FAQ",
+    "klaimFlow": "Klaim Flow",
+    "klaimHealth": "Klaim Health",
+    "klaimEstate": "Klaim Estate",
+    "getStarted": "Get Started",
+    "languageEnglish": "EN",
+    "languageArabic": "AR"
+  }
 }

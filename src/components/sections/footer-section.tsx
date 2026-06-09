@@ -66,7 +66,7 @@ function FooterGroupedLinkRow({
           <ChevronDownIcon
             className={cn(
               "size-4 shrink-0 transition-transform duration-200 text-muted-foreground",
-              expanded && "rotate-180"
+              expanded && "rotate-180",
             )}
             aria-hidden
           />
@@ -77,7 +77,7 @@ function FooterGroupedLinkRow({
           aria-labelledby={`footer-submenu-trigger-${link.id}`}
           className={cn(
             "mt-1 flex flex-col gap-y-1.5 border-l border-border pl-3 pt-0.5",
-            !expanded && "hidden"
+            !expanded && "hidden",
           )}
         >
           {link.items.map((sub) => (
@@ -139,17 +139,22 @@ export function FooterSection({
   const tablet = useMediaQuery("(max-width: 1024px)");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [message, setMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
 
   const footerColumns = hideSectors
-    ? copy.footerLinks.filter((column) => !SECTOR_COLUMN_TITLES.has(column.title))
+    ? copy.footerLinks.filter(
+        (column) => !SECTOR_COLUMN_TITLES.has(column.title),
+      )
     : copy.footerLinks;
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email.trim()) {
-      setMessage({ type: 'error', text: copy.validationError });
+      setMessage({ type: "error", text: copy.validationError });
       return;
     }
 
@@ -158,15 +163,15 @@ export function FooterSection({
 
     try {
       const result = await submitNewsletterLead(email);
-      
+
       if (result.success) {
-        setMessage({ type: 'success', text: copy.successMessage });
+        setMessage({ type: "success", text: copy.successMessage });
         setEmail("");
       } else {
-        setMessage({ type: 'error', text: result.message });
+        setMessage({ type: "error", text: result.message });
       }
     } catch {
-      setMessage({ type: 'error', text: copy.submitError });
+      setMessage({ type: "error", text: copy.submitError });
     } finally {
       setIsSubmitting(false);
     }
@@ -238,7 +243,10 @@ export function FooterSection({
             <p className="text-sm font-semibold text-primary mb-2">
               {copy.newsletterTitle}
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex items-center gap-2 mb-4">
+            <form
+              onSubmit={handleNewsletterSubmit}
+              className="flex items-center gap-2 mb-4"
+            >
               <input
                 type="email"
                 value={email}
@@ -263,11 +271,13 @@ export function FooterSection({
               </button>
             </form>
             {message && (
-              <p className={`text-xs mt-2 ${
-                message.type === 'success' 
-                  ? 'text-green-600 dark:text-green-400' 
-                  : 'text-red-600 dark:text-red-400'
-              }`}>
+              <p
+                className={`text-xs mt-2 ${
+                  message.type === "success"
+                    ? "text-green-600 dark:text-green-400"
+                    : "text-red-600 dark:text-red-400"
+                }`}
+              >
                 {message.text}
               </p>
             )}
@@ -291,7 +301,6 @@ export function FooterSection({
       <div className="w-full h-48 md:h-64 relative mt-24 z-0 hidden md:block">
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-40%" />
         <div className="absolute inset-0 mx-6">
-      
           <FlickeringGrid
             text={tablet ? "Klaim" : copy.gridText}
             fontSize={tablet ? 50 : 70}

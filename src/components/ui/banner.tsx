@@ -27,7 +27,9 @@ export function Banner({
   } as const;
 
   return (
-    <section className={`flex-col items-center justify-center w-full md:flex hidden ${className}`}>
+    <section
+      className={`flex-col items-center justify-center w-full md:flex hidden ${className}`}
+    >
       <div className="w-full">
         <div
           className={`${heightClasses[height]} overflow-hidden shadow-xl w-full border border-border rounded-lg md:rounded-xl relative z-20`}
@@ -44,19 +46,19 @@ export function Banner({
             sizes="100vw"
           />
 
-        {logo === "estate" && (
-          <Image
-            src="/klaim-estate.svg"
-            alt="Klaim Estate Logo"
-            className="absolute top-4 md:top-10 left-1/2 md:left-16 -translate-x-1/2 md:translate-x-0 w-40 md:w-[300px]"
-            quality={100}
-            width={300}
-            height={300}
-            priority
-          />
-        )}
+          {logo === "estate" && (
+            <Image
+              src="/klaim-estate.svg"
+              alt="Klaim Estate Logo"
+              className="absolute top-4 md:top-10 left-1/2 md:left-16 -translate-x-1/2 md:translate-x-0 w-40 md:w-[300px]"
+              quality={100}
+              width={300}
+              height={300}
+              priority
+            />
+          )}
         </div>
       </div>
     </section>
   );
-} 
+}

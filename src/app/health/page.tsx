@@ -36,7 +36,7 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
         dir={locale === "ar" ? "rtl" : "ltr"}
       >
         <HeroSection />
-        <ProblemSection />
+        {/* <ProblemSection />
         <BentoSection />
         <Banner
           src={
@@ -69,7 +69,7 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
           description={contact.description}
           form={contact.form}
         />
-        <FooterSection copy={footer} hideSectors />
+        <FooterSection copy={footer} hideSectors /> */}
       </main>
     </NextIntlClientProvider>
   );

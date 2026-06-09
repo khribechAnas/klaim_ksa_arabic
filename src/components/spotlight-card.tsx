@@ -42,12 +42,12 @@ const GlowCard: React.FC<GlowCardProps> = ({
         cardRef.current.style.setProperty("--x", x.toFixed(2));
         cardRef.current.style.setProperty(
           "--xp",
-          (x / window.innerWidth).toFixed(2)
+          (x / window.innerWidth).toFixed(2),
         );
         cardRef.current.style.setProperty("--y", y.toFixed(2));
         cardRef.current.style.setProperty(
           "--yp",
-          (y / window.innerHeight).toFixed(2)
+          (y / window.innerHeight).toFixed(2),
         );
       }
     };

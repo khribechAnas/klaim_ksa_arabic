@@ -174,7 +174,7 @@ function IconWithTooltipAndLink({
               "flex items-center justify-center",
               iconData.background && "rounded-full p-2",
               iconData.backgroundColor === "black" && "bg-black",
-              iconData.backgroundColor === "white" && "bg-white"
+              iconData.backgroundColor === "white" && "bg-white",
             )}
           >
             <Image
@@ -184,7 +184,7 @@ function IconWithTooltipAndLink({
               height={iconData.height || 40}
               className={cn(
                 "object-contain max-w-full max-h-full",
-                iconData.invert && "invert dark:invert-0"
+                iconData.invert && "invert dark:invert-0",
               )}
             />
           </div>
@@ -198,7 +198,7 @@ function IconWithTooltipAndLink({
               iconData.backgroundColor === "black" && "bg-black",
               iconData.backgroundColor === "white" && "bg-white",
               iconData.rounded && "rounded-full p-0",
-              !iconData.background && "bg-transparent" // Default to white background if none specified
+              !iconData.background && "bg-transparent", // Default to white background if none specified
             )}
           >
             <Image
@@ -208,7 +208,7 @@ function IconWithTooltipAndLink({
               height={100} // Reduced from 48
               className={cn(
                 "object-contain w-full h-full",
-                iconData.rounded && "rounded-full"
+                iconData.rounded && "rounded-full",
               )}
             />
           </div>

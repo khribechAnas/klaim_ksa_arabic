@@ -16,18 +16,31 @@ export function ContactFormGridWithDetails() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [message, setMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
+    setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name.trim() || !formData.email.trim() || !formData.company.trim() || !formData.phone.trim()) {
-      setMessage({ type: 'error', text: 'Please fill in all required fields.' });
+    if (
+      !formData.name.trim() ||
+      !formData.email.trim() ||
+      !formData.company.trim() ||
+      !formData.phone.trim()
+    ) {
+      setMessage({
+        type: "error",
+        text: "Please fill in all required fields.",
+      });
       return;
     }
 
@@ -44,13 +57,25 @@ export function ContactFormGridWithDetails() {
       });
 
       if (result.success) {
-        setMessage({ type: 'success', text: 'Thank you for your interest! We\'ll contact you soon to discuss KlaimFlow.' });
-        setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+        setMessage({
+          type: "success",
+          text: "Thank you for your interest! We'll contact you soon to discuss KlaimFlow.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          phone: "",
+          message: "",
+        });
       } else {
-        setMessage({ type: 'error', text: result.message });
+        setMessage({ type: "error", text: result.message });
       }
     } catch {
-      setMessage({ type: 'error', text: 'Failed to submit form. Please try again later.' });
+      setMessage({
+        type: "error",
+        text: "Failed to submit form. Please try again later.",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -100,7 +125,10 @@ export function ContactFormGridWithDetails() {
           />
         </div>
       </div>
-      <form onSubmit={handleSubmit} className="relative mx-auto flex w-full max-w-2xl flex-col items-start gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-gray-100 to-gray-200 p-4 sm:p-10 dark:from-neutral-900 dark:to-neutral-950">
+      <form
+        onSubmit={handleSubmit}
+        className="relative mx-auto flex w-full max-w-2xl flex-col items-start gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-gray-100 to-gray-200 p-4 sm:p-10 dark:from-neutral-900 dark:to-neutral-950"
+      >
         <Grid size={20} />
         <div className="relative z-20 mb-4 w-full">
           <label
@@ -193,11 +221,13 @@ export function ContactFormGridWithDetails() {
         </div>
 
         {message && (
-          <div className={`relative z-20 mb-4 w-full p-3 rounded-md text-sm ${
-            message.type === 'success' 
-              ? 'bg-green-50 text-green-700 border border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800' 
-              : 'bg-red-50 text-red-700 border border-red-200 dark:bg-red-900/20 dark:text-red-300 dark:border-red-800'
-          }`}>
+          <div
+            className={`relative z-20 mb-4 w-full p-3 rounded-md text-sm ${
+              message.type === "success"
+                ? "bg-green-50 text-green-700 border border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800"
+                : "bg-red-50 text-red-700 border border-red-200 dark:bg-red-900/20 dark:text-red-300 dark:border-red-800"
+            }`}
+          >
             {message.text}
           </div>
         )}
@@ -213,7 +243,7 @@ export function ContactFormGridWithDetails() {
               Submitting...
             </>
           ) : (
-            'Submit'
+            "Submit"
           )}
         </button>
       </form>
@@ -227,7 +257,7 @@ const Pin = ({ className }: { className?: string }) => {
       style={{ transform: "translateZ(1px)" }}
       className={cn(
         "pointer-events-none absolute z-[60] flex h-40 w-96 items-center justify-center opacity-100 transition duration-500",
-        className
+        className,
       )}
     >
       <div className="h-full w-full">
@@ -296,13 +326,13 @@ export const FeatureIconContainer = ({
     <div
       className={cn(
         "relative h-14 w-14 rounded-md bg-gradient-to-b from-gray-50 to-neutral-200 p-[4px] dark:from-neutral-800 dark:to-neutral-950",
-        className
+        className,
       )}
     >
       <div
         className={cn(
           "relative z-20 h-full w-full rounded-[5px] bg-gray-50 dark:bg-neutral-800",
-          className
+          className,
         )}
       >
         {children}

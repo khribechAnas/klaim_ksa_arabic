@@ -21,29 +21,27 @@ export default async function Image() {
     const baseUrl = getBaseUrl();
 
     return new ImageResponse(
-      (
-        <div
+      <div
+        style={{
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "black",
+        }}
+      >
+        <img
+          src={`${baseUrl}/agent-template-og.png`}
+          alt={alt}
           style={{
-            height: "100%",
             width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "black",
+            height: "100%",
+            objectFit: "contain",
           }}
-        >
-          <img
-            src={`${baseUrl}/agent-template-og.png`}
-            alt={alt}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-            }}
-          />
-        </div>
-      ),
-      { ...size }
+        />
+      </div>,
+      { ...size },
     );
   } catch (error) {
     console.error("Error generating OpenGraph image:", error);

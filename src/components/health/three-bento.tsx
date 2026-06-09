@@ -1,25 +1,25 @@
 import { cn } from "@/lib/utils";
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from "next-intl";
 import { IconClock, IconShieldCheck, IconBrain } from "@tabler/icons-react";
 
 export function ThreeBento() {
-  const t = useTranslations('health');
+  const t = useTranslations("health");
   const locale = useLocale();
   const isRtl = locale === "ar";
   const features = [
     {
-      title: t('valueFeatures.0.title'),
-      description: t('valueFeatures.0.description'),
+      title: t("valueFeatures.0.title"),
+      description: t("valueFeatures.0.description"),
       icon: <IconClock />,
     },
     {
-      title: t('valueFeatures.1.title'),
-      description: t('valueFeatures.1.description'),
+      title: t("valueFeatures.1.title"),
+      description: t("valueFeatures.1.description"),
       icon: <IconShieldCheck />,
     },
     {
-      title: t('valueFeatures.2.title'),
-      description: t('valueFeatures.2.description'),
+      title: t("valueFeatures.2.title"),
+      description: t("valueFeatures.2.description"),
       icon: <IconBrain />,
     },
   ];
@@ -58,7 +58,7 @@ const Feature = ({
     <div
       className={cn(
         "flex flex-col relative group/feature hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-300 p-8 min-h-[280px]",
-        !isLast && "border-r border-border"
+        !isLast && "border-r border-border",
       )}
     >
       {/* Icon */}
@@ -71,7 +71,7 @@ const Feature = ({
         <div
           className={cn(
             "absolute inset-y-0 w-1 rounded-full bg-transparent group-hover/feature:bg-secondary transition-all duration-300",
-            isRtl ? "-right-2" : "-left-2"
+            isRtl ? "-right-2" : "-left-2",
           )}
         />
         <span
@@ -79,7 +79,7 @@ const Feature = ({
             "transition-all duration-300 inline-block",
             isRtl
               ? "group-hover/feature:-translate-x-2"
-              : "group-hover/feature:translate-x-2"
+              : "group-hover/feature:translate-x-2",
           )}
         >
           {title}

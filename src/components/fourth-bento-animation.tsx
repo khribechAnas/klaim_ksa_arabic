@@ -180,12 +180,12 @@ export function FourthBentoAnimation({
               {i === 0
                 ? "💳"
                 : i === 1
-                ? "💵"
-                : i === 2
-                ? "💳"
-                : i === 3
-                ? "⚡"
-                : "🏦"}
+                  ? "💵"
+                  : i === 2
+                    ? "💳"
+                    : i === 3
+                      ? "⚡"
+                      : "🏦"}
             </div>
           </motion.div>
         ))}

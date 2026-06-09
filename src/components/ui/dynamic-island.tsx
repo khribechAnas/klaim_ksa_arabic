@@ -155,7 +155,7 @@ type BlobContextType = {
   dispatch: React.Dispatch<BlobAction>;
   setSize: (size: SizePresets) => void;
   scheduleAnimation: (
-    animationSteps: Array<{ size: SizePresets; delay: number }>
+    animationSteps: Array<{ size: SizePresets; delay: number }>,
   ) => void;
   presets: Record<SizePresets, Preset>;
 };
@@ -164,7 +164,7 @@ const BlobContext = createContext<BlobContextType | undefined>(undefined);
 
 const blobReducer = (
   state: BlobStateType,
-  action: BlobAction
+  action: BlobAction,
 ): BlobStateType => {
   switch (action.type) {
     case "SET_SIZE":
@@ -237,14 +237,14 @@ const DynamicIslandProvider: React.FC<DynamicIslandProviderProps> = ({
         dispatch({ type: "SET_SIZE", newSize });
       }
     },
-    [state.previousSize, state.size, dispatch]
+    [state.previousSize, state.size, dispatch],
   );
 
   const scheduleAnimation = useCallback(
     (animationSteps: Array<{ size: SizePresets; delay: number }>) => {
       dispatch({ type: "SCHEDULE_ANIMATION", animationSteps });
     },
-    [dispatch]
+    [dispatch],
   );
 
   const contextValue = {
@@ -264,14 +264,14 @@ const useDynamicIslandSize = () => {
   const context = useContext(BlobContext);
   if (!context) {
     throw new Error(
-      "useDynamicIslandSize must be used within a DynamicIslandProvider"
+      "useDynamicIslandSize must be used within a DynamicIslandProvider",
     );
   }
   return context;
 };
 
 const useScheduledAnimations = (
-  animations: Array<{ size: SizePresets; delay: number }>
+  animations: Array<{ size: SizePresets; delay: number }>,
 ) => {
   const { scheduleAnimation } = useDynamicIslandSize();
   const animationsRef = useRef(animations);
@@ -333,7 +333,7 @@ const DynamicIsland = ({
 const calculateDimensions = (
   size: SizePresets,
   screenSize: string,
-  currentSize: Preset
+  currentSize: Preset,
 ): { width: string; height: number } => {
   const isMassiveOnMobile = size === "massive" && screenSize === "mobile";
   const isUltraOnMobile = size === "ultra" && screenSize === "mobile";

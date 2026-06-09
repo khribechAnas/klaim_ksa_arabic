@@ -45,11 +45,10 @@ export const ThirdBentoSkeleton = () => {
         <div className="relative w-full max-w-sm">
           {/* Cash Flow Management Illustration */}
           <div className="relative mx-auto w-40 h-40 z-20 transition-all duration-500 ease-in-out group-hover:scale-105">
-            
             {/* Central cash flow hub */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-green-400/60 to-blue-500/60 backdrop-blur-md shadow-lg flex items-center justify-center">
               <div className="absolute inset-0 rounded-full bg-white/10 dark:bg-gray-800/10 animate-pulse"></div>
-              
+
               {/* Dollar sign in center */}
               <div className="relative w-12 h-12 flex items-center justify-center">
                 <div className="text-2xl font-bold text-white/90">$</div>
@@ -69,13 +68,13 @@ export const ThirdBentoSkeleton = () => {
               { icon: "📈", label: "Growth", color: "purple" },
               { icon: "🔄", label: "Sync", color: "green" },
               { icon: "📱", label: "Mobile", color: "blue" },
-              { icon: "🎯", label: "Focus", color: "purple" }
+              { icon: "🎯", label: "Focus", color: "purple" },
             ].map((item, i) => {
               const angle = i * 60 * (Math.PI / 180);
               const radius = 70;
               const x = 50 + radius * Math.cos(angle);
               const y = 50 + radius * Math.sin(angle);
-              
+
               return (
                 <div
                   key={i}
@@ -86,12 +85,14 @@ export const ThirdBentoSkeleton = () => {
                   }}
                 >
                   {/* Node background */}
-                  <div className={`w-8 h-8 rounded-full bg-${item.color}-400/80 backdrop-blur-sm shadow-lg flex items-center justify-center text-xs animate-pulse`}>
+                  <div
+                    className={`w-8 h-8 rounded-full bg-${item.color}-400/80 backdrop-blur-sm shadow-lg flex items-center justify-center text-xs animate-pulse`}
+                  >
                     {item.icon}
                   </div>
-                  
+
                   {/* Connecting line */}
-                  <div 
+                  <div
                     className="absolute w-0.5 h-8 bg-gradient-to-b from-green-300/50 to-blue-300/50 rounded-full"
                     style={{
                       transform: `rotate(${angle * (180 / Math.PI)}deg)`,
@@ -133,7 +134,7 @@ export const ThirdBentoSkeleton = () => {
                 stroke="rgba(34,197,94,0.1)"
                 strokeWidth="2"
               />
-              
+
               {/* Clock hands showing time moving faster */}
               <line
                 x1="100"
@@ -155,14 +156,9 @@ export const ThirdBentoSkeleton = () => {
                 strokeLinecap="round"
                 className="animate-spin-slow-reverse"
               />
-              
+
               {/* Clock center */}
-              <circle
-                cx="100"
-                cy="100"
-                r="4"
-                fill="rgba(34,197,94,0.8)"
-              />
+              <circle cx="100" cy="100" r="4" fill="rgba(34,197,94,0.8)" />
             </svg>
           </div>
 

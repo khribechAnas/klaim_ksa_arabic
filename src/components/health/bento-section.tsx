@@ -2,10 +2,10 @@
 
 import { SectionHeader } from "@/components/section-header";
 import { FeaturesSectionDemo } from "./simple-bento";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
 export function BentoSection() {
-  const t = useTranslations('health.bento');
+  const t = useTranslations("health.bento");
 
   return (
     <section
@@ -18,10 +18,10 @@ export function BentoSection() {
 
         <SectionHeader>
           <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance pb-1">
-            {t('title')}
+            {t("title")}
           </h2>
           <p className="text-muted-foreground text-center text-balance font-medium">
-            {t('description')}
+            {t("description")}
           </p>
         </SectionHeader>
 
