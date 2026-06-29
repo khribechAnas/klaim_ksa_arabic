@@ -37,7 +37,7 @@ const verticalOptions = [
   { name: "Klaim Estate", href: "https://estate.klaim.ai", target: "_blank" },
   {
     name: "Klaim Health",
-    href: "https://portal.uae.klaim.ai",
+    href: "https://kapital.ksa.klaim.ai",
     target: "_blank",
     rel: "noopener noreferrer",
   },

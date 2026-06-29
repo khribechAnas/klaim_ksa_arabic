@@ -78,7 +78,7 @@ export const siteConfig = {
     cta: {
       primary: {
         text: "Get Started",
-        href: "#contact",
+        href: "https://kapital.ksa.klaim.ai",
       },
       secondary: {
         text: "Book a Call",
