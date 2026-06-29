@@ -79,11 +79,7 @@ export function Navbar() {
   const messages =
     locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const isMobile = useMediaQuery("(max-width: 768px)");
-  // On the root path when user explicitly chooses English, show the main Klaim
-  // logo instead of the Klaim Health logo while preserving health branding
-  // for Arabic and for the /health route.
   const showKlaimLogoOnRootEnglish = isRoot && locale === "en";
-
   const isHealthLogo = isHealthPage && !showKlaimLogoOnRootEnglish;
 
   const healthLogoSrc = isHealthLogo
@@ -268,9 +264,7 @@ export function Navbar() {
                   isFlowPage
                     ? "/klaimflow.png"
                     : isHealthLogo
-                      ? locale === "ar"
-                        ? "/klaimksa.png"
-                        : "/klaim-health.png"
+                      ? healthLogoSrc
                       : isEstatePage
                         ? "/klaim-estate.png"
                         : "/logo-dark.svg"
@@ -305,9 +299,7 @@ export function Navbar() {
                   isFlowPage
                     ? "/klaimflow.png"
                     : isHealthLogo
-                      ? locale === "ar"
-                        ? "/klaimksa.png"
-                        : "/klaim-health.png"
+                      ? healthLogoSrc
                       : isEstatePage
                         ? "/klaim-estate.png"
                         : "/logo-white.svg"
@@ -418,9 +410,7 @@ export function Navbar() {
                         isFlowPage
                           ? "/klaimflow.png"
                           : isHealthLogo
-                            ? locale === "ar"
-                              ? "/klaimksa.png"
-                              : "/klaim-health.png"
+                            ? healthLogoSrc
                             : isEstatePage
                               ? "/klaim-estate.png"
                               : "/logo-dark.svg"
@@ -453,9 +443,7 @@ export function Navbar() {
                         isFlowPage
                           ? "/klaimflow.png"
                           : isHealthLogo
-                            ? locale === "ar"
-                              ? "/klaimksa.png"
-                              : "/klaim-health.png"
+                            ? healthLogoSrc
                             : isEstatePage
                               ? "/klaim-estate.png"
                               : "/logo-white.svg"
@@ -482,7 +470,7 @@ export function Navbar() {
                       quality={100}
                       style={{ objectFit: "contain" }}
                       className={`hidden dark:block ${
-                        isFlowPage || isHealthLogo || isEstatePage
+                        isFlowPage || isHealthPage || isEstatePage
                           ? "grayscale invert"
                           : "block"
                       }`}
