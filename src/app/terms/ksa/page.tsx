@@ -172,7 +172,7 @@ export default function TermsOfServiceKsaPage() {
               <li>
                 Our Privacy Policy, which explains how we collect, use and store
                 your personal data.{" "}
-                <a href="/privacy/ksa" className="text-primary hover:underline">
+                <a href="/docs/Privacy_Policy.pdf" className="text-primary hover:underline">
                   Website Privacy Policy
                 </a>
               </li>
@@ -611,7 +611,7 @@ export default function TermsOfServiceKsaPage() {
             <p>
               We will only use your personal information as set out in our
               Privacy Policy.{" "}
-              <a href="/privacy/ksa" className="text-primary hover:underline">
+              <a href="/docs/Privacy_Policy.pdf" className="text-primary hover:underline">
                 Website Privacy Policy
               </a>
             </p>

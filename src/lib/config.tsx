@@ -1075,7 +1075,7 @@ export const siteConfig = {
           id: 10,
           title: "Privacy Policy",
           items: [
-            { id: 102, title: "KSA", url: "/privacy/ksa" },
+            { id: 102, title: "KSA", url: "/docs/Privacy_Policy.pdf" },
           ],
         },
         {
