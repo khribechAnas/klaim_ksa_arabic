@@ -95,3 +95,55 @@ export const inter = localFont({
   display: "swap",
   fallback: ["system-ui", "arial"],
 });
+
+// Arabic Fonts
+export const almarai = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Almarai-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Almarai-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Almarai-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-almarai",
+  display: "swap",
+  fallback: ["system-ui", "arial"],
+});
+
+export const alexandria = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Alexandria-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Alexandria-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Alexandria-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Alexandria-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-alexandria",
+  display: "swap",
+  fallback: ["system-ui", "arial"],
+});

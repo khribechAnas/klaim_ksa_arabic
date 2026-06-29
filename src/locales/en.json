@@ -2,7 +2,7 @@
   "health": {
     "hero": {
       "title": "Tired of chasing Insurance Claims?",
-      "description": "You've treated the patients but your payments are stuck in processing? Klaim Health helps you unlock your pending claims in just 24 hours, so you can focus on care, not cash.",
+      "description": "You've treated the patients but your payments are stuck in processing? Klaim Health helps you unlock your pending claims in just 48 hours, so you can focus on care, not cash.",
       "cta": {
         "primary": "Get Started",
         "secondary": "Book a Call"
@@ -48,7 +48,7 @@
     },
     "features": [
       {
-        "title": "Get up to 90% of claim value in 24h",
+        "title": "Access up to 90% of your approved insurance payments within 48 hours.",
         "description": "Fast claim processing with immediate cash flow to keep your practice running smoothly."
       },
       {
@@ -60,11 +60,11 @@
         "description": "Let us handle the paperwork while you concentrate on what matters most - your patients."
       },
       {
-        "title": "AI-powered denial prediction & claim insights",
+        "title": "Shariah-compliant financing program.",
         "description": "Advanced analytics help prevent denials before they happen and optimize your claims."
       },
       {
-        "title": "Zero debt, no collateral, performance-based fees",
+        "title": "Competitive fees starting from 1.5%",
         "description": "No upfront costs or hidden fees. You only pay when we successfully collect your claims."
       }
     ],
@@ -74,16 +74,24 @@
       "onboarding": {
         "title": "One-Time Onboarding",
         "steps": [
-          "Financial Assessment",
-          "RPA Request",
-          "Get your funds in 24 hours"
+          "Register on Klaim.sa",
+          "Accept the Terms & Conditions",
+          "Assessment & Approval",
+          "Upload your Invoices",
+          "Get your funds in 48 hours"
         ],
-        "rpaSubtitle": "(Receivables Purchase Agreement)",
-        "alt": ["Financial Assessment", "RPA Request", "Get your funds"]
+        "rpaSubtitle": "",
+        "alt": [
+          "Register on Klaim.sa",
+          "Accept the Terms and Conditions",
+          "Assessment and Approval",
+          "Upload your Invoices",
+          "Get your funds in 48 hours"
+        ]
       },
       "ongoing": {
         "title": "Ongoing Flow",
-        "steps": ["Share your invoices", "Get paid in 24 hours"],
+        "steps": ["Share your invoices", "Get paid in 48 hours"],
         "alt": ["Share your invoices", "Get paid"]
       }
     },
@@ -124,15 +132,11 @@
     "valueFeatures": [
       {
         "title": "Faster Access to Revenue",
-        "description": "Get up to 90% of your claim value within 24 hours. No more waiting months for insurance payments."
+        "description": "Access up to 90% of approved insurance claim value within 48 hours."
       },
       {
         "title": "No Debt, No Collateral",
         "description": "You get your money without taking on debt or putting up collateral. Performance-based fees only."
-      },
-      {
-        "title": "AI-Powered Revenue Protection",
-        "description": "Advanced denial prediction technology identifies and prevents claim issues before they impact your revenue."
       }
     ],
     "cta": {
@@ -145,11 +149,11 @@
       "items": [
         {
           "question": "What is Klaim?",
-          "answer": "Klaim is a payment acceleration platform that purchases approved receivables from businesses, helping them unlock cash flow tied up in unpaid invoices or claims without loans, interest, or debt."
+          "answer": "Klaim is a specialized platform that purchases approved insurance claims from healthcare providers through a Shariah-compliant Murabaha program, enabling faster access to receivables and improved cash flow without loans or additional financing obligations."
         },
         {
           "question": "How does Klaim work?",
-          "answer": "Once approved, you submit your invoice or claim to Klaim. We purchase it at an agreed value, and you receive payment directly in your account within 24 hours."
+          "answer": "Once approved, you submit approved insurance claims to Klaim. We finance them at the agreed value and transfer the funds directly to your account within 48 hours."
         },
         {
           "question": "Is Klaim a bank or lender?",
@@ -157,11 +161,11 @@
         },
         {
           "question": "What types of receivables does Klaim purchase?",
-          "answer": "Klaim purchases approved receivables from healthcare providers (insurance claims), real estate brokers (commissions), SMEs (invoices), and distributors (supplier invoices) to accelerate their cash flow."
+          "answer": "Klaim purchases approved insurance claims from healthcare providers only."
         },
         {
           "question": "How fast do I get paid?",
-          "answer": "Typically within 24 hours of submitting your approved receivable to Klaim."
+          "answer": "Typically within 48 hours of submitting approved insurance claims to Klaim."
         },
         {
           "question": "Do I need collateral or a personal guarantee?",
@@ -177,11 +181,11 @@
         },
         {
           "question": "Is Klaim available across the UAE and KSA?",
-          "answer": "Yes. Klaim currently operates across the UAE and Saudi Arabia and is expanding to support more businesses regionally."
+          "answer": "Klaim currently supports healthcare providers in Saudi Arabia and continues expanding its regional presence."
         },
         {
           "question": "How is Klaim different from traditional financing or factoring?",
-          "answer": "Unlike loans or factoring, Klaim's true sale model means your receivable is sold outright without adding debt, interest, or liability to your business. This keeps your balance sheet clean and your cash flow predictable."
+          "answer": "Unlike traditional loans or factoring, Klaim purchases approved insurance claims through a Murabaha structure, helping maintain financial strength and improve cash flow predictability."
         }
       ]
     },
@@ -222,7 +226,7 @@
       "validationError": "Please enter your email address.",
       "successMessage": "Thank you for subscribing to our newsletter!",
       "submitError": "Failed to subscribe. Please try again later.",
-      "gridText": "Get Paid in 24 Hours",
+      "gridText": "Get Paid in 48 Hours",
       "footerLinks": [
         {
           "title": "Company",
@@ -246,18 +250,12 @@
             {
               "id": 10,
               "title": "Privacy Policy",
-              "items": [
-                { "id": 101, "title": "UAE", "url": "/privacy/uae" },
-                { "id": 102, "title": "KSA", "url": "/privacy/ksa" }
-              ]
+              "items": [{ "id": 102, "title": "KSA", "url": "/privacy/ksa" }]
             },
             {
               "id": 11,
               "title": "Terms of Service",
-              "items": [
-                { "id": 111, "title": "UAE", "url": "/terms/uae" },
-                { "id": 112, "title": "KSA", "url": "/terms/ksa" }
-              ]
+              "items": [{ "id": 112, "title": "KSA", "url": "/terms/ksa" }]
             }
           ]
         }

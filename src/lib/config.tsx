@@ -1038,7 +1038,7 @@ export const siteConfig = {
     title: "You have done the work, now klaim the reward",
     backgroundImage: "/signup_banner.jpg",
     button: {
-      text: "Get Paid in 24 Hours",
+      text: "Get Paid in 48 Hours",
       href: "#contact",
     },
     subtext: "Cancel anytime, no questions asked",
@@ -1075,7 +1075,6 @@ export const siteConfig = {
           id: 10,
           title: "Privacy Policy",
           items: [
-            { id: 101, title: "UAE", url: "/privacy/uae" },
             { id: 102, title: "KSA", url: "/privacy/ksa" },
           ],
         },
@@ -1083,7 +1082,6 @@ export const siteConfig = {
           id: 11,
           title: "Terms of Service",
           items: [
-            { id: 111, title: "UAE", url: "/terms/uae" },
             { id: 112, title: "KSA", url: "/terms/ksa" },
           ],
         },

@@ -2,32 +2,31 @@ import { cn } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
 import { IconClock, IconShieldCheck, IconBrain } from "@tabler/icons-react";
 
+type ValueFeature = {
+  title: string;
+  description: string;
+};
+
 export function ThreeBento() {
   const t = useTranslations("health");
   const locale = useLocale();
   const isRtl = locale === "ar";
-  const features = [
-    {
-      title: t("valueFeatures.0.title"),
-      description: t("valueFeatures.0.description"),
-      icon: <IconClock />,
-    },
-    {
-      title: t("valueFeatures.1.title"),
-      description: t("valueFeatures.1.description"),
-      icon: <IconShieldCheck />,
-    },
-    {
-      title: t("valueFeatures.2.title"),
-      description: t("valueFeatures.2.description"),
-      icon: <IconBrain />,
-    },
-  ];
+  const icons = [<IconClock key="clock" />, <IconShieldCheck key="shield" />, <IconBrain key="brain" />];
+  const features = (t.raw("valueFeatures") as ValueFeature[]).map(
+    (feature, index) => ({
+      ...feature,
+      icon: icons[index] ?? <IconShieldCheck />,
+    }),
+  );
 
   return (
     <div className="relative z-10 max-w-7xl mx-auto">
-      {/* Single row with 3 items */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-px border border-border overflow-hidden rounded-lg">
+      <div
+        className={cn(
+          "grid grid-cols-1 gap-px border border-border overflow-hidden rounded-lg",
+          features.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3",
+        )}
+      >
         {features.map((feature, index) => (
           <Feature
             key={feature.title}
@@ -57,7 +56,7 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col relative group/feature hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-300 p-8 min-h-[280px]",
+    "flex flex-col items-center text-center relative group/feature hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-300 p-8 min-h-[280px]",
         !isLast && "border-r border-border",
       )}
     >
@@ -74,14 +73,7 @@ const Feature = ({
             isRtl ? "-right-2" : "-left-2",
           )}
         />
-        <span
-          className={cn(
-            "transition-all duration-300 inline-block",
-            isRtl
-              ? "group-hover/feature:-translate-x-2"
-              : "group-hover/feature:translate-x-2",
-          )}
-        >
+        <span className="transition-all duration-300 inline-block group-hover/feature:scale-[1.02]">
           {title}
         </span>
       </div>

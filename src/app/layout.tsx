@@ -3,14 +3,14 @@ import { Navbar } from "@/components/sections/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
-import { parkinsans, inter } from "@/lib/fonts";
+import { alexandria, almarai, inter, parkinsans } from "@/lib/fonts";
 import "./globals.css";
 
 import { PostHogProvider } from "@/components/PostHogProvider";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getLocale, getMessages } from "next-intl/server";
 
 export const viewport: Viewport = {
   themeColor: "black",
@@ -30,16 +30,23 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
   const messages = await getMessages();
+  const isArabic = locale === "ar";
 
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-KWKV399D";
   const ga4MeasurementId =
     process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || "G-ZDR00YYTN0";
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang={locale}
+      dir={isArabic ? "rtl" : "ltr"}
+      className={`${parkinsans.variable} ${inter.variable} ${almarai.variable} ${alexandria.variable} ${isArabic ? "arabic-fonts" : ""}`}
+      suppressHydrationWarning
+    >
       <body
-        className={`${parkinsans.variable} ${inter.variable} antialiased font-sans bg-background`}
+        className={`${isArabic ? `${alexandria.className} [--font-sans:var(--font-alexandria)] [--font-inter:var(--font-alexandria)]` : parkinsans.className} antialiased font-sans bg-background`}
       >
         <PostHogProvider>
           <NextIntlClientProvider messages={messages}>

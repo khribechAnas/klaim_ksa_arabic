@@ -3,8 +3,6 @@
 import { Suspense } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
-import enTranslations from "@/locales/en.json";
-import arTranslations from "@/locales/ar.json";
 import { getLocaleFromLang, HEALTH_DEFAULT_LOCALE } from "@/lib/locale";
 
 function LanguageToggleContent() {
@@ -16,11 +14,9 @@ function LanguageToggleContent() {
     searchParams.get("lang"),
     isHealthPage ? HEALTH_DEFAULT_LOCALE : "en",
   );
-  const messages =
-    locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const labels = {
-    en: messages.languageEnglish,
-    ar: messages.languageArabic,
+    en: "English",
+    ar: "عربي",
   };
 
   const navigate = (target: "en" | "ar") => {

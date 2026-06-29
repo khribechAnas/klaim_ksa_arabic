@@ -35,7 +35,7 @@ const defaultCopy: FooterCopy = {
   validationError: "Please enter your email address.",
   successMessage: "Thank you for subscribing to our newsletter!",
   submitError: "Failed to subscribe. Please try again later.",
-  gridText: "Get Paid in 24 Hours",
+  gridText: "Get Paid in 48 Hours",
   footerLinks: siteConfig.footerLinks,
 };
 
@@ -136,6 +136,11 @@ export function FooterSection({
 }: FooterSectionProps) {
   const locale = useLocale();
   const isRtl = locale === "ar";
+  const footerLogoHref = isRtl ? "/health" : "/";
+  const footerLogoLightSrc = isRtl ? "/klaimksa.png" : "/logo-dark.svg";
+  const footerLogoDarkSrc = isRtl ? "/klaimksa.png" : "/logo-white.svg";
+  const footerLogoAlt = isRtl ? "كليم" : "Klaim";
+  const footerLogoWidth = isRtl ? 120 : 130;
   const tablet = useMediaQuery("(max-width: 1024px)");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -181,19 +186,19 @@ export function FooterSection({
     <footer id="footer" className="w-full pb-0">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between p-10">
         <div className="flex flex-col items-start justify-start gap-y-5 max-w-xs mx-0">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href={footerLogoHref} className="flex items-center gap-2">
             <Image
-              src="/logo-dark.svg"
-              alt="Klaim"
-              width={130}
+              src={footerLogoLightSrc}
+              alt={footerLogoAlt}
+              width={footerLogoWidth}
               height={130}
               quality={100}
               className="dark:hidden"
             />
             <Image
-              src="/logo-white.svg"
-              alt="Klaim"
-              width={130}
+              src={footerLogoDarkSrc}
+              alt={footerLogoAlt}
+              width={footerLogoWidth}
               height={130}
               quality={100}
               className="hidden dark:block"
@@ -302,7 +307,7 @@ export function FooterSection({
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-40%" />
         <div className="absolute inset-0 mx-6">
           <FlickeringGrid
-            text={tablet ? "Klaim" : copy.gridText}
+            text={copy.gridText}
             fontSize={tablet ? 50 : 70}
             className="h-full w-full"
             squareSize={1.5}

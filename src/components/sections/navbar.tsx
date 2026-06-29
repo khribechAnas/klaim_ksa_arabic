@@ -81,6 +81,9 @@ export function Navbar() {
   const healthLogoWidth =
     locale === "ar" ? (isMobile ? 70 : 130) : isMobile ? 170 : 250;
   const mobileHealthLogoWidth = locale === "ar" ? 46 : 150;
+  const healthQuery = searchParams?.toString();
+  const logoHref =
+    isHealthPage && healthQuery ? `/health?${healthQuery}` : isHealthPage ? "/health" : "/";
   const flowNavigation: NavItem[] = [
     { id: 1, name: messages.home, href: "#hero" },
     {
@@ -233,7 +236,7 @@ export function Navbar() {
           )}
         >
           <div className="flex h-[56px] items-center justify-between p-4">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href={logoHref} className="flex items-center gap-3">
               <Image
                 src={
                   isFlowPage
@@ -379,7 +382,7 @@ export function Navbar() {
               {/* Mobile menu content */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
-                  <Link href="/" className="flex items-center gap-3">
+                  <Link href={logoHref} className="flex items-center gap-3">
                     <Image
                       src={
                         isFlowPage

@@ -5,13 +5,53 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 
+type FlowStep = {
+  label: string;
+  alt: string;
+  icon: string;
+};
+
 export function HowItWorks() {
   const t = useTranslations("health.howItWorks");
   const locale = useLocale();
   const isRtl = locale === "ar";
+  const onboardingSteps = t.raw("onboarding.steps") as string[];
+  const onboardingAlt = t.raw("onboarding.alt") as string[];
+  const onboardingIcons = [
+    "/how-it-works/flow/step1.svg",
+    "/how-it-works/flow/step2.svg",
+    "/how-it-works/health/step3.svg",
+    "/how-it-works/flow/step3.svg",
+    "/how-it-works/estate/step4.svg",
+  ];
+  const onboardingItems: FlowStep[] = onboardingSteps.map((label, index) => ({
+    label,
+    alt: onboardingAlt[index] ?? label,
+    icon: onboardingIcons[index] ?? onboardingIcons[onboardingIcons.length - 1],
+  }));
   const arrowClassName = cn(
     "transform rotate-90 md:rotate-0",
     isRtl && "md:scale-x-[-1]",
+  );
+  const Arrow = () => (
+    <div className="flex items-center md:mt-8">
+      <svg
+        className={arrowClassName}
+        width="20"
+        height="10"
+        viewBox="0 0 20 10"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 5H18M18 5L14 1M18 5L14 9"
+          stroke="#5cc2ac"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
   );
 
   return (
@@ -28,109 +68,38 @@ export function HowItWorks() {
         </p>
       </SectionHeader>
 
-      <div className="w-full h-full md:ms-10 lg:h-[250px] flex items-center justify-center">
-        {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="grid w-full max-w-7xl grid-cols-1 gap-12 lg:gap-16">
           {/* One-Time Onboarding Section */}
           <div className="space-y-8">
             <h3 className="text-2xl font-medium tracking-tight text-primary text-center">
               {t("onboarding.title")}
             </h3>
 
-            <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-6">
-              {/* Step 1 */}
-              <div className="flex flex-col items-center space-y-3">
-                <div className="w-16 h-16 flex items-center justify-center">
-                  <Image
-                    src="/how-it-works/flow/step1.svg"
-                    alt={t("onboarding.alt.0")}
-                    width={64}
-                    height={64}
-                  />
-                </div>
-                <div className="text-center max-w-[120px]">
-                  <p className="text-sm font-medium text-primary leading-tight">
-                    {t("onboarding.steps.0")}
-                  </p>
-                </div>
-              </div>
-
-              {/* Arrow 1 */}
-              <div className="flex items-center md:mt-8">
-                <svg
-                  className={arrowClassName}
-                  width="20"
-                  height="10"
-                  viewBox="0 0 20 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            <div className="flex flex-col md:flex-row md:flex-wrap items-center md:items-start justify-center gap-6">
+              {onboardingItems.map((step, index) => (
+                <div
+                  key={step.label}
+                  className="contents"
                 >
-                  <path
-                    d="M0 5H18M18 5L14 1M18 5L14 9"
-                    stroke="#5cc2ac"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-
-              {/* Step 2 */}
-              <div className="flex flex-col items-center space-y-3">
-                <div className="w-16 h-16 flex items-center justify-center">
-                  <Image
-                    src="/how-it-works/flow/step2.svg"
-                    alt={t("onboarding.alt.1")}
-                    width={64}
-                    height={64}
-                  />
+                  <div className="flex flex-col items-center space-y-3">
+                    <div className="w-16 h-16 flex items-center justify-center">
+                      <Image
+                        src={step.icon}
+                        alt={step.alt}
+                        width={64}
+                        height={64}
+                      />
+                    </div>
+                    <div className="text-center max-w-[130px]">
+                      <p className="text-sm font-medium text-primary leading-tight">
+                        {step.label}
+                      </p>
+                    </div>
+                  </div>
+                  {index < onboardingItems.length - 1 && <Arrow />}
                 </div>
-                <div className="text-center max-w-[120px]">
-                  <p className="text-sm font-medium text-primary leading-tight">
-                    {t("onboarding.steps.1")}
-                  </p>
-                  <p className="text-xs text-muted-foreground leading-tight mt-1">
-                    {t("onboarding.rpaSubtitle")}
-                  </p>
-                </div>
-              </div>
-
-              {/* Arrow 2 */}
-              <div className="flex items-center md:mt-8">
-                <svg
-                  className={arrowClassName}
-                  width="20"
-                  height="10"
-                  viewBox="0 0 20 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 5H18M18 5L14 1M18 5L14 9"
-                    stroke="#5cc2ac"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-
-              {/* Step 3 */}
-              <div className="flex flex-col items-center space-y-3">
-                <div className="w-16 h-16 flex items-center justify-center">
-                  <Image
-                    src="/how-it-works/health/step3.svg"
-                    alt={t("onboarding.alt.2")}
-                    width={64}
-                    height={64}
-                  />
-                </div>
-                <div className="text-center max-w-[120px]">
-                  <p className="text-sm font-medium text-primary leading-tight">
-                    {t("onboarding.steps.2")}
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 

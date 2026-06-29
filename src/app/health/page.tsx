@@ -11,6 +11,7 @@ import { FAQSection } from "@/components/sections/faq-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { FooterSection } from "@/components/sections/footer-section";
 import { Banner } from "@/components/ui/banner";
+import { alexandria } from "@/lib/fonts";
 import { getLocaleFromLang, HEALTH_DEFAULT_LOCALE } from "@/lib/locale";
 
 interface HealthPageProps {
@@ -32,11 +33,11 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <main
-        className="flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full"
+        className={`${locale === "ar" ? `arabic-fonts ${alexandria.className} [--font-sans:var(--font-alexandria)] [--font-inter:var(--font-alexandria)]` : ""} flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full`}
         dir={locale === "ar" ? "rtl" : "ltr"}
       >
         <HeroSection />
-        {/* <ProblemSection />
+        <ProblemSection />
         <BentoSection />
         <Banner
           src={
@@ -57,7 +58,7 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
           thumbnailAlt={testimonials.thumbnailAlt}
           dotAriaLabel={testimonials.dotAriaLabel}
         />
-        <ValueProposition /> 
+        <ValueProposition />
         <CTASection locale={locale} />
         <FAQSection
           title={faq.title}
@@ -69,7 +70,7 @@ export default async function HealthPage({ searchParams }: HealthPageProps) {
           description={contact.description}
           form={contact.form}
         />
-        <FooterSection copy={footer} hideSectors /> */}
+        <FooterSection copy={footer} hideSectors />
       </main>
     </NextIntlClientProvider>
   );

@@ -354,4 +354,25 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .arabic-fonts p,
+  .arabic-fonts li {
+    font-family: var(--font-alexandria);
+    font-weight: 400;
+  }
+
+  .arabic-fonts h1,
+  .arabic-fonts h2,
+  .arabic-fonts h3,
+  .arabic-fonts h4,
+  .arabic-fonts h5,
+  .arabic-fonts h6,
+  .arabic-fonts b,
+  .arabic-fonts strong,
+  .arabic-fonts .font-medium,
+  .arabic-fonts .font-semibold,
+  .arabic-fonts .font-bold {
+    font-family: var(--font-almarai);
+    font-weight: 700;
+  }
 }
