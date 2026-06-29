@@ -67,7 +67,8 @@ export function Navbar() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const isFlowPage = pathname === "/flow";
-  const isHealthPage = pathname === "/health";
+  // Treat root (/) as the health landing so the health navbar appears on /
+  const isHealthPage = pathname === "/health" || pathname === "/";
   const isEstatePage = pathname === "/estate";
   const locale = getLocaleFromLang(
     searchParams?.get("lang"),

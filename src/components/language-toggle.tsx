@@ -9,7 +9,8 @@ function LanguageToggleContent() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const isHealthPage = pathname === "/health";
+  // Treat root as the health landing so Arabic becomes the default on `/`
+  const isHealthPage = pathname === "/health" || pathname === "/";
   const locale = getLocaleFromLang(
     searchParams.get("lang"),
     isHealthPage ? HEALTH_DEFAULT_LOCALE : "en",
