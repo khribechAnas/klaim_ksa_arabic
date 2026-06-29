@@ -92,7 +92,7 @@ export function ContactFormGridWithDetails() {
         <div className="mt-10 hidden flex-col items-left gap-4 lg:flex">
           <p className="text-sm text-muted-foreground text-center flex items-center gap-2">
             <MapPin className="h-4 w-4" />
-            Indigo Icon Tower Unit 2705 - Dubai, United Arab Emirates
+            Anas Bin Malik Street, Building 3141, Al Malqa District, Postal Code 13521, Additional Number 8292 - Kingdom of Saudi Arabia
           </p>
 
           <div className="flex flex-wrap items-center justify-start gap-2 md:gap-4">

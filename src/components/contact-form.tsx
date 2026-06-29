@@ -37,7 +37,7 @@ export interface ContactFormCopy {
 const defaultCopy: ContactFormCopy = {
   intro:
     "We are always looking for ways to improve our products and services. Contact us and let us know how we can help you.",
-  address: "Indigo Icon Tower Unit 2705 - Dubai, United Arab Emirates",
+  address: "Anas Bin Malik Street, Building 3141, Al Malqa District, Postal Code 13521, Additional Number 8292 - Kingdom of Saudi Arabia",
   mapAlt: "world map",
   pinLabel: "We are here",
   labels: {
