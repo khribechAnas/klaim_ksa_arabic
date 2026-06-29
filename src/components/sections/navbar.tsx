@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { TrackedGetStartedButton } from "@/components/ui/tracked-button";
+import { TrackedGetStartedButton } from "../ui/tracked-button";
 import { BUTTON_LOCATIONS } from "@/hooks/use-posthog-tracking";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import enTranslations from "@/locales/en.json";
@@ -69,6 +69,7 @@ export function Navbar() {
   const isFlowPage = pathname === "/flow";
   // Treat root (/) as the health landing so the health navbar appears on /
   const isHealthPage = pathname === "/health" || pathname === "/";
+  const isRoot = pathname === "/";
   const isEstatePage = pathname === "/estate";
   const locale = getLocaleFromLang(
     searchParams?.get("lang"),
@@ -78,10 +79,34 @@ export function Navbar() {
   const messages =
     locale === "ar" ? arTranslations.navbar : enTranslations.navbar;
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const healthLogoSrc = locale === "ar" ? "/klaimksa.png" : "/klaim-health.png";
-  const healthLogoWidth =
-    locale === "ar" ? (isMobile ? 70 : 130) : isMobile ? 170 : 250;
-  const mobileHealthLogoWidth = locale === "ar" ? 46 : 150;
+  // On the root path when user explicitly chooses English, show the main Klaim
+  // logo instead of the Klaim Health logo while preserving health branding
+  // for Arabic and for the /health route.
+  const showKlaimLogoOnRootEnglish = isRoot && locale === "en";
+
+  const isHealthLogo = isHealthPage && !showKlaimLogoOnRootEnglish;
+
+  const healthLogoSrc = isHealthLogo
+    ? locale === "ar"
+      ? "/klaimksa.png"
+      : "/klaim-health.png"
+    : "/logo-dark.svg";
+
+  const healthLogoWidth = isHealthLogo
+    ? locale === "ar"
+      ? isMobile
+        ? 70
+        : 130
+      : isMobile
+        ? 170
+        : 250
+    : 130;
+
+  const mobileHealthLogoWidth = isHealthLogo
+    ? locale === "ar"
+      ? 46
+      : 150
+    : 120;
   const healthQuery = searchParams?.toString();
   const logoHref =
     isHealthPage && healthQuery ? `/health?${healthQuery}` : isHealthPage ? "/health" : "/";
@@ -242,8 +267,10 @@ export function Navbar() {
                 src={
                   isFlowPage
                     ? "/klaimflow.png"
-                    : isHealthPage
-                      ? healthLogoSrc
+                    : isHealthLogo
+                      ? locale === "ar"
+                        ? "/klaimksa.png"
+                        : "/klaim-health.png"
                       : isEstatePage
                         ? "/klaim-estate.png"
                         : "/logo-dark.svg"
@@ -251,14 +278,16 @@ export function Navbar() {
                 alt={
                   isFlowPage
                     ? "KlaimFlow"
-                    : isHealthPage
-                      ? "Klaim Health"
+                    : isHealthLogo
+                      ? locale === "ar"
+                        ? "Klaim KSA"
+                        : "Klaim Health"
                       : isEstatePage
                         ? "Klaim Estate"
                         : "Klaim"
                 }
                 width={
-                  isHealthPage
+                  isHealthLogo
                     ? healthLogoWidth
                     : isFlowPage || isEstatePage
                       ? isMobile
@@ -275,8 +304,10 @@ export function Navbar() {
                 src={
                   isFlowPage
                     ? "/klaimflow.png"
-                    : isHealthPage
-                      ? healthLogoSrc
+                    : isHealthLogo
+                      ? locale === "ar"
+                        ? "/klaimksa.png"
+                        : "/klaim-health.png"
                       : isEstatePage
                         ? "/klaim-estate.png"
                         : "/logo-white.svg"
@@ -284,14 +315,16 @@ export function Navbar() {
                 alt={
                   isFlowPage
                     ? "KlaimFlow"
-                    : isHealthPage
-                      ? "Klaim Health"
+                    : isHealthLogo
+                      ? locale === "ar"
+                        ? "Klaim KSA"
+                        : "Klaim Health"
                       : isEstatePage
                         ? "Klaim Estate"
                         : "Klaim"
                 }
                 width={
-                  isHealthPage
+                  isHealthLogo
                     ? healthLogoWidth
                     : isFlowPage || isEstatePage
                       ? isMobile
@@ -303,7 +336,7 @@ export function Navbar() {
                 quality={100}
                 style={{ objectFit: "contain" }}
                 className={`${
-                  isFlowPage || isHealthPage || isEstatePage
+                  isFlowPage || isHealthLogo || isEstatePage
                     ? "grayscale invert hidden dark:block"
                     : "block"
                 } hidden dark:block`}
@@ -384,8 +417,10 @@ export function Navbar() {
                       src={
                         isFlowPage
                           ? "/klaimflow.png"
-                          : isHealthPage
-                            ? healthLogoSrc
+                          : isHealthLogo
+                            ? locale === "ar"
+                              ? "/klaimksa.png"
+                              : "/klaim-health.png"
                             : isEstatePage
                               ? "/klaim-estate.png"
                               : "/logo-dark.svg"
@@ -393,8 +428,10 @@ export function Navbar() {
                       alt={
                         isFlowPage
                           ? "KlaimFlow"
-                          : isHealthPage
-                            ? "Klaim Health"
+                          : isHealthLogo
+                            ? locale === "ar"
+                              ? "Klaim KSA"
+                              : "Klaim Health"
                             : isEstatePage
                               ? "Klaim Estate"
                               : "Klaim"
@@ -402,7 +439,7 @@ export function Navbar() {
                       width={
                         isFlowPage
                           ? 130
-                          : isHealthPage
+                          : isHealthLogo
                             ? mobileHealthLogoWidth
                             : 120
                       }
@@ -415,8 +452,10 @@ export function Navbar() {
                       src={
                         isFlowPage
                           ? "/klaimflow.png"
-                          : isHealthPage
-                            ? healthLogoSrc
+                          : isHealthLogo
+                            ? locale === "ar"
+                              ? "/klaimksa.png"
+                              : "/klaim-health.png"
                             : isEstatePage
                               ? "/klaim-estate.png"
                               : "/logo-white.svg"
@@ -424,8 +463,10 @@ export function Navbar() {
                       alt={
                         isFlowPage
                           ? "KlaimFlow"
-                          : isHealthPage
-                            ? "Klaim Health"
+                          : isHealthLogo
+                            ? locale === "ar"
+                              ? "Klaim KSA"
+                              : "Klaim Health"
                             : isEstatePage
                               ? "Klaim Estate"
                               : "Klaim"
@@ -433,7 +474,7 @@ export function Navbar() {
                       width={
                         isFlowPage
                           ? 130
-                          : isHealthPage
+                          : isHealthLogo
                             ? mobileHealthLogoWidth
                             : 120
                       }
@@ -441,7 +482,7 @@ export function Navbar() {
                       quality={100}
                       style={{ objectFit: "contain" }}
                       className={`hidden dark:block ${
-                        isFlowPage || isHealthPage || isEstatePage
+                        isFlowPage || isHealthLogo || isEstatePage
                           ? "grayscale invert"
                           : "block"
                       }`}

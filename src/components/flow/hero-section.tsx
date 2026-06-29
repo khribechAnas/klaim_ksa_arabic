@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/config";
 import {
   TrackedGetStartedButton,
   TrackedBookCallButton,
-} from "@/components/ui/tracked-button";
+} from "../ui/tracked-button";
 import { BUTTON_LOCATIONS } from "@/hooks/use-posthog-tracking";
 
 export function HeroSection() {
