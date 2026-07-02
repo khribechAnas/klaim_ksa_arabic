@@ -180,15 +180,7 @@ export function ContactFormGridWithDetails({
           >
             <Mail className="h-4 w-4 shrink-0" />
             <p className="text-sm text-muted-foreground" dir="ltr">
-              hello@klaim.ai
-            </p>
-            <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground" dir="ltr">
               helloksa@klaim.ai
-            </p>
-            <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground" dir="ltr">
-              hellooman@klaim.ai
             </p>
           </div>
 
@@ -201,15 +193,7 @@ export function ContactFormGridWithDetails({
           >
             <Phone className="h-4 w-4 shrink-0" />
             <p className="text-sm text-muted-foreground" dir="ltr">
-              +971 4 876 4096
-            </p>
-            <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground" dir="ltr">
               +966 568 154 527
-            </p>
-            <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-            <p className="text-sm text-muted-foreground" dir="ltr">
-              +968 7 173 4424
             </p>
           </div>
         </div>
