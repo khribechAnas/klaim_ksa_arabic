@@ -1,0 +1,32 @@
+{
+  "shariah": {
+    "metadata": {
+      "title": "Shariah-compliant (KSA) - Klaim AI",
+      "description": "Learn how Klaim provides transparent Murabaha financing to help healthcare providers improve cash flow while remaining aligned with Shariah principles and Saudi regulatory requirements."
+    },
+    "header": {
+      "title": "Shariah-compliant",
+      "description": "Learn how Klaim provides transparent Murabaha financing to help healthcare providers improve cash flow while remaining aligned with Shariah principles and Saudi regulatory requirements."
+    },
+    "sections": [
+      {
+        "title": "Principles",
+        "description": "All financing is structured using a Shariah-compliant Murabaha arrangement. Pricing is transparent, agreed upon upfront, and fully disclosed before execution."
+      },
+      {
+        "title": "Transaction Structure",
+        "description": "Every financing transaction is supported by clear contractual documentation, a predefined payment schedule, and complete disclosure of pricing and terms."
+      },
+      {
+        "title": "Compliance",
+        "description": "Murabaha financing is structured in accordance with Shariah principles and in compliance with the applicable laws and regulations of the Kingdom of Saudi Arabia."
+      }
+    ],
+    "contactBanner": {
+      "title": "Questions about Shariah compliance?",
+      "description": "If you have any questions about our Shariah-compliant financing, please don't hesitate to contact us.",
+      "buttonText": "Contact Us",
+      "email": "hello@klaim.ai"
+    }
+  }
+}

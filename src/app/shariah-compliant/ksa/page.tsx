@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { alexandria } from "@/lib/fonts";
 import { getLocaleFromLang } from "@/lib/locale";
-import { TermsContent } from "./terms-content";
+import { ShariahContent } from "./shariah-content";
 
-interface TermsKsaPageProps {
+interface ShariahKsaPageProps {
   searchParams: Promise<{
     lang?: string;
   }>;
@@ -12,23 +12,23 @@ interface TermsKsaPageProps {
 
 export async function generateMetadata({
   searchParams,
-}: TermsKsaPageProps): Promise<Metadata> {
+}: ShariahKsaPageProps): Promise<Metadata> {
   const { lang } = await searchParams;
   const locale = getLocaleFromLang(lang, "en");
-  const messages = (await import(`@/locales/${locale}-terms.json`)).default;
+  const messages = (await import(`@/locales/${locale}-shariah.json`)).default;
 
   return {
-    title: messages.terms.metadata.title,
-    description: messages.terms.metadata.description,
+    title: messages.shariah.metadata.title,
+    description: messages.shariah.metadata.description,
   };
 }
 
-export default async function TermsOfServiceKsaPage({
+export default async function ShariahCompliantKsaPage({
   searchParams,
-}: TermsKsaPageProps) {
+}: ShariahKsaPageProps) {
   const { lang } = await searchParams;
   const locale = getLocaleFromLang(lang, "en");
-  const messages = (await import(`@/locales/${locale}-terms.json`)).default;
+  const messages = (await import(`@/locales/${locale}-shariah.json`)).default;
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
@@ -36,7 +36,7 @@ export default async function TermsOfServiceKsaPage({
         className={`${locale === "ar" ? `arabic-fonts ${alexandria.className} [--font-sans:var(--font-alexandria)] [--font-inter:var(--font-alexandria)]` : ""}`}
         dir={locale === "ar" ? "rtl" : "ltr"}
       >
-        <TermsContent />
+        <ShariahContent />
       </div>
     </NextIntlClientProvider>
   );
