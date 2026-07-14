@@ -68,7 +68,10 @@ export function Navbar() {
   const searchParams = useSearchParams();
   const isFlowPage = pathname === "/flow";
   // Treat root (/) as the health landing so the health navbar appears on /
-  const isHealthPage = pathname === "/health" || pathname === "/";
+  // Also treat privacy, terms, and sharia-related pages as the root/health navbar
+  const isPrivacyOrTermsOrSharia =
+    pathname?.startsWith("/privacy") || pathname?.startsWith("/terms") || pathname?.includes("sharia");
+  const isHealthPage = pathname === "/health" || pathname === "/" || isPrivacyOrTermsOrSharia;
   const isRoot = pathname === "/";
   const isEstatePage = pathname === "/estate";
   const locale = getLocaleFromLang(
