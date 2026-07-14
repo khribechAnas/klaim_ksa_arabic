@@ -1064,7 +1064,6 @@ export const siteConfig = {
       title: "Resources",
       links: [
         { id: 7, title: "FAQ", url: "#faq" },
-        { id: 8, title: "How it Works", url: "#features" },
         { id: 9, title: "Testimonials", url: "#testimonials" },
       ],
     },
@@ -1083,6 +1082,13 @@ export const siteConfig = {
           title: "Terms of Service",
           items: [
             { id: 112, title: "KSA", url: "/terms/ksa" },
+          ],
+        },
+        {
+          id: 12,
+          title: "Shariah-compliant",
+          items: [
+            { id: 121, title: "KSA", url: "/shariah-compliant/ksa" },
           ],
         },
       ] satisfies FooterLinkItem[],

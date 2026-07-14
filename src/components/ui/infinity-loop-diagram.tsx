@@ -53,7 +53,7 @@ const InfinityLoopDiagram = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveCorner((prev) => (prev + 1) % 4);
-    }, 3000); // Change every 2.5 seconds
+    }, 6000); // Change every 2.5 seconds
 
     return () => clearInterval(interval);
   }, []);
